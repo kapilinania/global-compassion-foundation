@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Care Foundation | Empowering Communities</title>
+    <meta name="description" content="Global Care Foundation (GCF) is dedicated to fostering sustainable community development, educating youth, defending ecosystems, and supporting the Chakma indigenous people. Join us.">
+    <!-- CSS Style sheets linked directly in correct order for local compatibility (with version cache-busters) -->
+    <link rel="stylesheet" href="css/variables.css?v=1.7">
+    <link rel="stylesheet" href="css/main.css?v=1.7">
+    <link rel="stylesheet" href="css/layout.css?v=1.7">
+    <!-- FontAwesome for standard icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Responsive Spacing & Color Adjustments */
+        
+        /* Hero Section Styling */
+        .alone-hero {
+            position: relative;
+            background: linear-gradient(rgba(10, 17, 40, 0.65), rgba(10, 17, 40, 0.65)), url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1470&auto=format&fit=crop') no-repeat center center;
+            background-size: cover;
+            min-height: calc(100vh - 120px);
+            display: flex;
+            align-items: center;
+            color: white;
+            padding: var(--space-2xl) 0; /* Reduced padding for mobile spacing */
+            overflow: hidden; /* Bulletproof horizontal scroll prevention */
+        }
+        
+        @media (min-width: 768px) {
+            .alone-hero {
+                padding: var(--space-3xl) 0;
+            }
+        }
+        
+        .alone-hero-content {
+            max-width: 700px;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: heroFadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 0.2s;
+        }
+        
+        @keyframes heroFadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .alone-hero-content h1 {
+            color: white;
+            font-size: var(--text-2xl); /* Start smaller on narrow viewports */
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: var(--space-md);
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+        }
+        
+        @media (min-width: 480px) {
+            .alone-hero-content h1 {
+                font-size: var(--text-3xl);
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .alone-hero-content h1 {
+                font-size: var(--text-4xl);
+                line-height: 1.15;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .alone-hero-content h1 {
+                font-size: var(--text-5xl);
+            }
+        }
+        
+        .alone-hero-content h1 span {
+            color: var(--highlight-teal-dark); /* Vibrant teal contrast accent against dark bg */
+        }
+        
+        .alone-hero-content p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: var(--text-base); /* Standard readable body font size on mobile */
+            margin-bottom: var(--space-lg);
+            font-weight: 400;
+            max-width: 600px;
+        }
+        
+        @media (min-width: 768px) {
+            .alone-hero-content p {
+                font-size: var(--text-lg);
+                margin-bottom: var(--space-xl);
+            }
+        }
+        
+        .alone-hero-btns {
+            display: flex;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 480px) {
+            .alone-hero-btns .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Section Header Alignment and Spacing */
+        .section-header {
+            max-width: 800px;
+            margin: 0 auto var(--space-2xl) auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .section-header h2 {
+            text-align: center;
+            margin-bottom: var(--space-sm);
+        }
+        .section-header p {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Stats Strip Styling as clean white cards with Navy accents - Responsive Margins */
+        .stats-strip {
+            margin-top: -30px; /* Reduced margin to avoid text overlaps on narrow mobile viewports */
+            position: relative;
+            z-index: 10;
+        }
+        
+        @media (min-width: 768px) {
+            .stats-strip {
+                margin-top: -60px; /* Reset standard offset for large layouts */
+            }
+        }
+        
+        .stats-grid-card {
+            background-color: white;
+            color: var(--text-main);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            box-shadow: var(--shadow-xl);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-sm);
+            border: 1px solid rgba(0, 40, 102, 0.08);
+        }
+        
+        @media(min-width: 768px) {
+            .stats-grid-card {
+                grid-template-columns: repeat(4, 1fr);
+                padding: var(--space-lg) var(--space-md);
+                gap: var(--space-md);
+            }
+        }
+        
+        .stat-card-item {
+            text-align: center;
+            padding: var(--space-sm);
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-normal);
+            background-color: var(--bg-offset);
+            border: 1px solid rgba(0, 0, 0, 0.02);
+        }
+        
+        .stat-card-item:hover {
+            transform: translateY(-5px);
+            background-color: var(--primary-light);
+            border-color: rgba(0, 40, 102, 0.15);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .stat-card-item:hover .stat-box-num {
+            color: var(--primary-hover);
+        }
+        
+        .stat-box-num {
+            font-family: var(--font-heading);
+            font-size: var(--text-2xl); /* Moderated text size for narrow devices */
+            font-weight: 800;
+            color: var(--primary); /* Navy Blue Numbers */
+            margin-bottom: var(--space-xs);
+            transition: color var(--transition-fast);
+        }
+        
+        @media(min-width: 768px) {
+            .stat-box-num {
+                font-size: var(--text-3xl);
+            }
+        }
+        
+        .stat-box-label {
+            font-size: var(--text-xs);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+        }
+
+        /* Interactive row values layout */
+        .value-row-card {
+            display: flex;
+            gap: var(--space-md);
+            background-color: white;
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(0,0,0,0.03);
+            margin-bottom: var(--space-sm);
+            transition: all var(--transition-normal);
+            cursor: default;
+        }
+        
+        .value-row-card:hover {
+            transform: translateX(6px);
+            border-color: rgba(0, 40, 102, 0.15);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .value-row-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-base);
+            flex-shrink: 0;
+            transition: all var(--transition-fast);
+        }
+        
+        .value-row-card:hover .value-row-icon {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Split layout image offset effect - Prevent mobile overflow */
+        /* Split Blocks - Responsive 2-Column Grid */
+        .split-block {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+        }
+        
+        @media (min-width: 768px) {
+            .split-block {
+                grid-template-columns: 1.1fr 0.9fr;
+                gap: var(--space-2xl);
+            }
+            .split-block.reverse {
+                grid-template-columns: 0.9fr 1.1fr;
+            }
+        }
+        
+        .split-block-img {
+            position: relative;
+            width: 100%;
+            z-index: 1;
+        }
+        
+        .split-block-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .split-block-img::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0; /* Keep inside on mobile to avoid horizontal scrolling */
+            border: 2px solid var(--primary);
+            border-radius: var(--radius-md);
+            z-index: -1;
+            transition: all var(--transition-normal);
+        }
+        
+        @media (min-width: 768px) {
+            .split-block-img::after {
+                top: 15px; left: 15px; right: -15px; bottom: -15px; /* Offset safely on large viewports */
+            }
+        }
+        
+        .split-block-img:hover::after {
+            top: 8px; left: 8px; right: -8px; bottom: -8px;
+            background-color: var(--primary-light);
+        }
+        
+        /* Interactive Step cards in Volunteer section */
+        .step-card {
+            background-color: white;
+            padding: var(--space-md) var(--space-lg);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(0,0,0,0.03);
+            margin-bottom: var(--space-md);
+            position: relative;
+            transition: all var(--transition-normal);
+            padding-right: var(--space-3xl); /* Ensure text doesn't overlap absolute step numbers */
+        }
+        
+        .step-card:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(0, 40, 102, 0.15);
+        }
+        
+        .step-number {
+            position: absolute;
+            top: var(--space-md);
+            right: var(--space-lg);
+            font-family: var(--font-heading);
+            font-size: var(--text-3xl);
+            font-weight: 800;
+            color: var(--primary-light);
+            line-height: 1;
+            transition: color var(--transition-fast);
+        }
+        
+        .step-card:hover .step-number {
+            color: var(--primary);
+        }
+
+        /* Centralized Interactive Donation card */
+        .donation-panel-card {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-offset) 100%);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            box-shadow: var(--shadow-xl);
+            border: 1px solid rgba(255,255,255,0.05);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .freq-switch {
+            display: flex;
+            background-color: var(--bg-dark-offset);
+            padding: 4px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 0;
+            max-width: 220px;
+        }
+        
+        .freq-switch input {
+            display: none;
+        }
+        
+        .freq-switch label {
+            flex: 1;
+            text-align: center;
+            padding: 8px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            color: var(--text-light);
+            cursor: pointer;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-fast);
+        }
+        
+        .freq-switch input:checked + label {
+            background-color: var(--brand-accent); /* Vibrant blue checked state */
+            color: white;
+        }
+
+        /* Responsive presets selector grid - 5 columns but dynamic padding to prevent mobile wrapping */
+        .amt-btn-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 6px;
+            margin-bottom: var(--space-md);
+        }
+        
+        .amt-preset-btn {
+            background-color: var(--bg-dark-offset);
+            border: 2px solid transparent;
+            color: white;
+            padding: 8px 4px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: var(--text-sm);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            text-align: center;
+        }
+        
+        @media (min-width: 768px) {
+            .amt-btn-grid {
+                gap: 12px;
+            }
+            .amt-preset-btn {
+                padding: var(--space-md) var(--space-sm);
+                font-size: var(--text-base);
+            }
+        }
+        
+        .amt-preset-btn:hover {
+            border-color: var(--brand-accent);
+            color: var(--brand-accent);
+        }
+        
+        .amt-preset-btn.active {
+            background-color: var(--brand-accent);
+            color: white;
+            border-color: var(--brand-accent);
+        }
+
+        .custom-amt-box {
+            position: relative;
+            margin-bottom: var(--space-md);
+        }
+        
+        .custom-amt-box span {
+            position: absolute;
+            left: var(--space-md);
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--text-light);
+        }
+        
+        .custom-amt-box input {
+            width: 100%;
+            padding: 0.75rem var(--space-md) 0.75rem var(--space-xl);
+            border: 2px solid var(--bg-dark-offset);
+            background-color: var(--bg-dark-offset);
+            border-radius: var(--radius-sm);
+            color: white;
+            font-weight: 600;
+            transition: border-color var(--transition-normal);
+            outline: none;
+        }
+        
+        .custom-amt-box input:focus {
+            border-color: var(--brand-accent);
+        }
+        
+        .live-impact {
+            background-color: rgba(56, 189, 248, 0.08); /* Soft cyan highlight tint background */
+            border: 1px dashed var(--highlight-teal-dark);
+            padding: var(--space-md);
+            border-radius: var(--radius-sm);
+            margin-bottom: var(--space-lg);
+            font-size: var(--text-sm);
+            color: var(--highlight-teal-dark);
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+        
+        @media (min-width: 640px) {
+            .form-row {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .input-group label {
+            font-size: var(--text-xs);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            margin-bottom: var(--space-xs);
+        }
+        
+        .input-group input, .input-group select, .input-group textarea {
+            padding: 0.75rem var(--space-md);
+            border: 2px solid var(--bg-dark-offset);
+            background-color: var(--bg-dark-offset);
+            color: white;
+            border-radius: var(--radius-sm);
+            outline: none;
+            transition: all var(--transition-normal);
+            width: 100%; /* Force width limit to prevent overflow */
+            max-width: 100%;
+        }
+        
+        .input-group input:focus, .input-group select:focus, .input-group textarea:focus {
+            border-color: var(--brand-accent);
+            background-color: #2b2b2b;
+        }
+        
+        /* Premium Highlights & Accents */
+        h2 span {
+            color: var(--highlight-teal); /* Beautiful turquoise highlight in h2 titles */
+        }
+        
+        .badge-primary {
+            background-color: var(--highlight-teal-light);
+            color: var(--highlight-teal);
+        }
+        
+        .stat-card-item:hover .stat-box-num {
+            color: var(--highlight-teal); /* Modern teal numbering hover state */
+        }
+        
+        /* Contact Information Cards */
+        .contact-card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+        
+        @media(min-width: 768px) {
+            .contact-card-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .contact-detail-card {
+            background-color: var(--bg-offset);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.02);
+            transition: transform var(--transition-fast);
+        }
+        
+        .contact-detail-card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .contact-detail-card i {
+            font-size: var(--text-xl);
+            color: var(--primary);
+            margin-bottom: var(--space-sm);
+        }
+        
+        /* Inputs inside Light-background White Premium Cards (Volunteer & Contact) */
+        .premium-card .input-group label {
+            color: var(--text-muted);
+        }
+        .premium-card .input-group input,
+        .premium-card .input-group select,
+        .premium-card .input-group textarea {
+            background-color: var(--bg-offset);
+            color: var(--text-main);
+            border: 2px solid var(--bg-offset);
+        }
+        .premium-card .input-group input::placeholder,
+        .premium-card .input-group textarea::placeholder {
+            color: var(--text-light);
+            opacity: 0.8;
+        }
+        .premium-card .input-group input:focus,
+        .premium-card .input-group select:focus,
+        .premium-card .input-group textarea:focus {
+            border-color: var(--brand-accent);
+            background-color: white;
+            color: var(--text-main);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Utility Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-contact">
+                <span><i class="fas fa-envelope"></i> info@globalcare.org</span>
+                <span><i class="fas fa-phone-alt"></i> +1 (555) 019-2834</span>
+            </div>
+            <div class="top-bar-socials">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="site-header" id="main-header">
+        <div class="container">
+            <!-- logo.png linked dynamically -->
+            <a href="#home" class="logo-link" id="logo">
+                <img src="assets/images/hero/logo.png" alt="Global Care Foundation Logo">
+            </a>
+            
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" id="menu-toggle">
+                &#9776;
+            </button>
+            
+            <!-- Navbar with shortened, single-word menu items -->
+            <nav class="main-nav" id="navigation-menu">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#volunteering" class="nav-link">Volunteer</a></li>
+                    <li><a href="#donation" class="nav-link">Donate</a></li>
+                    <li><a href="#chakma" class="nav-link">Chakma</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <a href="#donation" class="btn btn-secondary" style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.05em; padding: 0.5rem 1.25rem;">Donate</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Single Page Content -->
+    <main>
+        
+        <!-- Home / Hero Section -->
+        <section id="home" class="alone-hero">
+            <div class="container">
+                <div class="alone-hero-content">
+                    <span class="badge badge-primary">Save Lives Today</span>
+                    <h1>Empower families & preserve <span>heritage</span></h1>
+                    <p>Global Care Foundation works directly with isolated hamlets to build local schools, construct clean gravity water lines, and restore regional forests.</p>
+                    <div class="alone-hero-btns">
+                        <a href="#donation" class="btn btn-secondary">Make a Donation</a>
+                        <a href="#volunteering" class="btn btn-outline" style="border-color: white; color: white;">Join Program</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats strip container (Floating Card Items) -->
+        <div class="container stats-strip">
+            <div class="stats-grid-card">
+                <div class="stat-card-item">
+                    <div class="stat-box-num"><span class="stat-count" data-target="15000" data-suffix="+">0</span></div>
+                    <div class="stat-box-label">Supported</div>
+                </div>
+                <div class="stat-card-item">
+                    <div class="stat-box-num"><span class="stat-count" data-target="65" data-suffix="+">0</span></div>
+                    <div class="stat-box-label">Volunteers</div>
+                </div>
+                <div class="stat-card-item">
+                    <div class="stat-box-num"><span class="stat-count" data-target="120" data-suffix="+">0</span></div>
+                    <div class="stat-box-label">Acres Greened</div>
+                </div>
+                <div class="stat-card-item">
+                    <div class="stat-box-num"><span class="stat-count" data-target="100" data-suffix="%">0</span></div>
+                    <div class="stat-box-label">Direct Model</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section (Value Cards) -->
+        <section id="about" class="section reveal">
+            <div class="container">
+                <div class="split-block">
+                    <div>
+                        <span class="badge badge-primary">Who We Are</span>
+                        <h2 style="margin-bottom: var(--space-md);">Grassroots action for <span>social change</span></h2>
+                        <p style="margin-bottom: var(--space-lg); max-width: 600px;">We bypass heavy administrative layers, delivering 100% of public donations directly to field operations and building materials in rural hamlets.</p>
+                        
+                        <!-- Interactive Value Cards -->
+                        <div class="value-row-card">
+                            <div class="value-row-icon"><i class="fas fa-heart"></i></div>
+                            <div>
+                                <h4 style="margin-bottom: 2px; font-size: var(--text-base);">100% Direct Impact Model</h4>
+                                <p style="font-size: var(--text-sm); margin-bottom: 0; color: var(--text-light);">Every cent donated goes explicitly to buy physical books, clinic kits, and water pipes.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-row-card">
+                            <div class="value-row-icon"><i class="fas fa-users"></i></div>
+                            <div>
+                                <h4 style="margin-bottom: 2px; font-size: var(--text-base);">Community Ownership</h4>
+                                <p style="font-size: var(--text-sm); margin-bottom: 0; color: var(--text-light);">Local village councils manage, install, and audit GCF-funded project operations.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-row-card">
+                            <div class="value-row-icon"><i class="fas fa-seedling"></i></div>
+                            <div>
+                                <h4 style="margin-bottom: 2px; font-size: var(--text-base);">Eco-Conscious Integration</h4>
+                                <p style="font-size: var(--text-sm); margin-bottom: 0; color: var(--text-light);">All constructions utilize local sustainable assets and native planting initiatives.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="split-block-img">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=600&auto=format&fit=crop" alt="Volunteers distributing resources directly to rural youth">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Chakma People Section (Interactive Card Grid) -->
+        <section id="chakma" class="section section-bg reveal">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge badge-primary">Cultural Support</span>
+                    <h2>The <span>Chakma Community</span></h2>
+                    <p style="max-width: 600px; margin: 0 auto;">We collaborate with local elders in Chittagong Hill Tracts and Northeast regions to build resilient programs while protecting their heritage.</p>
+                </div>
+                
+                <div class="grid grid-3">
+                    <!-- Premium Card 1 -->
+                    <div class="premium-card">
+                        <div class="premium-card-icon"><i class="fas fa-book-open"></i></div>
+                        <h3>Chakma Script Classes</h3>
+                        <p style="font-size: var(--text-sm); margin-bottom: 0;">Preserving a unique literary heritage. GCF funds local tutors to teach school-aged youth reading and writing in native Chakma scripts.</p>
+                    </div>
+                    
+                    <!-- Premium Card 2 -->
+                    <div class="premium-card">
+                        <div class="premium-card-icon"><i class="fas fa-faucet-drip"></i></div>
+                        <h3>Gravity Aqueducts</h3>
+                        <p style="font-size: var(--text-sm); margin-bottom: 0;">Bringing safety and hygiene. Installing durable, gravity-fed pipeline networks from mountain springs to isolated hilltop villages.</p>
+                    </div>
+                    
+                    <!-- Premium Card 3 -->
+                    <div class="premium-card">
+                        <div class="premium-card-icon"><i class="fas fa-kit-medical"></i></div>
+                        <h3>Mobile Care Clinics</h3>
+                        <p style="font-size: var(--text-sm); margin-bottom: 0;">Closing the medicine gap. Funding mobile health camps and essential medicines to treat endemic fevers and malaria in isolated zones.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Volunteering Program Section (Step Cards & Registration Form Card) -->
+        <section id="volunteering" class="section reveal">
+            <div class="container">
+                <div class="split-block">
+                    <div>
+                        <span class="badge badge-primary">Join Us</span>
+                        <h2>Volunteer <span>Placement</span></h2>
+                        <p style="margin-bottom: var(--space-xl); max-width: 500px;">Spend your time and skills where they make a real difference. Follow our three simple steps to start your placement program.</p>
+                        
+                        <!-- Step Cards -->
+                        <div class="step-card">
+                            <div class="step-number">01</div>
+                            <h4 style="font-size: var(--text-base); margin-bottom: var(--space-xs);">Submit Application</h4>
+                            <p style="font-size: var(--text-sm); margin-bottom: 0; color: var(--text-light); max-width: 80%;">Fill out the quick signup sheet on this page with your details.</p>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-number">02</div>
+                            <h4 style="font-size: var(--text-base); margin-bottom: var(--space-xs);">Skill Mapping</h4>
+                            <p style="font-size: var(--text-sm); margin-bottom: 0; color: var(--text-light); max-width: 80%;">Our coordinators align your skills (teaching, medical, construction) with projects.</p>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-number">03</div>
+                            <h4 style="font-size: var(--text-base); margin-bottom: var(--space-xs);">Field Operations</h4>
+                            <p style="font-size: var(--text-sm); margin-bottom: 0; color: var(--text-light); max-width: 80%;">Begin working directly alongside local community coordinators on site.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Registration Card Form -->
+                    <div class="volunteer-box premium-card" style="border: 1px solid rgba(0,0,0,0.06); border-top: 4px solid var(--primary);">
+                        <h3 style="margin-bottom: var(--space-md); text-transform: uppercase; letter-spacing: -0.01em;">Become a Volunteer</h3>
+                        <form id="volunteer-form">
+                            <div class="input-group" style="margin-bottom: var(--space-md);">
+                                <label for="vol-name">Full Name</label>
+                                <input type="text" id="vol-name" required placeholder="John Doe">
+                            </div>
+                            <div class="input-group" style="margin-bottom: var(--space-md);">
+                                <label for="vol-email">Email Address</label>
+                                <input type="email" id="vol-email" required placeholder="john@example.com">
+                            </div>
+                            <div class="input-group" style="margin-bottom: var(--space-md);">
+                                <label for="vol-program">Preferred Area</label>
+                                <select id="vol-program" style="height: 46px;">
+                                    <option value="education">Chakma Script Schooling</option>
+                                    <option value="water">Gravity Pipe construction</option>
+                                    <option value="health">Mobile Clinic Support</option>
+                                    <option value="general">Reforestation Nursery</option>
+                                </select>
+                            </div>
+                            <div class="input-group" style="margin-bottom: var(--space-lg);">
+                                <label for="vol-notes">Briefly note your skills</label>
+                                <textarea id="vol-notes" placeholder="e.g. Teaching, nurse, engineering, farming..." style="min-height: 80px;"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-secondary" style="width: 100%;">Submit Registration</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Please Make a Donation Section (Interactive Card) -->
+        <section id="donation" class="section section-bg reveal">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge badge-primary">Support Funding</span>
+                    <h2>Secure <span>Donations Portal</span></h2>
+                    <p style="max-width: 600px; margin: 0 auto;">Select a preset or custom amount. Every donation directly supplies tools, books, and water pipelines to the community.</p>
+                </div>
+                
+                <div class="donation-panel-card">
+                    <form id="donation-form" novalidate>
+                            <!-- Row 1: Frequency & Direct Funding To (Responsive 2 Columns) -->
+                            <div class="form-row" style="margin-bottom: var(--space-md);">
+                                <div>
+                                    <label style="display: block; font-size: var(--text-xs); font-weight:700; text-transform: uppercase; color: var(--text-light); margin-bottom: var(--space-xs);">Frequency</label>
+                                    <div class="freq-switch">
+                                        <input type="radio" name="freq" id="freq-one" checked>
+                                        <label for="freq-one">One-Time</label>
+                                        <input type="radio" name="freq" id="freq-month">
+                                        <label for="freq-month">Monthly</label>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="donation-cause">Direct Funding To</label>
+                                    <select id="donation-cause" style="height: 46px;">
+                                        <option value="general">General operations (Where most needed)</option>
+                                        <option value="education">Chakma Script Schools</option>
+                                        <option value="water">Gravity Aqueduct Pipes</option>
+                                        <option value="health">Mobile Clinics & Malaria Kits</option>
+                                    </select>
+                                </div>
+                            </div>
+    
+                            <!-- Row 2: Preset Buttons (Full Width for Premium Spacing & No Wrap) -->
+                            <div style="margin-bottom: var(--space-md);">
+                                <label style="display: block; font-size: var(--text-xs); font-weight:700; text-transform: uppercase; color: var(--text-light); margin-bottom: var(--space-xs);">Select Donation Amount</label>
+                                <div class="amt-btn-grid">
+                                    <!-- Using amount-btn class to match js/donation.js hooks -->
+                                    <button type="button" class="amount-btn amt-preset-btn" data-amount="10">$10</button>
+                                    <button type="button" class="amount-btn amt-preset-btn" data-amount="25">$25</button>
+                                    <button type="button" class="amount-btn amt-preset-btn" data-amount="50">$50</button>
+                                    <button type="button" class="amount-btn amt-preset-btn" data-amount="100">$100</button>
+                                    <button type="button" class="amount-btn amt-preset-btn" data-amount="250">$250</button>
+                                </div>
+                            </div>
+    
+                            <!-- Row 3: Custom Amount (Full Width on its own clean row below presets) -->
+                            <div style="margin-bottom: var(--space-md);">
+                                <label style="display: block; font-size: var(--text-xs); font-weight:700; text-transform: uppercase; color: var(--text-light); margin-bottom: var(--space-xs);">Or Custom Value ($)</label>
+                                <div class="custom-amt-box">
+                                    <span>$</span>
+                                    <input type="number" id="custom-amount" min="1" placeholder="Enter Custom Amount">
+                                </div>
+                            </div>
+                        
+                        <!-- Interactive Impact Message Card -->
+                        <div class="live-impact" id="impact-text">
+                            Please choose or enter a donation amount.
+                        </div>
+                        
+                        <!-- Billing Fields -->
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="donor-name">Your Full Name</label>
+                                <input type="text" id="donor-name" placeholder="John Doe" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="donor-email">Email Address</label>
+                                <input type="email" id="donor-email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row" style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: var(--space-md); margin-top: var(--space-lg);">
+                            <div class="input-group">
+                                <label for="card-num">Mock Credit Card (Simulation)</label>
+                                <input type="text" id="card-num" placeholder="4111 2222 3333 4444">
+                            </div>
+                            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);">
+                                <div class="input-group">
+                                    <label for="card-expiry">Expiry Date</label>
+                                    <input type="text" id="card-expiry" placeholder="MM/YY">
+                                </div>
+                                <div class="input-group">
+                                    <label for="card-cvc">CVC</label>
+                                    <input type="text" id="card-cvc" placeholder="123">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="display:flex; justify-content: flex-end; margin-top: var(--space-xl);">
+                            <button type="submit" class="btn btn-secondary" style="width: 100%;">Submit Simulated Donation</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Section (Interactive contact card layout) -->
+        <section id="contact" class="section reveal">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge badge-primary">Get in Touch</span>
+                    <h2>Contact <span>Us</span></h2>
+                    <p style="max-width: 500px; margin: 0 auto;">Reach out for audits, sponsorships, or general questions. We respond within 24 hours.</p>
+                </div>
+                
+                <!-- Contact detail cards grid -->
+                <div class="contact-card-grid" style="margin-bottom: var(--space-2xl);">
+                    <div class="premium-card text-center">
+                        <div class="premium-card-icon" style="margin: 0 auto var(--space-md);"><i class="fas fa-map-marker-alt"></i></div>
+                        <h4>Office Location</h4>
+                        <p style="font-size: var(--text-sm); color: var(--text-muted); margin-top: var(--space-xs); margin-bottom: 0;">123 Care Street, City Centre, State 400012</p>
+                    </div>
+                    
+                    <div class="premium-card text-center">
+                        <div class="premium-card-icon" style="margin: 0 auto var(--space-md);"><i class="fas fa-envelope"></i></div>
+                        <h4>Email Support</h4>
+                        <p style="font-size: var(--text-sm); color: var(--text-muted); margin-top: var(--space-xs); margin-bottom: 0;"><a href="mailto:info@globalcare.org">info@globalcare.org</a></p>
+                    </div>
+                    
+                    <div class="premium-card text-center">
+                        <div class="premium-card-icon" style="margin: 0 auto var(--space-md);"><i class="fas fa-phone-alt"></i></div>
+                        <h4>Call Line</h4>
+                        <p style="font-size: var(--text-sm); color: var(--text-muted); margin-top: var(--space-xs); margin-bottom: 0;">+1 (555) 019-2834</p>
+                    </div>
+                </div>
+                
+                <!-- Minimalist Contact form card -->
+                <div class="premium-card" id="contact-form-card" style="border: 1px solid rgba(0,0,0,0.06); border-top: 4px solid var(--primary);">
+                    <h3 style="margin-bottom: var(--space-md); text-transform: uppercase;">Write A Message</h3>
+                    <form id="contact-form">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="contact-name">Full Name</label>
+                                <input type="text" id="contact-name" placeholder="John Doe" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="contact-email">Email Address</label>
+                                <input type="email" id="contact-email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div class="input-group" style="margin-bottom: var(--space-lg);">
+                            <label for="contact-msg">Message details</label>
+                            <textarea id="contact-msg" placeholder="Write your request details here..." required style="min-height: 100px;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="color: white;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer in Alone Theme Black -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col" style="flex-grow: 1.5;">
+                    <a href="#home" class="logo-link">
+                        <img src="assets/images/hero/logo.png" alt="Global Care Foundation Logo">
+                    </a>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#volunteering">Volunteer</a></li>
+                        <li><a href="#donation">Donate</a></li>
+                        <li><a href="#chakma">Chakma</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p style="font-size: var(--text-sm); line-height: 1.4; margin-bottom: var(--space-sm);">Stay updated with our latest field project progress and audits.</p>
+                    <form id="newsletter-form" class="footer-newsletter">
+                        <input type="email" id="news-email" placeholder="Email Address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+                <div class="footer-col">
+                    <h3>Get in Touch</h3>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 8px; color: var(--primary);"></i> 123 Care Street, City Centre, State 400012</p>
+                    <p><i class="fas fa-envelope" style="margin-right: 8px; color: var(--primary);"></i> info@globalcare.org</p>
+                    <p><i class="fas fa-phone-alt" style="margin-right: 8px; color: var(--primary);"></i> +1 (555) 019-2834</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="copyright-year">2026</span> Global Care Foundation. All Rights Reserved. Designed with care.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="js/navigation.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/donation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Volunteer Form Submission Simulation
+            const volunteerForm = document.getElementById('volunteer-form');
+            if (volunteerForm) {
+                volunteerForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const name = document.getElementById('vol-name').value;
+                    alert(`Thank you, ${name}! Your simulation application for the volunteering program has been sent. We will review it shortly.`);
+                    volunteerForm.reset();
+                });
+            }
+
+            // Contact Form Submission Simulation
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const name = document.getElementById('contact-name').value;
+                    alert(`Thank you, ${name}! Your message has been sent successfully. We will respond shortly.`);
+                    contactForm.reset();
+                });
+            }
+
+            // Newsletter Form Submission Simulation
+            const newsForm = document.getElementById('newsletter-form');
+            if (newsForm) {
+                newsForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const email = document.getElementById('news-email').value;
+                    alert(`Thank you! ${email} has been subscribed to GCF newsletters.`);
+                    newsForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
