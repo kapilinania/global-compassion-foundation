@@ -80,6 +80,7 @@
     align-items: center;
     max-height: 80px;
     flex-shrink: 0; /* Prevent logo from squishing on narrower desktop viewports */
+    gap: 10px; /* Space between logo image and logo text */
 }
 
 .logo-link img {
@@ -92,7 +93,48 @@
 
 @media (min-width: 768px) {
     .logo-link img {
-        height: 60px; /* Larger height on desktop */
+        height: 52px; /* Adjusted height on desktop to balance with text */
+    }
+}
+
+/* Interactive & Responsive Navbar NGO Name Text */
+.logo-text {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.95rem;
+    line-height: 1.1;
+    color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: color var(--transition-fast), transform var(--transition-normal);
+    letter-spacing: -0.015em;
+}
+
+.logo-text span {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--highlight-teal);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.logo-link:hover .logo-text {
+    color: var(--brand-accent);
+}
+
+@media (min-width: 768px) {
+    .logo-text {
+        font-size: 1.25rem;
+    }
+    .logo-text span {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .logo-text {
+        display: none; /* Hide logo text on extremely narrow mobile viewports to prevent hamburger overlap */
     }
 }
 
