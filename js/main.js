@@ -19,65 +19,91 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Smooth scroll for nav links and button targets
-    const scrollLinks = document.querySelectorAll('a[href^="#"]');
-    scrollLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetSection = document.querySelector(targetId);
-            if (targetSection) {
-                e.preventDefault();
-                
-                // Close mobile menu if active
-                const mainNav = document.querySelector('.main-nav');
-                const menuToggle = document.getElementById('menu-toggle');
-                if (mainNav && mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
-                    if (menuToggle) {
-                        menuToggle.setAttribute('aria-expanded', 'false');
-                        menuToggle.innerHTML = '&#9776;';
-                    }
-                }
-
-                // Scroll with offset for sticky header
-                const headerHeight = document.querySelector('.site-header').offsetHeight;
-                const targetPosition = targetSection.getBoundingClientRect().top + window.scrollY - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // Scroll Spy active navigation highlight
-    const sections = document.querySelectorAll('section[id]');
+    // Set active class on navigation links based on current page URL
     const navLinks = document.querySelectorAll('.nav-link');
-
-    window.addEventListener('scroll', () => {
-        let currentSectionId = '';
-        const headerHeight = document.querySelector('.site-header').offsetHeight + 40;
+    const currentPath = window.location.pathname;
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        const href = link.getAttribute('href');
         
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - headerHeight;
-            const sectionHeight = section.offsetHeight;
-            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                currentSectionId = section.getAttribute('id');
+        if (href) {
+            // Check if href is the current page
+            if (currentPath.endsWith(href) || (href === 'index.html' && (currentPath.endsWith('/') || currentPath === ''))) {
+                link.classList.add('active');
             }
-        });
-
-        if (currentSectionId) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${currentSectionId}`) {
-                    link.classList.add('active');
-                }
-            });
         }
     });
+
+    // Core Pillars Tabs Switching
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+    
+    if (tabBtns.length > 0 && tabPanes.length > 0) {
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetTab = btn.getAttribute('data-tab');
+                
+                // Set active button
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Set active pane
+                tabPanes.forEach(pane => {
+                    if (pane.getAttribute('id') === targetTab) {
+                        pane.classList.add('active');
+                    } else {
+                        pane.classList.remove('active');
+                    }
+                });
+            });
+        });
+    }
+
+    // Testimonials Slider
+    const wrapper = document.querySelector('.testimonial-wrapper');
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    
+    if (wrapper && slides.length > 0 && dots.length > 0) {
+        let activeIndex = 0;
+        
+        const updateSlider = (index) => {
+            activeIndex = index;
+            wrapper.style.transform = `translateX(-${activeIndex * 100}%)`;
+            
+            dots.forEach((dot, idx) => {
+                if (idx === activeIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        };
+        
+        dots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => {
+                updateSlider(idx);
+            });
+        });
+        
+        // Auto slide every 5 seconds
+        let slideInterval = setInterval(() => {
+            let nextIndex = (activeIndex + 1) % slides.length;
+            updateSlider(nextIndex);
+        }, 5000);
+
+        // Reset timer on click
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(() => {
+                    let nextIndex = (activeIndex + 1) % slides.length;
+                    updateSlider(nextIndex);
+                }, 5000);
+            });
+        });
+    }
 
     // Scroll Reveal Intersection Observer
     const revealElements = document.querySelectorAll('.reveal');
@@ -140,5 +166,127 @@ document.addEventListener('DOMContentLoaded', () => {
             threshold: 0.2
         });
         statsObserver.observe(statsContainer);
+    }
+
+    // Animate progress bars in Financial Transparency
+    const financeContainer = document.querySelector('.finance-grid');
+    if (financeContainer) {
+        const progressBars = financeContainer.querySelectorAll('.progress-bar');
+        const financeObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    progressBars.forEach(bar => {
+                        const targetWidth = bar.getAttribute('data-width') || '0%';
+                        bar.style.width = targetWidth;
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        financeObserver.observe(financeContainer);
+    }
+
+    // Team Slider Carousel logic
+    const teamWrapper = document.querySelector('.team-slider-wrapper');
+    const teamSlides = document.querySelectorAll('.team-slide');
+    const teamDots = document.querySelectorAll('.team-dot');
+    const teamPrev = document.querySelector('.team-slider-btn.prev');
+    const teamNext = document.querySelector('.team-slider-btn.next');
+
+    if (teamWrapper && teamSlides.length > 0) {
+        let activeTeamIdx = 0;
+        
+        const getItemsPerView = () => {
+            if (window.innerWidth >= 1024) return 3; // Show 3 items on desktop!
+            if (window.innerWidth >= 640) return 2;  // Show 2 items on tablet!
+            return 1;                                // Show 1 item on mobile!
+        };
+        
+        const updateTeamSlider = () => {
+            const itemsPerView = getItemsPerView();
+            const maxIndex = Math.max(0, teamSlides.length - itemsPerView);
+            
+            // Boundary enforcement
+            if (activeTeamIdx > maxIndex) activeTeamIdx = maxIndex;
+            if (activeTeamIdx < 0) activeTeamIdx = 0;
+            
+            const translateX = activeTeamIdx * (100 / itemsPerView);
+            teamWrapper.style.transform = `translateX(-${translateX}%)`;
+            
+            // Update dots active classes and visibility
+            teamDots.forEach((dot, idx) => {
+                if (idx > maxIndex) {
+                    dot.style.display = 'none';
+                } else {
+                    dot.style.display = 'inline-block';
+                    if (idx === activeTeamIdx) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                }
+            });
+        };
+        
+        // Autoplay Infinite Loop logic
+        let teamInterval = setInterval(() => {
+            const itemsPerView = getItemsPerView();
+            const maxIndex = Math.max(0, teamSlides.length - itemsPerView);
+            activeTeamIdx++;
+            if (activeTeamIdx > maxIndex) {
+                activeTeamIdx = 0;
+            }
+            updateTeamSlider();
+        }, 4000);
+
+        const resetTeamInterval = () => {
+            clearInterval(teamInterval);
+            teamInterval = setInterval(() => {
+                const itemsPerView = getItemsPerView();
+                const maxIndex = Math.max(0, teamSlides.length - itemsPerView);
+                activeTeamIdx++;
+                if (activeTeamIdx > maxIndex) {
+                    activeTeamIdx = 0;
+                }
+                updateTeamSlider();
+            }, 4000);
+        };
+        
+        if (teamPrev && teamNext) {
+            teamPrev.addEventListener('click', () => {
+                const itemsPerView = getItemsPerView();
+                activeTeamIdx--;
+                if (activeTeamIdx < 0) {
+                    activeTeamIdx = Math.max(0, teamSlides.length - itemsPerView);
+                }
+                updateTeamSlider();
+                resetTeamInterval();
+            });
+            
+            teamNext.addEventListener('click', () => {
+                const itemsPerView = getItemsPerView();
+                const maxIndex = Math.max(0, teamSlides.length - itemsPerView);
+                activeTeamIdx++;
+                if (activeTeamIdx > maxIndex) {
+                    activeTeamIdx = 0;
+                }
+                updateTeamSlider();
+                resetTeamInterval();
+            });
+        }
+        
+        teamDots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => {
+                activeTeamIdx = idx;
+                updateTeamSlider();
+                resetTeamInterval();
+            });
+        });
+        
+        // Listen to window resizes to recalculate layout
+        window.addEventListener('resize', updateTeamSlider);
+        updateTeamSlider();
     }
 });
