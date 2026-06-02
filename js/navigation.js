@@ -8,7 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!overlay) {
             overlay = document.createElement('div');
             overlay.className = 'nav-overlay';
-            document.body.appendChild(overlay);
+            const header = document.querySelector('.site-header');
+            if (header) {
+                header.appendChild(overlay);
+            } else {
+                document.body.appendChild(overlay);
+            }
         }
 
         const openMenu = () => {
