@@ -10,6 +10,135 @@
     <link rel="stylesheet" href="css/layout.css?v=3.1">
     <!-- FontAwesome for standard icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom steps and forms styling */
+        .step-indicator {
+            transition: all var(--transition-fast);
+        }
+        .step-indicator.active {
+            color: var(--secondary) !important;
+        }
+        .step-indicator.active span {
+            background-color: var(--secondary-light) !important;
+            border-color: var(--secondary) !important;
+            color: var(--secondary) !important;
+            font-weight: 800;
+        }
+        .step-indicator.completed span {
+            background-color: var(--secondary) !important;
+            border-color: var(--secondary) !important;
+            color: white !important;
+        }
+        
+        .freq-label {
+            background-color: transparent;
+            color: var(--text-light);
+        }
+        .freq-label.active {
+            background-color: var(--secondary);
+            color: white !important;
+        }
+        
+        .payment-method-card {
+            transition: all 0.2s ease-in-out;
+        }
+        .payment-method-card:hover {
+            border-color: var(--secondary) !important;
+            background-color: var(--bg-offset) !important;
+        }
+        .payment-method-card.active {
+            border-color: var(--secondary) !important;
+            background-color: var(--secondary-light) !important;
+        }
+        
+        .amt-preset-btn {
+            background-color: var(--bg-offset);
+            color: var(--text-main);
+            border: 1px solid var(--border-light);
+            padding: 12px var(--space-xs);
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: var(--text-sm);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .amt-preset-btn:hover {
+            background-color: var(--primary-light);
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+        .amt-preset-btn.active {
+            background-color: var(--secondary) !important;
+            border-color: var(--secondary) !important;
+            color: white !important;
+        }
+
+        .prev-step-btn {
+            background: white;
+            border: 1px solid var(--border-light);
+            color: var(--text-main);
+        }
+        .prev-step-btn:hover {
+            background: var(--bg-offset);
+            border-color: var(--text-light);
+        }
+        
+        
+        /* Mobile styling */
+        @media (max-width: 768px) {
+            .donation-card-wrapper {
+                width: 100%;
+            }
+            .indian-trust-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        /* Centered Plain FAQ Grid */
+        .faq-plain-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md) var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+        
+        .faq-plain-item {
+            text-align: left;
+            background: white;
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-plain-item h4 {
+            font-size: var(--text-sm);
+            color: var(--secondary);
+            font-weight: 700;
+            margin-bottom: var(--space-xs);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .faq-plain-item p {
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .faq-plain-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-md);
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -60,8 +189,8 @@
     <!-- Subpage Hero Banner -->
     <div class="subpage-hero hero-donate">
         <div class="container">
-            <h1>GCF Secure Donations Portal</h1>
-            <p>100% Direct Impact Model. Fueling school builds, aqueduct lines, and nurseries directly.</p>
+            <h1>Support Our Field Projects</h1>
+            <p>Claim 50% Tax Exemption under Sec 80G. 100% of your donation buys materials directly.</p>
         </div>
     </div>
 
@@ -72,104 +201,283 @@
         <section id="donation" class="section reveal">
             <div class="container">
                 <div class="split-block" style="align-items: start; gap: var(--space-xl);">
-                    <!-- Left: Why Support GCF -->
-                    <div style="padding-right: var(--space-sm);">
-                        <span class="badge badge-primary">Direct Impact</span>
-                        <h2 style="color: var(--primary); margin-bottom: var(--space-md); text-align: left;">Your support makes a <span>direct difference</span></h2>
-                        <p style="color: var(--text-muted); margin-bottom: var(--space-lg); font-size: var(--text-base);">At Global Compassion Foundation, we follow a strict 100% direct-impact model. Every dollar you donate goes directly to procuring construction equipment, schoolbooks, clinic kits, and seeds for remote communities.</p>
+                    <!-- Left: Trust Indicators & FAQ -->
+                    <div style="flex: 1; padding-right: var(--space-sm);">
+                        <span class="badge badge-primary" style="background-color: var(--secondary); color: white; margin-bottom: var(--space-sm);">Trust & Security</span>
+                        <h2 style="font-family: var(--font-heading); color: var(--primary); font-size: var(--text-3xl); margin-bottom: var(--space-md); text-align: left; line-height: 1.2;">Secure & Transparent <span>Giving</span></h2>
+                        <p style="color: var(--text-muted); margin-bottom: var(--space-lg); font-size: var(--text-base); line-height: 1.6;">Global Compassion Foundation (GCF) is a registered charitable trust in Mizoram, North-East India. Your support goes directly to procuring development materials for deep forest indigenous sectors.</p>
                         
-                        <div class="value-row-card">
-                            <div class="value-row-icon"><i class="fas fa-faucet-drip"></i></div>
-                            <div>
-                                <h4 style="margin-bottom: 2px; font-size: var(--text-base); color: var(--primary); font-weight:700;">Clean Water Line Materials</h4>
-                                <p style="font-size: var(--text-sm); margin-bottom: 0; color: var(--text-muted);">$50 buys 5 meters of durable pressure pipes for village gravity aqueducts.</p>
+                        <!-- Trust Badges Grid -->
+                        <div class="indian-trust-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); margin-bottom: var(--space-xl);">
+                            <div class="trust-badge-card" style="background: white; border: 1px solid var(--border-light); padding: var(--space-md); border-radius: var(--radius-md); text-align: left; box-shadow: var(--shadow-sm);">
+                                <div style="color: var(--secondary); font-size: var(--text-2xl); margin-bottom: var(--space-xs);"><i class="fas fa-shield-halved"></i></div>
+                                <h4 style="font-size: var(--text-sm); color: var(--primary); margin-bottom: 2px; font-weight: 700;">80G Tax Exemption</h4>
+                                <p style="font-size: var(--text-xs); color: var(--text-light); margin-bottom: 0; line-height: 1.4;">Claim 50% tax deduction on your donation under Sec 80G.</p>
+                            </div>
+                            
+                            <div class="trust-badge-card" style="background: white; border: 1px solid var(--border-light); padding: var(--space-md); border-radius: var(--radius-md); text-align: left; box-shadow: var(--shadow-sm);">
+                                <div style="color: var(--brand-accent); font-size: var(--text-2xl); margin-bottom: var(--space-xs);"><i class="fas fa-hand-holding-heart"></i></div>
+                                <h4 style="font-size: var(--text-sm); color: var(--primary); margin-bottom: 2px; font-weight: 700;">100% Direct Model</h4>
+                                <p style="font-size: var(--text-xs); color: var(--text-light); margin-bottom: 0; line-height: 1.4;">No middleman fees. Every rupee buys materials directly.</p>
+                            </div>
+                            
+                            <div class="trust-badge-card" style="background: white; border: 1px solid var(--border-light); padding: var(--space-md); border-radius: var(--radius-md); text-align: left; box-shadow: var(--shadow-sm);">
+                                <div style="color: var(--highlight-teal); font-size: var(--text-2xl); margin-bottom: var(--space-xs);"><i class="fas fa-lock"></i></div>
+                                <h4 style="font-size: var(--text-sm); color: var(--primary); margin-bottom: 2px; font-weight: 700;">Secure Gateways</h4>
+                                <p style="font-size: var(--text-xs); color: var(--text-light); margin-bottom: 0; line-height: 1.4;">UPI, Cards & Netbanking secured with 256-bit SSL.</p>
+                            </div>
+                            
+                            <div class="trust-badge-card" style="background: white; border: 1px solid var(--border-light); padding: var(--space-md); border-radius: var(--radius-md); text-align: left; box-shadow: var(--shadow-sm);">
+                                <div style="color: #25d366; font-size: var(--text-2xl); margin-bottom: var(--space-xs);"><i class="fab fa-whatsapp"></i></div>
+                                <h4 style="font-size: var(--text-sm); color: var(--primary); margin-bottom: 2px; font-weight: 700;">WhatsApp Updates</h4>
+                                <p style="font-size: var(--text-xs); color: var(--text-light); margin-bottom: 0; line-height: 1.4;">Opt-in to receive field photos and updates of project impact.</p>
                             </div>
                         </div>
 
-                        <div class="value-row-card">
-                            <div class="value-row-icon"><i class="fas fa-book-open"></i></div>
-                            <div>
-                                <h4 style="margin-bottom: 2px; font-size: var(--text-base); color: var(--primary); font-weight:700;">Native Literacy Textbooks</h4>
-                                <p style="font-size: var(--text-sm); margin-bottom: 0; color: var(--text-muted);">$25 prints and distributes 5 traditional Ajhā script workbooks to village camps.</p>
-                            </div>
-                        </div>
-
-                        <div class="value-row-card">
-                            <div class="value-row-icon"><i class="fas fa-kit-medical"></i></div>
-                            <div>
-                                <h4 style="margin-bottom: 2px; font-size: var(--text-base); color: var(--primary); font-weight:700;">Diagnostic Clinic Supplies</h4>
-                                <p style="font-size: var(--text-sm); margin-bottom: 0; color: var(--text-muted);">$100 supplies 25 rapid-test malaria diagnostic kits for health patrols.</p>
-                            </div>
-                        </div>
                     </div>
 
                     <!-- Right: Modern Donation Form Card -->
-                    <div class="premium-card" style="box-shadow: var(--shadow-xl); border-top: 4px solid var(--secondary); background-color: white;">
-                        <h3 style="margin-bottom: var(--space-md); text-transform: uppercase; color: var(--primary); font-size: var(--text-xl); letter-spacing: -0.01em;">Simulated Donation</h3>
+                    <div class="premium-card donation-card-wrapper" style="flex: 1.2; box-shadow: var(--shadow-xl); border: 1px solid rgba(0,0,0,0.06); border-top: 4px solid var(--secondary); background-color: white; border-radius: var(--radius-lg); padding: var(--space-lg); overflow: hidden; position: relative;">
+                        <!-- Progress indicator -->
+                        <div class="donation-steps" style="display: flex; justify-content: space-between; margin-bottom: var(--space-lg); border-bottom: 1px solid var(--border-light); padding-bottom: var(--space-sm);">
+                            <div class="step-indicator active" id="step-1-indicator" style="font-size: var(--text-xs); font-weight: 700; color: var(--secondary); display: flex; align-items: center; gap: 6px;">
+                                <span style="background: var(--secondary-light); width: 22px; height: 22px; display: inline-flex; justify-content: center; align-items: center; border-radius: 50%; border: 1px solid var(--secondary);">1</span> Amount
+                            </div>
+                            <div class="step-indicator" id="step-2-indicator" style="font-size: var(--text-xs); font-weight: 700; color: var(--text-light); display: flex; align-items: center; gap: 6px;">
+                                <span style="background: var(--bg-offset); width: 22px; height: 22px; display: inline-flex; justify-content: center; align-items: center; border-radius: 50%; border: 1px solid var(--border-light);">2</span> Details
+                            </div>
+                            <div class="step-indicator" id="step-3-indicator" style="font-size: var(--text-xs); font-weight: 700; color: var(--text-light); display: flex; align-items: center; gap: 6px;">
+                                <span style="background: var(--bg-offset); width: 22px; height: 22px; display: inline-flex; justify-content: center; align-items: center; border-radius: 50%; border: 1px solid var(--border-light);">3</span> Payment
+                            </div>
+                        </div>
+
                         <form id="donation-form" novalidate>
                             
-                            <!-- Frequency Toggle -->
-                            <div style="margin-bottom: var(--space-md); display: flex; justify-content: space-between; align-items: center;">
-                                <label style="font-size: var(--text-xs); font-weight:700; text-transform: uppercase; color: var(--text-light); margin-bottom: 0;">Frequency</label>
-                                <div class="freq-switch">
-                                    <input type="radio" name="freq" id="freq-one" checked>
-                                    <label for="freq-one">One-Time</label>
-                                    <input type="radio" name="freq" id="freq-month">
-                                    <label for="freq-month">Monthly</label>
+                            <!-- STEP 1: Select Amount -->
+                            <div class="form-step-section" id="step-1-section">
+                                <h3 style="font-family: var(--font-heading); color: var(--primary); font-size: var(--text-lg); margin-bottom: var(--space-sm);">Select Donation Amount</h3>
+                                
+                                <!-- Frequency Toggle -->
+                                <div style="margin-bottom: var(--space-md); display: flex; justify-content: space-between; align-items: center; background: var(--bg-offset); padding: var(--space-sm); border-radius: var(--radius-md);">
+                                    <span style="font-size: var(--text-xs); font-weight:700; text-transform: uppercase; color: var(--text-muted);">Frequency</span>
+                                    <div class="freq-switch" style="display: flex; gap: 4px;">
+                                        <input type="radio" name="freq" id="freq-one" checked style="display: none;">
+                                        <label for="freq-one" class="freq-label active" style="font-size: var(--text-xs); padding: 4px 12px; border-radius: var(--radius-full); cursor: pointer; font-weight: 700; transition: all 0.2s;">One-Time</label>
+                                        
+                                        <input type="radio" name="freq" id="freq-month" style="display: none;">
+                                        <label for="freq-month" class="freq-label" style="font-size: var(--text-xs); padding: 4px 12px; border-radius: var(--radius-full); cursor: pointer; font-weight: 700; transition: all 0.2s;">Monthly</label>
+                                    </div>
+                                </div>
+
+                                <!-- Preset Amounts (Indian Rupees) -->
+                                <div style="margin-bottom: var(--space-md);">
+                                    <div class="amt-btn-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px;">
+                                        <button type="button" class="amount-btn amt-preset-btn" data-amount="250">₹250</button>
+                                        <button type="button" class="amount-btn amt-preset-btn" data-amount="500">₹500</button>
+                                        <button type="button" class="amount-btn amt-preset-btn" data-amount="1000">₹1000</button>
+                                        <button type="button" class="amount-btn amt-preset-btn" data-amount="2000">₹2000</button>
+                                        <button type="button" class="amount-btn amt-preset-btn" data-amount="5000">₹5000</button>
+                                    </div>
+                                </div>
+
+                                <!-- Custom Amount (INR) -->
+                                <div style="margin-bottom: var(--space-md);">
+                                    <div class="custom-amt-group" style="display: flex; align-items: stretch; border: 1px solid var(--border-light); border-radius: var(--radius-md); overflow: hidden;">
+                                        <span class="custom-amt-addon" style="display: flex; align-items: center; background: var(--bg-offset); padding: 0 16px; border-right: 1px solid var(--border-light); font-weight: 700; color: var(--text-muted);">₹</span>
+                                        <input type="number" id="custom-amount" min="10" placeholder="Enter custom amount (e.g. 100)" style="border: none; padding: 10px; width: 100%; font-size: var(--text-sm); outline: none;">
+                                    </div>
+                                    <span style="font-size: 10px; color: var(--text-light); margin-top: 4px; display: block;">*Minimum donation amount is ₹10.</span>
+                                </div>
+
+                                <!-- Target Cause -->
+                                <div class="input-group" style="margin-bottom: var(--space-md);">
+                                    <label for="donation-cause" style="font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; color: var(--text-light); margin-bottom: var(--space-xs); display: block;">Direct My Donation To</label>
+                                    <select id="donation-cause" style="width: 100%; padding: 10px; border: 1px solid var(--border-light); border-radius: var(--radius-md); background: var(--bg-offset); font-size: var(--text-sm); outline: none;">
+                                        <option value="general">General Operations & Logistics</option>
+                                        <option value="education">Chakma Script Schools & Textbooks</option>
+                                        <option value="water">Gravity Aqueduct Pipes & Infrastructure</option>
+                                        <option value="health">Mobile Healthcare Clinics & Malaria Kits</option>
+                                    </select>
+                                </div>
+
+                                <!-- Impact Description -->
+                                <div class="live-impact" id="impact-text" style="background-color: var(--secondary-light); border-left: 4px solid var(--secondary); padding: var(--space-md); border-radius: var(--radius-sm); font-size: var(--text-sm); color: var(--secondary-hover); line-height: 1.5; margin-bottom: var(--space-lg);">
+                                    Please choose or enter a donation amount.
+                                </div>
+
+                                <button type="button" class="btn btn-primary next-step-btn" style="width: 100%; color: white; border-radius: var(--radius-full);">Next: Enter Details</button>
+                            </div>
+
+                            <!-- STEP 2: Donor Details -->
+                            <div class="form-step-section" id="step-2-section" style="display: none;">
+                                <h3 style="font-family: var(--font-heading); color: var(--primary); font-size: var(--text-lg); margin-bottom: var(--space-sm);">Donor Information</h3>
+                                
+                                <div class="input-group" style="margin-bottom: var(--space-md);">
+                                    <label for="donor-name" style="font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; color: var(--text-light); margin-bottom: var(--space-xs); display: block;">Full Name (As in PAN/Aadhaar)</label>
+                                    <input type="text" id="donor-name" placeholder="John Doe" required style="width: 100%; padding: 10px; border: 1px solid var(--border-light); border-radius: var(--radius-md); font-size: var(--text-sm); outline: none;">
+                                </div>
+
+                                <div class="input-group" style="margin-bottom: var(--space-md);">
+                                    <label for="donor-email" style="font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; color: var(--text-light); margin-bottom: var(--space-xs); display: block;">Email Address (For Receipt)</label>
+                                    <input type="email" id="donor-email" placeholder="john@example.com" required style="width: 100%; padding: 10px; border: 1px solid var(--border-light); border-radius: var(--radius-md); font-size: var(--text-sm); outline: none;">
+                                </div>
+
+                                <div class="input-group" style="margin-bottom: var(--space-md);">
+                                    <label for="donor-phone" style="font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; color: var(--text-light); margin-bottom: var(--space-xs); display: block;">Mobile Number (WhatsApp Preferred)</label>
+                                    <input type="tel" id="donor-phone" placeholder="e.g. 9876543210" style="width: 100%; padding: 10px; border: 1px solid var(--border-light); border-radius: var(--radius-md); font-size: var(--text-sm); outline: none;">
+                                </div>
+
+                                <!-- WhatsApp Opt-In -->
+                                <div style="margin-bottom: var(--space-md); display: flex; align-items: flex-start; gap: 8px;">
+                                    <input type="checkbox" id="whatsapp-optin" checked style="margin-top: 3px;">
+                                    <label for="whatsapp-optin" style="font-size: var(--text-xs); color: var(--text-muted); cursor: pointer; line-height: 1.4;">Receive instant updates and project reports on WhatsApp.</label>
+                                </div>
+
+                                <!-- 80G Tax Exemption Toggle -->
+                                <div style="background: var(--bg-offset); padding: var(--space-sm); border-radius: var(--radius-md); margin-bottom: var(--space-lg); border: 1px solid var(--border-light);">
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <input type="checkbox" id="tax-receipt-toggle" style="cursor: pointer;">
+                                        <label for="tax-receipt-toggle" style="font-size: var(--text-xs); font-weight: 700; color: var(--primary); cursor: pointer; text-transform: uppercase; letter-spacing: 0.02em;">Claim 80G Tax Exemption</label>
+                                    </div>
+                                    <div id="pan-input-container" style="margin-top: var(--space-sm); display: none;">
+                                        <label for="donor-pan" style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-light); display: block; margin-bottom: 4px;">PAN Card Number</label>
+                                        <input type="text" id="donor-pan" placeholder="ABCDE1234F" style="width: 100%; padding: 8px; border: 1px solid var(--border-light); border-radius: var(--radius-sm); font-size: var(--text-sm); outline: none; text-transform: uppercase;">
+                                        <span style="font-size: 9px; color: var(--text-light); display: block; margin-top: 2px;">*Required by Income Tax Dept for tax exemption certificates.</span>
+                                    </div>
+                                </div>
+
+                                <div style="display: flex; gap: var(--space-sm);">
+                                    <button type="button" class="btn btn-outline prev-step-btn" style="flex: 1; border-radius: var(--radius-full);">Back</button>
+                                    <button type="button" class="btn btn-primary next-step-btn" style="flex: 1; color: white; border-radius: var(--radius-full);">Next: Payment</button>
                                 </div>
                             </div>
 
-                            <!-- Target Cause -->
-                            <div class="input-group" style="margin-bottom: var(--space-md);">
-                                <label for="donation-cause">Direct My Funds To</label>
-                                <select id="donation-cause" style="height: 46px;">
-                                    <option value="general">General Operations (Where most needed)</option>
-                                    <option value="education">Chakma Script Schools</option>
-                                    <option value="water">Gravity Aqueduct Pipes</option>
-                                    <option value="health">Mobile Clinics & Malaria Kits</option>
-                                </select>
-                            </div>
+                            <!-- STEP 3: Payment Selection -->
+                            <div class="form-step-section" id="step-3-section" style="display: none;">
+                                <h3 style="font-family: var(--font-heading); color: var(--primary); font-size: var(--text-lg); margin-bottom: var(--space-sm);">Select Payment Method</h3>
+                                
+                                <div class="payment-options-grid" style="display: grid; grid-template-columns: 1fr; gap: var(--space-sm); margin-bottom: var(--space-lg);">
+                                    <!-- Option 1: UPI -->
+                                    <div class="payment-method-card active" id="pay-upi" style="border: 2px solid var(--secondary); background: var(--secondary-light); padding: var(--space-md); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: all 0.2s;">
+                                        <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                                            <div style="color: var(--secondary); font-size: var(--text-xl);"><i class="fas fa-mobile-screen-button"></i></div>
+                                            <div>
+                                                <h4 style="font-size: var(--text-sm); color: var(--primary); font-weight: 700; margin-bottom: 2px;">UPI / QR Code</h4>
+                                                <p style="font-size: 10px; color: var(--text-muted); margin-bottom: 0;">Google Pay, PhonePe, Paytm, BHIM</p>
+                                            </div>
+                                        </div>
+                                        <div class="pay-check-circle" style="color: var(--secondary); font-size: var(--text-base);"><i class="fas fa-circle-check"></i></div>
+                                    </div>
 
-                            <!-- Preset Amounts -->
-                            <div style="margin-bottom: var(--space-md);">
-                                <label style="display: block; font-size: var(--text-xs); font-weight:700; text-transform: uppercase; color: var(--text-light); margin-bottom: var(--space-xs);">Select Amount</label>
-                                <div class="amt-btn-grid">
-                                    <button type="button" class="amount-btn amt-preset-btn" data-amount="10">$10</button>
-                                    <button type="button" class="amount-btn amt-preset-btn" data-amount="25">$25</button>
-                                    <button type="button" class="amount-btn amt-preset-btn" data-amount="50">$50</button>
-                                    <button type="button" class="amount-btn amt-preset-btn" data-amount="100">$100</button>
-                                    <button type="button" class="amount-btn amt-preset-btn" data-amount="250">$250</button>
+                                    <!-- Option 2: Cards / Netbanking -->
+                                    <div class="payment-method-card" id="pay-other" style="border: 1px solid var(--border-light); background: white; padding: var(--space-md); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: all 0.2s;">
+                                        <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                                            <div style="color: var(--text-light); font-size: var(--text-xl);"><i class="fas fa-credit-card"></i></div>
+                                            <div>
+                                                <h4 style="font-size: var(--text-sm); color: var(--primary); font-weight: 700; margin-bottom: 2px;">Cards / Net Banking</h4>
+                                                <p style="font-size: 10px; color: var(--text-muted); margin-bottom: 0;">RuPay, Visa, Mastercard, Net Banking</p>
+                                            </div>
+                                        </div>
+                                        <div class="pay-check-circle" style="color: var(--border-light); font-size: var(--text-base);"><i class="far fa-circle"></i></div>
+                                    </div>
+                                </div>
+
+                                <!-- Dynamic Section: UPI QR Code Display -->
+                                <div id="upi-qr-section" style="background: var(--bg-offset); border: 1px dashed var(--secondary); padding: var(--space-md); border-radius: var(--radius-md); text-align: center; margin-bottom: var(--space-lg);">
+                                    <p style="font-size: var(--text-xs); color: var(--text-muted); margin-bottom: var(--space-sm);">Scan this dynamic QR code using GPay, PhonePe, Paytm, or BHIM to pay instantly:</p>
+                                    
+                                    <!-- Dynamic QR Code Container -->
+                                    <div id="dynamic-qr-container" style="background: white; border: 1px solid var(--border-light); padding: 12px; display: inline-block; border-radius: var(--radius-md); margin-bottom: var(--space-sm); box-shadow: var(--shadow-sm); position: relative;">
+                                        <!-- Simulated QR Image -->
+                                        <div id="qr-code-placeholder" style="width: 150px; height: 150px; display: flex; align-items: center; justify-content: center; background: #f3f4f6; position: relative;">
+                                            <i class="fas fa-spinner fa-spin" style="font-size: 24px; color: var(--secondary);"></i>
+                                        </div>
+                                    </div>
+                                    
+                                    <h4 id="upi-amount-display" style="font-size: var(--text-base); color: var(--primary); font-weight: 800; margin-bottom: var(--space-xs);">₹1000</h4>
+                                    <p style="font-size: 10px; color: var(--text-light); margin-bottom: 0;">UPI ID: <strong style="color: var(--secondary);">president.gcf.024@okicici</strong></p>
+                                </div>
+
+                                <!-- Dynamic Section: Credit/Debit Card Form -->
+                                <div id="card-form-section" style="display: none; background: var(--bg-offset); border: 1px solid var(--border-light); padding: var(--space-md); border-radius: var(--radius-md); margin-bottom: var(--space-lg);">
+                                    <div class="input-group" style="margin-bottom: var(--space-sm);">
+                                        <label for="card-num" style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-light); display: block; margin-bottom: 4px;">Card Number</label>
+                                        <input type="text" id="card-num" placeholder="4111 2222 3333 4444" style="width: 100%; padding: 8px; border: 1px solid var(--border-light); border-radius: var(--radius-sm); font-size: var(--text-sm); outline: none;">
+                                    </div>
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-sm);">
+                                        <div class="input-group">
+                                            <label for="card-exp" style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-light); display: block; margin-bottom: 4px;">Expiry Date</label>
+                                            <input type="text" id="card-exp" placeholder="MM/YY" style="width: 100%; padding: 8px; border: 1px solid var(--border-light); border-radius: var(--radius-sm); font-size: var(--text-sm); outline: none;">
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="card-cvv" style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-light); display: block; margin-bottom: 4px;">CVV</label>
+                                            <input type="password" id="card-cvv" placeholder="***" maxLength="3" style="width: 100%; padding: 8px; border: 1px solid var(--border-light); border-radius: var(--radius-sm); font-size: var(--text-sm); outline: none;">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div style="display: flex; gap: var(--space-sm);">
+                                    <button type="button" class="btn btn-outline prev-step-btn" style="flex: 1; border-radius: var(--radius-full);">Back</button>
+                                    <button type="submit" class="btn btn-primary" id="submit-donation-btn" style="flex: 1.5; color: white; border-radius: var(--radius-full); font-weight: 800;">Complete Donation</button>
                                 </div>
                             </div>
 
-                            <!-- Custom Amount -->
-                            <div style="margin-bottom: var(--space-lg);">
-                                <div class="custom-amt-group">
-                                    <span class="custom-amt-addon">$</span>
-                                    <input type="number" id="custom-amount" min="1" placeholder="Or enter custom amount">
-                                </div>
-                            </div>
-
-                            <!-- Impact Description -->
-                            <div class="live-impact" id="impact-text" style="background-color: var(--bg-offset); border-color: var(--border-light); color: var(--text-muted);">
-                                Please choose or enter a donation amount.
-                            </div>
-
-                            <!-- Donor Details -->
-                            <div class="form-row">
-                                <div class="input-group">
-                                    <label for="donor-name">Your Full Name</label>
-                                    <input type="text" id="donor-name" placeholder="John Doe" required>
-                                </div>
-                                <div class="input-group">
-                                    <label for="donor-email">Email Address</label>
-                                    <input type="email" id="donor-email" placeholder="john@example.com" required>
-                                </div>
-                            </div>
-
-                            <!-- CTA Button -->
-                            <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: var(--radius-full); color: white; margin-top: var(--space-md);">Simulate Donation</button>
                         </form>
+                    </div>
+                </div>
+
+                <!-- Premium FAQ Section (Centered & Spacious) -->
+                <div style="margin-top: var(--space-3xl); border-top: 1px solid var(--border-light); padding-top: var(--space-2xl); text-align: center;">
+                    <div style="max-width: 700px; margin: 0 auto var(--space-xl) auto; text-align: center;">
+                        <span class="badge badge-primary" style="background-color: var(--secondary); color: white; margin-bottom: var(--space-sm);">FAQ</span>
+                        <h2 style="font-family: var(--font-heading); color: var(--primary); font-size: var(--text-3xl); margin-bottom: var(--space-sm); text-align: center;">Frequently Asked <span>Questions</span></h2>
+                        <p style="color: var(--text-light); font-size: var(--text-sm); line-height: 1.5;">Common queries regarding Section 80G tax exemptions, payment methods, and utilization of funds.</p>
+                    </div>
+                    
+                    <div class="faq-plain-grid">
+                        <!-- FAQ 1 -->
+                        <div class="faq-plain-item">
+                            <h4>
+                                <i class="fas fa-circle-question"></i>
+                                How do I claim my 80G Tax Exemption?
+                            </h4>
+                            <p>
+                                Select the "Claim 80G Tax Exemption" option in Step 2 and enter your PAN. Once the donation is verified, GCF generates your Form 10BE certificate and sends it to your registered email and WhatsApp. This certificate is all you need to claim your 50% tax exemption under Section 80G of the Income Tax Act.
+                            </p>
+                        </div>
+                        
+                        <!-- FAQ 2 -->
+                        <div class="faq-plain-item">
+                            <h4>
+                                <i class="fas fa-circle-question"></i>
+                                Which UPI apps are supported for QR codes?
+                            </h4>
+                            <p>
+                                You can scan the dynamic QR code using any Indian UPI app, including Google Pay (GPay), PhonePe, Paytm, BHIM, Mobikwik, and your official banking apps (YONO SBI, iMobile, etc.).
+                            </p>
+                        </div>
+                        
+                        <!-- FAQ 3 -->
+                        <div class="faq-plain-item">
+                            <h4>
+                                <i class="fas fa-circle-question"></i>
+                                Is it safe to enter my card and bank details?
+                            </h4>
+                            <p>
+                                Absolutely! All card details and Netbanking transactions are encrypted using secure 256-bit SSL connections and processed via top-tier Indian payment gateways (like Razorpay/UPI), ensuring maximum security. GCF never stores your financial information.
+                            </p>
+                        </div>
+                        
+                        <!-- FAQ 4 -->
+                        <div class="faq-plain-item">
+                            <h4>
+                                <i class="fas fa-circle-question"></i>
+                                How is my donation utilized?
+                            </h4>
+                            <p>
+                                GCF is founded on a 100% direct-impact model. This means 100% of public donations are used to purchase project supplies (like aqueduct pipes, cement, books, seeds, and medical kits) directly from verified local vendors, without any administrative overhead.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
