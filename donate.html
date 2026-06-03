@@ -380,6 +380,18 @@
                                         </div>
                                         <div class="pay-check-circle" style="color: var(--border-light); font-size: var(--text-base);"><i class="far fa-circle"></i></div>
                                     </div>
+
+                                    <!-- Option 3: Bank Transfer -->
+                                    <div class="payment-method-card" id="pay-bank" style="border: 1px solid var(--border-light); background: white; padding: var(--space-md); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: all 0.2s;">
+                                        <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                                            <div style="color: var(--text-light); font-size: var(--text-xl);"><i class="fas fa-building-columns"></i></div>
+                                            <div>
+                                                <h4 style="font-size: var(--text-sm); color: var(--primary); font-weight: 700; margin-bottom: 2px;">Direct Bank Transfer</h4>
+                                                <p style="font-size: 10px; color: var(--text-muted); margin-bottom: 0;">SBI NEFT / IMPS / Account Details</p>
+                                            </div>
+                                        </div>
+                                        <div class="pay-check-circle" style="color: var(--border-light); font-size: var(--text-base);"><i class="far fa-circle"></i></div>
+                                    </div>
                                 </div>
 
                                 <!-- Dynamic Section: UPI QR Code Display -->
@@ -395,7 +407,7 @@
                                     </div>
                                     
                                     <h4 id="upi-amount-display" style="font-size: var(--text-base); color: var(--primary); font-weight: 800; margin-bottom: var(--space-xs);">₹1000</h4>
-                                    <p style="font-size: 10px; color: var(--text-light); margin-bottom: 0;">UPI ID: <strong style="color: var(--secondary);">president.gcf.024@okicici</strong></p>
+                                    <p style="font-size: 10px; color: var(--text-light); margin-bottom: 0;">UPI ID: <strong style="color: var(--secondary);">45119166469@sbin.ifsc.npci</strong></p>
                                 </div>
 
                                 <!-- Dynamic Section: Credit/Debit Card Form -->
@@ -413,6 +425,36 @@
                                             <label for="card-cvv" style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-light); display: block; margin-bottom: 4px;">CVV</label>
                                             <input type="password" id="card-cvv" placeholder="***" maxLength="3" style="width: 100%; padding: 8px; border: 1px solid var(--border-light); border-radius: var(--radius-sm); font-size: var(--text-sm); outline: none;">
                                         </div>
+                                    </div>
+                                </div>
+
+                                <!-- Dynamic Section: Bank Account Details -->
+                                <div id="bank-details-section" style="display: none; background: var(--bg-offset); border: 1px solid var(--border-light); padding: var(--space-md); border-radius: var(--radius-md); margin-bottom: var(--space-lg); text-align: left;">
+                                    <p style="font-size: var(--text-xs); color: var(--text-muted); margin-bottom: var(--space-sm); border-bottom: 1px solid var(--border-light); padding-bottom: 4px; font-weight: 700;">GCF Official Bank Account Details:</p>
+                                    <div style="font-size: var(--text-xs); line-height: 1.8;">
+                                        <div style="display: flex; justify-content: space-between;">
+                                            <span style="color: var(--text-light);">Account Name:</span>
+                                            <strong style="color: var(--primary);">Global Compassion Foundation</strong>
+                                        </div>
+                                        <div style="display: flex; justify-content: space-between;">
+                                            <span style="color: var(--text-light);">Account Number:</span>
+                                            <strong style="color: var(--primary); letter-spacing: 0.05em;">45119166469</strong>
+                                        </div>
+                                        <div style="display: flex; justify-content: space-between;">
+                                            <span style="color: var(--text-light);">IFSC Code:</span>
+                                            <strong style="color: var(--secondary);">SBIN0003810</strong>
+                                        </div>
+                                        <div style="display: flex; justify-content: space-between;">
+                                            <span style="color: var(--text-light);">Bank Name:</span>
+                                            <strong style="color: var(--primary);">State Bank of India (SBI)</strong>
+                                        </div>
+                                        <div style="display: flex; justify-content: space-between;">
+                                            <span style="color: var(--text-light);">CIF Number:</span>
+                                            <strong style="color: var(--primary);">92414809235</strong>
+                                        </div>
+                                    </div>
+                                    <div style="margin-top: var(--space-sm); background: var(--secondary-light); border-radius: var(--radius-sm); padding: 8px; font-size: 10px; color: var(--secondary-hover); line-height: 1.4;">
+                                        <i class="fas fa-circle-info" style="margin-right: 4px;"></i> Please complete the bank transfer, then click <strong>Complete Donation</strong> to register your details.
                                     </div>
                                 </div>
 

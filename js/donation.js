@@ -31,8 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Step 3 Payment Selection Elements
     const payUpiCard = document.getElementById('pay-upi');
     const payOtherCard = document.getElementById('pay-other');
+    const payBankCard = document.getElementById('pay-bank');
     const upiQrSection = document.getElementById('upi-qr-section');
     const cardFormSection = document.getElementById('card-form-section');
+    const bankDetailsSection = document.getElementById('bank-details-section');
     const upiAmountDisplay = document.getElementById('upi-amount-display');
     const qrPlaceholder = document.getElementById('qr-code-placeholder');
 
@@ -145,43 +147,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Payment Selection Toggle Event
-    if (payUpiCard && payOtherCard) {
-        payUpiCard.addEventListener('click', () => {
-            payUpiCard.classList.add('active');
-            payUpiCard.style.border = '2px solid var(--secondary)';
-            payUpiCard.style.background = 'var(--secondary-light)';
-            payUpiCard.querySelector('.pay-check-circle').innerHTML = '<i class="fas fa-circle-check"></i>';
-            payUpiCard.querySelector('.pay-check-circle').style.color = 'var(--secondary)';
+    // Reusable Payment Method Selector
+    function selectPaymentMethod(method) {
+        const cards = [
+            { card: payUpiCard, section: upiQrSection, type: 'UPI' },
+            { card: payOtherCard, section: cardFormSection, type: 'CARD' },
+            { card: payBankCard, section: bankDetailsSection, type: 'BANK' }
+        ];
 
-            payOtherCard.classList.remove('active');
-            payOtherCard.style.border = '1px solid var(--border-light)';
-            payOtherCard.style.background = 'white';
-            payOtherCard.querySelector('.pay-check-circle').innerHTML = '<i class="far fa-circle"></i>';
-            payOtherCard.querySelector('.pay-check-circle').style.color = 'var(--border-light)';
-
-            upiQrSection.style.display = 'block';
-            cardFormSection.style.display = 'none';
-            paymentMethod = 'UPI';
+        cards.forEach(item => {
+            if (!item.card) return;
+            if (item.type === method) {
+                item.card.classList.add('active');
+                item.card.style.border = '2px solid var(--secondary)';
+                item.card.style.background = 'var(--secondary-light)';
+                const circle = item.card.querySelector('.pay-check-circle');
+                if (circle) {
+                    circle.innerHTML = '<i class="fas fa-circle-check"></i>';
+                    circle.style.color = 'var(--secondary)';
+                }
+                if (item.section) item.section.style.display = 'block';
+                paymentMethod = method;
+            } else {
+                item.card.classList.remove('active');
+                item.card.style.border = '1px solid var(--border-light)';
+                item.card.style.background = 'white';
+                const circle = item.card.querySelector('.pay-check-circle');
+                if (circle) {
+                    circle.innerHTML = '<i class="far fa-circle"></i>';
+                    circle.style.color = 'var(--border-light)';
+                }
+                if (item.section) item.section.style.display = 'none';
+            }
         });
+    }
 
-        payOtherCard.addEventListener('click', () => {
-            payOtherCard.classList.add('active');
-            payOtherCard.style.border = '2px solid var(--secondary)';
-            payOtherCard.style.background = 'var(--secondary-light)';
-            payOtherCard.querySelector('.pay-check-circle').innerHTML = '<i class="fas fa-circle-check"></i>';
-            payOtherCard.querySelector('.pay-check-circle').style.color = 'var(--secondary)';
-
-            payUpiCard.classList.remove('active');
-            payUpiCard.style.border = '1px solid var(--border-light)';
-            payUpiCard.style.background = 'white';
-            payUpiCard.querySelector('.pay-check-circle').innerHTML = '<i class="far fa-circle"></i>';
-            payUpiCard.querySelector('.pay-check-circle').style.color = 'var(--border-light)';
-
-            upiQrSection.style.display = 'none';
-            cardFormSection.style.display = 'block';
-            paymentMethod = 'CARD';
-        });
+    if (payUpiCard) {
+        payUpiCard.addEventListener('click', () => selectPaymentMethod('UPI'));
+    }
+    if (payOtherCard) {
+        payOtherCard.addEventListener('click', () => selectPaymentMethod('CARD'));
+    }
+    if (payBankCard) {
+        payBankCard.addEventListener('click', () => selectPaymentMethod('BANK'));
     }
 
     // Step 1 Validation
@@ -249,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // tn = transaction note
         // am = amount
         // cu = currency (INR)
-        const upiScheme = `upi://pay?pa=president.gcf.024@okicici&pn=Global%20Compassion%20Foundation&tn=Donation%20to%20GCF&am=${selectedAmount}&cu=INR`;
+        const upiScheme = `upi://pay?pa=45119166469@sbin.ifsc.npci&pn=Global%20Compassion%20Foundation&tn=Donation%20to%20GCF&am=${selectedAmount}&cu=INR`;
         const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(upiScheme)}`;
         
         // Preload image
