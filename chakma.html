@@ -11,6 +11,303 @@
     <link rel="stylesheet" href="css/layout.css?v=3.1">
     <!-- FontAwesome for standard icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Style overrides for Chakma interactive dashboard -->
+    <style>
+        .challenges-sec {
+            background: linear-gradient(180deg, var(--bg-main) 0%, var(--bg-offset) 100%);
+            padding: var(--space-3xl) 0;
+            text-align: center;
+        }
+        .dashboard-container {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr;
+            margin-top: var(--space-2xl);
+            text-align: left;
+        }
+        @media (min-width: 1024px) {
+            .dashboard-container {
+                grid-template-columns: 320px 1fr;
+            }
+        }
+        
+        /* Left Sidebar Navigation */
+        .dashboard-sidebar {
+            background-color: #fafaf9;
+            border-right: 1px solid var(--border-light);
+            display: flex;
+            flex-direction: column;
+        }
+        @media (max-width: 1023px) {
+            .dashboard-sidebar {
+                border-right: none;
+                border-bottom: 1px solid var(--border-light);
+                flex-direction: row;
+                overflow-x: auto;
+                white-space: nowrap;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                padding: 4px;
+            }
+            .dashboard-sidebar::-webkit-scrollbar {
+                height: 4px;
+            }
+            .dashboard-sidebar::-webkit-scrollbar-thumb {
+                background: rgba(4, 120, 87, 0.2);
+                border-radius: var(--radius-full);
+            }
+        }
+        
+        .dashboard-nav-item {
+            padding: var(--space-md) var(--space-lg);
+            border-left: 4px solid transparent;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            border-bottom: 1px solid rgba(28, 25, 23, 0.04);
+        }
+        @media (max-width: 1023px) {
+            .dashboard-nav-item {
+                border-left: none;
+                border-bottom: none;
+                border-top: 4px solid transparent;
+                flex: 0 0 auto;
+                scroll-snap-align: start;
+                padding: var(--space-sm) var(--space-md);
+            }
+        }
+        .dashboard-nav-item:hover {
+            background-color: rgba(4, 120, 87, 0.02);
+        }
+        .dashboard-nav-item.active {
+            background-color: white;
+            border-left-color: var(--secondary);
+        }
+        @media (max-width: 1023px) {
+            .dashboard-nav-item.active {
+                border-left-color: transparent;
+                border-top-color: var(--secondary);
+                background-color: white;
+            }
+        }
+        
+        .nav-item-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: var(--secondary-light);
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-base);
+            flex-shrink: 0;
+            transition: all var(--transition-normal);
+        }
+        .dashboard-nav-item.active .nav-item-icon {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .nav-item-meta {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        .nav-item-meta h4 {
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            color: var(--text-main);
+            margin: 0;
+        }
+        .dashboard-nav-item.active .nav-item-meta h4 {
+            color: var(--secondary);
+        }
+        
+        .challenge-card-badge {
+            align-self: flex-start;
+            margin-top: 4px;
+            padding: 2px 6px;
+            font-size: 9px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-radius: var(--radius-sm);
+            line-height: 1;
+        }
+        .challenge-card-badge.critical {
+            background-color: #fee2e2;
+            color: #ef4444;
+        }
+        .challenge-card-badge.severe {
+            background-color: #ffedd5;
+            color: #f97316;
+        }
+        .challenge-card-badge.high {
+            background-color: #fef3c7;
+            color: #d97706;
+        }
+        
+        /* Detail Display Panel */
+        .dashboard-content-panel {
+            padding: var(--space-md);
+            background: white;
+        }
+        @media (min-width: 768px) {
+            .dashboard-content-panel {
+                padding: var(--space-xl);
+            }
+        }
+        
+        .dashboard-pane {
+            display: none;
+            animation: fadeInSlide 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .dashboard-pane.active {
+            display: block;
+        }
+        @keyframes fadeInSlide {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .pane-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-xl);
+        }
+        @media (min-width: 768px) {
+            .pane-grid {
+                grid-template-columns: 1.2fr 0.8fr;
+                gap: var(--space-xl);
+            }
+        }
+        
+        .pane-info h3 {
+            font-family: var(--font-heading);
+            font-size: var(--text-2xl);
+            color: var(--primary);
+            margin-bottom: var(--space-md);
+            position: relative;
+            padding-bottom: var(--space-xs);
+            margin-top: 0;
+        }
+        .pane-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; width: 40px; height: 3px;
+            background-color: var(--secondary);
+            border-radius: var(--radius-full);
+        }
+        
+        .pane-intro {
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: var(--space-md);
+        }
+        
+        /* Custom Bullet Points */
+        .challenge-bullets {
+            list-style: none !important;
+            padding-left: 0 !important;
+            margin-bottom: var(--space-lg) !important;
+            margin-top: 0 !important;
+        }
+        .challenge-bullets li {
+            position: relative !important;
+            padding-left: 24px !important;
+            margin-bottom: var(--space-sm) !important;
+            font-size: var(--text-sm) !important;
+            color: var(--text-muted) !important;
+            line-height: 1.6 !important;
+            list-style-type: none !important;
+        }
+        .challenge-bullets li::before {
+            content: '\f054'; /* FontAwesome chevron-right */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            color: var(--brand-accent);
+            font-size: 10px;
+        }
+        .challenge-bullets li strong {
+            color: var(--primary);
+        }
+        
+        /* GCF Action Banner */
+        .action-banner {
+            background-color: var(--secondary-light);
+            border-left: 4px solid var(--secondary);
+            padding: var(--space-md);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            display: flex;
+            gap: var(--space-md);
+            align-items: flex-start;
+            margin-top: var(--space-md);
+        }
+        .action-banner-icon {
+            font-size: var(--text-lg);
+            color: var(--secondary);
+            margin-top: 2px;
+        }
+        .action-banner-text h5 {
+            color: var(--secondary);
+            font-family: var(--font-heading);
+            font-size: var(--text-base);
+            margin-bottom: 4px;
+            margin-top: 0;
+        }
+        .action-banner-text p {
+            font-size: var(--text-sm) !important;
+            line-height: 1.5 !important;
+            color: var(--text-muted) !important;
+            margin: 0 !important;
+        }
+        
+        /* Detail Image */
+        .pane-image-wrapper {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            height: 200px;
+        }
+        @media (min-width: 768px) {
+            .pane-image-wrapper {
+                height: 100%;
+                min-height: 350px;
+            }
+        }
+        .pane-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .pane-image-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0; height: 30%;
+            background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+        }
+    </style>
 </head>
 <body>
 
@@ -69,15 +366,15 @@
     <!-- Main Content -->
     <main>
 
-        <!-- Context Overview Section -->
+        <!-- Who Are the Chakmas? (Intro Section) -->
         <section class="section reveal">
             <div class="container">
                 <div class="split-block">
                     <div>
-                        <span class="badge badge-primary">Indigenous Partners</span>
-                        <h2>Preserving <span>Culture & Self-Sufficiency</span></h2>
-                        <p style="color: var(--text-muted);">The Chakma are a unique indigenous ethnic group inhabiting the Chittagong Hill Tracts. Possessing their own distinct language, written script (Ajhā script), and beautiful cultural heritage, they reside in remote mountainous terrains.</p>
-                        <p style="margin-bottom: var(--space-lg); color: var(--text-muted);">Due to structural isolation, remote hamlets lack clean running water and basic education infrastructure. Historically, children must walk long paths to municipal schools, leading to language attrition and script decay. GCF works directly with the Council of Elders to implement non-invasive assistance programs.</p>
+                        <span class="badge badge-primary">Background</span>
+                        <h2>Who Are the <span>Chakmas?</span></h2>
+                        <p style="color: var(--text-muted); font-size: var(--text-base); line-height: 1.6; margin-bottom: var(--space-md);">The Chakma are an ethnic tribal community of Buddhist heritage with a distinct culture, language, and history. They are one of the indigenous tribal groups in the Indian subcontinent, traditionally inhabiting the Chittagong Hill Tracts of Bangladesh and parts of Northeast India, including Mizoram, Tripura, Arunachal Pradesh, and Assam.</p>
+                        <p style="color: var(--text-muted); font-size: var(--text-base); line-height: 1.6; margin-bottom: var(--space-lg);">In Mizoram, Chakmas form a recognized Scheduled Tribe and make up around <strong>8–9% of the state’s population</strong>. They are most heavily concentrated in the south of the state, along the border with Bangladesh.</p>
                         <a href="volunteer.html" class="btn btn-primary" style="color: white;">Join Our Field Team</a>
                     </div>
                     <div class="split-block-img">
@@ -107,7 +404,194 @@
                     <div class="stat-box-label">Villages Served</div>
                 </div>
             </div>
-        </div>
+        </di        <!-- Primary Challenges Faced by Chakma Communities -->
+        <section class="challenges-sec reveal">
+            <div class="container">
+                <div class="section-header" style="text-align: center;">
+                    <span class="badge badge-primary">Socio-Economic Context</span>
+                    <h2>Primary <span>Challenges Faced</span></h2>
+                    <p style="max-width: 700px; margin: 0 auto; color: var(--text-light);">The Chakma community in Mizoram continues to navigate systemic disparities that limit growth. Explore the core challenges below.</p>
+                </div>
+
+                <div class="dashboard-container">
+                    <!-- Left Sidebar Selectors -->
+                    <div class="dashboard-sidebar">
+                        <div class="dashboard-nav-item active" data-pane="pane-edu">
+                            <div class="nav-item-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <div class="nav-item-meta">
+                                <h4>Education</h4>
+                                <span class="challenge-card-badge critical">Critical Impact</span>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-nav-item" data-pane="pane-econ">
+                            <div class="nav-item-icon"><i class="fas fa-seedling"></i></div>
+                            <div class="nav-item-meta">
+                                <h4>Economy</h4>
+                                <span class="challenge-card-badge severe">Severe Impact</span>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-nav-item" data-pane="pane-infra">
+                            <div class="nav-item-icon"><i class="fas fa-plug"></i></div>
+                            <div class="nav-item-meta">
+                                <h4>Infrastructure</h4>
+                                <span class="challenge-card-badge critical">Critical Impact</span>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-nav-item" data-pane="pane-social">
+                            <div class="nav-item-icon"><i class="fas fa-users-slash"></i></div>
+                            <div class="nav-item-meta">
+                                <h4>Discrimination</h4>
+                                <span class="challenge-card-badge high">High Bias</span>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-nav-item" data-pane="pane-health">
+                            <div class="nav-item-icon"><i class="fas fa-heart-pulse"></i></div>
+                            <div class="nav-item-meta">
+                                <h4>Health Services</h4>
+                                <span class="challenge-card-badge severe">Severe Gap</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Display Panel -->
+                    <div class="dashboard-content-panel">
+                        <!-- Panel 1: Education -->
+                        <div class="dashboard-pane active" id="pane-edu">
+                            <div class="pane-grid">
+                                <div class="pane-info">
+                                    <h3>Educational Disadvantage</h3>
+                                    <p class="pane-intro">Despite constitutional protections, the Chakma community in Mizoram continues to experience wide gaps in educational access and outcomes:</p>
+                                    <ul class="challenge-bullets">
+                                        <li><strong>Literacy Disparity:</strong> Literacy rates among Chakmas are significantly lower than the state average; historically at around 45% compared to Mizoram’s literacy rate of almost 90%.</li>
+                                        <li><strong>School Scarcity:</strong> Many Chakma villages lack quality schools beyond primary levels, forcing children to travel long distances or drop out.</li>
+                                        <li><strong>Professional Barriers:</strong> Reports indicate discrimination in higher education access, including alleged barriers to professional seats such as medical education for Chakma students.</li>
+                                    </ul>
+                                    
+                                    <!-- GCF Direct Response Banner -->
+                                    <div class="action-banner">
+                                        <div class="action-banner-icon"><i class="fas fa-check-circle"></i></div>
+                                        <div class="action-banner-text">
+                                            <h5>GCF Direct Response</h5>
+                                            <p>Establishing the non-profit school for underprivileged Chakma children, funding 12 active village script centers, and providing free textbook publishing to combat high dropout rates and language attrition.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pane-image-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=600&auto=format&fit=crop" alt="Students in classroom learning">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 2: Economy -->
+                        <div class="dashboard-pane" id="pane-econ">
+                            <div class="pane-grid">
+                                <div class="pane-info">
+                                    <h3>Economic Underdevelopment</h3>
+                                    <p class="pane-intro">Economic mobility and stability remain highly restricted in remote and border settlements:</p>
+                                    <ul class="challenge-bullets">
+                                        <li><strong>Subsistence Agriculture:</strong> Most Chakma families in Mizoram rely on traditional shifting cultivation (jhum), which yields low productivity and limited economic stability.</li>
+                                        <li><strong>Lack of Modern Tools:</strong> Absence of reliable irrigation, farming tools, and diversified crops compounds food security risks.</li>
+                                        <li><strong>Market Isolation:</strong> The absence of infrastructure such as roads, electricity, and market access further limits economic opportunities and contributes to high levels of poverty.</li>
+                                    </ul>
+                                    
+                                    <div class="action-banner">
+                                        <div class="action-banner-icon"><i class="fas fa-check-circle"></i></div>
+                                        <div class="action-banner-text">
+                                            <h5>GCF Direct Response</h5>
+                                            <p>Funding agroforestry projects, planting native fruit tree seedlings, and conducting climate resilience workshops to help families diversify income and build financial self-sufficiency.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pane-image-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=600&auto=format&fit=crop" alt="Traditional farming land and crops">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 3: Infrastructure -->
+                        <div class="dashboard-pane" id="pane-infra">
+                            <div class="pane-grid">
+                                <div class="pane-info">
+                                    <h3>Infrastructure Deficits</h3>
+                                    <p class="pane-intro">Many Chakma-dominated areas in Southern Mizoram suffer from chronic underdevelopment:</p>
+                                    <ul class="challenge-bullets">
+                                        <li><strong>Poor Connectivity:</strong> Inadequate road layouts isolate hilltop communities from emergency support and markets.</li>
+                                        <li><strong>Energy Deficit:</strong> Deep forest villages have limited or no reliable electricity.</li>
+                                        <li><strong>Water Scarcity:</strong> Clean water and sanitary systems are virtually non-existent, forcing households to spend hours carrying water up cliffs.</li>
+                                    </ul>
+                                    
+                                    <div class="action-banner">
+                                        <div class="action-banner-icon"><i class="fas fa-check-circle"></i></div>
+                                        <div class="action-banner-text">
+                                            <h5>GCF Direct Response</h5>
+                                            <p>Building gravity-fed water pipelines that carry fresh spring water directly to central village taps with zero electrical power required, and establishing local maintenance plumbing committees.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pane-image-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=600&auto=format&fit=crop" alt="Water stream in forest representing remote terrains">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 4: Social & Institutional Bias -->
+                        <div class="dashboard-pane" id="pane-social">
+                            <div class="pane-grid">
+                                <div class="pane-info">
+                                    <h3>Social & Institutional Bias</h3>
+                                    <p class="pane-intro">Although recognized under the Sixth Schedule with the Chakma Autonomous District Council (CADC), bias persists:</p>
+                                    <ul class="challenge-bullets">
+                                        <li><strong>Systemic Disadvantages:</strong> Institutional discrimination and societal bias have been reported in language-based job criteria and resource allocation.</li>
+                                        <li><strong>Identity Gaps:</strong> Some community members are treated as outsiders or non-indigenous by dominant groups, affecting access to services and citizenship rights.</li>
+                                    </ul>
+                                    
+                                    <div class="action-banner">
+                                        <div class="action-banner-icon"><i class="fas fa-check-circle"></i></div>
+                                        <div class="action-banner-text">
+                                            <h5>GCF Direct Response</h5>
+                                            <p>Creating safe, inclusive environments where pupils learn their native script, develop leadership skills, and assert their cultural identity with pride and self-confidence.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pane-image-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=600&auto=format&fit=crop" alt="Group of diverse children and community members">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 5: Health Services Gap -->
+                        <div class="dashboard-pane" id="pane-health">
+                            <div class="pane-grid">
+                                <div class="pane-info">
+                                    <h3>Health & Social Services Gap</h3>
+                                    <p class="pane-intro">Remote border settlements face severe deficits in basic medical safety and treatment access:</p>
+                                    <ul class="challenge-bullets">
+                                        <li><strong>Remoteness of Care:</strong> With limited local healthcare infrastructure, many Chakma communities must travel long distances for medical care.</li>
+                                        <li><strong>High Maternal Risks:</strong> Maternal and child health services are often inadequate, leaving mothers and infants vulnerable.</li>
+                                        <li><strong>Slow Emergencies:</strong> Emergency response is slow or non-existent due to poor transport and mountain roads.</li>
+                                    </ul>
+                                    
+                                    <div class="action-banner">
+                                        <div class="action-banner-icon"><i class="fas fa-check-circle"></i></div>
+                                        <div class="action-banner-text">
+                                            <h5>GCF Direct Response</h5>
+                                            <p>Supporting and stocking Mobile Care Clinics that visit deep forest settlements, providing diagnostics for malaria, pediatric medicine, first aid, and sanitation training.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pane-image-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=600&auto=format&fit=crop" alt="Medical clinic and care facilities">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Detailed Programs Grid Section -->
         <section class="section section-bg reveal">
@@ -200,6 +684,68 @@
             </div>
         </section>
 
+        <!-- Why Mr. Sudip Chakma's Work Matters Section -->
+        <section class="section reveal">
+            <div class="container">
+                <div class="split-block reverse">
+                    <div>
+                        <span class="badge badge-primary">Founder's Story</span>
+                        <h2>Why Mr. Sudip Chakma’s <span>Work Matters</span></h2>
+                        <p style="color: var(--text-muted); font-size: var(--text-base); line-height: 1.6; margin-bottom: var(--space-md);">
+                            Living within this context of educational exclusion, economic hardship, infrastructural deficits, and social marginalization, <strong>Mr. Sudip Chakma</strong> was deeply moved to take action:
+                        </p>
+                        <ul style="margin-left: 20px; list-style-type: disc; margin-bottom: var(--space-lg); color: var(--text-muted); font-size: var(--text-sm); line-height: 1.6;">
+                            <li style="margin-bottom: var(--space-sm);"><strong>Firsthand Experience:</strong> Having experienced interrupted education himself, he understood firsthand how lack of opportunity can shape a person’s future.</li>
+                            <li style="margin-bottom: var(--space-sm);"><strong>Relentless Belief:</strong> His early teaching work and countless late nights spent connecting with supporters reflected a relentless belief that education and compassion are catalysts for change.</li>
+                            <li style="margin-bottom: var(--space-sm);"><strong>Devoted Life:</strong> Observing that many Chakma children lacked access to quality schools and supportive learning environments, he devoted his life to creating alternative pathways for learning, dignity, and social upliftment.</li>
+                        </ul>
+                    </div>
+                    <div class="split-block-img">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=600&auto=format&fit=crop" alt="Mr. Sudip Chakma working with community children">
+                    </div>
+                </div>
+
+                <div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--secondary-light); border: 1px solid rgba(4, 120, 87, 0.15); border-radius: var(--radius-lg);">
+                    <h3 style="font-family: var(--font-heading); color: var(--secondary); margin-bottom: var(--space-lg); font-size: var(--text-xl); text-align: center;">GCF's Core Mission & Solutions</h3>
+                    <div class="grid grid-3" style="gap: var(--space-xl);">
+                        <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
+                            <div style="color: var(--secondary); font-size: var(--text-2xl); margin-bottom: var(--space-xs);"><i class="fas fa-graduation-cap"></i></div>
+                            <h4 style="color: var(--primary); font-family: var(--font-heading); font-size: var(--text-lg); margin-bottom: var(--space-xs);">Quality Education</h4>
+                            <p style="color: var(--text-muted); font-size: var(--text-sm); line-height: 1.5; margin-bottom: 0;">Providing high-quality instruction for children who have historically been denied equitable educational opportunities.</p>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
+                            <div style="color: var(--secondary); font-size: var(--text-2xl); margin-bottom: var(--space-xs);"><i class="fas fa-shield-heart"></i></div>
+                            <h4 style="color: var(--primary); font-family: var(--font-heading); font-size: var(--text-lg); margin-bottom: var(--space-xs);">Safe, Inclusive Spaces</h4>
+                            <p style="color: var(--text-muted); font-size: var(--text-sm); line-height: 1.5; margin-bottom: 0;">Creating safe, welcoming environments that nurture potential, confidence, and self-worth.</p>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
+                            <div style="color: var(--secondary); font-size: var(--text-2xl); margin-bottom: var(--space-xs);"><i class="fas fa-people-carry-box"></i></div>
+                            <h4 style="color: var(--primary); font-family: var(--font-heading); font-size: var(--text-lg); margin-bottom: var(--space-xs);">Community Solutions</h4>
+                            <p style="color: var(--text-muted); font-size: var(--text-sm); line-height: 1.5; margin-bottom: 0;">Implementing grassroots, community-centered solutions that empower both children and families for future success.</p>
+                        </div>
+                    </div>
+                    <div style="margin-top: var(--space-lg); text-align: center; border-top: 1px solid rgba(4, 120, 87, 0.1); padding-top: var(--space-md);">
+                        <p style="color: var(--secondary); font-weight: 700; margin-bottom: 0; font-family: var(--font-body); font-size: var(--text-sm);">
+                            Mr. Chakma’s work directly challenges the cycle of marginalization by placing education, care, and opportunity at the center of development.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Box Section -->
+        <section class="section reveal">
+            <div class="container" style="max-width: var(--max-width-narrow);">
+                <div style="background-color: var(--bg-offset); border-top: 4px solid var(--brand-accent); padding: var(--space-xl); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); text-align: center;">
+                    <div style="color: var(--brand-accent); font-size: var(--text-2xl); margin-bottom: var(--space-sm);"><i class="fas fa-quote-left"></i></div>
+                    <h3 style="font-family: var(--font-heading); color: var(--primary); margin-bottom: var(--space-md); font-size: var(--text-xl);">Summary of the Cause</h3>
+                    <p style="color: var(--text-muted); font-size: var(--text-base); line-height: 1.6; font-style: italic; margin-bottom: 0;">
+                        "The Chakma community of Mizoram faces layered challenges — educational, economic, social, and infrastructural — rooted in historical marginalization and ongoing disparities. Through Global Compassion Foundation, Mr. Sudip Chakma is addressing these barriers with compassion, vision, and on-the-ground action, helping children and families unlock pathways to a better future."
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <!-- Direct CTA Block -->
         <section class="section reveal">
             <div class="container">
@@ -278,6 +824,31 @@
                     const email = document.getElementById('news-email').value;
                     alert(`Thank you! ${email} has been subscribed to GCF newsletters.`);
                     newsForm.reset();
+                });
+            }
+
+            // Interactive Challenges Dashboard Logic
+            const navItems = document.querySelectorAll('.dashboard-nav-item');
+            const dashboardPanes = document.querySelectorAll('.dashboard-pane');
+            
+            if (navItems.length > 0 && dashboardPanes.length > 0) {
+                navItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                        const targetId = item.getAttribute('data-pane');
+                        
+                        // Toggle active navigation item
+                        navItems.forEach(nav => nav.classList.remove('active'));
+                        item.classList.add('active');
+                        
+                        // Toggle active pane
+                        dashboardPanes.forEach(pane => {
+                            if (pane.getAttribute('id') === targetId) {
+                                pane.classList.add('active');
+                            } else {
+                                pane.classList.remove('active');
+                            }
+                        });
+                    });
                 });
             }
         });
