@@ -307,6 +307,832 @@
             bottom: 0; left: 0; right: 0; height: 30%;
             background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
         }
+
+        /* -------------------------------------------------------------------------- */
+        /* Upgraded & Glassmorphic Dashboard Styles                                   */
+        /* -------------------------------------------------------------------------- */
+        .dashboard-container {
+            background: rgba(255, 255, 255, 0.7) !important;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+            border: 1px solid rgba(4, 120, 87, 0.08) !important;
+            box-shadow: var(--shadow-xl) !important;
+        }
+        .dashboard-sidebar {
+            background-color: rgba(250, 250, 249, 0.6) !important;
+        }
+        .dashboard-nav-item {
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-fast) !important;
+        }
+        .dashboard-nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--brand-accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        @media (min-width: 1024px) {
+            .dashboard-nav-item::after {
+                bottom: 0; right: auto; left: 0; width: 4px; height: 100%;
+                transform: scaleY(0);
+                transform-origin: top;
+            }
+        }
+        .dashboard-nav-item:hover::after {
+            transform: scaleX(1);
+        }
+        @media (min-width: 1024px) {
+            .dashboard-nav-item:hover::after {
+                transform: scaleY(1);
+            }
+        }
+        .dashboard-nav-item.active {
+            border-left-color: transparent !important;
+            background-color: white !important;
+            box-shadow: inset 2px 0 8px rgba(4, 120, 87, 0.03);
+        }
+        @media (max-width: 1023px) {
+            .dashboard-nav-item.active {
+                border-top-color: transparent !important;
+            }
+        }
+        .dashboard-nav-item.active::after {
+            transform: scaleX(1);
+        }
+        @media (min-width: 1024px) {
+            .dashboard-nav-item.active::after {
+                transform: scaleY(1);
+            }
+        }
+        .challenge-card-badge {
+            transition: transform var(--transition-fast);
+        }
+        .dashboard-nav-item:hover .challenge-card-badge {
+            transform: scale(1.03);
+        }
+
+        /* -------------------------------------------------------------------------- */
+        /* Interactive Basic Vocabulary 3D Flip Cards                                 */
+        /* -------------------------------------------------------------------------- */
+        .vocab-section {
+            background-color: var(--bg-offset);
+            padding: var(--space-2xl) 0;
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+        @media (min-width: 640px) {
+            .vocab-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .vocab-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+        .vocab-card {
+            background: transparent;
+            height: 250px;
+            perspective: 1000px;
+        }
+        .vocab-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            box-shadow: var(--shadow-md);
+            border-radius: var(--radius-lg);
+        }
+        .vocab-card:hover .vocab-card-inner,
+        .vocab-card.flipped .vocab-card-inner {
+            transform: rotateY(180deg);
+        }
+        .vocab-card-front, .vocab-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid var(--border-light);
+        }
+        .vocab-card-front {
+            background-color: white;
+            color: var(--primary);
+        }
+        .vocab-card-back {
+            background: linear-gradient(135deg, var(--secondary-hover), var(--secondary));
+            color: white;
+            transform: rotateY(180deg);
+            border-color: var(--secondary);
+            justify-content: space-between;
+        }
+        .vocab-card-front i {
+            font-size: var(--text-3xl);
+            color: var(--brand-accent);
+            margin-bottom: var(--space-md);
+            transition: transform 0.3s ease;
+        }
+        .vocab-card:hover .vocab-card-front i {
+            transform: scale(1.1) translateY(-2px);
+        }
+        .vocab-card-front h3 {
+            font-size: var(--text-2xl);
+            margin-bottom: 4px;
+            font-family: var(--font-heading);
+            color: var(--primary);
+        }
+        .vocab-pronounce {
+            font-size: var(--text-xs);
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: var(--space-sm);
+        }
+        .vocab-card-front .flip-hint {
+            font-size: 9px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .vocab-card-back h4 {
+            color: white;
+            font-family: var(--font-heading);
+            font-size: var(--text-lg);
+            margin-bottom: var(--space-xs);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            padding-bottom: 4px;
+            width: 100%;
+        }
+        .vocab-card-back p {
+            color: rgba(255, 255, 255, 0.9) !important;
+            font-size: var(--text-xs);
+            line-height: 1.5;
+            margin-bottom: 0 !important;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .vocab-card-back .back-tag {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 3px 8px;
+            border-radius: var(--radius-sm);
+            font-size: 8px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: var(--space-sm);
+        }
+
+        /* -------------------------------------------------------------------------- */
+        /* Ajhā Script Writing Sandbox                                                */
+        /* -------------------------------------------------------------------------- */
+        .script-section {
+            padding: var(--space-2xl) 0;
+        }
+        .script-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-xl);
+            margin-top: var(--space-xl);
+        }
+        @media (min-width: 768px) {
+            .script-grid {
+                grid-template-columns: 280px 1fr;
+            }
+        }
+        .script-sidebar {
+            background-color: var(--bg-offset);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
+            padding: var(--space-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+            height: fit-content;
+        }
+        .script-btn {
+            background-color: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: var(--space-sm) var(--space-md);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all var(--transition-fast);
+            text-align: left;
+        }
+        .script-btn:hover {
+            border-color: var(--secondary);
+            background-color: rgba(4, 120, 87, 0.01);
+            transform: translateX(2px);
+        }
+        .script-btn.active {
+            background-color: var(--secondary-light);
+            border-color: var(--secondary);
+            box-shadow: var(--shadow-sm);
+        }
+        .script-btn-meta {
+            display: flex;
+            flex-direction: column;
+        }
+        .script-btn-char {
+            font-family: var(--font-heading);
+            font-size: var(--text-lg);
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .script-btn.active .script-btn-char {
+            color: var(--secondary);
+        }
+        .script-btn-name {
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        .script-btn.active .script-btn-name {
+            color: var(--secondary-hover);
+        }
+        .script-btn-arrow {
+            color: var(--text-light);
+            font-size: var(--text-xs);
+            transition: transform var(--transition-fast);
+        }
+        .script-btn.active .script-btn-arrow {
+            transform: translateX(3px);
+            color: var(--secondary);
+        }
+
+        .script-workspace {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+        }
+        @media (min-width: 1024px) {
+            .script-workspace {
+                grid-template-columns: 1.1fr 0.9fr;
+            }
+        }
+        .script-canvas-card {
+            background-color: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            padding: var(--space-lg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .script-canvas-header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-md);
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: var(--space-sm);
+        }
+        .canvas-title {
+            font-family: var(--font-body);
+            font-size: var(--text-xs);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+        .script-canvas-body {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1;
+            max-width: 280px;
+            background-color: #fcfcfb;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            margin: var(--space-md) auto;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.01);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* Guidelines Grid Overlay */
+        .script-guidelines {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            opacity: 0.3;
+            transition: opacity 0.3s ease;
+        }
+        .script-guidelines.hidden {
+            opacity: 0;
+        }
+        .script-guidelines line {
+            stroke: #d7d3c9;
+            stroke-dasharray: 4 4;
+            stroke-width: 1;
+        }
+        .script-guidelines .center-axis {
+            stroke: #c2bbae;
+            stroke-dasharray: none;
+        }
+        .script-svg-element {
+            width: 85%;
+            height: 85%;
+            z-index: 2;
+        }
+        .script-path-draw {
+            stroke: var(--secondary);
+            fill: none;
+            stroke-width: 6;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+        }
+        .script-path-draw.animating {
+            animation: drawStroke 2.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        @keyframes drawStroke {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        .script-canvas-footer {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: var(--space-md);
+        }
+        .script-info-card {
+            background-color: var(--secondary-light);
+            border: 1px solid rgba(4, 120, 87, 0.1);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 320px;
+        }
+        .script-info-top h3 {
+            font-size: var(--text-xl);
+            color: var(--secondary);
+            margin-bottom: var(--space-xs);
+            margin-top: 0;
+        }
+        .script-info-pronounce {
+            background: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: var(--radius-full);
+            font-size: var(--text-xs);
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            border: 1px solid rgba(4, 120, 87, 0.1);
+        }
+        .script-info-desc {
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: var(--space-md);
+        }
+        .script-info-word {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            border: 1px solid rgba(4, 120, 87, 0.08);
+            margin-top: auto;
+        }
+        .script-info-word h4 {
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--brand-accent);
+            margin-bottom: var(--space-xs);
+            margin-top: 0;
+        }
+        .script-info-word p {
+            margin: 0 !important;
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* -------------------------------------------------------------------------- */
+        /* Dynamic GCF Impact Calculator & Slider                                     */
+        /* -------------------------------------------------------------------------- */
+        .calc-section {
+            padding: var(--space-2xl) 0;
+            background-color: var(--bg-offset);
+            border-top: 1px solid var(--border-light);
+        }
+        .calc-container {
+            background-color: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr;
+            margin-top: var(--space-xl);
+        }
+        @media (min-width: 768px) {
+            .calc-container {
+                grid-template-columns: 1.1fr 0.9fr;
+            }
+        }
+        .calc-panel-left {
+            padding: var(--space-lg);
+        }
+        @media (min-width: 768px) {
+            .calc-panel-left {
+                padding: var(--space-xl);
+            }
+        }
+        .calc-panel-right {
+            background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+            color: white;
+            padding: var(--space-lg);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        @media (min-width: 768px) {
+            .calc-panel-right {
+                padding: var(--space-xl);
+                border-left: 1px solid var(--border-light);
+            }
+        }
+        .calc-inputs-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+        .calc-slider-wrapper {
+            margin: var(--space-md) 0;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+        .calc-slider-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .calc-slider-label {
+            font-size: var(--text-xs);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+        }
+        .calc-amount-value {
+            font-size: var(--text-2xl);
+            font-weight: 800;
+            color: var(--secondary);
+            font-family: var(--font-body);
+        }
+        .calc-range-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: var(--radius-full);
+            background: var(--border-light);
+            outline: none;
+            margin: var(--space-sm) 0;
+        }
+        .calc-range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--brand-accent);
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.15s ease, background 0.15s ease;
+        }
+        .calc-range-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.15);
+            background: var(--brand-accent-hover);
+        }
+        .calc-range-slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border: none;
+            border-radius: 50%;
+            background: var(--brand-accent);
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.15s ease, background 0.15s ease;
+        }
+        .calc-range-slider::-moz-range-thumb:hover {
+            transform: scale(1.15);
+            background: var(--brand-accent-hover);
+        }
+        .calc-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-md);
+        }
+        .calc-chip {
+            background-color: var(--bg-offset);
+            border: 1px solid var(--border-light);
+            padding: 6px 12px;
+            border-radius: var(--radius-md);
+            font-size: var(--text-xs);
+            font-weight: 700;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        .calc-chip:hover {
+            background-color: var(--secondary-light);
+            color: var(--secondary);
+            border-color: var(--secondary);
+        }
+        .calc-chip.active {
+            background-color: var(--secondary) !important;
+            color: white !important;
+            border-color: var(--secondary) !important;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .calc-cause-chips {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+            margin-bottom: var(--space-sm);
+        }
+        .calc-cause-chip {
+            background-color: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: var(--space-sm);
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-xs);
+        }
+        .calc-cause-chip i {
+            font-size: var(--text-lg);
+            color: var(--text-light);
+        }
+        .calc-cause-chip span {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+        .calc-cause-chip:hover {
+            border-color: var(--secondary);
+            background-color: var(--secondary-light);
+        }
+        .calc-cause-chip.active {
+            border-color: var(--secondary) !important;
+            background-color: var(--secondary-light) !important;
+            box-shadow: var(--shadow-sm);
+        }
+        .calc-cause-chip.active i {
+            color: var(--secondary);
+        }
+        .calc-cause-chip.active span {
+            color: var(--secondary-hover);
+        }
+        .calc-panel-right h3 {
+            color: white;
+            font-family: var(--font-heading);
+            font-size: var(--text-lg);
+            margin-bottom: var(--space-md);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: var(--space-sm);
+            margin-top: 0;
+        }
+        .calc-output-stat {
+            background-color: rgba(255,255,255,0.05);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: var(--space-md);
+        }
+        .calc-output-stat h4 {
+            color: var(--brand-accent);
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-xs);
+            margin-top: 0;
+        }
+        .calc-output-num {
+            font-size: var(--text-3xl);
+            font-weight: 800;
+            color: white;
+            margin-bottom: var(--space-xs);
+            font-family: var(--font-heading);
+        }
+        .calc-output-desc {
+            font-size: var(--text-xs);
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+            margin-bottom: 0 !important;
+        }
+        .calc-progress-container {
+            width: 100%;
+            height: 6px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            margin-top: var(--space-sm);
+        }
+        .calc-progress-bar {
+            height: 100%;
+            background-color: var(--secondary);
+            border-radius: var(--radius-full);
+            width: 40%;
+            transition: width 0.3s ease;
+        }
+
+        /* -------------------------------------------------------------------------- */
+        /* Voices of Sajek Testimonials Carousel Slider                               */
+        /* -------------------------------------------------------------------------- */
+        .carousel-section {
+            background-color: var(--bg-dark);
+            color: white;
+            padding: var(--space-3xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .carousel-section h2 {
+            color: white;
+            text-align: center;
+            font-family: var(--font-heading);
+            margin-bottom: var(--space-md);
+        }
+        .carousel-section h2 span {
+            color: var(--brand-accent);
+        }
+        .carousel-container {
+            max-width: var(--max-width-narrow);
+            margin: 0 auto;
+            position: relative;
+            padding: 0 var(--space-xl);
+        }
+        .carousel-viewport {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            width: 100%;
+        }
+        .carousel-slide {
+            min-width: 100%;
+            width: 100%;
+            padding: var(--space-lg) var(--space-md);
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .carousel-quote {
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            font-style: italic;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: var(--space-lg);
+            position: relative;
+        }
+        @media (min-width: 768px) {
+            .carousel-quote {
+                font-size: var(--text-lg);
+            }
+        }
+        .carousel-quote::before {
+            content: "“";
+            position: absolute;
+            top: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--font-heading);
+            font-size: 7rem;
+            color: rgba(217, 119, 6, 0.12);
+            pointer-events: none;
+            line-height: 1;
+        }
+        .carousel-author {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: var(--text-base);
+            color: var(--brand-accent);
+            margin-bottom: 2px;
+        }
+        .carousel-role {
+            font-size: var(--text-xs);
+            color: var(--text-light);
+            font-family: var(--font-body);
+        }
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            z-index: 10;
+        }
+        .carousel-arrow:hover {
+            background-color: var(--brand-accent);
+            border-color: var(--brand-accent);
+            transform: translateY(-50%) scale(1.05);
+        }
+        .carousel-arrow.prev {
+            left: 0;
+        }
+        .carousel-arrow.next {
+            right: 0;
+        }
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-xs);
+            margin-top: var(--space-lg);
+        }
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        .carousel-dot.active {
+            background-color: var(--brand-accent);
+            transform: scale(1.2);
+        }
+        
+        /* Audio visualizer wave bar animations */
+        @keyframes bounceBar {
+            from { transform: scaleY(0.2); }
+            to { transform: scaleY(1); }
+        }
+        .audio-wave span {
+            display: inline-block;
+            width: 2px;
+            background-color: var(--secondary);
+            border-radius: var(--radius-full);
+            transform-origin: bottom;
+        }
+        .script-info-pronounce {
+            position: relative;
+            transition: background-color var(--transition-fast), border-color var(--transition-fast);
+        }
+        .script-info-pronounce:hover {
+            background-color: white !important;
+            border-color: var(--secondary) !important;
+        }
     </style>
 </head>
 <body>
@@ -388,23 +1214,23 @@
         <div class="container stats-strip" style="margin-top: 0; margin-bottom: var(--space-xl);">
             <div class="stats-grid-card">
                 <div class="stat-card-item">
-                    <div class="stat-box-num">12</div>
+                    <div class="stat-box-num stat-count" data-target="12">0</div>
                     <div class="stat-box-label">Script Centers</div>
                 </div>
                 <div class="stat-card-item">
-                    <div class="stat-box-num">450+</div>
+                    <div class="stat-box-num stat-count" data-target="450" data-suffix="+">0</div>
                     <div class="stat-box-label">Young Pupils</div>
                 </div>
                 <div class="stat-card-item">
-                    <div class="stat-box-num">3.2m</div>
-                    <div class="stat-box-label">Gravity Piping</div>
+                    <div class="stat-box-num stat-count" data-target="3200" data-suffix="m">0</div>
+                    <div class="stat-box-label">Meters of Piping</div>
                 </div>
                 <div class="stat-card-item">
-                    <div class="stat-box-num">8</div>
+                    <div class="stat-box-num stat-count" data-target="8">0</div>
                     <div class="stat-box-label">Villages Served</div>
                 </div>
             </div>
-        </di        <!-- Primary Challenges Faced by Chakma Communities -->
+        </div>        <!-- Primary Challenges Faced by Chakma Communities -->
         <section class="challenges-sec reveal">
             <div class="container">
                 <div class="section-header" style="text-align: center;">
@@ -674,12 +1500,254 @@
             </div>
         </section>
 
-        <!-- Voices of Sajek Section -->
-        <section class="section section-bg reveal">
+        <!-- Interactive Vocabulary flipping cards -->
+        <section class="section vocab-section reveal">
             <div class="container">
-                <div class="story-quote-block" style="background-color: var(--bg-dark-offset); border-left-color: var(--brand-accent);">
-                    <p class="story-quote-text" style="color: white;">"Our children can now read and write in our ancestral script, and our mothers no longer have to climb steep cliffs every morning just to fetch fresh water. GCF's support is respectful, direct, and has given our community sustainable tools to thrive."</p>
-                    <div class="story-quote-author" style="color: var(--brand-accent);">Sujata Chakma, <span style="font-family: var(--font-body); color: var(--text-light);">Traditional Literacy Lead Tutor, Sajek Valley</span></div>
+                <div class="section-header" style="text-align: center;">
+                    <span class="badge badge-primary">Preserving Culture</span>
+                    <h2>Voices of Heritage: <span>Chakma Vocabulary</span></h2>
+                    <p style="max-width: 600px; margin: 0 auto; color: var(--text-muted);">Click on the cards below to explore common words in the traditional Chakma language and see how GCF supports them.</p>
+                </div>
+                <div class="vocab-grid">
+                    <!-- Card 1: Maju -->
+                    <div class="vocab-card" onclick="this.classList.toggle('flipped')">
+                        <div class="vocab-card-inner">
+                            <div class="vocab-card-front">
+                                <i class="fas fa-handshake"></i>
+                                <h3>Maju</h3>
+                                <span class="vocab-pronounce">/mah-joo/</span>
+                                <span class="flip-hint"><i class="fas fa-arrows-rotate"></i> Click to Flip</span>
+                            </div>
+                            <div class="vocab-card-back">
+                                <h4>Maju</h4>
+                                <p>A warm traditional greeting meaning "Welcome" or "Hello". It reflects the open-hearted hospitality of the Chakma people.</p>
+                                <span class="back-tag">Hospitality</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2: Pharā -->
+                    <div class="vocab-card" onclick="this.classList.toggle('flipped')">
+                        <div class="vocab-card-inner">
+                            <div class="vocab-card-front">
+                                <i class="fas fa-house-chimney-window"></i>
+                                <h3>Pharā</h3>
+                                <span class="vocab-pronounce">/pha-rah/</span>
+                                <span class="flip-hint"><i class="fas fa-arrows-rotate"></i> Click to Flip</span>
+                            </div>
+                            <div class="vocab-card-back">
+                                <h4>Pharā</h4>
+                                <p>Means "Village". GCF is actively working in 8 remote villages (Pharās) in the Sajek Valley region to build water grids and schools.</p>
+                                <span class="back-tag">Community</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3: Izor -->
+                    <div class="vocab-card" onclick="this.classList.toggle('flipped')">
+                        <div class="vocab-card-inner">
+                            <div class="vocab-card-front">
+                                <i class="fas fa-pen-nib"></i>
+                                <h3>Izor</h3>
+                                <span class="vocab-pronounce">/ee-zor/</span>
+                                <span class="flip-hint"><i class="fas fa-arrows-rotate"></i> Click to Flip</span>
+                            </div>
+                            <div class="vocab-card-back">
+                                <h4>Izor</h4>
+                                <p>Means "Traditional Script" or "Writing". GCF supports this by distributing free workbooks written in the Ajhā alphabet.</p>
+                                <span class="back-tag">Education</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4: Alo -->
+                    <div class="vocab-card" onclick="this.classList.toggle('flipped')">
+                        <div class="vocab-card-inner">
+                            <div class="vocab-card-front">
+                                <i class="fas fa-lightbulb"></i>
+                                <h3>Alo</h3>
+                                <span class="vocab-pronounce">/ah-loh/</span>
+                                <span class="flip-hint"><i class="fas fa-arrows-rotate"></i> Click to Flip</span>
+                            </div>
+                            <div class="vocab-card-back">
+                                <h4>Alo</h4>
+                                <p>Means "Light" or "Knowledge". Reflects the educational empowerment brought to over 450 Chakma children via script schools.</p>
+                                <span class="back-tag">Empowerment</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 5: Kada -->
+                    <div class="vocab-card" onclick="this.classList.toggle('flipped')">
+                        <div class="vocab-card-inner">
+                            <div class="vocab-card-front">
+                                <i class="fas fa-droplet"></i>
+                                <h3>Kada</h3>
+                                <span class="vocab-pronounce">/kah-dah/</span>
+                                <span class="flip-hint"><i class="fas fa-arrows-rotate"></i> Click to Flip</span>
+                            </div>
+                            <div class="vocab-card-back">
+                                <h4>Kada</h4>
+                                <p>Means "Water". GCF engineers gravity-fed aqueducts that bring fresh, clean spring water directly to village centers.</p>
+                                <span class="back-tag">Water Grid</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ajhā Script Writing Explorer -->
+        <section class="section script-section reveal">
+            <div class="container">
+                <div class="section-header" style="text-align: center;">
+                    <span class="badge badge-primary">Literacy Sandbox</span>
+                    <h2>Ajhā Script <span>Alphabet Explorer</span></h2>
+                    <p style="max-width: 600px; margin: 0 auto; color: var(--text-muted);">Learn how the letters of the traditional Ajhā script are constructed. Click on a character to view details and watch it write itself stroke-by-stroke.</p>
+                </div>
+                
+                <div class="script-grid">
+                    <!-- Left: Letter Selectors -->
+                    <div class="script-sidebar">
+                        <button class="script-btn active" data-char="alon">
+                            <div class="script-btn-meta">
+                                <span class="script-btn-char">𑄃 (A)</span>
+                                <span class="script-btn-name">Alon</span>
+                            </div>
+                            <i class="fas fa-chevron-right script-btn-arrow"></i>
+                        </button>
+                        <button class="script-btn" data-char="i">
+                            <div class="script-btn-meta">
+                                <span class="script-btn-char">𑄄 (I)</span>
+                                <span class="script-btn-name">I</span>
+                            </div>
+                            <i class="fas fa-chevron-right script-btn-arrow"></i>
+                        </button>
+                        <button class="script-btn" data-char="u">
+                            <div class="script-btn-meta">
+                                <span class="script-btn-char">𑄅 (U)</span>
+                                <span class="script-btn-name">U</span>
+                            </div>
+                            <i class="fas fa-chevron-right script-btn-arrow"></i>
+                        </button>
+                        <button class="script-btn" data-char="kaa">
+                            <div class="script-btn-meta">
+                                <span class="script-btn-char">𑄇 (Ka)</span>
+                                <span class="script-btn-name">Kaa</span>
+                            </div>
+                            <i class="fas fa-chevron-right script-btn-arrow"></i>
+                        </button>
+                        <button class="script-btn" data-char="khaa">
+                            <div class="script-btn-meta">
+                                <span class="script-btn-char">𑄈 (Kha)</span>
+                                <span class="script-btn-name">Khaa</span>
+                            </div>
+                            <i class="fas fa-chevron-right script-btn-arrow"></i>
+                        </button>
+                        <button class="script-btn" data-char="gaa">
+                            <div class="script-btn-meta">
+                                <span class="script-btn-char">𑄉 (Ga)</span>
+                                <span class="script-btn-name">Gaa</span>
+                            </div>
+                            <i class="fas fa-chevron-right script-btn-arrow"></i>
+                        </button>
+                    </div>
+
+                    <!-- Right: Workspace -->
+                    <div class="script-workspace">
+                        <!-- Canvas Box -->
+                        <div class="script-canvas-card">
+                            <div class="script-canvas-header">
+                                <h4 class="canvas-title">Interactive Guidelines</h4>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <span style="font-size: 10px; color: var(--text-light); font-weight: 700; text-transform: uppercase;">Grid</span>
+                                    <button class="btn" id="toggle-grid-btn" style="padding: 4px 8px; font-size: 10px; border-radius: var(--radius-sm); border: 1px solid var(--border-light); background: var(--bg-offset); box-shadow: none;">Show/Hide</button>
+                                </div>
+                            </div>
+                            
+                            <div class="script-canvas-body">
+                                <!-- Guidelines overlay -->
+                                <svg class="script-guidelines" viewBox="0 0 100 100" id="canvas-grid-svg">
+                                    <line class="center-axis" x1="0" y1="50" x2="100" y2="50" />
+                                    <line class="center-axis" x1="50" y1="0" x2="50" y2="100" />
+                                    <line x1="0" y1="25" x2="100" y2="25" stroke="#e0e0e0" />
+                                    <line x1="0" y1="75" x2="100" y2="75" stroke="#e0e0e0" />
+                                    <line x1="25" y1="0" x2="25" y2="100" stroke="#e0e0e0" />
+                                    <line x1="75" y1="0" x2="75" y2="100" stroke="#e0e0e0" />
+                                </svg>
+                                
+                                <!-- Canvas Glyph -->
+                                <svg class="script-svg-element" viewBox="0 0 100 100" id="script-canvas-svg">
+                                    <!-- Dynamic path will load here -->
+                                    <path class="script-path-draw animating" d="M 20 45 C 20 15, 55 15, 55 45 C 55 75, 80 75, 80 45" id="animating-path" />
+                                </svg>
+                            </div>
+                            
+                            <div class="script-canvas-footer">
+                                <button class="btn btn-outline" id="animate-stroke-btn" style="padding: 0.5rem 1rem; font-size: var(--text-xs); border-radius: var(--radius-md);"><i class="fas fa-play" style="margin-right: 6px;"></i> Animate Stroke</button>
+                                <span style="font-size: 10px; color: var(--text-light);"><i class="fas fa-circle-info"></i> Click to redraw</span>
+                            </div>
+                        </div>
+
+                        <!-- Information Details -->
+                        <div class="script-info-card" id="script-info-panel">
+                            <div class="script-info-top">
+                                <h3 id="letter-title">Alon</h3>
+                                <div class="script-info-pronounce" id="letter-pronounce" style="cursor: pointer;" title="Click to hear pronunciation">
+                                    <i class="fas fa-volume-high"></i>
+                                    <span>Pronounced: /ah-lon/</span>
+                                    <div class="audio-wave" id="script-audio-wave" style="display: none; align-items: center; gap: 2px; margin-left: 6px; height: 12px;">
+                                        <span style="display: inline-block; width: 2px; height: 100%; background-color: var(--secondary); animation: bounceBar 0.5s ease-in-out infinite alternate; transform-origin: bottom;"></span>
+                                        <span style="display: inline-block; width: 2px; height: 70%; background-color: var(--secondary); animation: bounceBar 0.5s ease-in-out infinite alternate; animation-delay: 0.15s; transform-origin: bottom;"></span>
+                                        <span style="display: inline-block; width: 2px; height: 40%; background-color: var(--secondary); animation: bounceBar 0.5s ease-in-out infinite alternate; animation-delay: 0.3s; transform-origin: bottom;"></span>
+                                    </div>
+                                </div>
+                                <p class="script-info-desc" id="letter-desc">The letter 'Alon' represents the starting vowel sound of the alphabet, equivalent to the English letter 'A' or 'Ah'. It is characterized by a central curving loop that begins at the left axis and finishes with a soft tail.</p>
+                            </div>
+                            <div class="script-info-word">
+                                <h4 id="letter-word-header">Word Association</h4>
+                                <p id="letter-word-text"><strong>Alo</strong> - meaning "Light" or "Education". In GCF script centers, children learn to write 'Alon' as their first step towards literacy.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Voices of Sajek (Interactive Carousel) -->
+        <section class="carousel-section reveal">
+            <h2>Voices from <span>Sajek Valley</span></h2>
+            <div class="carousel-container">
+                <!-- Arrow buttons -->
+                <button class="carousel-arrow prev" id="carousel-prev" aria-label="Previous Slide"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-arrow next" id="carousel-next" aria-label="Next Slide"><i class="fas fa-chevron-right"></i></button>
+                
+                <div class="carousel-viewport">
+                    <div class="carousel-track" id="carousel-track">
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide">
+                            <p class="carousel-quote">"Our children can now read and write in our ancestral script, and our mothers no longer have to climb steep cliffs every morning just to fetch fresh water. GCF's support is respectful, direct, and has given our community sustainable tools to thrive."</p>
+                            <div class="carousel-author">Sujata Chakma</div>
+                            <div class="carousel-role">Traditional Literacy Lead Tutor, Sajek Valley</div>
+                        </div>
+                        
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide">
+                            <p class="carousel-quote">"Before the gravity aqueduct was constructed, a single leak in our piping meant carrying water from the stream for days. Now we have continuous flow at the central tap with a local plumber committee trained by GCF to handle repairs."</p>
+                            <div class="carousel-author">Amit Chakma</div>
+                            <div class="carousel-role">Lead Plumber Committee, Tuichawng Pharā</div>
+                        </div>
+                        
+                        <!-- Slide 3 -->
+                        <div class="carousel-slide">
+                            <p class="carousel-quote">"My two youngest had persistent fevers, and travelling to the clinic in Lunglei takes 4 hours on mountain roads. The GCF mobile camp checked them, diagnosed malaria instantly, and gave us pediatric care on the spot."</p>
+                            <div class="carousel-author">Rani Chakma</div>
+                            <div class="carousel-role">Mother of Three, Sajek Valley</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dot indicators -->
+                <div class="carousel-dots" id="carousel-dots">
+                    <button class="carousel-dot active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="carousel-dot" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="carousel-dot" data-slide="2" aria-label="Slide 3"></button>
                 </div>
             </div>
         </section>
@@ -746,15 +1814,118 @@
             </div>
         </section>
 
-        <!-- Direct CTA Block -->
+        <!-- Dynamic GCF Impact Calculator & Slider -->
+        <section class="section calc-section reveal" id="impact-calculator">
+            <div class="container">
+                <div class="section-header" style="text-align: center;">
+                    <span class="badge badge-primary">Direct Aid Model</span>
+                    <h2>Calculate Your <span>Donation Impact</span></h2>
+                    <p style="max-width: 600px; margin: 0 auto; color: var(--text-muted);">Adjust the donation amount below to see exactly what supplies will be deployed to the Sajek Valley projects.</p>
+                </div>
+
+                <div class="calc-container">
+                    <!-- Left: Control Panel -->
+                    <div class="calc-panel-left">
+                        <div class="calc-inputs-group">
+                            <!-- Cause Selection -->
+                            <div>
+                                <label class="calc-slider-label" style="display: block; margin-bottom: var(--space-sm);">Choose Program Area</label>
+                                <div class="calc-cause-chips" id="calc-cause-chips">
+                                    <div class="calc-cause-chip active" data-cause="education">
+                                        <i class="fas fa-book-open"></i>
+                                        <span>Script Schools</span>
+                                    </div>
+                                    <div class="calc-cause-chip" data-cause="water">
+                                        <i class="fas fa-faucet-drip"></i>
+                                        <span>Gravity Aqueducts</span>
+                                    </div>
+                                    <div class="calc-cause-chip" data-cause="health">
+                                        <i class="fas fa-kit-medical"></i>
+                                        <span>Mobile Clinics</span>
+                                    </div>
+                                    <div class="calc-cause-chip" data-cause="general">
+                                        <i class="fas fa-arrow-trend-up"></i>
+                                        <span>General Fund</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slider Wrapper -->
+                            <div class="calc-slider-wrapper">
+                                <div class="calc-slider-header">
+                                    <span class="calc-slider-label">Donation Amount</span>
+                                    <span class="calc-amount-value" id="calc-amount-val">₹1,000</span>
+                                </div>
+                                <input type="range" class="calc-range-slider" id="calc-slider" min="250" max="15000" step="250" value="1000">
+                            </div>
+
+                            <!-- Quick Select Chips -->
+                            <div>
+                                <label class="calc-slider-label" style="display: block; margin-bottom: var(--space-sm);">Quick Select Amount</label>
+                                <div class="calc-chips" id="calc-preset-chips">
+                                    <button class="calc-chip" data-amount="500">₹500</button>
+                                    <button class="calc-chip active" data-amount="1000">₹1,000</button>
+                                    <button class="calc-chip" data-amount="2500">₹2,500</button>
+                                    <button class="calc-chip" data-amount="5000">₹5,000</button>
+                                    <button class="calc-chip" data-amount="10000">₹10,000</button>
+                                    <button class="calc-chip" data-amount="15000">₹15,000</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Impact Output -->
+                    <div class="calc-panel-right">
+                        <div>
+                            <h3 id="calc-project-title">Script Schools & Literacy</h3>
+                            
+                            <!-- Stat 1 -->
+                            <div class="calc-output-stat">
+                                <h4 id="calc-stat-label-1">Textbooks Printed</h4>
+                                <div class="calc-output-num" id="calc-stat-num-1">4</div>
+                                <p class="calc-output-desc" id="calc-stat-desc-1">Traditional Ajhā script workbooks published and distributed free to young pupils.</p>
+                            </div>
+
+                            <!-- Stat 2 -->
+                            <div class="calc-output-stat">
+                                <h4 id="calc-stat-label-2">Weeks of School Funding</h4>
+                                <div class="calc-output-num" id="calc-stat-num-2">2 Weeks</div>
+                                <p class="calc-output-desc" id="calc-stat-desc-2">Covers full stipends for village language tutors to conduct after-school learning.</p>
+                            </div>
+                            
+                            <!-- Goal Progress -->
+                            <div style="margin-top: var(--space-md);">
+                                <div style="display: flex; justify-content: space-between; font-size: 10px; font-weight: 700; text-transform: uppercase; color: rgba(255,255,255,0.6);">
+                                    <span>Classroom Kit Goal Progress</span>
+                                    <span id="calc-progress-val">40%</span>
+                                </div>
+                                <div class="calc-progress-container">
+                                    <div class="calc-progress-bar" id="calc-progress-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Button -->
+                        <div style="margin-top: var(--space-lg);">
+                            <a href="donate.html?cause=education&amount=1000" class="btn btn-secondary" id="calc-donate-btn" style="width: 100%; color: white; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                <i class="fas fa-heart"></i> Donate <span id="btn-amount-val">₹1,000</span> Now
+                            </a>
+                            <span style="font-size: 9px; color: rgba(255,255,255,0.5); text-align: center; display: block; margin-top: 6px;"><i class="fas fa-shield-halved"></i> Claim 50% Tax Exemption under Sec 80G</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Direct CTA Block (Backup Field Team Link) -->
         <section class="section reveal">
             <div class="container">
-                <div class="cta-banner-card">
-                    <h3>Support the <span>Chakma Program</span> Today</h3>
-                    <p>100% of your donation is deployed directly in the Sajek Hill tracts to buy pressure pipes, sand-filters, and script school textbook prints.</p>
-                    <div class="cta-btns">
-                        <a href="donate.html?cause=education" class="btn btn-secondary" style="color: white;">Make a Donation</a>
-                        <a href="volunteer.html" class="btn btn-white-outline">Join Field Team</a>
+                <div class="cta-banner-card" style="padding: var(--space-lg); text-align: center; border-radius: var(--radius-lg); background: var(--secondary-light); border: 1px solid rgba(4, 120, 87, 0.15); box-shadow: none;">
+                    <h3 style="color: var(--secondary); font-family: var(--font-heading); font-size: var(--text-xl); margin-bottom: var(--space-xs);">Want to support on the ground?</h3>
+                    <p style="color: var(--text-muted); font-size: var(--text-sm); margin-bottom: var(--space-md); max-width: 600px; margin-left: auto; margin-right: auto;">Our field teams deploy directly into the Lunglei forest sectors to help lay pipelines and setup libraries.</p>
+                    <div style="display: flex; justify-content: center; gap: var(--space-sm); flex-wrap: wrap;">
+                        <a href="volunteer.html" class="btn btn-primary" style="color: white; padding: 0.5rem 1.5rem; font-size: var(--text-xs);">Join Field Team</a>
+                        <a href="about.html" class="btn btn-outline" style="padding: 0.5rem 1.5rem; font-size: var(--text-xs); background: white;">Read Project Audits</a>
                     </div>
                 </div>
             </div>
@@ -850,6 +2021,459 @@
                         });
                     });
                 });
+            }
+
+            /* ==========================================================================
+               1. Ajhā Script Alphabet Explorer Logic
+               ========================================================================== */
+            const letterData = {
+                alon: {
+                    title: "Alon",
+                    pronounce: "Pronounced: /ah-lon/",
+                    desc: "The letter 'Alon' represents the starting vowel sound of the alphabet, equivalent to the English letter 'A' or 'Ah'. It is characterized by a central curving loop that begins at the left axis and finishes with a soft tail.",
+                    path: "M 20 45 C 20 15, 55 15, 55 45 C 55 75, 80 75, 80 45",
+                    wordHeader: "Word Association",
+                    wordText: "<strong>Alo</strong> - meaning 'Light' or 'Education'. In GCF script centers, children learn to write 'Alon' as their first step towards literacy."
+                },
+                i: {
+                    title: "I",
+                    pronounce: "Pronounced: /ee/",
+                    desc: "The letter 'I' represents the vowel sound 'Ee'. It is drawn in a flowing motion that curves downwards from the top, forms a central loop, and ends with a horizontal base stroke.",
+                    path: "M 50 20 C 30 20, 30 50, 50 50 C 70 50, 70 80, 50 80",
+                    wordHeader: "Word Association",
+                    wordText: "<strong>Izor</strong> - meaning 'Traditional Script'. Understanding 'I' is fundamental to writing classical Chakma documents."
+                },
+                u: {
+                    title: "U",
+                    pronounce: "Pronounced: /oo/",
+                    desc: "The letter 'U' represents the vowel sound 'Oo'. It features a deep U-shaped cradle that sweeps down to the baseline, rising back up before finishing with a strong vertical anchor stroke.",
+                    path: "M 30 30 C 30 70, 70 70, 70 30 M 70 30 L 70 80",
+                    wordHeader: "Word Association",
+                    wordText: "<strong>Uchawng</strong> - meaning 'High / Hill'. Sajek Valley's hill villages use this letter in local geographic records."
+                },
+                kaa: {
+                    title: "Kaa",
+                    pronounce: "Pronounced: /kah/",
+                    desc: "The letter 'Kaa' is the first consonant of the Chakma alphabet. It is drawn as a cross-looping glyph starting with two intersecting diagonals and finishing with a central wave.",
+                    path: "M 25 25 L 75 75 M 75 25 L 25 75 M 50 25 C 25 50, 75 50, 50 75",
+                    wordHeader: "Word Association",
+                    wordText: "<strong>Kada</strong> - meaning 'Water'. This character is utilized in training modules for local water committees."
+                },
+                khaa: {
+                    title: "Khaa",
+                    pronounce: "Pronounced: /khah/",
+                    desc: "The consonant 'Khaa' represents an aspirated 'Kh' sound. It is drawn with a high wave, curving down into a loop near the baseline, and completing with an upward tail representing rising tone.",
+                    path: "M 30 30 Q 50 20 70 30 Q 80 50 50 60 Q 20 70 50 80",
+                    wordHeader: "Word Association",
+                    wordText: "<strong>Khagrachari</strong> - A key cultural center of the Chakma community where traditional scripts have been preserved."
+                },
+                gaa: {
+                    title: "Gaa",
+                    pronounce: "Pronounced: /gah/",
+                    desc: "The consonant 'Gaa' represents the hard 'G' sound. It is drawn starting with a loop on the left, curving up into a dome, and returning to the center in a tail.",
+                    path: "M 30 20 C 30 20, 60 40, 60 60 C 60 80, 40 80, 40 60 C 40 40, 70 20, 70 20",
+                    wordHeader: "Word Association",
+                    wordText: "<strong>Ghar</strong> - meaning 'House'. GCF helps rebuild traditional wooden houses (ghars) affected by landslides."
+                }
+            };
+
+            const scriptBtns = document.querySelectorAll('.script-btn');
+            const animatingPath = document.getElementById('animating-path');
+            const toggleGridBtn = document.getElementById('toggle-grid-btn');
+            const canvasGridSvg = document.getElementById('canvas-grid-svg');
+            const animateStrokeBtn = document.getElementById('animate-stroke-btn');
+
+            const letterTitle = document.getElementById('letter-title');
+            const letterPronounce = document.getElementById('letter-pronounce').querySelector('span');
+            const letterDesc = document.getElementById('letter-desc');
+            const letterWordHeader = document.getElementById('letter-word-header');
+            const letterWordText = document.getElementById('letter-word-text');
+
+            let activeChar = 'alon';
+
+            function runStrokeAnimation() {
+                if (!animatingPath) return;
+                animatingPath.classList.remove('animating');
+                // Force reflow to restart CSS animation
+                void animatingPath.offsetWidth;
+                
+                // Get path length dynamically for precise drawing
+                const pathLength = animatingPath.getTotalLength();
+                animatingPath.style.strokeDasharray = pathLength;
+                animatingPath.style.strokeDashoffset = pathLength;
+                animatingPath.classList.add('animating');
+            }
+
+            function selectLetter(charKey) {
+                const data = letterData[charKey];
+                if (!data) return;
+
+                activeChar = charKey;
+
+                // Update active state of buttons
+                scriptBtns.forEach(btn => {
+                    if (btn.getAttribute('data-char') === charKey) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+
+                // Update canvas path
+                if (animatingPath) {
+                    animatingPath.setAttribute('d', data.path);
+                    runStrokeAnimation();
+                }
+
+                // Update info card details
+                if (letterTitle) letterTitle.textContent = data.title;
+                if (letterPronounce) letterPronounce.textContent = data.pronounce;
+                if (letterDesc) letterDesc.textContent = data.desc;
+                if (letterWordHeader) letterWordHeader.textContent = data.wordHeader;
+                if (letterWordText) letterWordText.innerHTML = data.wordText;
+            }
+
+            scriptBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const charKey = btn.getAttribute('data-char');
+                    selectLetter(charKey);
+                });
+            });
+
+            if (toggleGridBtn && canvasGridSvg) {
+                toggleGridBtn.addEventListener('click', () => {
+                    canvasGridSvg.classList.toggle('hidden');
+                });
+            }
+
+            if (animateStrokeBtn) {
+                animateStrokeBtn.addEventListener('click', () => {
+                    runStrokeAnimation();
+                });
+            }
+
+            // Initialize default letter
+            if (animatingPath) {
+                selectLetter('alon');
+            }
+
+            /* ==========================================================================
+               Speech Synthesis Pronunciation Logic
+               ========================================================================== */
+            const letterPronounceContainer = document.getElementById('letter-pronounce');
+            const scriptAudioWave = document.getElementById('script-audio-wave');
+            
+            function speakPronunciation(text, sourceWaveElement) {
+                if ('speechSynthesis' in window) {
+                    // Normalize text spelling for synthesis (speak the letter/word clearly)
+                    const cleanText = text.replace(/Pronounced:\s*\/|\//g, '').trim();
+                    const utterance = new SpeechSynthesisUtterance(cleanText);
+                    utterance.lang = 'en-IN'; // Indian English dialect
+                    utterance.rate = 0.8; // Relaxed speed for clear phonetic articulation
+                    
+                    utterance.onstart = () => {
+                        if (sourceWaveElement) {
+                            sourceWaveElement.style.display = 'inline-flex';
+                        }
+                    };
+                    utterance.onend = () => {
+                        if (sourceWaveElement) {
+                            sourceWaveElement.style.display = 'none';
+                        }
+                    };
+                    utterance.onerror = () => {
+                        if (sourceWaveElement) {
+                            sourceWaveElement.style.display = 'none';
+                        }
+                    };
+                    
+                    window.speechSynthesis.cancel(); // Cancel currently playing audio
+                    window.speechSynthesis.speak(utterance);
+                }
+            }
+
+            if (letterPronounceContainer) {
+                letterPronounceContainer.addEventListener('click', () => {
+                    const data = letterData[activeChar];
+                    if (data) {
+                        speakPronunciation(data.title, scriptAudioWave);
+                    }
+                });
+            }
+
+            /* ==========================================================================
+               2. Dynamic GCF Impact Calculator & Slider Logic
+               ========================================================================== */
+            const calcSlider = document.getElementById('calc-slider');
+            const calcAmountVal = document.getElementById('calc-amount-val');
+            const btnAmountVal = document.getElementById('btn-amount-val');
+            const calcPresetChips = document.getElementById('calc-preset-chips');
+            const calcCauseChips = document.getElementById('calc-cause-chips');
+            const calcProjectTitle = document.getElementById('calc-project-title');
+            
+            const calcStatLabel1 = document.getElementById('calc-stat-label-1');
+            const calcStatNum1 = document.getElementById('calc-stat-num-1');
+            const calcStatDesc1 = document.getElementById('calc-stat-desc-1');
+
+            const calcStatLabel2 = document.getElementById('calc-stat-label-2');
+            const calcStatNum2 = document.getElementById('calc-stat-num-2');
+            const calcStatDesc2 = document.getElementById('calc-stat-desc-2');
+
+            const calcProgressVal = document.getElementById('calc-progress-val');
+            const calcProgressBar = document.getElementById('calc-progress-bar');
+            const calcDonateBtn = document.getElementById('calc-donate-btn');
+
+            let currentAmount = 1000;
+            let currentCause = 'education';
+
+            const causeConfig = {
+                education: {
+                    title: "Script Schools & Literacy Drive",
+                    stat1: {
+                        label: "Workbooks Printed",
+                        calc: (val) => Math.floor(val / 250),
+                        desc: "Colorful, engaging Ajhā alphabet workbooks printed locally and distributed free to rural pupils."
+                    },
+                    stat2: {
+                        label: "School Funding Provided",
+                        calc: (val) => {
+                            const weeks = val / 1000;
+                            return weeks === 1 ? "1 Week" : `${weeks.toFixed(1).replace('.0', '')} Weeks`;
+                        },
+                        desc: "Covers monthly teaching stipends for indigenous educators running village script centers."
+                    },
+                    progress: {
+                        label: "Classroom Kit Goal Progress",
+                        target: 10000
+                    }
+                },
+                water: {
+                    title: "Gravity Aqueduct Infrastructure",
+                    stat1: {
+                        label: "High-Density Piping",
+                        calc: (val) => Math.floor(val / 50) + " Meters",
+                        desc: "UV-resistant, food-grade PVC piping carrying fresh spring water down mountains directly to village taps."
+                    },
+                    stat2: {
+                        label: "Families Supplied",
+                        calc: (val) => Math.floor(val / 500) + " Homes",
+                        desc: "Provides continuous, clean water flow to family households, eliminating dangerous cliffside water treks."
+                    },
+                    progress: {
+                        label: "Spring Capture Box Goal Progress",
+                        target: 15000
+                    }
+                },
+                health: {
+                    title: "Mobile Healthcare Campaigns",
+                    stat1: {
+                        label: "Rapid Malaria Tests",
+                        calc: (val) => Math.floor(val / 100) + " Test Kits",
+                        desc: "Allows local medics to diagnose dangerous cerebral malaria strains within 15 minutes in deep forests."
+                    },
+                    stat2: {
+                        label: "Medication & Care Kits",
+                        calc: (val) => Math.floor(val / 400) + " Children",
+                        desc: "Essential rehydration formulas, pediatric fever reducers, vitamins, and primary medical sets."
+                    },
+                    progress: {
+                        label: "Bi-Weekly Camp Goal Progress",
+                        target: 12000
+                    }
+                },
+                general: {
+                    title: "General Sustainable Operations",
+                    stat1: {
+                        label: "Tree Saplings Planted",
+                        calc: (val) => Math.floor(val / 50) + " Seedlings",
+                        desc: "Native fruit trees distributed to families for shifting cultivation (jhum) replacement and income diversification."
+                    },
+                    stat2: {
+                        label: "Families Supported",
+                        calc: (val) => Math.floor(val / 1000) + " Families",
+                        desc: "Helps GCF purchase essential farming tools, agroforestry equipment, and cover emergency aid logistics."
+                    },
+                    progress: {
+                        label: "Logistics Operations Goal Progress",
+                        target: 10000
+                    }
+                }
+            };
+
+            function updateCalculator() {
+                if (!calcSlider) return;
+                
+                // Format display numbers (Indian style)
+                const formattedAmt = "₹" + currentAmount.toLocaleString('en-IN');
+                if (calcAmountVal) calcAmountVal.textContent = formattedAmt;
+                if (btnAmountVal) btnAmountVal.textContent = formattedAmt;
+
+                // Update presets active states
+                if (calcPresetChips) {
+                    const presetBtns = calcPresetChips.querySelectorAll('.calc-chip');
+                    presetBtns.forEach(btn => {
+                        const amt = parseInt(btn.getAttribute('data-amount'), 10);
+                        if (amt === currentAmount) {
+                            btn.classList.add('active');
+                        } else {
+                            btn.classList.remove('active');
+                        }
+                    });
+                }
+
+                // Update causes active states
+                if (calcCauseChips) {
+                    const causeBtns = calcCauseChips.querySelectorAll('.calc-cause-chip');
+                    causeBtns.forEach(btn => {
+                        const cause = btn.getAttribute('data-cause');
+                        if (cause === currentCause) {
+                            btn.classList.add('active');
+                        } else {
+                            btn.classList.remove('active');
+                        }
+                    });
+                }
+
+                // Calculate outputs
+                const config = causeConfig[currentCause];
+                if (config) {
+                    if (calcProjectTitle) calcProjectTitle.textContent = config.title;
+
+                    // Update Stat 1
+                    if (calcStatLabel1) calcStatLabel1.textContent = config.stat1.label;
+                    if (calcStatNum1) calcStatNum1.textContent = config.stat1.calc(currentAmount);
+                    if (calcStatDesc1) calcStatDesc1.textContent = config.stat1.desc;
+
+                    // Update Stat 2
+                    if (calcStatLabel2) calcStatLabel2.textContent = config.stat2.label;
+                    if (calcStatNum2) calcStatNum2.textContent = config.stat2.calc(currentAmount);
+                    if (calcStatDesc2) calcStatDesc2.textContent = config.stat2.desc;
+
+                    // Update Progress Goal
+                    const progressPercent = Math.min(100, Math.round((currentAmount / config.progress.target) * 100));
+                    if (calcProgressVal) {
+                        calcProgressVal.textContent = progressPercent + "%";
+                        // Update the label too
+                        const progressLabel = calcProgressVal.parentElement.firstElementChild;
+                        if (progressLabel) progressLabel.textContent = config.progress.label;
+                    }
+                    if (calcProgressBar) {
+                        calcProgressBar.style.width = progressPercent + "%";
+                    }
+
+                    // Update CTA link
+                    if (calcDonateBtn) {
+                        calcDonateBtn.setAttribute('href', `donate.html?cause=${currentCause}&amount=${currentAmount}`);
+                    }
+                }
+            }
+
+            if (calcSlider) {
+                // Slider listener
+                calcSlider.addEventListener('input', (e) => {
+                    currentAmount = parseInt(e.target.value, 10);
+                    updateCalculator();
+                });
+
+                // Preset chips listener
+                if (calcPresetChips) {
+                    const chips = calcPresetChips.querySelectorAll('.calc-chip');
+                    chips.forEach(chip => {
+                        chip.addEventListener('click', () => {
+                            const amt = parseInt(chip.getAttribute('data-amount'), 10);
+                            currentAmount = amt;
+                            calcSlider.value = amt;
+                            updateCalculator();
+                        });
+                    });
+                }
+
+                // Cause chips listener
+                if (calcCauseChips) {
+                    const chips = calcCauseChips.querySelectorAll('.calc-cause-chip');
+                    chips.forEach(chip => {
+                        chip.addEventListener('click', () => {
+                            const cause = chip.getAttribute('data-cause');
+                            currentCause = cause;
+                            updateCalculator();
+                        });
+                    });
+                }
+
+                // Initial run
+                updateCalculator();
+            }
+
+            /* ==========================================================================
+               3. Testimonials Sliding Carousel Logic
+               ========================================================================== */
+            const track = document.getElementById('carousel-track');
+            const prevArrow = document.getElementById('carousel-prev');
+            const nextArrow = document.getElementById('carousel-next');
+            const dotsContainer = document.getElementById('carousel-dots');
+            
+            if (track) {
+                const slides = track.querySelectorAll('.carousel-slide');
+                let currentIndex = 0;
+                let autoSlideInterval;
+
+                function showSlide(index) {
+                    if (index >= slides.length) currentIndex = 0;
+                    else if (index < 0) currentIndex = slides.length - 1;
+                    else currentIndex = index;
+
+                    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+                    // Update dots
+                    if (dotsContainer) {
+                        const dots = dotsContainer.querySelectorAll('.carousel-dot');
+                        dots.forEach((dot, idx) => {
+                            if (idx === currentIndex) {
+                                dot.classList.add('active');
+                            } else {
+                                dot.classList.remove('active');
+                            }
+                        });
+                    }
+                }
+
+                function startAutoSlide() {
+                    autoSlideInterval = setInterval(() => {
+                        showSlide(currentIndex + 1);
+                    }, 6000);
+                }
+
+                function resetAutoSlide() {
+                    clearInterval(autoSlideInterval);
+                    startAutoSlide();
+                }
+
+                if (prevArrow && nextArrow) {
+                    prevArrow.addEventListener('click', () => {
+                        showSlide(currentIndex - 1);
+                        resetAutoSlide();
+                    });
+
+                    nextArrow.addEventListener('click', () => {
+                        showSlide(currentIndex + 1);
+                        resetAutoSlide();
+                    });
+                }
+
+                if (dotsContainer) {
+                    const dots = dotsContainer.querySelectorAll('.carousel-dot');
+                    dots.forEach(dot => {
+                        dot.addEventListener('click', () => {
+                            const slideIndex = parseInt(dot.getAttribute('data-slide'), 10);
+                            showSlide(slideIndex);
+                            resetAutoSlide();
+                        });
+                    });
+                }
+
+                // Initial setup
+                showSlide(0);
+                startAutoSlide();
             }
         });
     </script>

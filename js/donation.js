@@ -333,11 +333,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Read Cause parameter from Query String
+    // Read Cause and Amount parameters from Query String
     const urlParams = new URLSearchParams(window.location.search);
     const causeParam = urlParams.get('cause');
     if (causeParam && donationCauseSelect) {
         donationCauseSelect.value = causeParam;
+    }
+    const amountParam = urlParams.get('amount');
+    if (amountParam) {
+        const amt = parseFloat(amountParam);
+        if (!isNaN(amt) && amt >= 10) {
+            selectedAmount = amt;
+            // Clear active state of preset buttons
+            amountBtns.forEach(b => b.classList.remove('active'));
+            
+            // Check if it matches a preset
+            let matchedPreset = false;
+            amountBtns.forEach(btn => {
+                if (parseFloat(btn.getAttribute('data-amount')) === amt) {
+                    btn.classList.add('active');
+                    matchedPreset = true;
+                }
+            });
+            
+            if (!matchedPreset && customAmountInput) {
+                customAmountInput.value = amt;
+            }
+            updateImpact(amt);
+        }
     }
 
     // Submit Simulated Form
