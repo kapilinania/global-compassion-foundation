@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (href) {
             // Check if href is the current page
-            if (currentPath.endsWith(href) || (href === 'index.html' && (currentPath.endsWith('/') || currentPath === ''))) {
+            if (currentPath === href || (href === '/' && (currentPath === '/' || currentPath === '' || currentPath.endsWith('/index.html'))) || (href !== '/' && currentPath.endsWith(href))) {
                 link.classList.add('active');
             }
         }
