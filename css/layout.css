@@ -59,7 +59,7 @@
 .site-header {
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
     background-color: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -1388,4 +1388,78 @@
     color: var(--text-main);
     line-height: 1.6;
     margin-bottom: var(--space-md);
+}
+
+/* ---------- NEWSLETTER BAND ---------- */
+.newsletter-band {
+    padding: 3.5rem 0;
+    background: white;
+    border-top: 1px solid var(--border-light);
+}
+
+.newsletter-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .newsletter-inner {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+    }
+}
+
+.newsletter-text h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+}
+
+.newsletter-text p {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin: 0;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.newsletter-form input {
+    padding: 0.75rem 1.25rem;
+    border: 1.5px solid var(--border-light);
+    border-radius: 999px;
+    font-size: 0.875rem;
+    outline: none;
+    transition: border-color 0.2s;
+    min-width: 220px;
+    font-family: var(--font-body);
+}
+
+.newsletter-form input:focus {
+    border-color: #047857;
+}
+
+.newsletter-form button {
+    padding: 0.75rem 1.5rem;
+    background: #047857;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.newsletter-form button:hover {
+    background: #065f46;
 }
