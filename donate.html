@@ -162,6 +162,52 @@
             }
         }
     </style>
+
+    <!-- JSON-LD Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://globalcompassionfoundation.org/index.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Secure Donation Portal",
+              "item": "https://globalcompassionfoundation.org/donate.html"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "url": "https://globalcompassionfoundation.org/donate.html",
+          "mainEntityOfPage": "https://globalcompassionfoundation.org/donate.html",
+          "headline": "Secure Donation Portal | Global Compassion Foundation",
+          "description": "Support Global Compassion Foundation. 100% of public donations purchase materials directly for rural water systems, libraries, and nurseries.",
+          "publisher": {
+            "@type": "NonprofitOrganization",
+            "name": "Global Compassion Foundation",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://globalcompassionfoundation.org/assets/images/hero/logo.png"
+            }
+          },
+          ...{
+          "@type": "WebPage",
+          "name": "Secure Donation Portal",
+          "description": "Secure giving portal supporting GCF projects with 80G tax exemption details."
+}
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -587,6 +633,7 @@
                         <li><a href="donate.html">Donate</a></li>
                         <li><a href="chakma.html">Chakma</a></li>
                         <li><a href="contact.html">Contact</a></li>
+                        <li><a href="mizoram.html">About Mizoram</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

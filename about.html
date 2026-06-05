@@ -1057,6 +1057,52 @@
             }
         }
     </style>
+
+    <!-- JSON-LD Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://globalcompassionfoundation.org/index.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "About Us",
+              "item": "https://globalcompassionfoundation.org/about.html"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "url": "https://globalcompassionfoundation.org/about.html",
+          "mainEntityOfPage": "https://globalcompassionfoundation.org/about.html",
+          "headline": "About Us | Global Compassion Foundation",
+          "description": "Discover the mission, vision, values, and work of Global Compassion Foundation in Tuichawng, Mizoram, India.",
+          "publisher": {
+            "@type": "NonprofitOrganization",
+            "name": "Global Compassion Foundation",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://globalcompassionfoundation.org/assets/images/hero/logo.png"
+            }
+          },
+          ...{
+          "@type": "AboutPage",
+          "name": "About Us",
+          "description": "Learn about the mission, vision, values, and the executive board of Global Compassion Foundation."
+}
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -2050,6 +2096,7 @@
                         <li><a href="donate.html">Donate</a></li>
                         <li><a href="chakma.html">Chakma</a></li>
                         <li><a href="contact.html">Contact</a></li>
+                        <li><a href="mizoram.html">About Mizoram</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

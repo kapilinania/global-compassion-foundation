@@ -1157,6 +1157,52 @@
             border-color: var(--secondary) !important;
         }
     </style>
+
+    <!-- JSON-LD Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://globalcompassionfoundation.org/index.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Chakma Community Support",
+              "item": "https://globalcompassionfoundation.org/chakma.html"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "url": "https://globalcompassionfoundation.org/chakma.html",
+          "mainEntityOfPage": "https://globalcompassionfoundation.org/chakma.html",
+          "headline": "Chakma Community Support | Global Compassion Foundation",
+          "description": "GCF partners with the Chakma indigenous people to build classrooms, gravity-fed clean water systems, and mobile clinics.",
+          "publisher": {
+            "@type": "NonprofitOrganization",
+            "name": "Global Compassion Foundation",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://globalcompassionfoundation.org/assets/images/hero/logo.png"
+            }
+          },
+          ...{
+          "@type": "WebPage",
+          "name": "Chakma Community Support",
+          "description": "Details about GCF's initiatives for the indigenous Chakma tribal communities in Mizoram."
+}
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -1993,6 +2039,7 @@
                         <li><a href="donate.html">Donate</a></li>
                         <li><a href="chakma.html">Chakma</a></li>
                         <li><a href="contact.html">Contact</a></li>
+                        <li><a href="mizoram.html">About Mizoram</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

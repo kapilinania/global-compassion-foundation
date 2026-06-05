@@ -1,0 +1,8 @@
+# Group 1: All bots
+User-agent: *
+Allow: /
+Disallow: /js/
+Disallow: /css/
+
+# Link to sitemap
+Sitemap: https://globalcompassionfoundation.org/sitemap.xml

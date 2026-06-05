@@ -33,6 +33,52 @@
     <link rel="stylesheet" href="css/layout.css?v=3.1">
     <!-- FontAwesome for standard icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- JSON-LD Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://globalcompassionfoundation.org/index.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Contact Us",
+              "item": "https://globalcompassionfoundation.org/contact.html"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "url": "https://globalcompassionfoundation.org/contact.html",
+          "mainEntityOfPage": "https://globalcompassionfoundation.org/contact.html",
+          "headline": "Contact Us | Global Compassion Foundation",
+          "description": "Get in touch with Global Compassion Foundation. Reach our office, send a message, or request audits.",
+          "publisher": {
+            "@type": "NonprofitOrganization",
+            "name": "Global Compassion Foundation",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://globalcompassionfoundation.org/assets/images/hero/logo.png"
+            }
+          },
+          ...{
+          "@type": "ContactPage",
+          "name": "Contact Us",
+          "description": "Get in touch with GCF regarding partnerships, donations, or volunteering."
+}
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -179,6 +225,7 @@
                         <li><a href="donate.html">Donate</a></li>
                         <li><a href="chakma.html">Chakma</a></li>
                         <li><a href="contact.html">Contact</a></li>
+                        <li><a href="mizoram.html">About Mizoram</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
