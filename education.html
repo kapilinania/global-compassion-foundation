@@ -1,0 +1,2140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Project - Global Compassion Academy | Global Compassion Foundation</title>
+    <meta name="description"
+        content="Learn about the proposed Global Compassion Academy, a future educational project by GCF to establish a holistic, value-based school for tribal children in remote Mizoram, India.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/hero/logo.png">
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords"
+        content="Global Compassion Academy, GCF Education Project, tribal school Mizoram, Tuichawng education, Sudip Chakma school, value-based education Mizoram, Northeast India NGO">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://globalcompassionfoundation.org/education.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://globalcompassionfoundation.org/education.html">
+    <meta property="og:title" content="Education Project - Global Compassion Academy | Global Compassion Foundation">
+    <meta property="og:description"
+        content="Learn about the proposed Global Compassion Academy, a future educational project by GCF to establish a holistic, value-based school for tribal children in remote Mizoram, India.">
+    <meta property="og:image" content="https://globalcompassionfoundation.org/assets/images/hero/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://globalcompassionfoundation.org/education.html">
+    <meta property="twitter:title" content="Education Project - Global Compassion Academy | Global Compassion Foundation">
+    <meta property="twitter:description"
+        content="Learn about the proposed Global Compassion Academy, a future educational project by GCF to establish a holistic, value-based school for tribal children in remote Mizoram, India.">
+    <meta property="twitter:image" content="https://globalcompassionfoundation.org/assets/images/hero/logo.png">
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="css/variables.css?v=4.0">
+    <link rel="stylesheet" href="css/main.css?v=4.0">
+    <link rel="stylesheet" href="css/layout.css?v=4.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Page-specific premium styles */
+        .section-relative {
+            position: relative;
+            overflow: hidden;
+            padding: var(--space-3xl) 0;
+        }
+
+        .glow-blob {
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            filter: blur(130px);
+            opacity: 0.04;
+            z-index: 0;
+            pointer-events: none;
+            transition: all 0.6s ease-in-out;
+        }
+
+        .glow-emerald {
+            background-color: var(--secondary);
+        }
+
+        .glow-amber {
+            background-color: var(--brand-accent);
+        }
+
+        /* Premium Badge */
+        .badge-premium {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, rgba(4, 120, 87, 0.08) 0%, rgba(4, 120, 87, 0.03) 100%);
+            border: 1px solid rgba(4, 120, 87, 0.15);
+            color: var(--secondary);
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 0.4rem 0.9rem;
+            border-radius: 99px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: var(--space-md);
+        }
+
+        /* Hero Subpage Glassmorphism Card styling */
+        .hero-glass-card {
+            background: rgba(28, 25, 23, 0.45);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 24px;
+            padding: var(--space-xl) var(--space-2xl);
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Breadcrumb style */
+        .breadcrumb-trail {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            list-style: none;
+            margin: 0 0 var(--space-sm) 0;
+            padding: 0;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .breadcrumb-trail li a {
+            color: rgba(255, 255, 255, 0.65);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .breadcrumb-trail li a:hover {
+            color: white;
+        }
+
+        .breadcrumb-trail li.active {
+            color: var(--brand-accent);
+        }
+
+        .breadcrumb-trail li:not(:last-child)::after {
+            content: "\f105";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-left: var(--space-sm);
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        /* Editorial Split Layout */
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-2xl);
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .editorial-grid {
+                grid-template-columns: 1.2fr 1fr;
+            }
+
+            .editorial-grid.reverse {
+                grid-template-columns: 1fr 1.2fr;
+            }
+        }
+
+        .editorial-text h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.15;
+            margin-bottom: var(--space-md);
+        }
+
+        .editorial-text h2 span {
+            color: var(--secondary);
+            font-style: italic;
+        }
+
+        .editorial-text p {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--text-muted);
+            margin-bottom: var(--space-md);
+        }
+
+        /* Card Sheen & Hover effects */
+        .meaning-card, .challenge-card, .facility-card, .polaroid-frame, .roadmap-panel-card {
+            position: relative;
+            overflow: hidden;
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .meaning-card::after, .challenge-card::after, .facility-card::after, .polaroid-frame::after, .roadmap-panel-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .meaning-card:hover::after, .challenge-card:hover::after, .facility-card:hover::after, .polaroid-frame:hover::after, .roadmap-panel-card:hover::after {
+            left: 150%;
+            transition: left 1s ease-in-out;
+        }
+
+        /* Meaning Card specifics */
+        .meaning-card {
+            padding: var(--space-xl);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .meaning-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(4, 120, 87, 0.25);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .meaning-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(4, 120, 87, 0.06);
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: var(--space-md);
+            transition: all 0.3s ease;
+        }
+
+        .meaning-card:hover .meaning-icon {
+            background: var(--secondary);
+            color: white;
+            transform: scale(1.08) rotate(3deg);
+        }
+
+        .meaning-card h3 {
+            font-family: var(--font-heading);
+            font-size: var(--text-lg);
+            color: var(--primary);
+            margin-bottom: var(--space-xs);
+            font-weight: 700;
+        }
+
+        /* Challenge Cards Grid layout */
+        .challenge-card {
+            display: flex;
+            gap: var(--space-md);
+            align-items: flex-start;
+            padding: var(--space-md) var(--space-lg);
+            border-left: 4px solid var(--brand-accent);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            box-shadow: 0 4px 12px rgba(28, 25, 23, 0.01);
+        }
+
+        .challenge-card:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-md);
+            border-left-color: var(--secondary);
+        }
+
+        .challenge-card-icon {
+            color: var(--brand-accent);
+            font-size: 1.25rem;
+            margin-top: 2px;
+            transition: transform 0.4s ease;
+        }
+
+        .challenge-card:hover .challenge-card-icon {
+            transform: scale(1.15) rotate(10deg);
+            color: var(--secondary);
+        }
+
+        .challenge-card h4 {
+            font-family: var(--font-heading);
+            font-size: var(--text-base);
+            color: var(--primary);
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+
+        .challenge-card p {
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Tabs System styling */
+        .tabs-header {
+            display: flex;
+            justify-content: center;
+            margin-bottom: var(--space-xl);
+        }
+
+        .tabs-nav {
+            display: inline-flex;
+            background: var(--bg-offset);
+            padding: 5px;
+            border-radius: 99px;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            padding: 0.75rem 1.75rem;
+            font-family: var(--font-body);
+            font-size: var(--text-xs);
+            font-weight: 800;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-radius: 99px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .tab-btn.active {
+            background: white;
+            color: var(--secondary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+            animation: tabFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes tabFadeUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Vision Items */
+        .vision-item {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            display: flex;
+            gap: var(--space-sm);
+            align-items: flex-start;
+            transition: all 0.3s ease;
+        }
+
+        .vision-item:hover {
+            border-color: rgba(4, 120, 87, 0.2);
+            background: rgba(4, 120, 87, 0.01);
+            transform: translateY(-2px);
+        }
+
+        .vision-icon {
+            color: var(--secondary);
+            font-size: 1.1rem;
+            margin-top: 2px;
+        }
+
+        .vision-item span {
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Facility Cards */
+        .facility-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: var(--space-md) var(--space-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            transition: all 0.3s ease;
+        }
+
+        .facility-card:hover {
+            border-color: rgba(4, 120, 87, 0.2);
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .facility-icon-wrap {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            background: rgba(4, 120, 87, 0.06);
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .facility-card:hover .facility-icon-wrap {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .facility-card span {
+            font-size: var(--text-sm);
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Polaroid Photo Gallery Section */
+        .polaroid-gallery {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: var(--space-xl);
+            margin-top: var(--space-xl);
+        }
+
+        @media (min-width: 576px) {
+            .polaroid-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 992px) {
+            .polaroid-gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .polaroid-frame {
+            position: relative;
+            background: white;
+            padding: 16px 16px 24px 16px;
+            border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(28,25,23,0.06);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            cursor: pointer;
+        }
+
+        .polaroid-frame::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            width: 90px;
+            height: 25px;
+            background: rgba(250, 245, 233, 0.6);
+            backdrop-filter: blur(1px);
+            border-left: 1px dashed rgba(0, 0, 0, 0.05);
+            border-right: 1px dashed rgba(0, 0, 0, 0.05);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .polaroid-frame img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            margin-bottom: 16px;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .polaroid-frame:hover img {
+            transform: scale(1.02);
+        }
+
+        @media (min-width: 768px) {
+            .polaroid-gallery .polaroid-frame:nth-child(1) { transform: rotate(-1.5deg); }
+            .polaroid-gallery .polaroid-frame:nth-child(2) { transform: rotate(1.2deg) translateY(-8px); }
+            .polaroid-gallery .polaroid-frame:nth-child(3) { transform: rotate(-1deg) translateY(4px); }
+            .polaroid-gallery .polaroid-frame:nth-child(4) { transform: rotate(2deg) translateY(-2px); }
+            .polaroid-gallery .polaroid-frame:nth-child(5) { transform: rotate(-2.2deg) translateY(-6px); }
+            .polaroid-gallery .polaroid-frame:nth-child(6) { transform: rotate(1.5deg) translateY(5px); }
+            .polaroid-gallery .polaroid-frame::before { width: 100px; }
+        }
+
+        .polaroid-frame:hover {
+            transform: translateY(-12px) rotate(0deg) scale(1.03) !important;
+            box-shadow: 0 25px 45px rgba(28,25,23,0.12);
+            border-color: rgba(4, 120, 87, 0.2);
+            z-index: 10;
+        }
+
+        .polaroid-caption {
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 700;
+            text-align: center;
+            letter-spacing: 0.02em;
+        }
+
+        /* Disclaimer Strip */
+        .disclaimer-strip {
+            background: linear-gradient(135deg, rgba(217, 119, 6, 0.05) 0%, rgba(217, 119, 6, 0.02) 100%);
+            border: 1px solid rgba(217, 119, 6, 0.15);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg) var(--space-xl);
+            margin-bottom: var(--space-2xl);
+            display: flex;
+            gap: var(--space-md);
+            align-items: flex-start;
+        }
+
+        .disclaimer-icon {
+            color: var(--brand-accent);
+            font-size: 1.4rem;
+            margin-top: 3px;
+        }
+
+        .disclaimer-text p {
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        /* Animated float glow blobs */
+        @keyframes floatBlob {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, -40px) scale(1.08); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+
+        .glow-blob.animated {
+            animation: floatBlob 15s ease-in-out infinite alternate;
+        }
+
+        /* ==========================================
+           NEW ROADMAP DESIGN: MASTER-DETAIL / ACCORDION
+           ========================================== */
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-md);
+            max-width: var(--max-width-container);
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        /* Sidebar Progress Track on Desktop */
+        .roadmap-sidebar {
+            display: none; /* Mobile first, hidden on small screens */
+            flex-direction: column;
+            position: relative;
+            padding-left: 20px;
+            gap: var(--space-sm);
+        }
+
+        @media (min-width: 992px) {
+            .roadmap-grid {
+                grid-template-columns: 310px 1fr;
+                gap: var(--space-2xl);
+            }
+            .roadmap-sidebar {
+                display: flex;
+            }
+        }
+
+        /* Vertical progress track line */
+        .roadmap-sidebar::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 20px;
+            bottom: 20px;
+            width: 3px;
+            background: var(--border-light);
+            z-index: 1;
+            border-radius: var(--radius-full);
+        }
+
+        .roadmap-sidebar-progress {
+            position: absolute;
+            left: 0;
+            top: 20px;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--secondary) 0%, var(--brand-accent) 100%);
+            z-index: 2;
+            border-radius: var(--radius-full);
+            transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            height: 0%; /* Dynamic height calculated in JS */
+        }
+
+        /* Sidebar buttons */
+        .roadmap-sidebar-btn {
+            background: transparent;
+            border: none;
+            padding: var(--space-md) var(--space-md) var(--space-md) 15px;
+            text-align: left;
+            position: relative;
+            z-index: 3;
+            cursor: pointer;
+            border-radius: var(--radius-md);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .roadmap-sidebar-btn::before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .roadmap-sidebar-btn.active::before {
+            background: var(--secondary);
+            border-color: var(--secondary-light);
+            box-shadow: 0 0 0 6px rgba(4, 120, 87, 0.25);
+            transform: translateY(-50%) scale(1.25);
+        }
+
+        .roadmap-sidebar-btn.active-future::before {
+            background: var(--brand-accent);
+            border-color: rgba(217, 119, 6, 0.2);
+            box-shadow: 0 0 0 6px rgba(217, 119, 6, 0.25);
+            transform: translateY(-50%) scale(1.25);
+        }
+
+        .roadmap-sidebar-btn:hover {
+            background: rgba(4, 120, 87, 0.02);
+        }
+
+        .roadmap-sidebar-btn.active {
+            background: rgba(4, 120, 87, 0.05);
+        }
+
+        .roadmap-sidebar-btn .phase-num {
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: color 0.3s ease;
+        }
+
+        .roadmap-sidebar-btn.active .phase-num {
+            color: var(--secondary);
+        }
+
+        .roadmap-sidebar-btn .phase-title {
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+        }
+
+        .roadmap-sidebar-btn.active .phase-title {
+            color: var(--primary);
+        }
+
+        /* Roadmap Panel cards (Accordion wrapper on mobile, detail pane on desktop) */
+        .roadmap-panels {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        .roadmap-panel-card {
+            border: 1px solid var(--border-light);
+            background: white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Accordion Header (Mobile button / Desktop subtitle) */
+        .roadmap-accordion-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-md) var(--space-lg);
+            background: white;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.3s ease;
+        }
+
+        .roadmap-accordion-header h3 {
+            font-family: var(--font-heading);
+            font-size: var(--text-base);
+            color: var(--primary);
+            margin: 0;
+            font-weight: 700;
+            flex-grow: 1;
+            padding-right: var(--space-md);
+        }
+
+        .roadmap-accordion-header .acc-num {
+            font-size: var(--text-sm);
+            font-weight: 800;
+            color: var(--secondary);
+            margin-right: var(--space-md);
+            font-family: var(--font-body);
+        }
+
+        .roadmap-accordion-header .acc-arrow {
+            font-size: 1rem;
+            color: var(--text-light);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Accordion content block */
+        .roadmap-accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            background: white;
+            padding: 0 var(--space-lg);
+        }
+
+        /* Mobile layout styling: active card states */
+        @media (max-width: 991px) {
+            .roadmap-panel-card.active {
+                border-color: rgba(4, 120, 87, 0.25);
+                box-shadow: var(--shadow-md);
+            }
+
+            .roadmap-panel-card.active .roadmap-accordion-header {
+                background: rgba(4, 120, 87, 0.02);
+            }
+
+            .roadmap-panel-card.active .roadmap-accordion-content {
+                max-height: 800px;
+                opacity: 1;
+                padding: var(--space-lg);
+                border-top: 1px solid var(--border-light);
+            }
+
+            .roadmap-panel-card.active .acc-arrow {
+                transform: rotate(180deg);
+                color: var(--secondary);
+            }
+        }
+
+        /* Desktop specific panel layout override */
+        @media (min-width: 992px) {
+            .roadmap-panel-card {
+                display: none;
+                border: 1px solid rgba(4, 120, 87, 0.12);
+                border-radius: var(--radius-lg);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            }
+
+            .roadmap-panel-card.active {
+                display: block;
+                animation: panelFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            }
+
+            @keyframes panelFadeIn {
+                from { opacity: 0; transform: translateY(12px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            .roadmap-accordion-header {
+                cursor: default;
+                border-bottom: 1px solid var(--border-light);
+                padding: var(--space-lg) var(--space-xl);
+                background: rgba(4, 120, 87, 0.01);
+            }
+
+            .roadmap-accordion-header h3 {
+                font-size: var(--text-lg);
+            }
+
+            .roadmap-accordion-header .acc-arrow {
+                display: none;
+            }
+
+            .roadmap-accordion-content {
+                max-height: none !important;
+                opacity: 1 !important;
+                display: block !important;
+                padding: var(--space-xl);
+            }
+        }
+
+        /* Phase Status Badges */
+        .status-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.68rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 3px 8px;
+            border-radius: 99px;
+            line-height: 1;
+        }
+
+        .status-active {
+            background-color: rgba(4, 120, 87, 0.1);
+            color: var(--secondary);
+            border: 1px solid rgba(4, 120, 87, 0.15);
+        }
+
+        .status-planned {
+            background-color: rgba(217, 119, 6, 0.08);
+            color: var(--brand-accent-hover);
+            border: 1px solid rgba(217, 119, 6, 0.15);
+        }
+
+        /* Active Phase Glowing pulse icon */
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulseBeat 1.8s infinite;
+        }
+
+        @keyframes pulseBeat {
+            0% { box-shadow: 0 0 0 0 rgba(4, 120, 87, 0.7); }
+            70% { box-shadow: 0 0 0 8px rgba(4, 120, 87, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(4, 120, 87, 0); }
+        }
+
+        /* Roadmap Grid details */
+        .roadmap-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+        }
+
+        @media (min-width: 768px) {
+            .roadmap-detail-grid {
+                grid-template-columns: 1fr 180px;
+                align-items: center;
+            }
+        }
+
+        .roadmap-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .roadmap-meta span i {
+            color: var(--secondary);
+            margin-right: 4px;
+        }
+
+        .roadmap-meta span.meta-planned i {
+            color: var(--brand-accent);
+        }
+
+        .roadmap-detail-text p {
+            font-size: var(--text-sm);
+            line-height: 1.6;
+            color: var(--text-muted);
+            margin: 0 0 var(--space-lg) 0;
+        }
+
+        /* Checklist milestones styling */
+        .roadmap-milestones h4 {
+            font-size: var(--text-sm);
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-sm);
+            font-weight: 800;
+        }
+
+        .roadmap-milestones ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+        }
+
+        .roadmap-milestones li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .roadmap-milestones li i {
+            margin-top: 3px;
+            font-size: 0.9rem;
+        }
+
+        .roadmap-milestones li i.done {
+            color: var(--secondary);
+        }
+
+        .roadmap-milestones li i.todo {
+            color: var(--text-light);
+            opacity: 0.5;
+        }
+
+        /* Icon highlight container on panels */
+        .roadmap-detail-icon-box {
+            display: none; /* Hide on mobile text block */
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+            width: 120px;
+            border-radius: var(--radius-lg);
+            background: rgba(4, 120, 87, 0.04);
+            border: 1px dashed rgba(4, 120, 87, 0.15);
+            font-size: 3.5rem;
+            margin: 0 auto;
+        }
+
+        .roadmap-panel-card[data-phase="2"] .roadmap-detail-icon-box,
+        .roadmap-panel-card[data-phase="3"] .roadmap-detail-icon-box,
+        .roadmap-panel-card[data-phase="6"] .roadmap-detail-icon-box {
+            background: rgba(217, 119, 6, 0.03);
+            border-color: rgba(217, 119, 6, 0.15);
+        }
+
+        @media (min-width: 768px) {
+            .roadmap-detail-icon-box {
+                display: flex;
+            }
+        }
+
+        .roadmap-detail-icon-box i.text-emerald {
+            color: var(--secondary);
+        }
+
+        .roadmap-detail-icon-box i.text-amber {
+            color: var(--brand-accent);
+        }
+
+        /* ==========================================
+           LIGHTBOX MODAL CSS STYLES
+           ========================================== */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            padding: var(--space-2xl) 0;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(28, 25, 23, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content-wrapper {
+            position: relative;
+            max-width: 850px;
+            width: 90%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            width: 100%;
+            max-height: 75vh;
+            object-fit: contain;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+            transform: scale(0.9);
+            transition: transform 0.4s ease;
+        }
+
+        .lightbox-modal.active .lightbox-content {
+            transform: scale(1);
+        }
+
+        .lightbox-caption {
+            margin: auto;
+            display: block;
+            width: 100%;
+            text-align: center;
+            color: white;
+            padding: var(--space-md) 0;
+            font-family: var(--font-heading);
+            font-size: var(--text-base);
+            font-weight: 600;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -45px;
+            right: 0;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 35px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 2005;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-close:focus {
+            color: white;
+            text-decoration: none;
+            transform: scale(1.1);
+        }
+    </style>
+
+    <!-- JSON-LD Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://globalcompassionfoundation.org/index.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Education Project",
+              "item": "https://globalcompassionfoundation.org/education.html"
+            }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "url": "https://globalcompassionfoundation.org/education.html",
+          "mainEntityOfPage": "https://globalcompassionfoundation.org/education.html",
+          "name": "Education Project - Global Compassion Academy",
+          "headline": "Education Project - Global Compassion Academy | Global Compassion Foundation",
+          "description": "Learn about the proposed Global Compassion Academy, a future educational project by GCF to establish a holistic, value-based school for tribal children in remote Mizoram, India.",
+          "publisher": {
+            "@type": "NonprofitOrganization",
+            "name": "Global Compassion Foundation",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://globalcompassionfoundation.org/assets/images/hero/logo.png"
+            }
+          }
+        },
+        {
+          "@type": "Project",
+          "name": "Global Compassion Academy",
+          "description": "A proposed inclusive, value-based, and holistic school for underserved tribal children living in Tuichawng Village and more than 25 surrounding remote villages in Lunglei District, Mizoram, India.",
+          "location": {
+            "@type": "Place",
+            "name": "Tuichawng Village, Lunglei District, Mizoram, India",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Tuichawng Village, Lunglei District",
+              "addressRegion": "Mizoram",
+              "addressCountry": "IN"
+            }
+          },
+          "provider": {
+            "@type": "NonprofitOrganization",
+            "name": "Global Compassion Foundation",
+            "url": "https://globalcompassionfoundation.org/index.html",
+            "logo": "https://globalcompassionfoundation.org/assets/images/hero/logo.png"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is the Global Compassion Academy?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Global Compassion Academy is a proposed educational project by Global Compassion Foundation (GCF) to establish an inclusive, value-based, and holistic school for underserved tribal children in Tuichawng Village and 25 surrounding remote villages in Lunglei District, Mizoram, Northeast India."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why is this educational project needed in Mizoram?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Underserved tribal children in remote villages face significant barriers including extreme poverty, geographical isolation, lack of educational infrastructure, inadequate learning resources, long transit distances, and limited access to technology."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How can I support the proposed Global Compassion Academy?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can support this educational vision through financial contributions, sponsorships, CSR partnerships, grants, educational partnerships, infrastructure support, and volunteer engagement."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- Top Utility Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-contact">
+                <span><i class="fas fa-envelope"></i> president.gcf.024@gmail.com</span>
+                <span><i class="fas fa-phone-alt"></i> +91 9612602899</span>
+            </div>
+            <div class="top-bar-socials">
+                <a href="https://www.facebook.com/share/1D7DtNhzAA/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@gcf_global" target="_blank" rel="noopener noreferrer"
+                    aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/globalcompassionfoundation?igsh=dmpzOXl4aHc1aDJr#" target="_blank"
+                    rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/global-compassion-foundation-73364a177/" target="_blank"
+                    rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="site-header" id="main-header">
+        <div class="container">
+            <a href="index.html" class="logo-link" id="logo">
+                <img src="assets/images/hero/logo.png" alt="Global Compassion Foundation Logo">
+                <span class="logo-text">Global Compassion <span>Foundation</span></span>
+            </a>
+
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false"
+                id="menu-toggle">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+
+            <nav class="main-nav" id="navigation-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="volunteer.html" class="nav-link">Volunteer</a></li>
+                    <li><a href="donate.html" class="nav-link">Donate</a></li>
+                    <li><a href="chakma.html" class="nav-link">Chakma</a></li>
+                    <li><a href="education.html" class="nav-link active">Education</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <a href="donate.html" class="btn btn-secondary"
+                    style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.05em; padding: 0.5rem 1.25rem; border-radius: var(--radius-full);">Donate</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Subpage Hero Banner -->
+    <div class="subpage-hero" style="background-image: linear-gradient(rgba(28, 25, 23, 0.85), rgba(28, 25, 23, 0.85)), url('assets/images/projects/classroom1.jpg');">
+        <div class="container">
+            <h1 style="text-transform: uppercase; font-size: var(--text-4xl); font-weight: 800; letter-spacing: 0.05em; text-shadow: 0 2px 4px rgba(0,0,0,0.4);">
+                Education Project</h1>
+            <p style="max-width: 650px; margin: 0 auto; font-size: var(--text-lg); text-shadow: 0 1px 3px rgba(0,0,0,0.3); color: rgba(255,255,255,0.95); font-weight: 500;">
+                Global Compassion Academy: Establishing a holistic, inclusive, and value-based learning environment for underserved children.
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Section 1: Intro Split Block -->
+        <section class="section-relative">
+            <div class="glow-blob glow-emerald animated" style="top: 10%; left: -8%;"></div>
+            <div class="container">
+
+                <!-- Proposed Project Disclaimer -->
+                <div class="disclaimer-strip">
+                    <div class="disclaimer-icon"><i class="fas fa-info-circle"></i></div>
+                    <div class="disclaimer-text">
+                        <p>Important Notice: At present, Global Compassion Academy has not yet been established. It remains a proposed educational project that Global Compassion Foundation hopes to implement in the future with the support of donors, partners, and well-wishers.</p>
+                    </div>
+                </div>
+
+                <div class="editorial-grid">
+                    <div class="editorial-text">
+                        <span class="badge-premium">Our Education Project</span>
+                        <h2>Global Compassion <span>Academy</span></h2>
+                        <p style="font-weight: 600; color: var(--primary);">A Vision for Inclusive, Value-Based, and Holistic Education in Remote Mizoram</p>
+                        <p>
+                            Global Compassion Foundation (GCF) is currently working toward the long-term vision of establishing Global Compassion Academy, a proposed inclusive, value-based, and holistic school for underserved tribal children living in Tuichawng Village and more than 25 surrounding remote villages in Lunglei District, Mizoram, Northeast India.
+                        </p>
+                        <p>
+                            We hope to build a nurturing learning space that makes quality education accessible to tribal families in remote border valleys, providing children with pathways out of generational poverty.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="polaroid-frame">
+                            <img src="assets/images/projects/ehanc3.jpeg" alt="Underserved children learning in rural classroom setup">
+                            <div class="polaroid-caption">Future Classroom Vision</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Meaning of GCA -->
+        <section class="section-relative" style="background-color: var(--bg-offset); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+            <div class="glow-blob glow-amber animated" style="bottom: 5%; right: -5%;"></div>
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin-bottom: var(--space-2xl);">
+                    <span class="badge-premium">Core Values</span>
+                    <h2 style="font-family: var(--font-heading); font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 800; color: var(--primary);">
+                        The Meaning of <span>Global Compassion Academy</span>
+                    </h2>
+                    <p style="max-width: 600px; margin: var(--space-sm) auto 0; color: var(--text-muted);">
+                        The proposed name reflects the values, ethics, and vision that we hope the institution will embody in Mizoram.
+                    </p>
+                </div>
+
+                <div class="grid grid-3">
+                    <!-- Card 1: Global -->
+                    <div class="meaning-card">
+                        <div class="meaning-icon"><i class="fas fa-globe-asia"></i></div>
+                        <h3>Global</h3>
+                        <p style="font-size: var(--text-sm); color: var(--text-muted); line-height: 1.6;">
+                            Represents our belief that every child, regardless of their location or background, deserves equal opportunities to learn, grow, and participate in an interconnected world.
+                        </p>
+                    </div>
+
+                    <!-- Card 2: Compassion -->
+                    <div class="meaning-card">
+                        <div class="meaning-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                        <h3>Compassion</h3>
+                        <p style="font-size: var(--text-sm); color: var(--text-muted); line-height: 1.6;">
+                            Represents kindness, empathy, respect, service, and concern for the well-being of others. We believe education should nurture both knowledge and humanity.
+                        </p>
+                    </div>
+
+                    <!-- Card 3: Academy -->
+                    <div class="meaning-card">
+                        <div class="meaning-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h3>Academy</h3>
+                        <p style="font-size: var(--text-sm); color: var(--text-muted); line-height: 1.6;">
+                            Represents a place of learning, character formation, leadership development, creativity, and lifelong growth. Combining academic excellence with social responsibility.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Why This Project Is Needed -->
+        <section class="section-relative">
+            <div class="glow-blob glow-emerald animated" style="top: 15%; left: -8%;"></div>
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin-bottom: var(--space-2xl);">
+                    <span class="badge-premium">The Challenge</span>
+                    <h2 style="font-family: var(--font-heading); font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 800; color: var(--primary);">
+                        Why This Project <span>Is Needed</span>
+                    </h2>
+                    <p style="max-width: 600px; margin: var(--space-sm) auto 0; color: var(--text-muted);">
+                        Tribal children living in remote villages face significant barriers to education. Our proposed academy addresses these local challenges.
+                    </p>
+                </div>
+
+                <div class="grid grid-2" style="gap: var(--space-lg);">
+                    <!-- Challenge 1 -->
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                        <div>
+                            <h4>Poverty and Economic Hardship</h4>
+                            <p>Most families depend on subsistence farming, leaving them without resources to support quality learning or school supplies.</p>
+                        </div>
+                    </div>
+                    <!-- Challenge 2 -->
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon"><i class="fas fa-map-marked-alt"></i></div>
+                        <div>
+                            <h4>Geographical Isolation</h4>
+                            <p>Deep forest settlements in Lunglei District are cut off from major administrative and educational centers.</p>
+                        </div>
+                    </div>
+                    <!-- Challenge 3 -->
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon"><i class="fas fa-school"></i></div>
+                        <div>
+                            <h4>Limited Educational Infrastructure</h4>
+                            <p>Existing primary structures are basic, lacking modern activity rooms, libraries, and basic teaching tools.</p>
+                        </div>
+                    </div>
+                    <!-- Challenge 4 -->
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon"><i class="fas fa-book"></i></div>
+                        <div>
+                            <h4>Inadequate Learning Resources</h4>
+                            <p>Textbooks, regional language materials, and reference books are in short supply in remote community schools.</p>
+                        </div>
+                    </div>
+                    <!-- Challenge 5 -->
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon"><i class="fas fa-walking"></i></div>
+                        <div>
+                            <h4>Long Distances to Facilities</h4>
+                            <p>Children must traverse steep and hazardous mountain paths for hours to reach secondary classrooms.</p>
+                        </div>
+                    </div>
+                    <!-- Challenge 6 -->
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon"><i class="fas fa-laptop"></i></div>
+                        <div>
+                            <h4>Limited Access to Technology</h4>
+                            <p>Digital learning systems are practically absent, creating a wide technological divide for tribal students.</p>
+                        </div>
+                    </div>
+                    <!-- Challenge 7 -->
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div>
+                            <h4>Lack of Safe Environments</h4>
+                            <p>Remote layouts lack structural safety, clean water, and nutritional backup necessary for steady attendance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Our Vision & Proposed Facilities -->
+        <section class="section-relative" style="background-color: var(--bg-offset); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+            <div class="glow-blob glow-amber animated" style="bottom: 10%; right: -5%;"></div>
+            <div class="container">
+                <!-- Segmented Tabs Switcher Header -->
+                <div class="tabs-header">
+                    <div class="tabs-nav">
+                        <button class="tab-btn active" data-tab="tab-vision">Our Philosophical Vision</button>
+                        <button class="tab-btn" data-tab="tab-facilities">Planned Infrastructure</button>
+                    </div>
+                </div>
+
+                <!-- Tab Pane 1: Vision -->
+                <div id="tab-vision" class="tab-pane active">
+                    <div class="editorial-grid" style="align-items: start;">
+                        <div class="editorial-text">
+                            <span class="badge-premium">The Roadmap Focus</span>
+                            <h2>Educational <span>Vision</span></h2>
+                            <p>
+                                If adequate funding and resources are secured, GCF intends to operate Global Compassion Academy as a model institution promoting holistic development, blending state academic standards with character training and indigenous heritage preservation:
+                            </p>
+                        </div>
+                        <div class="grid grid-2" style="gap: var(--space-sm); width: 100%;">
+                            <div class="vision-item">
+                                <i class="fas fa-check-circle vision-icon"></i>
+                                <span>Quality Education</span>
+                            </div>
+                            <div class="vision-item">
+                                <i class="fas fa-check-circle vision-icon"></i>
+                                <span>Inclusive Learning</span>
+                            </div>
+                            <div class="vision-item">
+                                <i class="fas fa-check-circle vision-icon"></i>
+                                <span>Moral & Ethical Values</span>
+                            </div>
+                            <div class="vision-item">
+                                <i class="fas fa-check-circle vision-icon"></i>
+                                <span>Social Responsibility</span>
+                            </div>
+                            <div class="vision-item">
+                                <i class="fas fa-check-circle vision-icon"></i>
+                                <span>Life Skills & Leadership</span>
+                            </div>
+                            <div class="vision-item">
+                                <i class="fas fa-check-circle vision-icon"></i>
+                                <span>Cultural Preservation</span>
+                            </div>
+                            <div class="vision-item">
+                                <i class="fas fa-check-circle vision-icon"></i>
+                                <span>Environmental Awareness</span>
+                            </div>
+                            <div class="vision-item">
+                                <i class="fas fa-check-circle vision-icon"></i>
+                                <span>Child Protection & Safety</span>
+                            </div>
+                            <div class="vision-item">
+                                <i class="fas fa-check-circle vision-icon"></i>
+                                <span>Equal Opportunities</span>
+                            </div>
+                            <div class="vision-item">
+                                <i class="fas fa-check-circle vision-icon"></i>
+                                <span>Holistic Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Pane 2: Proposed Facilities -->
+                <div id="tab-facilities" class="tab-pane">
+                    <div class="editorial-grid" style="align-items: start;">
+                        <div class="editorial-text">
+                            <span class="badge-premium">Proposed Setup</span>
+                            <h2>Planned <span>Facilities</span></h2>
+                            <p>
+                                Subject to availability of funding and land clearances, the layout of the project is planned to incorporate critical infrastructure designed for safety, sustainability, and complete community integration:
+                            </p>
+                        </div>
+                        <div class="grid grid-2" style="gap: var(--space-sm); width: 100%;">
+                            <div class="facility-card">
+                                <div class="facility-icon-wrap"><i class="fas fa-school"></i></div>
+                                <span>School Campus</span>
+                            </div>
+                            <div class="facility-card">
+                                <div class="facility-icon-wrap"><i class="fas fa-hotel"></i></div>
+                                <span>Student Hostel</span>
+                            </div>
+                            <div class="facility-card">
+                                <div class="facility-icon-wrap"><i class="fas fa-home"></i></div>
+                                <span>Teachers' Quarters</span>
+                            </div>
+                            <div class="facility-card">
+                                <div class="facility-icon-wrap"><i class="fas fa-book-open"></i></div>
+                                <span>Library & Reading Center</span>
+                            </div>
+                            <div class="facility-card">
+                                <div class="facility-icon-wrap"><i class="fas fa-laptop-code"></i></div>
+                                <span>Computer Lab</span>
+                            </div>
+                            <div class="facility-card">
+                                <div class="facility-icon-wrap"><i class="fas fa-flask"></i></div>
+                                <span>Science Lab</span>
+                            </div>
+                            <div class="facility-card">
+                                <div class="facility-icon-wrap"><i class="fas fa-tint"></i></div>
+                                <span>Clean Drinking Water</span>
+                            </div>
+                            <div class="facility-card">
+                                <div class="facility-icon-wrap"><i class="fas fa-toilet"></i></div>
+                                <span>Sanitation & Hygiene</span>
+                            </div>
+                            <div class="facility-card">
+                                <div class="facility-icon-wrap"><i class="fas fa-solar-panel"></i></div>
+                                <span>Solar & Electricity</span>
+                            </div>
+                            <div class="facility-card">
+                                <div class="facility-icon-wrap"><i class="fas fa-utensils"></i></div>
+                                <span>Kitchen & Dining</span>
+                            </div>
+                            <div class="facility-card">
+                                <div class="facility-icon-wrap"><i class="fas fa-child"></i></div>
+                                <span>Playground & Spaces</span>
+                            </div>
+                            <div class="facility-card">
+                                <div class="facility-icon-wrap"><i class="fas fa-bus"></i></div>
+                                <span>Transportation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Project Roadmap Section (Interactive Stepper & Accordion Grid) -->
+        <section class="section-relative">
+            <div class="glow-blob glow-amber animated" style="top: 20%; right: -5%;"></div>
+            <div class="glow-blob glow-emerald animated" style="bottom: 10%; left: -5%;"></div>
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin-bottom: var(--space-2xl);">
+                    <span class="badge-premium">Project Phases</span>
+                    <h2 style="font-family: var(--font-heading); font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 800; color: var(--primary);">
+                        Our Project <span>Roadmap</span>
+                    </h2>
+                    <p style="max-width: 600px; margin: var(--space-sm) auto 0; color: var(--text-muted);">
+                        GCF has outlined structured development phases to transform this educational vision into a reality on the ground in Mizoram.
+                    </p>
+                </div>
+
+                <div class="roadmap-grid">
+                    <!-- Desktop Sidebar Nav (Indexes phases) -->
+                    <div class="roadmap-sidebar">
+                        <div class="roadmap-sidebar-progress" id="roadmap-progress"></div>
+                        
+                        <button class="roadmap-sidebar-btn active" data-phase="1">
+                            <span class="phase-num">Phase 1</span>
+                            <span class="phase-title">Community Mapping</span>
+                            <span class="status-tag status-active"><span class="pulse-dot"></span> Active</span>
+                        </button>
+                        
+                        <button class="roadmap-sidebar-btn" data-phase="2">
+                            <span class="phase-num">Phase 2</span>
+                            <span class="phase-title">Mobilization & Funding</span>
+                            <span class="status-tag status-planned">Planned</span>
+                        </button>
+                        
+                        <button class="roadmap-sidebar-btn" data-phase="3">
+                            <span class="phase-num">Phase 3</span>
+                            <span class="phase-title">Land & Safety Audits</span>
+                            <span class="status-tag status-planned">Planned</span>
+                        </button>
+                        
+                        <button class="roadmap-sidebar-btn" data-phase="4">
+                            <span class="phase-num">Phase 4</span>
+                            <span class="phase-title">Classroom Construction</span>
+                            <span class="status-tag status-planned">Planned</span>
+                        </button>
+                        
+                        <button class="roadmap-sidebar-btn" data-phase="5">
+                            <span class="phase-num">Phase 5</span>
+                            <span class="phase-title">Curriculum & Staffing</span>
+                            <span class="status-tag status-planned">Planned</span>
+                        </button>
+                        
+                        <button class="roadmap-sidebar-btn" data-phase="6">
+                            <span class="phase-num">Phase 6</span>
+                            <span class="phase-title">Inauguration & Launch</span>
+                            <span class="status-tag status-planned">Planned</span>
+                        </button>
+                    </div>
+
+                    <!-- Details Panels (Accordions on Mobile, Content cards on Desktop) -->
+                    <div class="roadmap-panels">
+                        
+                        <!-- Card Phase 1 -->
+                        <div class="roadmap-panel-card active" data-phase="1">
+                            <div class="roadmap-accordion-header">
+                                <span class="acc-num">01</span>
+                                <h3>Phase 1: Community Mapping &amp; Feasibility</h3>
+                                <span class="status-tag status-active" style="margin-right: 10px;"><span class="pulse-dot"></span> Active</span>
+                                <i class="fas fa-chevron-down acc-arrow"></i>
+                            </div>
+                            <div class="roadmap-accordion-content">
+                                <div class="roadmap-detail-grid">
+                                    <div class="roadmap-detail-text">
+                                        <div class="roadmap-meta">
+                                            <span><i class="fas fa-calendar-alt"></i> Timeframe: Current / Underway</span>
+                                            <span><i class="fas fa-map-marker-alt"></i> Focus: Lunglei District Valleys</span>
+                                        </div>
+                                        <p>
+                                            Consultations with village elders, CADC district councils, and local tribal committees to map regional enrollment demands, document transport constraints, and assess language requirements.
+                                        </p>
+                                        <div class="roadmap-milestones">
+                                            <h4>Key Milestones</h4>
+                                            <ul>
+                                                <li><i class="fas fa-check-circle done"></i> Conduct surveys in 25 remote border villages</li>
+                                                <li><i class="fas fa-check-circle done"></i> Secure tribal community leader alignments</li>
+                                                <li><i class="fas fa-circle todo"></i> Draft CADC administrative request files</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="roadmap-detail-icon-box">
+                                        <i class="fas fa-map-marked-alt text-emerald"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Phase 2 -->
+                        <div class="roadmap-panel-card" data-phase="2">
+                            <div class="roadmap-accordion-header">
+                                <span class="acc-num">02</span>
+                                <h3>Phase 2: Mobilization &amp; Funding Campaigns</h3>
+                                <span class="status-tag status-planned" style="margin-right: 10px;">Planned</span>
+                                <i class="fas fa-chevron-down acc-arrow"></i>
+                            </div>
+                            <div class="roadmap-accordion-content">
+                                <div class="roadmap-detail-grid">
+                                    <div class="roadmap-detail-text">
+                                        <div class="roadmap-meta">
+                                            <span class="meta-planned"><i class="fas fa-calendar-alt"></i> Target: Q3 2026 - Q2 2027</span>
+                                            <span class="meta-planned"><i class="fas fa-hands-helping"></i> Support Needed: Donors &amp; CSR</span>
+                                        </div>
+                                        <p>
+                                            Launching public sponsorship campaigns, securing initial grants, and engaging corporate social responsibility (CSR) partners to fund physical material acquisition.
+                                        </p>
+                                        <div class="roadmap-milestones">
+                                            <h4>Key Milestones</h4>
+                                            <ul>
+                                                <li><i class="fas fa-circle todo"></i> Launch global digital crowdfunding portal</li>
+                                                <li><i class="fas fa-circle todo"></i> Partner with international philanthropic trusts</li>
+                                                <li><i class="fas fa-circle todo"></i> Present pitch deck to institutional donors</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="roadmap-detail-icon-box">
+                                        <i class="fas fa-handshake text-amber"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Phase 3 -->
+                        <div class="roadmap-panel-card" data-phase="3">
+                            <div class="roadmap-accordion-header">
+                                <span class="acc-num">03</span>
+                                <h3>Phase 3: Land Allocation &amp; Safety Audits</h3>
+                                <span class="status-tag status-planned" style="margin-right: 10px;">Planned</span>
+                                <i class="fas fa-chevron-down acc-arrow"></i>
+                            </div>
+                            <div class="roadmap-accordion-content">
+                                <div class="roadmap-detail-grid">
+                                    <div class="roadmap-detail-text">
+                                        <div class="roadmap-meta">
+                                            <span class="meta-planned"><i class="fas fa-calendar-alt"></i> Target: Q2 2027</span>
+                                            <span class="meta-planned"><i class="fas fa-shield-alt"></i> Quality: Water &amp; Structural Audits</span>
+                                        </div>
+                                        <p>
+                                            Securing land clearances in the Tuichawng sector, resolving local zoning procedures, and conducting environmental water safety audits to establish safe, potable gravity water pipelines.
+                                        </p>
+                                        <div class="roadmap-milestones">
+                                            <h4>Key Milestones</h4>
+                                            <ul>
+                                                <li><i class="fas fa-circle todo"></i> Formal land lease agreement finalized</li>
+                                                <li><i class="fas fa-circle todo"></i> Clean water source testing reports</li>
+                                                <li><i class="fas fa-circle todo"></i> Topographic surveying for earthquake resilience</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="roadmap-detail-icon-box">
+                                        <i class="fas fa-compass text-amber"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Phase 4 -->
+                        <div class="roadmap-panel-card" data-phase="4">
+                            <div class="roadmap-accordion-header">
+                                <span class="acc-num">04</span>
+                                <h3>Phase 4: Classroom &amp; Infrastructure Build</h3>
+                                <span class="status-tag status-planned" style="margin-right: 10px;">Planned</span>
+                                <i class="fas fa-chevron-down acc-arrow"></i>
+                            </div>
+                            <div class="roadmap-accordion-content">
+                                <div class="roadmap-detail-grid">
+                                    <div class="roadmap-detail-text">
+                                        <div class="roadmap-meta">
+                                            <span class="meta-planned"><i class="fas fa-calendar-alt"></i> Target: Q3 2027 - Q2 2028</span>
+                                            <span class="meta-planned"><i class="fas fa-tools"></i> Construction Type: Eco-friendly/Local</span>
+                                        </div>
+                                        <p>
+                                            Building the initial phase structures (multipurpose classrooms, basic library hub, separate hygienic sanitation blocks, and connecting water filtration pipelines).
+                                        </p>
+                                        <div class="roadmap-milestones">
+                                            <h4>Key Milestones</h4>
+                                            <ul>
+                                                <li><i class="fas fa-circle todo"></i> Foundation laying and timber/bamboo framing</li>
+                                                <li><i class="fas fa-circle todo"></i> Installation of solar power micro-grid panels</li>
+                                                <li><i class="fas fa-circle todo"></i> Setup of community sanitation modules</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="roadmap-detail-icon-box">
+                                        <i class="fas fa-tools text-emerald"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Phase 5 -->
+                        <div class="roadmap-panel-card" data-phase="5">
+                            <div class="roadmap-accordion-header">
+                                <span class="acc-num">05</span>
+                                <h3>Phase 5: Curriculum Design &amp; Local Staffing</h3>
+                                <span class="status-tag status-planned" style="margin-right: 10px;">Planned</span>
+                                <i class="fas fa-chevron-down acc-arrow"></i>
+                            </div>
+                            <div class="roadmap-accordion-content">
+                                <div class="roadmap-detail-grid">
+                                    <div class="roadmap-detail-text">
+                                        <div class="roadmap-meta">
+                                            <span class="meta-planned"><i class="fas fa-calendar-alt"></i> Target: Q3 2028</span>
+                                            <span class="meta-planned"><i class="fas fa-graduation-cap"></i> Syllabus: Mizoram State Board + Tribal Heritage</span>
+                                        </div>
+                                        <p>
+                                            Setting up inclusive curricula blending core literacy with native script education, character formation, and training dedicated regional educators.
+                                        </p>
+                                        <div class="roadmap-milestones">
+                                            <h4>Key Milestones</h4>
+                                            <ul>
+                                                <li><i class="fas fa-circle todo"></i> Create dual-language educational assets</li>
+                                                <li><i class="fas fa-circle todo"></i> Hire and onboard certified teachers</li>
+                                                <li><i class="fas fa-circle todo"></i> Conduct community enrollment campaigns</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="roadmap-detail-icon-box">
+                                        <i class="fas fa-book-open text-emerald"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Phase 6 -->
+                        <div class="roadmap-panel-card" data-phase="6">
+                            <div class="roadmap-accordion-header">
+                                <span class="acc-num">06</span>
+                                <h3>Phase 6: Academy Inauguration &amp; Launch</h3>
+                                <span class="status-tag status-planned" style="margin-right: 10px;">Planned</span>
+                                <i class="fas fa-chevron-down acc-arrow"></i>
+                            </div>
+                            <div class="roadmap-accordion-content">
+                                <div class="roadmap-detail-grid">
+                                    <div class="roadmap-detail-text">
+                                        <div class="roadmap-meta">
+                                            <span class="meta-planned"><i class="fas fa-calendar-alt"></i> Target: Q1 2029</span>
+                                            <span class="meta-planned"><i class="fas fa-child"></i> Enrollment: 150+ Rural Tribal Children</span>
+                                        </div>
+                                        <p>
+                                            Opening classroom doors to the first cohort of underprivileged tribal children from 25 valley communities in remote Mizoram.
+                                        </p>
+                                        <div class="roadmap-milestones">
+                                            <h4>Key Milestones</h4>
+                                            <ul>
+                                                <li><i class="fas fa-circle todo"></i> Ribbon-cutting and community blessings</li>
+                                                <li><i class="fas fa-circle todo"></i> Distribute uniforms, books, and solar lamps</li>
+                                                <li><i class="fas fa-circle todo"></i> Launch first formal school academic calendar</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="roadmap-detail-icon-box">
+                                        <i class="fas fa-graduation-cap text-amber"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: GCF Role and Support -->
+        <section class="section-relative">
+            <div class="glow-blob glow-emerald" style="top: 10%; left: -8%;"></div>
+            <div class="container">
+                <div class="editorial-grid reverse">
+                    <div>
+                        <div class="polaroid-frame">
+                            <img src="assets/images/projects/classroom.jpg" alt="Water tap connected to pipeline in rural village representing GCF infrastructure execution capabilities">
+                            <div class="polaroid-caption">GCF Infrastructure Capabilites</div>
+                        </div>
+                    </div>
+                    
+                    <div class="editorial-text">
+                        <span class="badge-premium">GCF Responsibility</span>
+                        <h2>The Role of <span>Global Compassion Foundation</span></h2>
+                        <p>
+                            Global Compassion Foundation will serve as the implementing agency responsible for planning, coordinating, developing, and managing the project if sufficient funding and resources become available.
+                        </p>
+                        <p>
+                            The Foundation is committed to transparency, accountability, community participation, and sustainable development throughout the implementation process.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: How You Can Support -->
+        <section class="section-relative" style="background-color: var(--bg-offset); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+            <div class="glow-blob glow-amber" style="bottom: 5%; right: -5%;"></div>
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin-bottom: var(--space-2xl);">
+                    <span class="badge-premium">Make an Impact</span>
+                    <h2 style="font-family: var(--font-heading); font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 800; color: var(--primary);">
+                        How You Can <span>Support This Vision</span>
+                    </h2>
+                    <p style="max-width: 600px; margin: var(--space-sm) auto 0; color: var(--text-muted);">
+                        As a small grassroots organization, we cannot achieve this vision alone. We warmly welcome collaborations across fields:
+                    </p>
+                </div>
+
+                <div class="grid grid-3" style="margin-bottom: var(--space-2xl);">
+                    <div class="meaning-card" style="text-align: center;">
+                        <div class="meaning-icon" style="margin: 0 auto var(--space-md);"><i class="fas fa-donate"></i></div>
+                        <h3>Financial Contributions</h3>
+                        <p style="font-size: var(--text-xs); color: var(--text-light); line-height: 1.5;">Direct sponsorships, CSR partnerships, and grants help fund infrastructure material acquisitions.</p>
+                    </div>
+                    <div class="meaning-card" style="text-align: center;">
+                        <div class="meaning-icon" style="margin: 0 auto var(--space-md);"><i class="fas fa-handshake"></i></div>
+                        <h3>CSR & Partnerships</h3>
+                        <p style="font-size: var(--text-xs); color: var(--text-light); line-height: 1.5;">Educational partnerships, grants, and infrastructure collaborations with development agencies.</p>
+                    </div>
+                    <div class="meaning-card" style="text-align: center;">
+                        <div class="meaning-icon" style="margin: 0 auto var(--space-md);"><i class="fas fa-people-carry"></i></div>
+                        <h3>Volunteers & Mentors</h3>
+                        <p style="font-size: var(--text-xs); color: var(--text-light); line-height: 1.5;">Technical guidance, curriculum structuring, remote or field mentorship, and direct collaboration.</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <a href="donate.html" class="btn btn-primary" style="margin-right: var(--space-md); color: white;">Support This Project</a>
+                    <a href="volunteer.html" class="btn btn-secondary">Join Our Network</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Building Hope & Polaroid Image Gallery Footer -->
+        <section class="section-relative">
+            <div class="glow-blob glow-emerald animated" style="top: 10%; left: -8%;"></div>
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin-bottom: var(--space-2xl);">
+                    <span class="badge-premium">Building Hope</span>
+                    <h2 style="font-family: var(--font-heading); font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 800; color: var(--primary);">
+                        Our Project <span>Gallery</span>
+                    </h2>
+                    <p style="max-width: 700px; margin: var(--space-sm) auto 0; color: var(--text-muted);">
+                        Global Compassion Academy is currently a vision for the future. However, we believe that with collective effort, compassion, and partnership, this vision can one day become a reality. Take a look at some of the communities we are serving and hoping to empower through education.
+                    </p>
+                </div>
+
+                <!-- Footer Image Gallery (Polaroid Frames using only local assets) -->
+                <div class="polaroid-gallery">
+                    <!-- Photo 1 -->
+                    <div class="polaroid-frame">
+                        <img src="assets/images/projects/classroom1.jpg" alt="Underprivileged tribal children learning in Sajek classroom" loading="lazy">
+                        <div class="polaroid-caption">Mizoram Classroom learning</div>
+                    </div>
+                    <!-- Photo 2 -->
+                    <div class="polaroid-frame">
+                        <img src="assets/images/projects/classroom.jpg" alt="GCF clean water tap and pipeline connection" loading="lazy">
+                        <div class="polaroid-caption">Clean Water Infrastructure</div>
+                    </div>
+                    <!-- Photo 3 -->
+                    <div class="polaroid-frame">
+                        <img src="assets/images/projects/ehanc3.jpeg" alt="Underprivileged children studying with hope" loading="lazy">
+                        <div class="polaroid-caption">Tribal Children Education</div>
+                    </div>
+                    <!-- Photo 4 -->
+                    <div class="polaroid-frame">
+                        <img src="assets/images/projects/teamDisplay.jpeg" alt="Volunteers working with GCF community" loading="lazy">
+                        <div class="polaroid-caption">GCF Team and Community</div>
+                    </div>
+                    <!-- Photo 5 -->
+                    <div class="polaroid-frame">
+                        <img src="assets/images/projects/enhanc1.jpg" alt="GCF volunteers teaching tribal children" loading="lazy">
+                        <div class="polaroid-caption">Volunteering in Action</div>
+                    </div>
+                    <!-- Photo 6 -->
+                    <div class="polaroid-frame">
+                        <img src="assets/images/projects/enhanc2.jpg" alt="Tribal children reading books in Mizoram village" loading="lazy">
+                        <div class="polaroid-caption">Fostering Literacy and Hope</div>
+                    </div>
+                </div>
+
+                <div style="margin-top: var(--space-2xl); text-align: center; background: var(--bg-offset); padding: var(--space-xl); border: 1px solid var(--border-light); border-radius: var(--radius-lg);">
+                    <p style="font-size: var(--text-base); color: var(--primary); font-weight: 700; margin-bottom: var(--space-md);">
+                        "We invite individuals, organizations, institutions, and well-wishers who share this vision to join us in making quality education accessible to children living in some of the most remote communities of Northeast India."
+                    </p>
+                    <a href="contact.html" class="btn btn-primary" style="color: white;"><i class="fas fa-envelope" style="margin-right: 8px;"></i> Contact Us to Partner</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Newsletter Band -->
+    <div class="newsletter-band">
+        <div class="container">
+            <div class="newsletter-inner">
+                <div class="newsletter-text">
+                    <h3>Stay connected with GCF</h3>
+                    <p>Get updates on our programs and community impact stories.</p>
+                </div>
+                <form class="newsletter-form" id="news-form" novalidate>
+                    <input type="email" id="news-email" placeholder="Enter your email address"
+                        aria-label="Email for newsletter" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer in GCF Theme Black -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col" style="flex-grow: 1.5;">
+                    <a href="index.html" class="logo-link">
+                        <img src="assets/images/hero/logo.png" alt="Global Compassion Foundation Logo" loading="lazy">
+                    </a>
+                    <p style="margin-top: var(--space-md); font-size: var(--text-sm); line-height: 1.6; max-width: 320px; color: var(--text-light);">
+                        Empowering remote indigenous communities through sustainable development, education, clean water access, and cultural heritage preservation.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="chakma.html">Chakma</a></li>
+                        <li><a href="education.html">Education</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="mizoram.html">About Mizoram</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Programs</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="education.html">Global Compassion Academy</a></li>
+                        <li><a href="about.html">After-School Learning</a></li>
+                        <li><a href="about.html">English Practice Program</a></li>
+                        <li><a href="chakma.html">Chakma Script Classes</a></li>
+                        <li><a href="volunteer.html">Mentorship Initiative</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Get in Touch</h3>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 8px; color: var(--brand-accent);"></i>
+                        Tuichawng, Lunglei District, Mizoram, North-East India</p>
+                    <p><i class="fas fa-envelope" style="margin-right: 8px; color: var(--brand-accent);"></i>
+                        president.gcf.024@gmail.com</p>
+                    <p><i class="fas fa-phone-alt" style="margin-right: 8px; color: var(--brand-accent);"></i> +91
+                        9612602899</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="copyright-year">2026</span> Global Compassion Foundation. All Rights Reserved. Designed with care.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1D7DtNhzAA/" target="_blank" rel="noopener noreferrer"
+                        class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/@gcf_global" target="_blank" rel="noopener noreferrer"
+                        class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/globalcompassionfoundation?igsh=dmpzOXl4aHc1aDJr#"
+                        target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/global-compassion-foundation-73364a177/" target="_blank"
+                        rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal Container -->
+    <div id="gallery-lightbox" class="lightbox-modal" aria-hidden="true">
+        <div class="lightbox-content-wrapper">
+            <span class="lightbox-close" aria-label="Close Lightbox">&times;</span>
+            <img class="lightbox-content" id="lightbox-img" src="" alt="Enlarged GCF Project Photo">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- JS Scripts -->
+    <script src="js/navigation.js?v=4.0"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Newsletter Form Simulation
+            const newsForm = document.getElementById('newsletter-form');
+            if (!newsForm) {
+                const form = document.getElementById('news-form');
+                if (form) {
+                    form.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        const emailInput = form.querySelector('input[type="email"]');
+                        if (emailInput && emailInput.value) {
+                            alert('Thank you! ' + emailInput.value + ' has been subscribed to GCF newsletters.');
+                            form.reset();
+                        }
+                    });
+                }
+            }
+
+            // ==========================================
+            // INTERACTIVE ROADMAP STEPS & ACCORDION SWITCH
+            // ==========================================
+            const progressFill = document.getElementById('roadmap-progress');
+            const sidebarBtns = document.querySelectorAll('.roadmap-sidebar-btn');
+            const panelCards = document.querySelectorAll('.roadmap-panel-card');
+
+            const updateRoadmapProgress = (index) => {
+                if (progressFill && sidebarBtns.length > 0) {
+                    const pct = (index / (sidebarBtns.length - 1)) * 100;
+                    progressFill.style.height = pct + '%';
+                }
+            };
+
+            // Init progress line on load
+            updateRoadmapProgress(0);
+
+            // Desktop click handlers
+            sidebarBtns.forEach((btn, idx) => {
+                btn.addEventListener('click', () => {
+                    const targetPhase = btn.getAttribute('data-phase');
+                    
+                    // Toggle nav buttons active state
+                    sidebarBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    // Toggle card panels active state
+                    panelCards.forEach(card => {
+                        if (card.getAttribute('data-phase') === targetPhase) {
+                            card.classList.add('active');
+                        } else {
+                            card.classList.remove('active');
+                        }
+                    });
+
+                    // Update progress line
+                    updateRoadmapProgress(idx);
+                });
+            });
+
+            // Mobile click accordion handlers
+            panelCards.forEach(card => {
+                const header = card.querySelector('.roadmap-accordion-header');
+                if (header) {
+                    header.addEventListener('click', () => {
+                        // Check if mobile (by verifying if sidebar is display none)
+                        const sidebar = document.querySelector('.roadmap-sidebar');
+                        const isMobile = sidebar && window.getComputedStyle(sidebar).display === 'none';
+                        if (!isMobile) return; // Keep desktop layout clickable strictly via sidebar menu
+
+                        const isCurrentlyActive = card.classList.contains('active');
+
+                        // Toggle accordion collapse/expand
+                        panelCards.forEach(c => c.classList.remove('active'));
+
+                        if (!isCurrentlyActive) {
+                            card.classList.add('active');
+                            // Scroll panel header smoothly into view after mobile layout recalculation
+                            setTimeout(() => {
+                                header.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                            }, 250);
+                        }
+                    });
+                }
+            });
+
+            // Handle browser resize transitions
+            window.addEventListener('resize', () => {
+                const sidebar = document.querySelector('.roadmap-sidebar');
+                const isMobile = sidebar && window.getComputedStyle(sidebar).display === 'none';
+                if (!isMobile) {
+                    const activeCard = document.querySelector('.roadmap-panel-card.active');
+                    if (!activeCard) {
+                        const firstCard = document.querySelector('.roadmap-panel-card');
+                        if (firstCard) firstCard.classList.add('active');
+                        const firstBtn = document.querySelector('.roadmap-sidebar-btn');
+                        if (firstBtn) firstBtn.classList.add('active');
+                        updateRoadmapProgress(0);
+                    } else {
+                        const activePhase = activeCard.getAttribute('data-phase');
+                        sidebarBtns.forEach((btn, idx) => {
+                            if (btn.getAttribute('data-phase') === activePhase) {
+                                btn.classList.add('active');
+                                updateRoadmapProgress(idx);
+                            } else {
+                                btn.classList.remove('active');
+                            }
+                        });
+                    }
+                }
+            });
+
+            // ==========================================
+            // PHOTO GALLERY PORTAL LIGHTBOX
+            // ==========================================
+            const lightbox = document.getElementById('gallery-lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const lightboxClose = document.querySelector('.lightbox-close');
+            const polaroidFrames = document.querySelectorAll('.polaroid-frame');
+
+            if (lightbox && lightboxImg && lightboxCaption) {
+                polaroidFrames.forEach(frame => {
+                    frame.addEventListener('click', () => {
+                        const img = frame.querySelector('img');
+                        const caption = frame.querySelector('.polaroid-caption');
+                        if (img) {
+                            lightboxImg.src = img.src;
+                            lightboxImg.alt = img.alt;
+                            if (caption) {
+                                lightboxCaption.textContent = caption.textContent;
+                            } else {
+                                lightboxCaption.textContent = '';
+                            }
+                            lightbox.classList.add('active');
+                            document.body.style.overflow = 'hidden'; // Lock main scrolling
+                        }
+                    });
+                });
+
+                const closeLightbox = () => {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = ''; // Restore scrolling
+                };
+
+                if (lightboxClose) {
+                    lightboxClose.addEventListener('click', closeLightbox);
+                }
+
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target === lightbox || e.target.classList.contains('lightbox-content-wrapper')) {
+                        closeLightbox();
+                    }
+                });
+
+                // Keypress Esc to close Modal
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') closeLightbox();
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>
