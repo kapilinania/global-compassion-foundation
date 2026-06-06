@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Global Compassion Foundation</title>
-    <meta name="description" content="Discover the mission, vision, values, and work of Global Compassion Foundation in Tuichawng, Mizoram, India. Led by founder Mr. Sudip Chakma to serve marginalized rural communities.">
-    
+    <meta name="description"
+        content="Discover the mission, vision, values, and work of Global Compassion Foundation in Tuichawng, Mizoram, India. Led by founder Mr. Sudip Chakma to serve marginalized rural communities.">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/hero/logo.png">
 
     <!-- SEO Meta Tags -->
-    <meta name="keywords" content="GCF mission, about Global Compassion Foundation, Sudip Chakma Mizoram, charity values, NGO about us, Tuichawng community, indigenous support India">
+    <meta name="keywords"
+        content="GCF mission, about Global Compassion Foundation, Sudip Chakma Mizoram, charity values, NGO about us, Tuichawng community, indigenous support India">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://globalcompassionfoundation.org/about.html">
 
@@ -18,14 +21,16 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://globalcompassionfoundation.org/about.html">
     <meta property="og:title" content="About Us | Global Compassion Foundation">
-    <meta property="og:description" content="Discover the mission, vision, values, and work of Global Compassion Foundation in Tuichawng, Mizoram, India. Led by founder Mr. Sudip Chakma to serve marginalized rural communities.">
+    <meta property="og:description"
+        content="Discover the mission, vision, values, and work of Global Compassion Foundation in Tuichawng, Mizoram, India. Led by founder Mr. Sudip Chakma to serve marginalized rural communities.">
     <meta property="og:image" content="https://globalcompassionfoundation.org/assets/images/hero/logo.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://globalcompassionfoundation.org/about.html">
     <meta property="twitter:title" content="About Us | Global Compassion Foundation">
-    <meta property="twitter:description" content="Discover the mission, vision, values, and work of Global Compassion Foundation in Tuichawng, Mizoram, India. Led by founder Mr. Sudip Chakma to serve marginalized rural communities.">
+    <meta property="twitter:description"
+        content="Discover the mission, vision, values, and work of Global Compassion Foundation in Tuichawng, Mizoram, India. Led by founder Mr. Sudip Chakma to serve marginalized rural communities.">
     <meta property="twitter:image" content="https://globalcompassionfoundation.org/assets/images/hero/logo.png">
 
     <link rel="stylesheet" href="css/variables.css?v=3.1">
@@ -39,7 +44,7 @@
             overflow: hidden;
             padding: var(--space-3xl) 0;
         }
-        
+
         .glow-blob {
             position: absolute;
             width: 450px;
@@ -51,8 +56,14 @@
             pointer-events: none;
             transition: all 0.6s ease-in-out;
         }
-        .glow-emerald { background-color: var(--secondary); }
-        .glow-amber { background-color: var(--brand-accent); }
+
+        .glow-emerald {
+            background-color: var(--secondary);
+        }
+
+        .glow-amber {
+            background-color: var(--brand-accent);
+        }
 
         /* Premium Badge */
         .badge-premium {
@@ -84,10 +95,12 @@
             gap: var(--space-2xl);
             align-items: center;
         }
+
         @media (min-width: 992px) {
             .editorial-grid {
                 grid-template-columns: 1.2fr 1fr;
             }
+
             .editorial-grid.reverse {
                 grid-template-columns: 1fr 1.2fr;
             }
@@ -101,10 +114,12 @@
             line-height: 1.15;
             margin-bottom: var(--space-md);
         }
+
         .editorial-text h2 span {
             color: var(--secondary);
             font-style: italic;
         }
+
         .editorial-text p {
             font-size: 1.05rem;
             line-height: 1.75;
@@ -123,25 +138,32 @@
             transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             z-index: 2;
         }
+
         .polaroid-frame::before {
             content: '';
             position: absolute;
-            top: 12px; left: 12px; right: -12px; bottom: -12px;
+            top: 12px;
+            left: 12px;
+            right: -12px;
+            bottom: -12px;
             background: linear-gradient(135deg, var(--secondary-light), rgba(217, 119, 6, 0.05));
             border-radius: 24px;
             z-index: -1;
             transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
         .polaroid-frame:hover {
             transform: translateY(-8px) scale(1.01);
             box-shadow: 0 30px 60px rgba(28, 25, 23, 0.1);
         }
+
         .polaroid-frame:hover::before {
             transform: translate(-6px, -6px);
         }
+
         .polaroid-frame img {
             width: 100%;
-            height: auto;
+            height: 338px;
             display: block;
             border-radius: 16px;
             object-fit: cover;
@@ -160,7 +182,7 @@
             transition: all 0.3s ease;
             padding: 0.85rem 0;
         }
-        
+
         .tabs-nav-wrapper {
             display: flex;
             justify-content: center;
@@ -172,7 +194,7 @@
             max-width: max-content;
             margin: 0 auto;
         }
-        
+
         .tab-nav-btn {
             display: inline-flex;
             align-items: center;
@@ -189,28 +211,28 @@
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             white-space: nowrap;
         }
-        
+
         .tab-nav-btn i {
             font-size: 0.95rem;
             color: var(--text-light);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        
+
         .tab-nav-btn:hover {
             color: var(--secondary);
         }
-        
+
         .tab-nav-btn:hover i {
             color: var(--secondary);
             transform: translateY(-1px);
         }
-        
+
         .tab-nav-btn.active {
             background-color: white;
             color: var(--secondary);
             box-shadow: 0 4px 16px rgba(28, 25, 23, 0.08);
         }
-        
+
         .tab-nav-btn.active i {
             color: var(--secondary);
             transform: scale(1.1);
@@ -220,6 +242,7 @@
             .tabs-nav-container {
                 padding: 0.6rem 0;
             }
+
             .tabs-nav-wrapper {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
@@ -231,6 +254,7 @@
                 padding: 8px;
                 background: rgba(28, 25, 23, 0.05);
             }
+
             .tab-nav-btn {
                 justify-content: center;
                 padding: 0.75rem 0.5rem;
@@ -241,19 +265,20 @@
                 white-space: normal;
                 text-align: center;
             }
+
             .tab-nav-btn.active {
                 background-color: white;
                 box-shadow: 0 4px 12px rgba(28, 25, 23, 0.1);
             }
         }
-        
+
         .tab-content {
             display: none;
             opacity: 0;
             transform: translateY(12px);
             transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        
+
         .tab-content.active {
             display: block;
             opacity: 1;
@@ -267,6 +292,7 @@
             gap: var(--space-xl);
             margin-top: var(--space-xl);
         }
+
         @media (min-width: 768px) {
             .vm-grid {
                 grid-template-columns: 1fr 1fr;
@@ -285,17 +311,23 @@
             display: flex;
             flex-direction: column;
         }
+
         .vm-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 4px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
             background: var(--accent-gradient);
         }
+
         .vm-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(28, 25, 23, 0.06);
             border-color: rgba(0, 0, 0, 0.06);
         }
+
         .vm-icon-box {
             width: 60px;
             height: 60px;
@@ -309,11 +341,13 @@
             color: var(--accent-color);
             transition: all 0.4s ease;
         }
+
         .vm-card:hover .vm-icon-box {
             transform: scale(1.1) rotate(4deg);
             background: var(--accent-color);
             color: white;
         }
+
         .vm-statement {
             font-family: var(--font-heading);
             font-size: 1.2rem;
@@ -335,6 +369,7 @@
             flex-direction: column;
             gap: 12px;
         }
+
         .vm-card li {
             position: relative;
             padding-left: 28px;
@@ -342,10 +377,12 @@
             line-height: 1.6;
             color: var(--text-muted);
         }
+
         .vm-card li::before {
             content: '✓';
             position: absolute;
-            left: 0; top: 2px;
+            left: 0;
+            top: 2px;
             width: 20px;
             height: 20px;
             background: var(--secondary-light);
@@ -365,11 +402,17 @@
             gap: var(--space-md);
             margin-top: var(--space-xl);
         }
+
         @media (min-width: 640px) {
-            .values-grid { grid-template-columns: repeat(2, 1fr); }
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
+
         @media (min-width: 1024px) {
-            .values-grid { grid-template-columns: repeat(3, 1fr); }
+            .values-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
         .value-card {
@@ -385,11 +428,13 @@
             flex-direction: column;
             gap: 8px;
         }
+
         .value-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 16px 32px rgba(28, 25, 23, 0.06);
             border-color: var(--value-color, var(--secondary));
         }
+
         .value-card h4 {
             font-family: var(--font-body);
             font-weight: 800;
@@ -397,17 +442,20 @@
             color: var(--primary);
             margin: 0;
         }
+
         .value-card p {
             font-size: 0.88rem;
             line-height: 1.6;
             color: var(--text-light);
             margin: 0;
         }
+
         .value-icon {
             font-size: 1.5rem;
             color: var(--value-color, var(--secondary));
             margin-bottom: var(--space-xs);
         }
+
         .value-number {
             font-size: 3rem;
             font-weight: 800;
@@ -432,16 +480,19 @@
             box-shadow: 0 20px 45px rgba(4, 120, 87, 0.12);
             border: 1px solid rgba(255, 255, 255, 0.06);
         }
+
         .commitment-banner h2 {
             font-family: var(--font-heading);
             color: white;
             font-size: clamp(1.8rem, 3.5vw, 2.75rem);
             margin-bottom: var(--space-md);
         }
+
         .commitment-banner h2 span {
             color: var(--brand-accent);
             font-style: italic;
         }
+
         .commitment-banner p {
             color: rgba(255, 255, 255, 0.8);
             max-width: 720px;
@@ -449,6 +500,7 @@
             font-size: 1.05rem;
             line-height: 1.75;
         }
+
         .commitment-buttons {
             display: flex;
             justify-content: center;
@@ -463,11 +515,17 @@
             gap: var(--space-xl);
             margin-top: var(--space-xl);
         }
+
         @media (min-width: 640px) {
-            .activity-grid { grid-template-columns: repeat(2, 1fr); }
+            .activity-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
+
         @media (min-width: 1024px) {
-            .activity-grid { grid-template-columns: repeat(3, 1fr); }
+            .activity-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
         .activity-card {
@@ -483,22 +541,29 @@
             flex-direction: column;
             height: 100%;
         }
+
         .activity-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(28, 25, 23, 0.08);
             border-color: var(--card-accent-color);
         }
+
         .activity-card::after {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 4px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
             background: var(--card-accent-color);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
+
         .activity-card:hover::after {
             opacity: 1;
         }
+
         .activity-icon {
             width: 54px;
             height: 54px;
@@ -512,11 +577,13 @@
             color: var(--card-accent-color);
             transition: all 0.4s ease;
         }
+
         .activity-card:hover .activity-icon {
             transform: scale(1.1) rotate(6deg);
             background: var(--card-accent-color);
             color: white;
         }
+
         .activity-card h4 {
             font-family: var(--font-body);
             font-weight: 800;
@@ -524,6 +591,7 @@
             color: var(--primary);
             margin: 0 0 10px 0;
         }
+
         .activity-card p {
             font-size: 0.9rem;
             line-height: 1.65;
@@ -549,14 +617,14 @@
             grid-template-columns: minmax(0, 1fr);
             gap: var(--space-md);
         }
-        
+
         @media (min-width: 992px) {
             .moa-document-container {
                 grid-template-columns: 280px minmax(0, 1fr);
                 gap: var(--space-xl);
             }
         }
-        
+
         .moa-sidebar {
             position: sticky;
             top: 150px;
@@ -566,7 +634,7 @@
             padding: var(--space-md);
             box-shadow: var(--shadow-sm);
         }
-        
+
         .moa-nav-list {
             list-style: none;
             padding: 0;
@@ -575,7 +643,7 @@
             flex-direction: column;
             gap: 6px;
         }
-        
+
         .moa-nav-item button {
             width: 100%;
             text-align: left;
@@ -590,12 +658,12 @@
             transition: all 0.25s ease;
             border-left: 3px solid transparent;
         }
-        
+
         .moa-nav-item button:hover {
             background: var(--bg-offset);
             color: var(--secondary);
         }
-        
+
         .moa-nav-item.active button {
             background: var(--secondary-light);
             color: var(--secondary);
@@ -612,8 +680,15 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(6px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* MoA responsive sidebar adaptation on smaller devices */
@@ -624,9 +699,11 @@
                 width: 100% !important;
                 box-sizing: border-box;
             }
-            .moa-card > div[style*="linear-gradient"] {
+
+            .moa-card>div[style*="linear-gradient"] {
                 padding: 1.5rem !important;
             }
+
             .moa-sidebar {
                 position: relative;
                 top: 0;
@@ -639,6 +716,7 @@
                 min-width: 0;
                 overflow: hidden;
             }
+
             .moa-nav-list {
                 flex-direction: row;
                 overflow-x: auto;
@@ -649,12 +727,15 @@
                 width: 100%;
                 -webkit-overflow-scrolling: touch;
             }
+
             .moa-nav-list::-webkit-scrollbar {
                 display: none;
             }
+
             .moa-nav-item {
                 flex: 0 0 auto;
             }
+
             .moa-nav-item button {
                 white-space: nowrap;
                 border-left: none;
@@ -664,6 +745,7 @@
                 background: white;
                 box-shadow: 0 2px 4px rgba(28, 25, 23, 0.02);
             }
+
             .moa-nav-item.active button {
                 border-left-color: transparent;
                 background: var(--secondary);
@@ -671,11 +753,13 @@
                 border-color: var(--secondary);
                 box-shadow: 0 4px 12px rgba(4, 120, 87, 0.2);
             }
+
             .moa-document-container {
                 padding: 1rem 0.75rem !important;
                 min-width: 0;
                 overflow: hidden;
             }
+
             .moa-content-pane {
                 padding: 1rem !important;
                 min-width: 0;
@@ -844,13 +928,13 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        
+
         .moa-obj-item:hover {
             transform: translateY(-2px);
             border-color: rgba(4, 120, 87, 0.12);
             box-shadow: 0 8px 20px rgba(4, 120, 87, 0.04);
         }
-        
+
         .moa-obj-item span {
             min-width: 28px;
             height: 28px;
@@ -866,7 +950,7 @@
             margin-top: 2px;
             border: 1px solid rgba(4, 120, 87, 0.1);
         }
-        
+
         .moa-obj-item:hover span {
             background: var(--secondary);
             color: white;
@@ -910,8 +994,8 @@
             background-color: var(--bg-offset) !important;
             color: var(--primary) !important;
         }
-        
-        
+
+
         /* High-end Member Profiles Grid inside MoA */
         .moa-members-grid {
             display: grid;
@@ -984,13 +1068,34 @@
         }
 
         /* Customize designation label color */
-        .member-badge.president { color: #047857; }
-        .member-badge.vice-president { color: #b45309; }
-        .member-badge.general-secretary { color: #047857; }
-        .member-badge.treasurer { color: #b45309; }
-        .member-badge.financial-secretary { color: #475569; }
-        .member-badge.asst-secretary { color: #475569; }
-        .member-badge.executive-member { color: #64748b; font-size: 0.68rem; }
+        .member-badge.president {
+            color: #047857;
+        }
+
+        .member-badge.vice-president {
+            color: #b45309;
+        }
+
+        .member-badge.general-secretary {
+            color: #047857;
+        }
+
+        .member-badge.treasurer {
+            color: #b45309;
+        }
+
+        .member-badge.financial-secretary {
+            color: #475569;
+        }
+
+        .member-badge.asst-secretary {
+            color: #475569;
+        }
+
+        .member-badge.executive-member {
+            color: #64748b;
+            font-size: 0.68rem;
+        }
 
         /* Accent separator line under the name & title */
         .member-info::after {
@@ -1033,15 +1138,18 @@
             border-radius: 14px;
             padding: 1.25rem 1.15rem;
         }
+
         .moa-signatures-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 1.5rem;
         }
+
         @media (min-width: 640px) {
             .moa-signatures-block {
                 padding: 1.75rem 2rem;
             }
+
             .moa-signatures-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 2rem;
@@ -1104,6 +1212,7 @@
     }
     </script>
 </head>
+
 <body>
 
     <!-- Top Utility Bar -->
@@ -1114,10 +1223,14 @@
                 <span><i class="fas fa-phone-alt"></i> +91 9612602899</span>
             </div>
             <div class="top-bar-socials">
-                <a href="https://www.facebook.com/share/1D7DtNhzAA/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.youtube.com/@gcf_global" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.instagram.com/globalcompassionfoundation?igsh=dmpzOXl4aHc1aDJr#" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/global-compassion-foundation-73364a177/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/share/1D7DtNhzAA/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@gcf_global" target="_blank" rel="noopener noreferrer"
+                    aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/globalcompassionfoundation?igsh=dmpzOXl4aHc1aDJr#" target="_blank"
+                    rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/global-compassion-foundation-73364a177/" target="_blank"
+                    rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </div>
@@ -1129,13 +1242,14 @@
                 <img src="assets/images/hero/logo.png" alt="Global Compassion Foundation Logo">
                 <span class="logo-text">Global Compassion <span>Foundation</span></span>
             </a>
-            
-            <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" id="menu-toggle">
+
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false"
+                id="menu-toggle">
                 <span class="line"></span>
                 <span class="line"></span>
                 <span class="line"></span>
             </button>
-            
+
             <nav class="main-nav" id="navigation-menu">
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link">Home</a></li>
@@ -1145,7 +1259,8 @@
                     <li><a href="chakma.html" class="nav-link">Chakma</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
-                <a href="donate.html" class="btn btn-secondary" style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.05em; padding: 0.5rem 1.25rem; border-radius: var(--radius-full);">Donate</a>
+                <a href="donate.html" class="btn btn-secondary"
+                    style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.05em; padding: 0.5rem 1.25rem; border-radius: var(--radius-full);">Donate</a>
             </nav>
         </div>
     </header>
@@ -1153,16 +1268,20 @@
     <!-- Subpage Hero Banner -->
     <div class="subpage-hero hero-about">
         <div class="container">
-            <h1 style="text-transform: uppercase; font-size: var(--text-4xl); font-weight: 800; letter-spacing: 0.05em; text-shadow: 0 2px 4px rgba(0,0,0,0.4);">About Us</h1>
-            <p style="max-width: 650px; margin: 0 auto; font-size: var(--text-lg); text-shadow: 0 1px 3px rgba(0,0,0,0.3); color: rgba(255,255,255,0.95); font-weight: 500;">
-                A non-profit, non-religious, and humanitarian organization serving underprivileged communities in Mizoram, India.
+            <h1
+                style="text-transform: uppercase; font-size: var(--text-4xl); font-weight: 800; letter-spacing: 0.05em; text-shadow: 0 2px 4px rgba(0,0,0,0.4);">
+                About Us</h1>
+            <p
+                style="max-width: 650px; margin: 0 auto; font-size: var(--text-lg); text-shadow: 0 1px 3px rgba(0,0,0,0.3); color: rgba(255,255,255,0.95); font-weight: 500;">
+                A non-profit, non-religious, and humanitarian organization serving underprivileged communities in
+                Mizoram, India.
             </p>
         </div>
     </div>
 
     <!-- Main Content -->
     <main>
-        
+
         <!-- Interactive Sticky Tabs Navigation -->
         <div class="tabs-nav-container">
             <div class="container">
@@ -1189,7 +1308,7 @@
 
         <!-- TAB CONTENT: Who We Are -->
         <div id="tab-identity" class="tab-content active">
-            
+
             <!-- Section 1: About GCF (Intro Split Block) -->
             <section class="section-relative">
                 <div class="glow-blob glow-emerald" style="top: 10%; left: -8%;"></div>
@@ -1199,54 +1318,76 @@
                             <span class="badge-premium">Established 2025</span>
                             <h2>Serving Underprivileged & <span>Marginalized Communities</span></h2>
                             <p>
-                                Global Compassion Foundation is a non-profit, non-religious, and humanitarian organization established in 2025 at Tuichawng Village, Lunglei District, Mizoram, India. The Foundation was formed with the sole purpose of serving underprivileged and marginalized communities through education, healthcare, social welfare, and compassionate community development.
+                                Global Compassion Foundation is a non-profit, non-religious, and humanitarian
+                                organization established in 2025 at Tuichawng Village, Lunglei District, Mizoram, India.
+                                The Foundation was formed with the sole purpose of serving underprivileged and
+                                marginalized communities through education, healthcare, social welfare, and
+                                compassionate community development.
                             </p>
                             <p style="color: var(--text-muted); font-size: 0.95rem;">
-                                We believe that compassion, when put into action, has the power to transform lives. Our work is guided by universal human values such as kindness, dignity, equality, ethical conduct, and social responsibility, without discrimination on the basis of religion, caste, community, language, gender, or background.
+                                We believe that compassion, when put into action, has the power to transform lives. Our
+                                work is guided by universal human values such as kindness, dignity, equality, ethical
+                                conduct, and social responsibility, without discrimination on the basis of religion,
+                                caste, community, language, gender, or background.
                             </p>
                         </div>
-                        
+
                         <div class="polaroid-frame">
-                            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=600&auto=format&fit=crop" alt="Compassion in Action - Small plants and seedlings in hands representing growth and community welfare">
+                            <img src="assets/images/about/about.jpeg"
+                                alt="Compassion in Action - Small plants and seedlings in hands representing growth and community welfare">
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- Section 2: Vision & Mission Side-by-Side Cards -->
-            <section class="section-relative" style="background-color: var(--bg-offset); border-bottom: 1px solid var(--border-light);">
+            <section class="section-relative"
+                style="background-color: var(--bg-offset); border-bottom: 1px solid var(--border-light);">
                 <div class="glow-blob glow-amber" style="bottom: 5%; right: -8%;"></div>
                 <div class="container">
                     <div class="section-header">
                         <span class="badge-premium amber">Our Blueprint</span>
                         <h2>Vision & <span>Mission</span></h2>
-                        <p style="max-width: 600px; margin: 0 auto; color: var(--text-light);">Our guiding principles and direct actions for community transformation.</p>
+                        <p style="max-width: 600px; margin: 0 auto; color: var(--text-light);">Our guiding principles
+                            and direct actions for community transformation.</p>
                     </div>
 
                     <div class="vm-grid">
                         <!-- Vision Card -->
-                        <div class="vm-card" style="--accent-gradient: linear-gradient(90deg, #d97706, #f59e0b); --bg-accent-light: rgba(217,119,6,0.08); --accent-color: var(--brand-accent);">
+                        <div class="vm-card"
+                            style="--accent-gradient: linear-gradient(90deg, #d97706, #f59e0b); --bg-accent-light: rgba(217,119,6,0.08); --accent-color: var(--brand-accent);">
                             <div class="vm-icon-box">
                                 <i class="fas fa-eye"></i>
                             </div>
-                            <h3 style="font-family: var(--font-body); font-weight: 800; font-size: 1.3rem; color: var(--primary);">Our Vision</h3>
+                            <h3
+                                style="font-family: var(--font-body); font-weight: 800; font-size: 1.3rem; color: var(--primary);">
+                                Our Vision</h3>
                             <div class="vm-statement">
-                                "To build a just, inclusive, and compassionate society where every individual—especially children, the elderly, and the marginalized—has access to education, healthcare, dignity, and opportunities for a better future."
+                                "To build a just, inclusive, and compassionate society where every individual—especially
+                                children, the elderly, and the marginalized—has access to education, healthcare,
+                                dignity, and opportunities for a better future."
                             </div>
                         </div>
 
                         <!-- Mission Card -->
-                        <div class="vm-card" style="--accent-gradient: linear-gradient(90deg, #047857, #10b981); --bg-accent-light: var(--secondary-light); --accent-color: var(--secondary);">
+                        <div class="vm-card"
+                            style="--accent-gradient: linear-gradient(90deg, #047857, #10b981); --bg-accent-light: var(--secondary-light); --accent-color: var(--secondary);">
                             <div class="vm-icon-box">
                                 <i class="fas fa-bullseye"></i>
                             </div>
-                            <h3 style="font-family: var(--font-body); font-weight: 800; font-size: 1.3rem; color: var(--primary);">Our Mission</h3>
+                            <h3
+                                style="font-family: var(--font-body); font-weight: 800; font-size: 1.3rem; color: var(--primary);">
+                                Our Mission</h3>
                             <ul>
-                                <li>To provide quality education to underprivileged children in rural and backward areas</li>
+                                <li>To provide quality education to underprivileged children in rural and backward areas
+                                </li>
                                 <li>To improve access to basic healthcare in remote and underserved regions</li>
-                                <li>To support vulnerable groups including children, elderly persons, women, and persons with disabilities</li>
-                                <li>To promote ethical living, peace, social harmony, and community well-being through non-religious, value-based initiatives</li>
-                                <li>To work transparently, honestly, and in collaboration with communities and institutions for sustainable development</li>
+                                <li>To support vulnerable groups including children, elderly persons, women, and persons
+                                    with disabilities</li>
+                                <li>To promote ethical living, peace, social harmony, and community well-being through
+                                    non-religious, value-based initiatives</li>
+                                <li>To work transparently, honestly, and in collaboration with communities and
+                                    institutions for sustainable development</li>
                             </ul>
                         </div>
                     </div>
@@ -1254,13 +1395,15 @@
             </section>
 
             <!-- Section 4: Our Core Values (6-Card Grid on Offset Background) -->
-            <section class="section-relative" style="background-color: var(--bg-offset); color: var(--text-main); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+            <section class="section-relative"
+                style="background-color: var(--bg-offset); color: var(--text-main); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
                 <div class="glow-blob glow-emerald" style="bottom: 10%; right: -8%;"></div>
                 <div class="container">
                     <div class="section-header">
                         <span class="badge-premium">Guiding Principles</span>
                         <h2>Our Core <span>Values</span></h2>
-                        <p style="max-width: 600px; margin: 0 auto; color: var(--text-muted);">The values that drive every decision, program, and volunteer action in our foundation.</p>
+                        <p style="max-width: 600px; margin: 0 auto; color: var(--text-muted);">The values that drive
+                            every decision, program, and volunteer action in our foundation.</p>
                     </div>
 
                     <div class="values-grid">
@@ -1269,7 +1412,8 @@
                             <span class="value-number">01</span>
                             <div class="value-icon"><i class="fas fa-heart"></i></div>
                             <h4>Compassion in Action</h4>
-                            <p>Devoting our energy to directly touch lives and uplift those facing absolute adversity.</p>
+                            <p>Devoting our energy to directly touch lives and uplift those facing absolute adversity.
+                            </p>
                         </div>
 
                         <!-- Value 2 -->
@@ -1277,7 +1421,8 @@
                             <span class="value-number">02</span>
                             <div class="value-icon"><i class="fas fa-file-invoice-dollar"></i></div>
                             <h4>Transparency & Accountability</h4>
-                            <p>Maintaining 100% direct expenditure transparency, ensuring every rupee goes directly to the field.</p>
+                            <p>Maintaining 100% direct expenditure transparency, ensuring every rupee goes directly to
+                                the field.</p>
                         </div>
 
                         <!-- Value 3 -->
@@ -1285,7 +1430,8 @@
                             <span class="value-number">03</span>
                             <div class="value-icon"><i class="fas fa-users"></i></div>
                             <h4>Inclusiveness & Equality</h4>
-                            <p>Welcoming and serving children and families regardless of ethnic heritage, community, or beliefs.</p>
+                            <p>Welcoming and serving children and families regardless of ethnic heritage, community, or
+                                beliefs.</p>
                         </div>
 
                         <!-- Value 4 -->
@@ -1293,7 +1439,8 @@
                             <span class="value-number">04</span>
                             <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
                             <h4>Ethical Conduct & Responsibility</h4>
-                            <p>Operating with strict honesty, respect, and deep respect for local customs and village councils.</p>
+                            <p>Operating with strict honesty, respect, and deep respect for local customs and village
+                                councils.</p>
                         </div>
 
                         <!-- Value 5 -->
@@ -1301,7 +1448,8 @@
                             <span class="value-number">05</span>
                             <div class="value-icon"><i class="fas fa-handshake"></i></div>
                             <h4>Service Without Discrimination</h4>
-                            <p>Delivering healthcare and tutoring purely based on human need, with absolute neutrality.</p>
+                            <p>Delivering healthcare and tutoring purely based on human need, with absolute neutrality.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1314,10 +1462,14 @@
                         <span class="badge-premium amber" style="margin-bottom: var(--space-md);">Our Sincerity</span>
                         <h2>Our <span>Commitment</span></h2>
                         <p>
-                            As a newly formed organization, we may have limited resources, but we are rich in dedication, sincerity, and determination. Every contribution and support we receive is used responsibly, transparently, and solely for the welfare of the communities we serve.
+                            As a newly formed organization, we may have limited resources, but we are rich in
+                            dedication, sincerity, and determination. Every contribution and support we receive is used
+                            responsibly, transparently, and solely for the welfare of the communities we serve.
                         </p>
-                        <div style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--brand-accent); margin-bottom: 2rem;">
-                            Global Compassion Foundation stands for hope, dignity, and compassion — turned into meaningful action.
+                        <div
+                            style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--brand-accent); margin-bottom: 2rem;">
+                            Global Compassion Foundation stands for hope, dignity, and compassion — turned into
+                            meaningful action.
                         </div>
                         <div class="commitment-buttons">
                             <a href="donate.html" class="btn btn-secondary">Support Our Work</a>
@@ -1330,36 +1482,52 @@
 
         <!-- TAB CONTENT: Founder's Story -->
         <div id="tab-founder" class="tab-content">
-            
+
             <!-- Section 5: Our Founder (Dedicated Split Block) -->
-            <section class="section-relative" id="founder-section" style="background-color: var(--bg-offset); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+            <section class="section-relative" id="founder-section"
+                style="background-color: var(--bg-offset); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
                 <div class="glow-blob glow-amber" style="top: 15%; left: -8%;"></div>
                 <div class="glow-blob glow-emerald" style="bottom: 10%; right: -8%;"></div>
                 <div class="container">
                     <div class="editorial-grid reverse">
                         <div style="position: relative; max-width: 380px; margin: 0 auto;">
                             <div class="polaroid-frame">
-                                <img src="assets/images/team/founder.png" alt="Mr. Sudip Chakma - Founder of Global Compassion Foundation">
-                                <div style="text-align: center; font-size: var(--text-xs); color: var(--text-light); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 12px;">Mr. Sudip Chakma</div>
+                                <img src="assets/images/team/founder.jpeg"
+                                    alt="Mr. Sudip Chakma - Founder of Global Compassion Foundation">
+                                <div
+                                    style="text-align: center; font-size: var(--text-xs); color: var(--text-light); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 12px;">
+                                    Mr. Sudip Chakma</div>
                             </div>
                         </div>
 
                         <div>
                             <span class="badge-premium">Our Visionary</span>
-                            <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800; color: var(--primary);">Meet Our <span>Founder</span></h2>
+                            <h2
+                                style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800; color: var(--primary);">
+                                Meet Our <span>Founder</span></h2>
                             <p style="font-weight: 600; color: var(--primary);">
-                                Global Compassion Foundation was founded by Mr. Sudip Chakma, a Government Primary School Teacher from Tuichawng Village and the founder of Mahabodhi Residential School, Tuichawng.
+                                Global Compassion Foundation was founded by Mr. Sudip Chakma, a Government Primary
+                                School Teacher from Tuichawng Village and the founder of Mahabodhi Residential School,
+                                Tuichawng.
                             </p>
                             <p style="font-size: 0.95rem; color: var(--text-muted);">
-                                With years of experience in grassroots education and community service, he is a dedicated and selfless social worker who deeply understands the challenges faced by children and families in rural and marginalized areas.
+                                With years of experience in grassroots education and community service, he is a
+                                dedicated and selfless social worker who deeply understands the challenges faced by
+                                children and families in rural and marginalized areas.
                             </p>
                             <p style="font-size: 0.95rem; color: var(--text-muted);">
-                                His lifelong commitment to education, social upliftment, and compassionate service inspired the formation of this Foundation to serve society in a structured, transparent, and sustainable manner.
+                                His lifelong commitment to education, social upliftment, and compassionate service
+                                inspired the formation of this Foundation to serve society in a structured, transparent,
+                                and sustainable manner.
                             </p>
-                            <div style="font-family: var(--font-heading); font-size: 1.25rem; font-style: italic; color: var(--secondary-hover); margin: 1.5rem 0; padding-left: 1.5rem; border-left: 4px solid var(--brand-accent);">
-                                "Compassion in action is not just a phrase; it is the path to transforming lives. Our sole purpose is to serve and empower those who have been left behind."
+                            <div
+                                style="font-family: var(--font-heading); font-size: 1.25rem; font-style: italic; color: var(--secondary-hover); margin: 1.5rem 0; padding-left: 1.5rem; border-left: 4px solid var(--brand-accent);">
+                                "Compassion in action is not just a phrase; it is the path to transforming lives. Our
+                                sole purpose is to serve and empower those who have been left behind."
                             </div>
-                            <div style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 1.6rem; color: var(--secondary); border-bottom: 2px solid var(--brand-accent); padding-bottom: 4px; display: inline-block; font-weight: 700;">Sudip Chakma</div>
+                            <div
+                                style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 1.6rem; color: var(--secondary); border-bottom: 2px solid var(--brand-accent); padding-bottom: 4px; display: inline-block; font-weight: 700;">
+                                Sudip Chakma</div>
                         </div>
                     </div>
                 </div>
@@ -1372,62 +1540,83 @@
                     <div class="section-header">
                         <span class="badge-premium">Direct Actions</span>
                         <h2>What We <span>Do</span></h2>
-                        <p style="max-width: 600px; margin: 0 auto; color: var(--text-muted);">Through focus, dedication, and resourcefulness, we run key programs that make a difference in remote tracts.</p>
+                        <p style="max-width: 600px; margin: 0 auto; color: var(--text-muted);">Through focus,
+                            dedication, and resourcefulness, we run key programs that make a difference in remote
+                            tracts.</p>
                     </div>
 
                     <div class="activity-grid">
                         <!-- Card 1: Education -->
-                        <div class="activity-card" style="--card-accent-color: var(--secondary); --icon-bg: var(--secondary-light);">
+                        <div class="activity-card"
+                            style="--card-accent-color: var(--secondary); --icon-bg: var(--secondary-light);">
                             <div class="activity-icon">
                                 <i class="fas fa-graduation-cap"></i>
                             </div>
                             <h4>Education for the Underprivileged</h4>
                             <p>
-                                Education is at the heart of our work. Global Compassion Foundation aims to establish and support charitable schools, hostels, and learning centers for children who lack access to quality education due to poverty and geographical challenges. Our focus is on ensuring that education truly reaches the child, especially in rural and marginalized communities.
+                                Education is at the heart of our work. Global Compassion Foundation aims to establish
+                                and support charitable schools, hostels, and learning centers for children who lack
+                                access to quality education due to poverty and geographical challenges. Our focus is on
+                                ensuring that education truly reaches the child, especially in rural and marginalized
+                                communities.
                             </p>
                         </div>
 
                         <!-- Card 2: Healthcare -->
-                        <div class="activity-card" style="--card-accent-color: var(--brand-accent); --icon-bg: rgba(217, 119, 6, 0.08);">
+                        <div class="activity-card"
+                            style="--card-accent-color: var(--brand-accent); --icon-bg: rgba(217, 119, 6, 0.08);">
                             <div class="activity-icon">
                                 <i class="fas fa-hand-holding-medical"></i>
                             </div>
                             <h4>Healthcare in Rural Areas</h4>
                             <p>
-                                Many rural and remote areas suffer from inadequate healthcare facilities, long distances to hospitals, shortage of medical professionals, and lack of health awareness. The Foundation works towards establishing rural hospitals, primary health centers, clinics, and mobile medical services to provide affordable and accessible healthcare for all.
+                                Many rural and remote areas suffer from inadequate healthcare facilities, long distances
+                                to hospitals, shortage of medical professionals, and lack of health awareness. The
+                                Foundation works towards establishing rural hospitals, primary health centers, clinics,
+                                and mobile medical services to provide affordable and accessible healthcare for all.
                             </p>
                         </div>
 
                         <!-- Card 3: Vulnerable Care -->
-                        <div class="activity-card" style="--card-accent-color: var(--secondary); --icon-bg: var(--secondary-light);">
+                        <div class="activity-card"
+                            style="--card-accent-color: var(--secondary); --icon-bg: var(--secondary-light);">
                             <div class="activity-icon">
                                 <i class="fas fa-hands-helping"></i>
                             </div>
                             <h4>Care for the Vulnerable</h4>
                             <p>
-                                We aim to establish and support old age homes, shelter homes, and care centers for the elderly, destitute, abandoned, and other vulnerable individuals, ensuring they live with dignity and care.
+                                We aim to establish and support old age homes, shelter homes, and care centers for the
+                                elderly, destitute, abandoned, and other vulnerable individuals, ensuring they live with
+                                dignity and care.
                             </p>
                         </div>
 
                         <!-- Card 4: Meditation -->
-                        <div class="activity-card" style="--card-accent-color: var(--brand-accent); --icon-bg: rgba(217, 119, 6, 0.08);">
+                        <div class="activity-card"
+                            style="--card-accent-color: var(--brand-accent); --icon-bg: rgba(217, 119, 6, 0.08);">
                             <div class="activity-icon">
                                 <i class="fas fa-spa"></i>
                             </div>
                             <h4>Meditation and Well-Being Centers</h4>
                             <p>
-                                The Foundation promotes mental peace and emotional well-being through meditation and mindfulness centers. Meditation, as practiced by the Foundation, is completely non-religious and open to all. It is offered solely as a method to improve concentration, inner peace, emotional balance, and a healthy way of life.
+                                The Foundation promotes mental peace and emotional well-being through meditation and
+                                mindfulness centers. Meditation, as practiced by the Foundation, is completely
+                                non-religious and open to all. It is offered solely as a method to improve
+                                concentration, inner peace, emotional balance, and a healthy way of life.
                             </p>
                         </div>
 
                         <!-- Card 5: Humanitarian activities -->
-                        <div class="activity-card" style="--card-accent-color: var(--secondary); --icon-bg: var(--secondary-light);">
+                        <div class="activity-card"
+                            style="--card-accent-color: var(--secondary); --icon-bg: var(--secondary-light);">
                             <div class="activity-icon">
                                 <i class="fas fa-globe-asia"></i>
                             </div>
                             <h4>Humanitarian & Community Welfare Activities</h4>
                             <p>
-                                We undertake relief and rehabilitation work during natural disasters and emergencies, support livelihood development, promote environmental awareness, sanitation, nutrition, and community empowerment programs.
+                                We undertake relief and rehabilitation work during natural disasters and emergencies,
+                                support livelihood development, promote environmental awareness, sanitation, nutrition,
+                                and community empowerment programs.
                             </p>
                         </div>
                     </div>
@@ -1435,37 +1624,89 @@
             </section>
 
             <!-- Section: Why Our Work Matters (Sudip's inspiration vs GCF's response) -->
-            <section class="section-relative" style="background-color: var(--bg-offset); color: var(--text-main); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+            <section class="section-relative"
+                style="background-color: var(--bg-offset); color: var(--text-main); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
                 <div class="glow-blob glow-emerald" style="top: 15%; right: -5%;"></div>
                 <div class="container">
                     <div class="section-header">
                         <span class="badge-premium amber">Bridging the Gap</span>
                         <h2>Why GCF & Mr. Sudip Chakma's <span>Work Matters</span></h2>
-                        <p style="max-width: 600px; margin: 0 auto; color: var(--text-muted);">How personal inspiration translates to community empowerment and direct, on-the-ground actions.</p>
+                        <p style="max-width: 600px; margin: 0 auto; color: var(--text-muted);">How personal inspiration
+                            translates to community empowerment and direct, on-the-ground actions.</p>
                     </div>
 
-                    <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-xl); margin-top: var(--space-xl);">
-                        <div style="background: white; border-radius: 20px; border: 1px solid rgba(0,0,0,0.04); padding: 2rem; border-left: 5px solid var(--brand-accent);">
-                            <h3 style="font-family: var(--font-body); font-weight: 800; font-size: 1.25rem; color: var(--brand-accent-hover); margin-bottom: 1rem;"><i class="fas fa-lightbulb" style="margin-right: 8px;"></i> The Catalyst</h3>
+                    <div
+                        style="display: grid; grid-template-columns: 1fr; gap: var(--space-xl); margin-top: var(--space-xl);">
+                        <div
+                            style="background: white; border-radius: 20px; border: 1px solid rgba(0,0,0,0.04); padding: 2rem; border-left: 5px solid var(--brand-accent);">
+                            <h3
+                                style="font-family: var(--font-body); font-weight: 800; font-size: 1.25rem; color: var(--brand-accent-hover); margin-bottom: 1rem;">
+                                <i class="fas fa-lightbulb" style="margin-right: 8px;"></i> The Catalyst
+                            </h3>
                             <p style="font-weight: 600; color: var(--primary); font-size: 0.95rem;">
-                                Living within this context of educational exclusion, economic hardship, infrastructural deficits, and social marginalization, Mr. Sudip Chakma was deeply moved to take action:
+                                Living within this context of educational exclusion, economic hardship, infrastructural
+                                deficits, and social marginalization, Mr. Sudip Chakma was deeply moved to take action:
                             </p>
                             <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px;">
-                                <li style="position: relative; padding-left: 20px; font-size: 0.9rem; color: var(--text-muted);"><i class="fas fa-arrow-right" style="position: absolute; left: 0; top: 4px; color: var(--brand-accent); font-size: 0.8rem;"></i> Having experienced interrupted education himself, he understood firsthand how lack of opportunity can shape a person’s future.</li>
-                                <li style="position: relative; padding-left: 20px; font-size: 0.9rem; color: var(--text-muted);"><i class="fas fa-arrow-right" style="position: absolute; left: 0; top: 4px; color: var(--brand-accent); font-size: 0.8rem;"></i> His early teaching work and countless late nights spent connecting with supporters reflected a relentless belief that education and compassion are catalysts for change.</li>
-                                <li style="position: relative; padding-left: 20px; font-size: 0.9rem; color: var(--text-muted);"><i class="fas fa-arrow-right" style="position: absolute; left: 0; top: 4px; color: var(--brand-accent); font-size: 0.8rem;"></i> Observing that many Chakma children lacked access to quality schools and supportive learning environments, he devoted his life to creating alternative pathways for learning, dignity, and social upliftment.</li>
+                                <li
+                                    style="position: relative; padding-left: 20px; font-size: 0.9rem; color: var(--text-muted);">
+                                    <i class="fas fa-arrow-right"
+                                        style="position: absolute; left: 0; top: 4px; color: var(--brand-accent); font-size: 0.8rem;"></i>
+                                    Having experienced interrupted education himself, he understood firsthand how lack
+                                    of opportunity can shape a person’s future.
+                                </li>
+                                <li
+                                    style="position: relative; padding-left: 20px; font-size: 0.9rem; color: var(--text-muted);">
+                                    <i class="fas fa-arrow-right"
+                                        style="position: absolute; left: 0; top: 4px; color: var(--brand-accent); font-size: 0.8rem;"></i>
+                                    His early teaching work and countless late nights spent connecting with supporters
+                                    reflected a relentless belief that education and compassion are catalysts for
+                                    change.
+                                </li>
+                                <li
+                                    style="position: relative; padding-left: 20px; font-size: 0.9rem; color: var(--text-muted);">
+                                    <i class="fas fa-arrow-right"
+                                        style="position: absolute; left: 0; top: 4px; color: var(--brand-accent); font-size: 0.8rem;"></i>
+                                    Observing that many Chakma children lacked access to quality schools and supportive
+                                    learning environments, he devoted his life to creating alternative pathways for
+                                    learning, dignity, and social upliftment.
+                                </li>
                             </ul>
                         </div>
 
-                        <div style="background: white; border-radius: 20px; border: 1px solid rgba(0,0,0,0.04); padding: 2rem; border-left: 5px solid var(--secondary);">
-                            <h3 style="font-family: var(--font-body); font-weight: 800; font-size: 1.25rem; color: var(--secondary); margin-bottom: 1rem;"><i class="fas fa-shield-alt" style="margin-right: 8px;"></i> The GCF Response</h3>
+                        <div
+                            style="background: white; border-radius: 20px; border: 1px solid rgba(0,0,0,0.04); padding: 2rem; border-left: 5px solid var(--secondary);">
+                            <h3
+                                style="font-family: var(--font-body); font-weight: 800; font-size: 1.25rem; color: var(--secondary); margin-bottom: 1rem;">
+                                <i class="fas fa-shield-alt" style="margin-right: 8px;"></i> The GCF Response
+                            </h3>
                             <p style="font-weight: 600; color: var(--primary); font-size: 0.95rem;">
-                                Global Compassion Foundation’s core mission — especially the establishment of a non-profit school for underprivileged Chakma children — is rooted in addressing these lived realities:
+                                Global Compassion Foundation’s core mission — especially the establishment of a
+                                non-profit school for underprivileged Chakma children — is rooted in addressing these
+                                lived realities:
                             </p>
                             <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px;">
-                                <li style="position: relative; padding-left: 20px; font-size: 0.9rem; color: var(--text-muted);"><i class="fas fa-check" style="position: absolute; left: 0; top: 4px; color: var(--secondary); font-size: 0.8rem;"></i> <strong>Quality Education</strong> for children historically denied equitable educational opportunities.</li>
-                                <li style="position: relative; padding-left: 20px; font-size: 0.9rem; color: var(--text-muted);"><i class="fas fa-check" style="position: absolute; left: 0; top: 4px; color: var(--secondary); font-size: 0.8rem;"></i> <strong>Safe, Inclusive Environments</strong> that nurture potential, confidence, and local cultural dignity.</li>
-                                <li style="position: relative; padding-left: 20px; font-size: 0.9rem; color: var(--text-muted);"><i class="fas fa-check" style="position: absolute; left: 0; top: 4px; color: var(--secondary); font-size: 0.8rem;"></i> <strong>Community-Centered Solutions</strong> that empower children and families for future success.</li>
+                                <li
+                                    style="position: relative; padding-left: 20px; font-size: 0.9rem; color: var(--text-muted);">
+                                    <i class="fas fa-check"
+                                        style="position: absolute; left: 0; top: 4px; color: var(--secondary); font-size: 0.8rem;"></i>
+                                    <strong>Quality Education</strong> for children historically denied equitable
+                                    educational opportunities.
+                                </li>
+                                <li
+                                    style="position: relative; padding-left: 20px; font-size: 0.9rem; color: var(--text-muted);">
+                                    <i class="fas fa-check"
+                                        style="position: absolute; left: 0; top: 4px; color: var(--secondary); font-size: 0.8rem;"></i>
+                                    <strong>Safe, Inclusive Environments</strong> that nurture potential, confidence,
+                                    and local cultural dignity.
+                                </li>
+                                <li
+                                    style="position: relative; padding-left: 20px; font-size: 0.9rem; color: var(--text-muted);">
+                                    <i class="fas fa-check"
+                                        style="position: absolute; left: 0; top: 4px; color: var(--secondary); font-size: 0.8rem;"></i>
+                                    <strong>Community-Centered Solutions</strong> that empower children and families for
+                                    future success.
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -1475,7 +1716,7 @@
 
         <!-- TAB CONTENT: Chakma Heritage -->
         <div id="tab-heritage" class="tab-content">
-            
+
             <!-- Section: Chakma Heritage & Challenges (Background & Accordion) -->
             <section class="section-relative">
                 <div class="glow-blob glow-emerald" style="top: 20%; left: -10%;"></div>
@@ -1484,26 +1725,38 @@
                     <div class="section-header">
                         <span class="badge-premium">Context & Background</span>
                         <h2>The Chakma People of Mizoram: <span>Challenges</span></h2>
-                        <p style="max-width: 600px; margin: 0 auto; color: var(--text-muted);">Understanding the community's history, heritage, and the systematic gaps we work to bridge.</p>
+                        <p style="max-width: 600px; margin: 0 auto; color: var(--text-muted);">Understanding the
+                            community's history, heritage, and the systematic gaps we work to bridge.</p>
                     </div>
 
                     <div class="editorial-grid reverse">
                         <!-- Left: Background Card -->
-                        <div style="background: white; border-radius: 24px; border: 1px solid rgba(0,0,0,0.04); border-left: 5px solid var(--secondary); padding: 2.25rem; box-shadow: 0 10px 30px rgba(28, 25, 23, 0.02);">
+                        <div
+                            style="background: white; border-radius: 24px; border: 1px solid rgba(0,0,0,0.04); border-left: 5px solid var(--secondary); padding: 2.25rem; box-shadow: 0 10px 30px rgba(28, 25, 23, 0.02);">
                             <span class="badge-premium" style="margin-bottom: 12px;">Community Profile</span>
-                            <h3 style="font-family: var(--font-body); font-weight: 800; font-size: 1.3rem; color: var(--secondary); margin: 0 0 15px 0;">Who Are the Chakmas?</h3>
+                            <h3
+                                style="font-family: var(--font-body); font-weight: 800; font-size: 1.3rem; color: var(--secondary); margin: 0 0 15px 0;">
+                                Who Are the Chakmas?</h3>
                             <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-muted);">
-                                The Chakma are an ethnic tribal community of Buddhist heritage with a distinct culture, language, and history. They are one of the indigenous tribal groups in the Indian subcontinent, traditionally inhabiting the Chittagong Hill Tracts of Bangladesh and parts of Northeast India, including Mizoram, Tripura, Arunachal Pradesh, and Assam.
+                                The Chakma are an ethnic tribal community of Buddhist heritage with a distinct culture,
+                                language, and history. They are one of the indigenous tribal groups in the Indian
+                                subcontinent, traditionally inhabiting the Chittagong Hill Tracts of Bangladesh and
+                                parts of Northeast India, including Mizoram, Tripura, Arunachal Pradesh, and Assam.
                             </p>
-                            <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 0;">
-                                In Mizoram, Chakmas form a recognized Scheduled Tribe and make up around <strong>8–9% of the state’s population</strong>. They are most heavily concentrated in the south of the state, along the border with Bangladesh.
+                            <p
+                                style="font-size: 0.95rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 0;">
+                                In Mizoram, Chakmas form a recognized Scheduled Tribe and make up around <strong>8–9% of
+                                    the state’s population</strong>. They are most heavily concentrated in the south of
+                                the state, along the border with Bangladesh.
                             </p>
                         </div>
 
                         <!-- Right: Interactive Accordion Challenges Panel -->
                         <div class="challenges-panel">
-                            <h3 style="font-family: var(--font-body); font-weight: 800; font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary);">Primary Challenges Faced by Chakma Communities</h3>
-                            
+                            <h3
+                                style="font-family: var(--font-body); font-weight: 800; font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary);">
+                                Primary Challenges Faced by Chakma Communities</h3>
+
                             <!-- Accordion Item 1 -->
                             <div class="accordion-item active">
                                 <button class="accordion-header" aria-expanded="true">
@@ -1516,13 +1769,24 @@
                                 <div class="accordion-collapse">
                                     <div class="accordion-body">
                                         <div class="accordion-body-content">
-                                            <p>Despite constitutional protections, the Chakma community in Mizoram continues to experience wide gaps in educational access and outcomes:</p>
+                                            <p>Despite constitutional protections, the Chakma community in Mizoram
+                                                continues to experience wide gaps in educational access and outcomes:
+                                            </p>
                                             <ul>
-                                                <li>Literacy rates among Chakmas are significantly lower than the state average; historically at around 45% compared to Mizoram’s literacy rate of almost 90%.</li>
-                                                <li>Many Chakma villages lack quality schools beyond primary levels, forcing children to travel long distances or drop out.</li>
-                                                <li>Reports indicate discrimination in higher education access, including alleged barriers to professional seats such as medical education for Chakma students.</li>
+                                                <li>Literacy rates among Chakmas are significantly lower than the state
+                                                    average; historically at around 45% compared to Mizoram’s literacy
+                                                    rate of almost 90%.</li>
+                                                <li>Many Chakma villages lack quality schools beyond primary levels,
+                                                    forcing children to travel long distances or drop out.</li>
+                                                <li>Reports indicate discrimination in higher education access,
+                                                    including alleged barriers to professional seats such as medical
+                                                    education for Chakma students.</li>
                                             </ul>
-                                            <p style="margin-top: var(--space-xs); margin-bottom: 0; font-weight: 500; color: var(--primary);">These educational barriers contribute to a persistent cycle of poverty and underdevelopment, restricting opportunities for advancement and skilled employment.</p>
+                                            <p
+                                                style="margin-top: var(--space-xs); margin-bottom: 0; font-weight: 500; color: var(--primary);">
+                                                These educational barriers contribute to a persistent cycle of poverty
+                                                and underdevelopment, restricting opportunities for advancement and
+                                                skilled employment.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1540,8 +1804,12 @@
                                 <div class="accordion-collapse">
                                     <div class="accordion-body">
                                         <div class="accordion-body-content">
-                                            <p>Most Chakma families in Mizoram rely on traditional subsistence agriculture such as shifting cultivation (jhum), which yields low productivity and limited economic stability.</p>
-                                            <p style="margin-bottom: 0;">The absence of infrastructure such as reliable irrigation, roads, electricity, and market access further limits economic opportunities and contributes to high levels of poverty.</p>
+                                            <p>Most Chakma families in Mizoram rely on traditional subsistence
+                                                agriculture such as shifting cultivation (jhum), which yields low
+                                                productivity and limited economic stability.</p>
+                                            <p style="margin-bottom: 0;">The absence of infrastructure such as reliable
+                                                irrigation, roads, electricity, and market access further limits
+                                                economic opportunities and contributes to high levels of poverty.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1559,14 +1827,17 @@
                                 <div class="accordion-collapse">
                                     <div class="accordion-body">
                                         <div class="accordion-body-content">
-                                            <p>Many Chakma-dominated areas in Mizoram suffer from chronic underdevelopment:</p>
+                                            <p>Many Chakma-dominated areas in Mizoram suffer from chronic
+                                                underdevelopment:</p>
                                             <ul style="margin-bottom: 0;">
                                                 <li>Poor connectivity to main roads and transportation</li>
                                                 <li>Limited or no reliable electricity</li>
                                                 <li>Inadequate water supply and sanitation</li>
                                                 <li>Scarce primary health facilities and emergency services</li>
                                             </ul>
-                                            <p style="margin-top: var(--space-xs); margin-bottom: 0;">Such conditions reduce quality of life and compound barriers to health, education, and livelihood development.</p>
+                                            <p style="margin-top: var(--space-xs); margin-bottom: 0;">Such conditions
+                                                reduce quality of life and compound barriers to health, education, and
+                                                livelihood development.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1584,12 +1855,21 @@
                                 <div class="accordion-collapse">
                                     <div class="accordion-body">
                                         <div class="accordion-body-content">
-                                            <p>Although the community is recognized under the Sixth Schedule of the Constitution and has its own Chakma Autonomous District Council (CADC), challenges persist:</p>
+                                            <p>Although the community is recognized under the Sixth Schedule of the
+                                                Constitution and has its own Chakma Autonomous District Council (CADC),
+                                                challenges persist:</p>
                                             <ul>
-                                                <li>Institutional discrimination and societal bias have been reported, including in language-based job criteria and resource allocation.</li>
-                                                <li>Some community members have been treated as outsiders or non-indigenous by dominant groups, affecting access to citizenship rights, services, and social inclusion.</li>
+                                                <li>Institutional discrimination and societal bias have been reported,
+                                                    including in language-based job criteria and resource allocation.
+                                                </li>
+                                                <li>Some community members have been treated as outsiders or
+                                                    non-indigenous by dominant groups, affecting access to citizenship
+                                                    rights, services, and social inclusion.</li>
                                             </ul>
-                                            <p style="margin-top: var(--space-xs); margin-bottom: 0; font-weight: 500; color: var(--primary);">Such discrimination intensifies feelings of marginalisation and restricts equitable participation in state-level opportunities.</p>
+                                            <p
+                                                style="margin-top: var(--space-xs); margin-bottom: 0; font-weight: 500; color: var(--primary);">
+                                                Such discrimination intensifies feelings of marginalisation and
+                                                restricts equitable participation in state-level opportunities.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1607,7 +1887,10 @@
                                 <div class="accordion-collapse">
                                     <div class="accordion-body">
                                         <div class="accordion-body-content">
-                                            <p style="margin-bottom: 0;">With limited local healthcare infrastructure, many Chakma communities must travel long distances for medical care. Maternal and child health services are often inadequate, and emergency response is slow due to remoteness and poor connectivity.</p>
+                                            <p style="margin-bottom: 0;">With limited local healthcare infrastructure,
+                                                many Chakma communities must travel long distances for medical care.
+                                                Maternal and child health services are often inadequate, and emergency
+                                                response is slow due to remoteness and poor connectivity.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1621,9 +1904,10 @@
 
         <!-- TAB CONTENT: Legal Charter -->
         <div id="tab-legal" class="tab-content">
-            
+
             <!-- MEMORANDUM OF ASSOCIATION SECTION -->
-            <section class="section-relative moa-section" id="memorandum" style="background: #f8faf9; border-top: 1px solid #e2ede8;">
+            <section class="section-relative moa-section" id="memorandum"
+                style="background: #f8faf9; border-top: 1px solid #e2ede8;">
                 <div class="container">
 
                     <!-- Section Header -->
@@ -1631,7 +1915,8 @@
                         <span class="badge-premium">Official Document</span>
                         <h2>Memorandum of <span>Association</span></h2>
                         <p style="max-width:640px; margin:0 auto; color:var(--text-light);">
-                            Registered under the <strong>Mizoram Societies Registration Act, 2005</strong> — the foundational legal charter of Global Compassion Foundation.
+                            Registered under the <strong>Mizoram Societies Registration Act, 2005</strong> — the
+                            foundational legal charter of Global Compassion Foundation.
                         </p>
                     </div>
 
@@ -1639,16 +1924,26 @@
                     <div class="moa-card">
 
                         <!-- Document Header Banner -->
-                        <div style="background:linear-gradient(135deg,#0f2d1c 0%,#1a4a2e 60%,#0f3d22 100%); padding:2.5rem; position:relative; overflow:hidden;">
-                            <div style="position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(217,119,6,0.15) 0%,transparent 70%);border-radius:50%;pointer-events:none;"></div>
-                            <div style="position:absolute;bottom:-40px;left:40px;width:150px;height:150px;background:radial-gradient(circle,rgba(52,211,153,0.1) 0%,transparent 70%);border-radius:50%;pointer-events:none;"></div>
+                        <div
+                            style="background:linear-gradient(135deg,#0f2d1c 0%,#1a4a2e 60%,#0f3d22 100%); padding:2.5rem; position:relative; overflow:hidden;">
+                            <div
+                                style="position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(217,119,6,0.15) 0%,transparent 70%);border-radius:50%;pointer-events:none;">
+                            </div>
+                            <div
+                                style="position:absolute;bottom:-40px;left:40px;width:150px;height:150px;background:radial-gradient(circle,rgba(52,211,153,0.1) 0%,transparent 70%);border-radius:50%;pointer-events:none;">
+                            </div>
                             <div style="position:relative;z-index:1;">
                                 <div style="display:flex;align-items:center;gap:10px;margin-bottom:1rem;">
                                     <div style="width:32px;height:3px;background:#d97706;border-radius:2px;"></div>
-                                    <span style="font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.55);">Legal Charter</span>
+                                    <span
+                                        style="font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.55);">Legal
+                                        Charter</span>
                                 </div>
-                                <h3 style="font-family:var(--font-heading);font-size:clamp(1.4rem,3vw,2rem);font-weight:800;color:#fff;margin:0 0 0.5rem;line-height:1.2;">MEMORANDUM OF ASSOCIATION</h3>
-                                <p style="color:rgba(255,255,255,0.65);font-size:0.85rem;margin:0;">(Under the Mizoram Societies Registration Act, 2005)</p>
+                                <h3
+                                    style="font-family:var(--font-heading);font-size:clamp(1.4rem,3vw,2rem);font-weight:800;color:#fff;margin:0 0 0.5rem;line-height:1.2;">
+                                    MEMORANDUM OF ASSOCIATION</h3>
+                                <p style="color:rgba(255,255,255,0.65);font-size:0.85rem;margin:0;">(Under the Mizoram
+                                    Societies Registration Act, 2005)</p>
                             </div>
                         </div>
 
@@ -1658,50 +1953,83 @@
                             <aside class="moa-sidebar">
                                 <ul class="moa-nav-list">
                                     <li class="moa-nav-item active" data-article="moa-art1">
-                                        <button><i class="fas fa-tag" style="margin-right: 8px; width: 16px; text-align: center;"></i> 1. Society Name</button>
+                                        <button><i class="fas fa-tag"
+                                                style="margin-right: 8px; width: 16px; text-align: center;"></i> 1.
+                                            Society Name</button>
                                     </li>
                                     <li class="moa-nav-item" data-article="moa-art2">
-                                        <button><i class="fas fa-map-marker-alt" style="margin-right: 8px; width: 16px; text-align: center;"></i> 2. Registered Office</button>
+                                        <button><i class="fas fa-map-marker-alt"
+                                                style="margin-right: 8px; width: 16px; text-align: center;"></i> 2.
+                                            Registered Office</button>
                                     </li>
                                     <li class="moa-nav-item" data-article="moa-art3">
-                                        <button><i class="fas fa-bullseye" style="margin-right: 8px; width: 16px; text-align: center;"></i> 3. Aims & Objects</button>
+                                        <button><i class="fas fa-bullseye"
+                                                style="margin-right: 8px; width: 16px; text-align: center;"></i> 3. Aims
+                                            & Objects</button>
                                     </li>
                                     <li class="moa-nav-item" data-article="moa-art4">
-                                        <button><i class="fas fa-users" style="margin-right: 8px; width: 16px; text-align: center;"></i> 4. Governing Body</button>
+                                        <button><i class="fas fa-users"
+                                                style="margin-right: 8px; width: 16px; text-align: center;"></i> 4.
+                                            Governing Body</button>
                                     </li>
                                     <li class="moa-nav-item" data-article="moa-art5">
-                                        <button><i class="fas fa-file-signature" style="margin-right: 8px; width: 16px; text-align: center;"></i> 5. Subscribers & Signatures</button>
+                                        <button><i class="fas fa-file-signature"
+                                                style="margin-right: 8px; width: 16px; text-align: center;"></i> 5.
+                                            Subscribers & Signatures</button>
                                     </li>
                                 </ul>
                             </aside>
 
                             <!-- Main content pane -->
-                            <div class="moa-content-pane" style="background: white; border-radius: 12px; border: 1px solid rgba(0,0,0,0.03); padding: 1.5rem;">
+                            <div class="moa-content-pane"
+                                style="background: white; border-radius: 12px; border: 1px solid rgba(0,0,0,0.03); padding: 1.5rem;">
                                 <div id="moa-art1" class="moa-article-content active">
                                     <!-- Article 1: Name -->
-                                    <div class="moa-article" style="margin-bottom:0;padding-bottom:0;border-bottom:none;">
+                                    <div class="moa-article"
+                                        style="margin-bottom:0;padding-bottom:0;border-bottom:none;">
                                         <div style="display:flex;align-items:flex-start;gap:1.25rem;">
-                                            <div style="min-width:36px;height:36px;border-radius:10px;background:rgba(4,120,87,0.1);color:#047857;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;flex-shrink:0;">1</div>
+                                            <div
+                                                style="min-width:36px;height:36px;border-radius:10px;background:rgba(4,120,87,0.1);color:#047857;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;flex-shrink:0;">
+                                                1</div>
                                             <div>
-                                                <h4 style="font-family:var(--font-heading);font-size:1.25rem;font-weight:800;color:#1a2e22;margin:0 0 0.75rem;">Name of the Society</h4>
-                                                <p style="font-size:1.05rem;color:var(--text-muted);line-height:1.75;margin:0;">The name of the Society shall be <strong style="color:#047857;">GLOBAL COMPASSION FOUNDATION</strong>.</p>
+                                                <h4
+                                                    style="font-family:var(--font-heading);font-size:1.25rem;font-weight:800;color:#1a2e22;margin:0 0 0.75rem;">
+                                                    Name of the Society</h4>
+                                                <p
+                                                    style="font-size:1.05rem;color:var(--text-muted);line-height:1.75;margin:0;">
+                                                    The name of the Society shall be <strong
+                                                        style="color:#047857;">GLOBAL COMPASSION FOUNDATION</strong>.
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div id="moa-art2" class="moa-article-content">
                                     <!-- Article 2: Registered Office -->
-                                    <div class="moa-article" style="margin-bottom:0;padding-bottom:0;border-bottom:none;">
+                                    <div class="moa-article"
+                                        style="margin-bottom:0;padding-bottom:0;border-bottom:none;">
                                         <div style="display:flex;align-items:flex-start;gap:1.25rem;">
-                                            <div style="min-width:36px;height:36px;border-radius:10px;background:rgba(4,120,87,0.1);color:#047857;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;flex-shrink:0;">2</div>
+                                            <div
+                                                style="min-width:36px;height:36px;border-radius:10px;background:rgba(4,120,87,0.1);color:#047857;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;flex-shrink:0;">
+                                                2</div>
                                             <div>
-                                                <h4 style="font-family:var(--font-heading);font-size:1.25rem;font-weight:800;color:#1a2e22;margin:0 0 0.75rem;">Registered Office</h4>
-                                                <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.7;margin:0 0 0.75rem;">The Registered Office of the Society shall be situated in the State of Mizoram, and at present shall be located at the following address:</p>
-                                                <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-left:4px solid #047857;border-radius:8px;padding:1rem 1.25rem;display:flex;align-items:flex-start;gap:10px;">
-                                                    <i class="fas fa-map-marker-alt" style="color:#047857;margin-top:3px;flex-shrink:0;"></i>
+                                                <h4
+                                                    style="font-family:var(--font-heading);font-size:1.25rem;font-weight:800;color:#1a2e22;margin:0 0 0.75rem;">
+                                                    Registered Office</h4>
+                                                <p
+                                                    style="font-size:0.95rem;color:var(--text-muted);line-height:1.7;margin:0 0 0.75rem;">
+                                                    The Registered Office of the Society shall be situated in the State
+                                                    of Mizoram, and at present shall be located at the following
+                                                    address:</p>
+                                                <div
+                                                    style="background:#f0fdf4;border:1px solid #bbf7d0;border-left:4px solid #047857;border-radius:8px;padding:1rem 1.25rem;display:flex;align-items:flex-start;gap:10px;">
+                                                    <i class="fas fa-map-marker-alt"
+                                                        style="color:#047857;margin-top:3px;flex-shrink:0;"></i>
                                                     <div>
-                                                        <strong style="color:#1a2e22;font-size:0.95rem;">Tuichawng Village, Lunglei District, Mizoram, India</strong><br>
-                                                        <span style="font-size:0.85rem;color:var(--text-light);">House No. 124</span>
+                                                        <strong style="color:#1a2e22;font-size:0.95rem;">Tuichawng
+                                                            Village, Lunglei District, Mizoram, India</strong><br>
+                                                        <span style="font-size:0.85rem;color:var(--text-light);">House
+                                                            No. 124</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1710,79 +2038,182 @@
                                 </div>
                                 <div id="moa-art3" class="moa-article-content">
                                     <!-- Article 3: Aims & Objects -->
-                                    <div class="moa-article" style="margin-bottom:0;padding-bottom:0;border-bottom:none;">
-                                        <div style="display:flex;align-items:flex-start;gap:1.25rem;margin-bottom:1.5rem;">
-                                            <div style="min-width:36px;height:36px;border-radius:10px;background:rgba(4,120,87,0.1);color:#047857;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;flex-shrink:0;">3</div>
+                                    <div class="moa-article"
+                                        style="margin-bottom:0;padding-bottom:0;border-bottom:none;">
+                                        <div
+                                            style="display:flex;align-items:flex-start;gap:1.25rem;margin-bottom:1.5rem;">
+                                            <div
+                                                style="min-width:36px;height:36px;border-radius:10px;background:rgba(4,120,87,0.1);color:#047857;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;flex-shrink:0;">
+                                                3</div>
                                             <div>
-                                                <h4 style="font-family:var(--font-heading);font-size:1.25rem;font-weight:800;color:#1a2e22;margin:0 0 0.5rem;">Aims and Objects</h4>
-                                                <p style="font-size:0.9rem;color:var(--text-light);margin:0;">The aims and objects for which the Society is established are as follows:</p>
+                                                <h4
+                                                    style="font-family:var(--font-heading);font-size:1.25rem;font-weight:800;color:#1a2e22;margin:0 0 0.5rem;">
+                                                    Aims and Objects</h4>
+                                                <p style="font-size:0.9rem;color:var(--text-light);margin:0;">The aims
+                                                    and objects for which the Society is established are as follows:</p>
                                             </div>
                                         </div>
 
                                         <div style="display:grid;grid-template-columns:1fr;gap:1rem;padding-left:0;">
-                                            <div class="moa-obj-item" style="display:flex;gap:0.875rem;padding:1rem 1.25rem;background:#f8faf9;border:1px solid #e2ede8;border-radius:12px;">
-                                                <span style="min-width:26px;height:26px;border-radius:50%;background:#047857;color:white;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">1</span>
-                                                <p style="margin:0;font-size:0.875rem;color:var(--text-muted);line-height:1.65;">To promote compassion, humanitarian values, ethical conduct, peace, harmony, and social responsibility among individuals and communities.</p>
+                                            <div class="moa-obj-item"
+                                                style="display:flex;gap:0.875rem;padding:1rem 1.25rem;background:#f8faf9;border:1px solid #e2ede8;border-radius:12px;">
+                                                <span
+                                                    style="min-width:26px;height:26px;border-radius:50%;background:#047857;color:white;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">1</span>
+                                                <p
+                                                    style="margin:0;font-size:0.875rem;color:var(--text-muted);line-height:1.65;">
+                                                    To promote compassion, humanitarian values, ethical conduct, peace,
+                                                    harmony, and social responsibility among individuals and
+                                                    communities.</p>
                                             </div>
-                                            <div class="moa-obj-item" style="display:flex;gap:0.875rem;padding:1rem 1.25rem;background:#f8faf9;border:1px solid #e2ede8;border-radius:12px;">
-                                                <span style="min-width:26px;height:26px;border-radius:50%;background:#047857;color:white;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">2</span>
-                                                <p style="margin:0;font-size:0.875rem;color:var(--text-muted);line-height:1.65;">To establish, run, support, and manage schools, educational institutions, learning centers, and vocational training facilities for underprivileged and marginalized children, with special focus on providing access to quality education in rural, remote, and backward areas.</p>
+                                            <div class="moa-obj-item"
+                                                style="display:flex;gap:0.875rem;padding:1rem 1.25rem;background:#f8faf9;border:1px solid #e2ede8;border-radius:12px;">
+                                                <span
+                                                    style="min-width:26px;height:26px;border-radius:50%;background:#047857;color:white;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">2</span>
+                                                <p
+                                                    style="margin:0;font-size:0.875rem;color:var(--text-muted);line-height:1.65;">
+                                                    To establish, run, support, and manage schools, educational
+                                                    institutions, learning centers, and vocational training facilities
+                                                    for underprivileged and marginalized children, with special focus on
+                                                    providing access to quality education in rural, remote, and backward
+                                                    areas.</p>
                                             </div>
-                                            <div class="moa-obj-item" style="display:flex;gap:0.875rem;padding:1rem 1.25rem;background:#f8faf9;border:1px solid #e2ede8;border-radius:12px;">
-                                                <span style="min-width:26px;height:26px;border-radius:50%;background:#047857;color:white;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">3</span>
-                                                <p style="margin:0;font-size:0.875rem;color:var(--text-muted);line-height:1.65;">To establish and operate charitable homes, shelter homes, and care centers for the elderly, destitute, abandoned, and other vulnerable persons.</p>
+                                            <div class="moa-obj-item"
+                                                style="display:flex;gap:0.875rem;padding:1rem 1.25rem;background:#f8faf9;border:1px solid #e2ede8;border-radius:12px;">
+                                                <span
+                                                    style="min-width:26px;height:26px;border-radius:50%;background:#047857;color:white;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">3</span>
+                                                <p
+                                                    style="margin:0;font-size:0.875rem;color:var(--text-muted);line-height:1.65;">
+                                                    To establish and operate charitable homes, shelter homes, and care
+                                                    centers for the elderly, destitute, abandoned, and other vulnerable
+                                                    persons.</p>
                                             </div>
-                                            <div class="moa-obj-item" style="display:flex;gap:0.875rem;padding:1rem 1.25rem;background:#f8faf9;border:1px solid #e2ede8;border-radius:12px;">
-                                                <span style="min-width:26px;height:26px;border-radius:50%;background:#047857;color:white;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">4</span>
-                                                <p style="margin:0;font-size:0.875rem;color:var(--text-muted);line-height:1.65;">To provide affordable and accessible healthcare services, including preventive care, basic treatment, maternal and child health services, emergency care, and health awareness programs, particularly for poor and marginalized communities.</p>
+                                            <div class="moa-obj-item"
+                                                style="display:flex;gap:0.875rem;padding:1rem 1.25rem;background:#f8faf9;border:1px solid #e2ede8;border-radius:12px;">
+                                                <span
+                                                    style="min-width:26px;height:26px;border-radius:50%;background:#047857;color:white;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">4</span>
+                                                <p
+                                                    style="margin:0;font-size:0.875rem;color:var(--text-muted);line-height:1.65;">
+                                                    To provide affordable and accessible healthcare services, including
+                                                    preventive care, basic treatment, maternal and child health
+                                                    services, emergency care, and health awareness programs,
+                                                    particularly for poor and marginalized communities.</p>
                                             </div>
-                                            <div class="moa-obj-item" style="display:flex;gap:0.875rem;padding:1rem 1.25rem;background:#f8faf9;border:1px solid #e2ede8;border-radius:12px;">
-                                                <span style="min-width:26px;height:26px;border-radius:50%;background:#047857;color:white;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">5</span>
-                                                <p style="margin:0;font-size:0.875rem;color:var(--text-muted);line-height:1.65;">To address healthcare challenges in rural and underdeveloped regions, such as lack of medical infrastructure, shortage of healthcare professionals, poverty, long distances to hospitals, and low health awareness, by implementing community-based and inclusive healthcare solutions.</p>
+                                            <div class="moa-obj-item"
+                                                style="display:flex;gap:0.875rem;padding:1rem 1.25rem;background:#f8faf9;border:1px solid #e2ede8;border-radius:12px;">
+                                                <span
+                                                    style="min-width:26px;height:26px;border-radius:50%;background:#047857;color:white;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">5</span>
+                                                <p
+                                                    style="margin:0;font-size:0.875rem;color:var(--text-muted);line-height:1.65;">
+                                                    To address healthcare challenges in rural and underdeveloped
+                                                    regions, such as lack of medical infrastructure, shortage of
+                                                    healthcare professionals, poverty, long distances to hospitals, and
+                                                    low health awareness, by implementing community-based and inclusive
+                                                    healthcare solutions.</p>
                                             </div>
-                                            <div class="moa-obj-item" style="display:flex;gap:0.875rem;padding:1rem 1.25rem;background:#f8faf9;border:1px solid #e2ede8;border-radius:12px;">
-                                                <span style="min-width:26px;height:26px;border-radius:50%;background:#047857;color:white;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">6</span>
-                                                <p style="margin:0;font-size:0.875rem;color:var(--text-muted);line-height:1.65;">To undertake welfare and development programs for children, women, elderly persons, persons with disabilities, and other vulnerable and marginalized groups.</p>
+                                            <div class="moa-obj-item"
+                                                style="display:flex;gap:0.875rem;padding:1rem 1.25rem;background:#f8faf9;border:1px solid #e2ede8;border-radius:12px;">
+                                                <span
+                                                    style="min-width:26px;height:26px;border-radius:50%;background:#047857;color:white;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">6</span>
+                                                <p
+                                                    style="margin:0;font-size:0.875rem;color:var(--text-muted);line-height:1.65;">
+                                                    To undertake welfare and development programs for children, women,
+                                                    elderly persons, persons with disabilities, and other vulnerable and
+                                                    marginalized groups.</p>
                                             </div>
-                                            <div class="moa-obj-item" style="display:flex;gap:0.875rem;padding:1rem 1.25rem;background:#f8faf9;border:1px solid #e2ede8;border-radius:12px;">
-                                                <span style="min-width:26px;height:26px;border-radius:50%;background:#047857;color:white;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">7</span>
-                                                <p style="margin:0;font-size:0.875rem;color:var(--text-muted);line-height:1.65;">To provide relief, rehabilitation, and humanitarian assistance during natural disasters, emergencies, and other situations of distress.</p>
+                                            <div class="moa-obj-item"
+                                                style="display:flex;gap:0.875rem;padding:1rem 1.25rem;background:#f8faf9;border:1px solid #e2ede8;border-radius:12px;">
+                                                <span
+                                                    style="min-width:26px;height:26px;border-radius:50%;background:#047857;color:white;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">7</span>
+                                                <p
+                                                    style="margin:0;font-size:0.875rem;color:var(--text-muted);line-height:1.65;">
+                                                    To provide relief, rehabilitation, and humanitarian assistance
+                                                    during natural disasters, emergencies, and other situations of
+                                                    distress.</p>
                                             </div>
-                                            <div class="moa-obj-item" style="display:flex;gap:0.875rem;padding:1rem 1.25rem;background:#f8faf9;border:1px solid #e2ede8;border-radius:12px;">
-                                                <span style="min-width:26px;height:26px;border-radius:50%;background:#047857;color:white;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">8</span>
-                                                <p style="margin:0;font-size:0.875rem;color:var(--text-muted);line-height:1.65;">To promote public health, sanitation, nutrition, environmental protection, climate awareness, and sustainable development through awareness programs and community-based initiatives.</p>
+                                            <div class="moa-obj-item"
+                                                style="display:flex;gap:0.875rem;padding:1rem 1.25rem;background:#f8faf9;border:1px solid #e2ede8;border-radius:12px;">
+                                                <span
+                                                    style="min-width:26px;height:26px;border-radius:50%;background:#047857;color:white;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">8</span>
+                                                <p
+                                                    style="margin:0;font-size:0.875rem;color:var(--text-muted);line-height:1.65;">
+                                                    To promote public health, sanitation, nutrition, environmental
+                                                    protection, climate awareness, and sustainable development through
+                                                    awareness programs and community-based initiatives.</p>
                                             </div>
-                                            <div class="moa-obj-item" style="display:flex;gap:0.875rem;padding:1rem 1.25rem;background:#f8faf9;border:1px solid #e2ede8;border-radius:12px;">
-                                                <span style="min-width:26px;height:26px;border-radius:50%;background:#047857;color:white;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">9</span>
-                                                <p style="margin:0;font-size:0.875rem;color:var(--text-muted);line-height:1.65;">To undertake livelihood development, skill training, self-help initiatives, and poverty alleviation programs for socio-economic empowerment of disadvantaged communities.</p>
+                                            <div class="moa-obj-item"
+                                                style="display:flex;gap:0.875rem;padding:1rem 1.25rem;background:#f8faf9;border:1px solid #e2ede8;border-radius:12px;">
+                                                <span
+                                                    style="min-width:26px;height:26px;border-radius:50%;background:#047857;color:white;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">9</span>
+                                                <p
+                                                    style="margin:0;font-size:0.875rem;color:var(--text-muted);line-height:1.65;">
+                                                    To undertake livelihood development, skill training, self-help
+                                                    initiatives, and poverty alleviation programs for socio-economic
+                                                    empowerment of disadvantaged communities.</p>
                                             </div>
-                                            <div class="moa-obj-item" style="display:flex;gap:0.875rem;padding:1rem 1.25rem;background:#f8faf9;border:1px solid #e2ede8;border-radius:12px;">
-                                                <span style="min-width:26px;height:26px;border-radius:50%;background:#047857;color:white;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">10</span>
-                                                <p style="margin:0;font-size:0.875rem;color:var(--text-muted);line-height:1.65;">To collaborate and coordinate with Government departments, local authorities, non-governmental organizations, educational institutions, healthcare institutions, and donors for achieving the objectives of the Society.</p>
+                                            <div class="moa-obj-item"
+                                                style="display:flex;gap:0.875rem;padding:1rem 1.25rem;background:#f8faf9;border:1px solid #e2ede8;border-radius:12px;">
+                                                <span
+                                                    style="min-width:26px;height:26px;border-radius:50%;background:#047857;color:white;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">10</span>
+                                                <p
+                                                    style="margin:0;font-size:0.875rem;color:var(--text-muted);line-height:1.65;">
+                                                    To collaborate and coordinate with Government departments, local
+                                                    authorities, non-governmental organizations, educational
+                                                    institutions, healthcare institutions, and donors for achieving the
+                                                    objectives of the Society.</p>
                                             </div>
-                                            <div class="moa-obj-item" style="display:flex;gap:0.875rem;padding:1rem 1.25rem;background:#f8faf9;border:1px solid #e2ede8;border-radius:12px;">
-                                                <span style="min-width:26px;height:26px;border-radius:50%;background:#047857;color:white;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">11</span>
-                                                <p style="margin:0;font-size:0.875rem;color:var(--text-muted);line-height:1.65;">To establish, maintain, and manage prayer centres and spaces for mental well-being, concentration, stress management, emotional balance, and peaceful living, open to all persons without distinction of religion, caste, creed, or belief, with the clear understanding that meditation is a non-religious, non-sectarian practice aimed solely at improving focus of mind, inner calm, ethical awareness, and overall quality of life.</p>
+                                            <div class="moa-obj-item"
+                                                style="display:flex;gap:0.875rem;padding:1rem 1.25rem;background:#f8faf9;border:1px solid #e2ede8;border-radius:12px;">
+                                                <span
+                                                    style="min-width:26px;height:26px;border-radius:50%;background:#047857;color:white;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">11</span>
+                                                <p
+                                                    style="margin:0;font-size:0.875rem;color:var(--text-muted);line-height:1.65;">
+                                                    To establish, maintain, and manage prayer centres and spaces for
+                                                    mental well-being, concentration, stress management, emotional
+                                                    balance, and peaceful living, open to all persons without
+                                                    distinction of religion, caste, creed, or belief, with the clear
+                                                    understanding that meditation is a non-religious, non-sectarian
+                                                    practice aimed solely at improving focus of mind, inner calm,
+                                                    ethical awareness, and overall quality of life.</p>
                                             </div>
                                         </div>
 
-                                        <div style="margin-top:1.5rem;padding:1.25rem 1.5rem;background:#fffbeb;border:1px solid #fde68a;border-left:4px solid #d97706;border-radius:10px;">
-                                            <p style="margin:0;font-size:0.82rem;color:#92400e;line-height:1.7;"><strong>Important Clause:</strong> All the incomes, earnings, movable or immovable properties of the Society shall be solely utilized and applied towards the promotion of its aims and objects only as set forth in this Memorandum of Association. No portion thereof shall be paid or transferred directly by way of dividends, bonus, profits, or in any manner whatsoever, to the present or past members of the Society. No member of the Society shall have any personal claim on any movable or immovable properties of the Society or make any profit, whatsoever, by virtue of his membership.</p>
+                                        <div
+                                            style="margin-top:1.5rem;padding:1.25rem 1.5rem;background:#fffbeb;border:1px solid #fde68a;border-left:4px solid #d97706;border-radius:10px;">
+                                            <p style="margin:0;font-size:0.82rem;color:#92400e;line-height:1.7;">
+                                                <strong>Important Clause:</strong> All the incomes, earnings, movable or
+                                                immovable properties of the Society shall be solely utilized and applied
+                                                towards the promotion of its aims and objects only as set forth in this
+                                                Memorandum of Association. No portion thereof shall be paid or
+                                                transferred directly by way of dividends, bonus, profits, or in any
+                                                manner whatsoever, to the present or past members of the Society. No
+                                                member of the Society shall have any personal claim on any movable or
+                                                immovable properties of the Society or make any profit, whatsoever, by
+                                                virtue of his membership.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div id="moa-art4" class="moa-article-content">
                                     <!-- Article 4: Governing Body -->
-                                    <div class="moa-article" style="margin-bottom:0;padding-bottom:0;border-bottom:none;">
-                                        <div style="display:flex;align-items:flex-start;gap:1.25rem;margin-bottom:1.5rem;">
-                                            <div style="min-width:36px;height:36px;border-radius:10px;background:rgba(4,120,87,0.1);color:#047857;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;flex-shrink:0;">4</div>
+                                    <div class="moa-article"
+                                        style="margin-bottom:0;padding-bottom:0;border-bottom:none;">
+                                        <div
+                                            style="display:flex;align-items:flex-start;gap:1.25rem;margin-bottom:1.5rem;">
+                                            <div
+                                                style="min-width:36px;height:36px;border-radius:10px;background:rgba(4,120,87,0.1);color:#047857;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;flex-shrink:0;">
+                                                4</div>
                                             <div>
-                                                <h4 style="font-family:var(--font-heading);font-size:1.25rem;font-weight:800;color:#1a2e22;margin:0 0 0.35rem;">Governing Body</h4>
-                                                <p style="font-size:0.875rem;color:var(--text-light);margin:0;">The names, addresses, occupations, and designations of the members of the Governing Body, as required under Section 5 of the Mizoram Societies Registration Act, 2005.</p>
+                                                <h4
+                                                    style="font-family:var(--font-heading);font-size:1.25rem;font-weight:800;color:#1a2e22;margin:0 0 0.35rem;">
+                                                    Governing Body</h4>
+                                                <p style="font-size:0.875rem;color:var(--text-light);margin:0;">The
+                                                    names, addresses, occupations, and designations of the members of
+                                                    the Governing Body, as required under Section 5 of the Mizoram
+                                                    Societies Registration Act, 2005.</p>
                                             </div>
                                         </div>
 
-                                        
+
                                         <div class="moa-members-grid">
                                             <div class="moa-member-card">
                                                 <div class="member-avatar">SC</div>
@@ -1810,7 +2241,8 @@
                                                 <div class="member-avatar">RK</div>
                                                 <div class="member-info">
                                                     <h5>Rakesh Kumar Chakma</h5>
-                                                    <span class="member-badge general-secretary">General Secretary</span>
+                                                    <span class="member-badge general-secretary">General
+                                                        Secretary</span>
                                                     <div class="member-meta">
                                                         <p><i class="fas fa-map-marker-alt"></i> Tuichawng</p>
                                                         <p><i class="fas fa-briefcase"></i> Social Worker</p>
@@ -1843,7 +2275,8 @@
                                                 <div class="member-avatar">EC</div>
                                                 <div class="member-info">
                                                     <h5>Eliash Chakma</h5>
-                                                    <span class="member-badge financial-secretary">Financial Secretary</span>
+                                                    <span class="member-badge financial-secretary">Financial
+                                                        Secretary</span>
                                                     <div class="member-meta">
                                                         <p><i class="fas fa-map-marker-alt"></i> Tuichawng</p>
                                                         <p><i class="fas fa-briefcase"></i> Social Worker</p>
@@ -1910,17 +2343,27 @@
                                 </div>
                                 <div id="moa-art5" class="moa-article-content">
                                     <!-- Article 5: Desirous Persons / Subscribers -->
-                                    <div class="moa-article" style="margin-bottom:0;padding-bottom:0;border-bottom:none;">
-                                        <div style="display:flex;align-items:flex-start;gap:1.25rem;margin-bottom:1.5rem;">
-                                            <div style="min-width:36px;height:36px;border-radius:10px;background:rgba(4,120,87,0.1);color:#047857;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;flex-shrink:0;">5</div>
+                                    <div class="moa-article"
+                                        style="margin-bottom:0;padding-bottom:0;border-bottom:none;">
+                                        <div
+                                            style="display:flex;align-items:flex-start;gap:1.25rem;margin-bottom:1.5rem;">
+                                            <div
+                                                style="min-width:36px;height:36px;border-radius:10px;background:rgba(4,120,87,0.1);color:#047857;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;flex-shrink:0;">
+                                                5</div>
                                             <div>
-                                                <h4 style="font-family:var(--font-heading);font-size:1.25rem;font-weight:800;color:#1a2e22;margin:0 0 0.35rem;">Desirous Persons (Subscribers)</h4>
-                                                <p style="font-size:0.875rem;color:var(--text-light);margin:0;">We, the undersigned, are desirous of forming a Society namely Global Compassion Foundation, under the Mizoram Societies Registration Act, 2005, in pursuance of this Memorandum of Association of the Society.</p>
+                                                <h4
+                                                    style="font-family:var(--font-heading);font-size:1.25rem;font-weight:800;color:#1a2e22;margin:0 0 0.35rem;">
+                                                    Desirous Persons (Subscribers)</h4>
+                                                <p style="font-size:0.875rem;color:var(--text-light);margin:0;">We, the
+                                                    undersigned, are desirous of forming a Society namely Global
+                                                    Compassion Foundation, under the Mizoram Societies Registration Act,
+                                                    2005, in pursuance of this Memorandum of Association of the Society.
+                                                </p>
                                             </div>
                                         </div>
 
                                         <!-- Subscribers Table -->
-                                        
+
                                         <div class="moa-members-grid">
                                             <div class="moa-member-card">
                                                 <div class="member-avatar">SC</div>
@@ -2036,17 +2479,31 @@
 
                                         <!-- Signatures Block -->
                                         <div class="moa-signatures-block">
-                                            <p style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#047857;margin:0 0 1.25rem;">Authorised Signatories</p>
+                                            <p
+                                                style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#047857;margin:0 0 1.25rem;">
+                                                Authorised Signatories</p>
                                             <div class="moa-signatures-grid">
                                                 <div>
-                                                    <p style="font-size:0.78rem;color:var(--text-light);margin:0 0 0.75rem;font-weight:600;">President</p>
-                                                    <div style="border-bottom:2px solid #047857;padding-bottom:0.5rem;margin-bottom:0.5rem;width:100%;max-width:180px;"></div>
-                                                    <p style="font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:700;color:#1a2e22;font-style:italic;margin:0;">Sudip Chakma</p>
+                                                    <p
+                                                        style="font-size:0.78rem;color:var(--text-light);margin:0 0 0.75rem;font-weight:600;">
+                                                        President</p>
+                                                    <div
+                                                        style="border-bottom:2px solid #047857;padding-bottom:0.5rem;margin-bottom:0.5rem;width:100%;max-width:180px;">
+                                                    </div>
+                                                    <p
+                                                        style="font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:700;color:#1a2e22;font-style:italic;margin:0;">
+                                                        Sudip Chakma</p>
                                                 </div>
                                                 <div>
-                                                    <p style="font-size:0.78rem;color:var(--text-light);margin:0 0 0.75rem;font-weight:600;">General Secretary</p>
-                                                    <div style="border-bottom:2px solid #047857;padding-bottom:0.5rem;margin-bottom:0.5rem;width:100%;max-width:180px;"></div>
-                                                    <p style="font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:700;color:#1a2e22;font-style:italic;margin:0;">Rakesh Kumar Chakma</p>
+                                                    <p
+                                                        style="font-size:0.78rem;color:var(--text-light);margin:0 0 0.75rem;font-weight:600;">
+                                                        General Secretary</p>
+                                                    <div
+                                                        style="border-bottom:2px solid #047857;padding-bottom:0.5rem;margin-bottom:0.5rem;width:100%;max-width:180px;">
+                                                    </div>
+                                                    <p
+                                                        style="font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:700;color:#1a2e22;font-style:italic;margin:0;">
+                                                        Rakesh Kumar Chakma</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2058,22 +2515,22 @@
                     </div>
                 </div>
             </section>
-        <!-- ---------- NEWSLETTER BAND ---------- -->
-        <div class="newsletter-band">
-            <div class="container">
-                <div class="newsletter-inner">
-                    <div class="newsletter-text">
-                        <h3>Stay connected with GCF</h3>
-                        <p>Get updates on our programs and community impact stories.</p>
+            <!-- ---------- NEWSLETTER BAND ---------- -->
+            <div class="newsletter-band">
+                <div class="container">
+                    <div class="newsletter-inner">
+                        <div class="newsletter-text">
+                            <h3>Stay connected with GCF</h3>
+                            <p>Get updates on our programs and community impact stories.</p>
+                        </div>
+                        <form class="newsletter-form" id="news-form" novalidate>
+                            <input type="email" id="news-email" placeholder="Enter your email address"
+                                aria-label="Email for newsletter" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
                     </div>
-                    <form class="newsletter-form" id="news-form" novalidate>
-                        <input type="email" id="news-email" placeholder="Enter your email address"
-                            aria-label="Email for newsletter" required>
-                        <button type="submit">Subscribe</button>
-                    </form>
                 </div>
             </div>
-        </div>
 
     </main>
 
@@ -2085,7 +2542,10 @@
                     <a href="index.html" class="logo-link">
                         <img src="assets/images/hero/logo.png" alt="Global Compassion Foundation Logo">
                     </a>
-                    <p style="margin-top: var(--space-md); font-size: var(--text-sm); line-height: 1.6; max-width: 320px; color: var(--text-light);">Empowering remote indigenous communities through sustainable development, education, clean water access, and cultural heritage preservation.</p>
+                    <p
+                        style="margin-top: var(--space-md); font-size: var(--text-sm); line-height: 1.6; max-width: 320px; color: var(--text-light);">
+                        Empowering remote indigenous communities through sustainable development, education, clean water
+                        access, and cultural heritage preservation.</p>
                 </div>
                 <div class="footer-col">
                     <h3>Quick Links</h3>
@@ -2101,19 +2561,29 @@
                 </div>
                 <div class="footer-col">
                     <h3>Get in Touch</h3>
-                    <p><i class="fas fa-map-marker-alt" style="margin-right: 8px; color: var(--brand-accent);"></i> Tuichawng, Lunglei District, Mizoram, North-East India</p>
-                    <p><i class="fas fa-envelope" style="margin-right: 8px; color: var(--brand-accent);"></i> president.gcf.024@gmail.com</p>
-                    <p><i class="fas fa-phone-alt" style="margin-right: 8px; color: var(--brand-accent);"></i> +91 9612602899</p>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 8px; color: var(--brand-accent);"></i>
+                        Tuichawng, Lunglei District, Mizoram, North-East India</p>
+                    <p><i class="fas fa-envelope" style="margin-right: 8px; color: var(--brand-accent);"></i>
+                        president.gcf.024@gmail.com</p>
+                    <p><i class="fas fa-phone-alt" style="margin-right: 8px; color: var(--brand-accent);"></i> +91
+                        9612602899</p>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
-                <p>&copy; <span id="copyright-year">2026</span> Global Compassion Foundation. All Rights Reserved. Designed with care.</p>
+                <p>&copy; <span id="copyright-year">2026</span> Global Compassion Foundation. All Rights Reserved.
+                    Designed with care.</p>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/share/1D7DtNhzAA/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.youtube.com/@gcf_global" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="https://www.instagram.com/globalcompassionfoundation?igsh=dmpzOXl4aHc1aDJr#" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/global-compassion-foundation-73364a177/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/share/1D7DtNhzAA/" target="_blank" rel="noopener noreferrer"
+                        class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/@gcf_global" target="_blank" rel="noopener noreferrer"
+                        class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/globalcompassionfoundation?igsh=dmpzOXl4aHc1aDJr#"
+                        target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/global-compassion-foundation-73364a177/" target="_blank"
+                        rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
@@ -2141,13 +2611,13 @@
                 header.addEventListener('click', () => {
                     const item = header.parentElement;
                     const isActive = item.classList.contains('active');
-                    
+
                     // Close all accordion items
                     document.querySelectorAll('.accordion-item').forEach(accItem => {
                         accItem.classList.remove('active');
                         accItem.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
                     });
-                    
+
                     // Toggle the clicked one
                     if (!isActive) {
                         item.classList.add('active');
@@ -2222,4 +2692,5 @@
         });
     </script>
 </body>
+
 </html>
