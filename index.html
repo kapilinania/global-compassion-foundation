@@ -33,6 +33,11 @@
         content="Global Compassion Foundation (GCF) is dedicated to empowering Chakma tribal children through education, clean water, and community development in Tuichawng, Mizoram.">
     <meta property="twitter:image" content="https://globalcompassionfoundation.org/assets/images/hero/logo.png">
 
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="stylesheet" href="css/variables.css?v=4.0">
     <link rel="stylesheet" href="css/main.css?v=4.0">
     <link rel="stylesheet" href="css/layout.css?v=4.0">
@@ -1626,32 +1631,47 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "NonprofitOrganization",
-      "name": "Global Compassion Foundation",
-      "alternateName": "GCF",
-      "url": "https://globalcompassionfoundation.org/index.html",
-      "logo": "https://globalcompassionfoundation.org/assets/images/hero/logo.png",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+91-9612602899",
-        "contactType": "president support",
-        "email": "president.gcf.024@gmail.com",
-        "areaServed": "IN",
-        "availableLanguage": ["en", "Hindi"]
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Tuichawng Village, Lunglei District",
-        "addressRegion": "Mizoram",
-        "addressCountry": "IN"
-      },
-      "sameAs": [
-        "https://www.facebook.com/share/1D7DtNhzAA/",
-        "https://www.youtube.com/@gcf_global",
-        "https://www.instagram.com/globalcompassionfoundation?igsh=dmpzOXl4aHc1aDJr#",
-        "https://www.linkedin.com/in/global-compassion-foundation-73364a177/"
-      ],
-      "description": "Global Compassion Foundation (GCF) is dedicated to empowering Chakma tribal children through education, clean water, and community development in Tuichawng, Mizoram."
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://globalcompassionfoundation.org/index.html"
+            }
+          ]
+        },
+        {
+          "@type": "NonprofitOrganization",
+          "name": "Global Compassion Foundation",
+          "alternateName": "GCF",
+          "url": "https://globalcompassionfoundation.org/index.html",
+          "logo": "https://globalcompassionfoundation.org/assets/images/hero/logo.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-9612602899",
+            "contactType": "president support",
+            "email": "president.gcf.024@gmail.com",
+            "areaServed": "IN",
+            "availableLanguage": ["en", "Hindi"]
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Tuichawng Village, Lunglei District",
+            "addressRegion": "Mizoram",
+            "addressCountry": "IN"
+          },
+          "sameAs": [
+            "https://www.facebook.com/share/1D7DtNhzAA/",
+            "https://www.youtube.com/@gcf_global",
+            "https://www.instagram.com/globalcompassionfoundation?igsh=dmpzOXl4aHc1aDJr#",
+            "https://www.linkedin.com/in/global-compassion-foundation-73364a177/"
+          ],
+          "description": "Global Compassion Foundation (GCF) is dedicated to empowering Chakma tribal children through education, clean water, and community development in Tuichawng, Mizoram."
+        }
+      ]
     }
     </script>
 </head>
@@ -1937,7 +1957,7 @@
                 <!-- Intro split -->
                 <div class="edu-intro">
                     <div class="edu-intro-img">
-                        <img src="assets/images/projects/ehanc3.jpeg" alt="Rural children studying with hope">
+                        <img src="assets/images/projects/ehanc3.jpeg" alt="Rural children studying with hope" loading="lazy">
                         <div class="floating-stat">
                             <div class="floating-stat-num">100%</div>
                             <div class="floating-stat-label">Funds to Children</div>
@@ -2045,7 +2065,7 @@
             <div class="container">
                 <div class="about-strip-inner">
                     <div class="about-strip-img">
-                        <img src="assets/images/projects/teamDisplay.jpeg" alt="Volunteers working with community">
+                        <img src="assets/images/projects/teamDisplay.jpeg" alt="Volunteers working with GCF community" loading="lazy">
                     </div>
                     <div class="about-strip-text">
                         <span class="sec-eyebrow" style="background:rgba(4,120,87,0.2); color:#6ee7b7;">Who We
@@ -2096,7 +2116,7 @@
                         <div class="project-img-v4">
                             <span class="project-tag">Forestry</span>
                             <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=600&auto=format&fit=crop"
-                                alt="Reforestation site">
+                                alt="Reforestation site for seedling nursery in Sajek Valley" loading="lazy">
                         </div>
                         <div class="project-body">
                             <h3 class="project-title-v4">Sajek Valley Nursery</h3>
@@ -2120,7 +2140,7 @@
                     <div class="project-card-v4">
                         <div class="project-img-v4">
                             <span class="project-tag">Education</span>
-                            <img src="assets/images/projects/classroom1.jpg" alt="Students learning">
+                            <img src="assets/images/projects/classroom1.jpg" alt="Underprivileged students learning native Chakma script in Sajek school class" loading="lazy">
                         </div>
                         <div class="project-body">
                             <h3 class="project-title-v4">Chakma Script Schools</h3>
@@ -2144,7 +2164,7 @@
                     <div class="project-card-v4">
                         <div class="project-img-v4">
                             <span class="project-tag">Infrastructure</span>
-                            <img src="assets/images/projects/classroom.jpg" alt="Clean water tap">
+                            <img src="assets/images/projects/classroom.jpg" alt="Clean water tap connected to gravity aqueduct pipeline" loading="lazy">
                         </div>
                         <div class="project-body">
                             <h3 class="project-title-v4">Ruma Gravity Pipes</h3>
@@ -2175,7 +2195,7 @@
                 <div class="heritage-inner">
                     <div class="heritage-img">
                         <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=700&auto=format&fit=crop"
-                            alt="Chakma cultural weaving">
+                            alt="Traditional Chakma indigenous handloom weaving patterns" loading="lazy">
                     </div>
                     <div class="heritage-text">
                         <span class="sec-eyebrow">Cultural Roots</span>
@@ -2316,7 +2336,7 @@
             <div class="footer-top">
                 <div class="footer-col">
                     <a href="index.html" class="logo-link" style="display:inline-flex; margin-bottom:1rem;">
-                        <img src="assets/images/hero/logo.png" alt="GCF Logo" style="height:56px; width:auto;">
+                        <img src="assets/images/hero/logo.png" alt="Global Compassion Foundation Logo" style="height:56px; width:auto;" loading="lazy">
                     </a>
                     <p>A grassroots non-profit initiative supporting Chakma tribal children with education, mentorship,
                         and community development from Tuichawng Village, Mizoram.</p>

@@ -33,6 +33,11 @@
         content="Deploy your skills directly where they matter most, working with local coordinators on active community sites.">
     <meta property="twitter:image" content="https://globalcompassionfoundation.org/assets/images/hero/logo.png">
 
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <!-- CSS Style sheets linked directly -->
     <link rel="stylesheet" href="css/variables.css?v=3.1">
     <link rel="stylesheet" href="css/main.css?v=3.1">
@@ -626,10 +631,12 @@
         },
         {
           "@context": "https://schema.org",
+          "@type": "WebPage",
           "url": "https://globalcompassionfoundation.org/volunteer.html",
           "mainEntityOfPage": "https://globalcompassionfoundation.org/volunteer.html",
+          "name": "Join Our Volunteer Network",
           "headline": "Join Our Volunteer Network | Global Compassion Foundation",
-          "description": "Deploy your skills directly where they matter most, working with local coordinators on active community sites.",
+          "description": "Register to volunteer with GCF on active field projects in Mizoram.",
           "publisher": {
             "@type": "NonprofitOrganization",
             "name": "Global Compassion Foundation",
@@ -637,12 +644,45 @@
               "@type": "ImageObject",
               "url": "https://globalcompassionfoundation.org/assets/images/hero/logo.png"
             }
-          },
-          ...{
-          "@type": "WebPage",
-          "name": "Join Our Volunteer Network",
-          "description": "Register to volunteer with GCF on active field projects in Mizoram."
-}
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Do I need prior experience?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, we match you with projects based on your skills. While professional backgrounds in teaching, nursing, or engineering are highly valuable, we also have plenty of opportunities in reforestation nurseries and logistics support."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long are the placements?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Placement durations are flexible, ranging from short-term field campaigns (2 weeks) to long-term community integrations (1 to 3 months). We list specific details during the skills mapping stage."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Where will I stay?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Volunteers reside in secure local guest rooms or shared community houses arranged by GCF coordinators and village elders. Clean meals, clean drinking water, and standard lodgings are fully provided."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are the travel requirements?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Volunteers are responsible for their transit to the nearest municipal hub (e.g. transit regional centers). From there, GCF coordinates all transport to deep forest sites and remote valley sectors."
+              }
+            }
+          ]
         }
       ]
     }
@@ -738,7 +778,7 @@
 
                     <div class="split-block-img">
                         <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=600&auto=format&fit=crop"
-                            alt="Volunteer teacher smiling and teaching eager young children in an outdoor community setting">
+                            alt="Volunteer teacher smiling and teaching eager young children in an outdoor community setting" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -1109,7 +1149,7 @@
             <div class="footer-top">
                 <div class="footer-col" style="flex-grow: 1.5;">
                     <a href="index.html" class="logo-link">
-                        <img src="assets/images/hero/logo.png" alt="Global Compassion Foundation Logo">
+                        <img src="assets/images/hero/logo.png" alt="Global Compassion Foundation Logo" loading="lazy">
                     </a>
                     <p
                         style="margin-top: var(--space-md); font-size: var(--text-sm); line-height: 1.6; max-width: 320px; color: var(--text-light);">

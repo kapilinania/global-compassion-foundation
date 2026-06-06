@@ -33,6 +33,11 @@
         content="Discover the mission, vision, values, and work of Global Compassion Foundation in Tuichawng, Mizoram, India. Led by founder Mr. Sudip Chakma to serve marginalized rural communities.">
     <meta property="twitter:image" content="https://globalcompassionfoundation.org/assets/images/hero/logo.png">
 
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="stylesheet" href="css/variables.css?v=3.1">
     <link rel="stylesheet" href="css/main.css?v=3.1">
     <link rel="stylesheet" href="css/layout.css?v=3.1">
@@ -1190,10 +1195,12 @@
         },
         {
           "@context": "https://schema.org",
+          "@type": "AboutPage",
           "url": "https://globalcompassionfoundation.org/about.html",
           "mainEntityOfPage": "https://globalcompassionfoundation.org/about.html",
+          "name": "About Us",
           "headline": "About Us | Global Compassion Foundation",
-          "description": "Discover the mission, vision, values, and work of Global Compassion Foundation in Tuichawng, Mizoram, India.",
+          "description": "Learn about the mission, vision, values, and the executive board of Global Compassion Foundation.",
           "publisher": {
             "@type": "NonprofitOrganization",
             "name": "Global Compassion Foundation",
@@ -1201,12 +1208,7 @@
               "@type": "ImageObject",
               "url": "https://globalcompassionfoundation.org/assets/images/hero/logo.png"
             }
-          },
-          ...{
-          "@type": "AboutPage",
-          "name": "About Us",
-          "description": "Learn about the mission, vision, values, and the executive board of Global Compassion Foundation."
-}
+          }
         }
       ]
     }
@@ -1334,7 +1336,7 @@
 
                         <div class="polaroid-frame">
                             <img src="assets/images/about/about.jpeg"
-                                alt="Compassion in Action - Small plants and seedlings in hands representing growth and community welfare">
+                                alt="Compassion in Action - Small plants and seedlings in hands representing growth and community welfare" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -1493,7 +1495,7 @@
                         <div style="position: relative; max-width: 380px; margin: 0 auto;">
                             <div class="polaroid-frame">
                                 <img src="assets/images/team/founder.jpeg"
-                                    alt="Mr. Sudip Chakma - Founder of Global Compassion Foundation">
+                                    alt="Mr. Sudip Chakma - Founder of Global Compassion Foundation" loading="lazy">
                                 <div
                                     style="text-align: center; font-size: var(--text-xs); color: var(--text-light); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 12px;">
                                     Mr. Sudip Chakma</div>
@@ -2540,7 +2542,7 @@
             <div class="footer-top">
                 <div class="footer-col" style="flex-grow: 1.5;">
                     <a href="index.html" class="logo-link">
-                        <img src="assets/images/hero/logo.png" alt="Global Compassion Foundation Logo">
+                        <img src="assets/images/hero/logo.png" alt="Global Compassion Foundation Logo" loading="lazy">
                     </a>
                     <p
                         style="margin-top: var(--space-md); font-size: var(--text-sm); line-height: 1.6; max-width: 320px; color: var(--text-light);">

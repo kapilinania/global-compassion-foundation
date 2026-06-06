@@ -28,6 +28,11 @@
     <meta property="twitter:description" content="Get in touch with Global Compassion Foundation. Reach our office, send a message, or request audits.">
     <meta property="twitter:image" content="https://globalcompassionfoundation.org/assets/images/hero/logo.png">
 
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="stylesheet" href="css/variables.css?v=3.1">
     <link rel="stylesheet" href="css/main.css?v=3.1">
     <link rel="stylesheet" href="css/layout.css?v=3.1">
@@ -58,10 +63,12 @@
         },
         {
           "@context": "https://schema.org",
+          "@type": "ContactPage",
           "url": "https://globalcompassionfoundation.org/contact.html",
           "mainEntityOfPage": "https://globalcompassionfoundation.org/contact.html",
+          "name": "Contact Us",
           "headline": "Contact Us | Global Compassion Foundation",
-          "description": "Get in touch with Global Compassion Foundation. Reach our office, send a message, or request audits.",
+          "description": "Get in touch with GCF regarding partnerships, donations, or volunteering.",
           "publisher": {
             "@type": "NonprofitOrganization",
             "name": "Global Compassion Foundation",
@@ -69,12 +76,7 @@
               "@type": "ImageObject",
               "url": "https://globalcompassionfoundation.org/assets/images/hero/logo.png"
             }
-          },
-          ...{
-          "@type": "ContactPage",
-          "name": "Contact Us",
-          "description": "Get in touch with GCF regarding partnerships, donations, or volunteering."
-}
+          }
         }
       ]
     }
@@ -594,7 +596,7 @@
             <div class="footer-top">
                 <div class="footer-col" style="flex-grow: 1.5;">
                     <a href="index.html" class="logo-link">
-                        <img src="assets/images/hero/logo.png" alt="Global Compassion Foundation Logo">
+                        <img src="assets/images/hero/logo.png" alt="Global Compassion Foundation Logo" loading="lazy">
                     </a>
                     <p style="margin-top: var(--space-md); font-size: var(--text-sm); line-height: 1.6; max-width: 320px; color: var(--text-light);">Empowering remote indigenous communities through sustainable development, education, clean water access, and cultural heritage preservation.</p>
                 </div>
