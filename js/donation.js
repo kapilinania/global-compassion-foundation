@@ -407,6 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const cause = donationCauseSelect.options[donationCauseSelect.selectedIndex].text;
         const panNumber = taxReceiptToggle.checked ? donorPanInput.value.trim().toUpperCase() : 'N/A';
         const isWhatsapp = whatsappOptin.checked && phone !== 'Not Provided';
+        const receiptNo = `GCF/2026-27/${Math.floor(100000 + Math.random() * 900000)}`;
 
         const modal = document.createElement('div');
         modal.className = 'modal-overlay';
@@ -421,7 +422,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div style="background: var(--bg-offset); padding: var(--space-md); border-radius: var(--radius-md); text-align: left; margin-bottom: var(--space-lg); border: 1px solid var(--border-light); font-size: var(--text-xs); line-height: 1.6;">
                     <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-light); padding-bottom: 4px; margin-bottom: var(--space-xs);">
                         <span style="color: var(--text-light);">Receipt No:</span>
-                        <strong style="color: var(--primary);">GCF/2026-27/${Math.floor(100000 + Math.random() * 900000)}</strong>
+                        <strong style="color: var(--primary);">${receiptNo}</strong>
                     </div>
                     <div style="display: flex; justify-content: space-between; margin-bottom: 2px;">
                         <span style="color: var(--text-light);">Amount Paid:</span>
@@ -447,7 +448,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </p>
 
                 <div style="display: flex; flex-direction: column; gap: var(--space-xs);">
-                    <button class="btn btn-secondary" style="width: 100%; border-radius: var(--radius-full); color: white; display: flex; align-items: center; justify-content: center; gap: 8px;" id="download-receipt-btn">
+                    <button class="btn btn-secondary" style="width: 100%; border-radius: var(--radius-full); color: white; display: inline-flex; align-items: center; justify-content: center; gap: 8px;" id="download-receipt-btn">
                         <i class="fas fa-file-arrow-down"></i> Download 80G Receipt (PDF)
                     </button>
                     <button class="btn btn-outline" style="width: 100%; border-radius: var(--radius-full);" id="close-modal-btn">Return to Site</button>
@@ -456,9 +457,101 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         document.body.appendChild(modal);
 
-        // Receipt Download Simulation
+        // Receipt Download Event Handler
         document.getElementById('download-receipt-btn').addEventListener('click', () => {
-            const receiptText = `
+            const { jsPDF } = window.jspdf || {};
+            if (jsPDF) {
+                const doc = new jsPDF();
+                
+                // Add receipt branding
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(22);
+                doc.setTextColor(4, 120, 87); // --secondary color: RGB(4, 120, 87)
+                doc.text("GLOBAL COMPASSION FOUNDATION", 20, 25);
+                
+                doc.setFontSize(10);
+                doc.setFont("helvetica", "normal");
+                doc.setTextColor(100, 100, 100);
+                doc.text("Mizoram Charitable Trust Reg No: 824/2018", 20, 32);
+                doc.text("Tuichawng, Lunglei District, Mizoram, India", 20, 37);
+                doc.text("Email: president.gcf.024@gmail.com | Web: globalcompassionfoundation.org", 20, 42);
+                
+                doc.setDrawColor(200, 200, 200);
+                doc.line(20, 47, 190, 47);
+                
+                // Title
+                doc.setFontSize(14);
+                doc.setFont("helvetica", "bold");
+                doc.setTextColor(28, 25, 23);
+                doc.text("DONATION RECEIPT & SEC 80G CERTIFICATE", 20, 57);
+                
+                // Content grid
+                doc.setFontSize(11);
+                doc.setFont("helvetica", "normal");
+                doc.setTextColor(60, 60, 60);
+                
+                let y = 70;
+                const fieldHeight = 8;
+                
+                const drawRow = (label, val, boldVal = false) => {
+                    doc.setFont("helvetica", "normal");
+                    doc.text(label, 20, y);
+                    if (boldVal) doc.setFont("helvetica", "bold");
+                    doc.text(val, 80, y);
+                    y += fieldHeight;
+                };
+                
+                drawRow("Receipt Number:", receiptNo, true);
+                drawRow("Date:", new Date().toLocaleDateString('en-IN'));
+                drawRow("Donor Name:", name, true);
+                drawRow("Email Address:", email);
+                drawRow("Mobile Number:", phone);
+                drawRow("Donation Type:", frequency);
+                drawRow("PAN Card Number:", panNumber);
+                drawRow("Allocated Cause:", cause);
+                
+                y += 4;
+                doc.line(20, y, 190, y);
+                y += 10;
+                
+                // Amount details
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(12);
+                doc.setTextColor(4, 120, 87);
+                doc.text(`Donation Amount: INR ${selectedAmount.toLocaleString('en-IN')}`, 20, y);
+                y += 7;
+                
+                doc.setFont("helvetica", "italic");
+                doc.setFontSize(10);
+                doc.setTextColor(100, 100, 100);
+                doc.text(`Amount in Words: Rupees ${numberToWords(selectedAmount)} Only`, 20, y);
+                y += 15;
+                
+                // Certification message
+                doc.setFont("helvetica", "normal");
+                doc.setFontSize(9);
+                doc.setTextColor(120, 120, 120);
+                
+                const splitText = doc.splitTextToSize(
+                    "This is an official receipt and Sec 80G tax exemption certificate issued by Global Compassion Foundation. This certificate certifies that the donor is entitled to claim 50% tax deduction under Section 80G of the Income Tax Act, 1961 on the amount mentioned above.",
+                    170
+                );
+                doc.text(splitText, 20, y);
+                y += 20;
+                
+                // Signature
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(10);
+                doc.setTextColor(28, 25, 23);
+                doc.text("Authorized Signatory", 140, y);
+                doc.setFont("helvetica", "italic");
+                doc.setFontSize(9);
+                doc.text("Global Compassion Foundation", 140, y + 5);
+                
+                doc.save(`GCF_Donation_Receipt_${name.replace(/\s+/g, '_')}.pdf`);
+            } else {
+                // Fallback to text file if jsPDF didn't load (offline)
+                const receiptText = `
 =========================================
       GLOBAL COMPASSION FOUNDATION
 =========================================
@@ -468,7 +561,7 @@ Contact: president.gcf.024@gmail.com
 -----------------------------------------
 DONATION RECEIPT & SEC 80G CERTIFICATE
 -----------------------------------------
-Receipt Number: GCF/2026-27/${Math.floor(100000 + Math.random() * 900000)}
+Receipt Number: ${receiptNo}
 Date: ${new Date().toLocaleDateString('en-IN')}
 Donor Name: ${name}
 Email Address: ${email}
@@ -480,21 +573,20 @@ Donation Amount: INR ${selectedAmount.toLocaleString('en-IN')}
 Amount in Words: Rupees ${numberToWords(selectedAmount)} Only
 Cause: ${cause}
 -----------------------------------------
-This is a computer-generated receipt for a simulated
-donation. No actual money was transferred. Global
-Compassion Foundation claims 80G exemption benefits.
+This is an official receipt and Sec 80G tax exemption
+certificate issued by Global Compassion Foundation.
 Thank you for your valuable support!
 =========================================
-            `;
-
-            const blob = new Blob([receiptText], { type: 'text/plain' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = `GCF_Donation_Receipt_${name.replace(/\s+/g, '_')}.txt`;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            alert('Mock receipt downloaded successfully as a text file!');
+                `;
+                const blob = new Blob([receiptText], { type: 'text/plain' });
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = `GCF_Donation_Receipt_${name.replace(/\s+/g, '_')}.txt`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                alert('Mock receipt downloaded successfully as a text file (PDF generator offline).');
+            }
         });
 
         // Close Modal and Reset Form

@@ -161,6 +161,50 @@
                 gap: var(--space-md);
             }
         }
+
+        /* Premium Success Modal Overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(17, 24, 39, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            animation: fadeInOverlay 0.3s ease-out forwards;
+        }
+
+        /* Modal Card with premium animations */
+        .modal-card {
+            background: white;
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            max-width: 520px;
+            width: 90%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border: 1px solid var(--border-light);
+            border-top: 5px solid var(--secondary);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideInModal 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeInOverlay {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInModal {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
     </style>
 
     <!-- JSON-LD Structured Data for Google -->
@@ -657,6 +701,7 @@
     </footer>
 
     <!-- JS Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="js/navigation.js?v=3.1"></script>
     <script src="js/main.js"></script>
     <script src="js/donation.js"></script>
