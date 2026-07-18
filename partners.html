@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Trusted Partners & Affiliations | Global Compassion Foundation</title>
+    <meta name="description"
+        content="Global Compassion Foundation (GCF) collaborates with organizations like ConnectFor and Great Place to Work to empower indigenous Chakma tribal children in Mizoram.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/hero/logo.png">
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords"
+        content="Global Compassion Foundation partners, GCF affiliations, ConnectFor, Great Place to Work, NGO collaborations, tribal community support, Mizoram NGO partners, Sudip Chakma">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://globalcompassionfoundation.org/partners.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://globalcompassionfoundation.org/partners.html">
+    <meta property="og:title" content="Our Trusted Partners & Affiliations | Global Compassion Foundation">
+    <meta property="og:description"
+        content="Global Compassion Foundation (GCF) collaborates with organizations like ConnectFor and Great Place to Work to empower indigenous Chakma tribal children in Mizoram.">
+    <meta property="og:image" content="https://globalcompassionfoundation.org/assets/images/hero/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://globalcompassionfoundation.org/partners.html">
+    <meta property="twitter:title" content="Our Trusted Partners & Affiliations | Global Compassion Foundation">
+    <meta property="twitter:description"
+        content="Global Compassion Foundation (GCF) collaborates with organizations like ConnectFor and Great Place to Work to empower indigenous Chakma tribal children in Mizoram.">
+    <meta property="twitter:image" content="https://globalcompassionfoundation.org/assets/images/hero/logo.png">
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- CSS Style sheets -->
+    <link rel="stylesheet" href="css/variables.css?v=4.0">
+    <link rel="stylesheet" href="css/main.css?v=4.0">
+    <link rel="stylesheet" href="css/layout.css?v=4.0">
+    <!-- FontAwesome for standard icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Page-specific premium styles */
+        .section-relative {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Premium Background Glow Blobs */
+        .glow-blob {
+            position: absolute;
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.05;
+            z-index: 0;
+            pointer-events: none;
+            transition: all 0.6s ease-in-out;
+        }
+
+        .glow-emerald {
+            background-color: var(--secondary);
+        }
+
+        .glow-amber {
+            background-color: var(--brand-accent);
+        }
+
+        .hero-partners {
+            background-image: linear-gradient(rgba(28, 25, 23, 0.85), rgba(28, 25, 23, 0.85)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1470&auto=format&fit=crop');
+        }
+
+        /* Unified Premium Partner Showcase Card */
+        .partner-showcase-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
+            padding: var(--space-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 220px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .partner-showcase-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(4, 120, 87, 0.02) 0%, rgba(217, 119, 6, 0.02) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .partner-showcase-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--secondary);
+        }
+
+        .partner-showcase-card:hover::before {
+            opacity: 1;
+        }
+
+        .partner-showcase-img {
+            max-width: 85%;
+            max-height: 130px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .partner-showcase-card:hover .partner-showcase-img {
+            transform: scale(1.04);
+        }
+
+        /* Premium Framed Certificate/Badge Card (Specifically for GPTW) */
+        .certificate-badge-card {
+            position: relative;
+            background: white;
+            padding: 12px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 2;
+            width: 100%;
+        }
+
+        .certificate-badge-card::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: -10px;
+            bottom: -10px;
+            background-color: rgba(217, 119, 6, 0.08);
+            border-radius: var(--radius-lg);
+            z-index: -1;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .certificate-badge-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--brand-accent);
+        }
+
+        .certificate-badge-card:hover::before {
+            transform: translate(-4px, -4px);
+            background-color: rgba(4, 120, 87, 0.08);
+        }
+
+        .certificate-badge-img {
+            width: 100%;
+            height: auto;
+            max-height: 280px;
+            display: block;
+            object-fit: contain;
+            border-radius: var(--radius-md);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .certificate-badge-card:hover .certificate-badge-img {
+            transform: scale(1.02);
+        }
+
+        /* Balanced Horizontal Layout Components */
+        .partner-header-block {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-md);
+        }
+
+        @media (min-width: 768px) {
+            .partner-header-block {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: var(--space-xl);
+            }
+            .partner-header-block > .partner-showcase-card,
+            .partner-header-block > .certificate-badge-card {
+                max-width: 240px;
+                flex-shrink: 0;
+            }
+            .partner-header-block.layout-reverse {
+                flex-direction: row-reverse;
+            }
+        }
+
+        /* Interactive Grid of Features */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+
+        @media (min-width: 640px) {
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .feature-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .feature-item-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: var(--space-md) var(--space-lg);
+            display: flex;
+            gap: var(--space-md);
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .feature-item-card:hover {
+            transform: translateY(-2px) translateX(4px);
+            border-color: var(--secondary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            color: var(--secondary);
+            background-color: var(--secondary-light);
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item-card:hover .feature-icon-box {
+            background-color: var(--secondary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .feature-item-card h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 2px;
+        }
+
+        .feature-item-card p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+            line-height: 1.4;
+        }
+
+        /* Interactive Trust Values Grid (Great Place to Work) */
+        .trust-values-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+
+        @media (min-width: 480px) {
+            .trust-values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .trust-values-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 992px) {
+            .trust-values-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+        .trust-value-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            text-align: center;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: var(--shadow-sm);
+            cursor: pointer;
+        }
+
+        .trust-value-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--brand-accent);
+            box-shadow: 0 10px 20px rgba(217, 119, 6, 0.08);
+        }
+
+        .trust-value-icon {
+            font-size: 1.5rem;
+            color: var(--brand-accent);
+            margin-bottom: var(--space-xs);
+            transition: transform 0.3s ease;
+        }
+
+        .trust-value-card:hover .trust-value-icon {
+            transform: scale(1.2) rotate(4deg);
+        }
+
+        .trust-value-card h4 {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+        }
+
+        .trust-value-card p {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            line-height: 1.35;
+            margin-bottom: 0;
+        }
+
+        /* Call To Action Banner */
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary-hover) 100%);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl) var(--space-md);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            margin-top: var(--space-2xl);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        @media (min-width: 768px) {
+            .cta-box {
+                padding: var(--space-2xl) var(--space-xl);
+            }
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(circle at 80% 20%, rgba(217, 119, 6, 0.18) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .cta-box h3 {
+            color: white;
+            font-size: var(--text-2xl);
+            margin-bottom: var(--space-sm);
+        }
+
+        .cta-box p {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto var(--space-lg) auto;
+            font-size: var(--text-sm);
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+        }
+    </style>
+
+    <!-- JSON-LD Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://globalcompassionfoundation.org/index.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Our Partners",
+              "item": "https://globalcompassionfoundation.org/partners.html"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "url": "https://globalcompassionfoundation.org/partners.html",
+          "mainEntityOfPage": "https://globalcompassionfoundation.org/partners.html",
+          "name": "Our Partners & Affiliations",
+          "headline": "Our Trusted Partners & Affiliations | Global Compassion Foundation",
+          "description": "Learn about the organizations that partner with GCF to support education and community development in Mizoram.",
+          "publisher": {
+            "@type": "NonprofitOrganization",
+            "name": "Global Compassion Foundation",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://globalcompassionfoundation.org/assets/images/hero/logo.png"
+            }
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- Top Utility Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-contact">
+                <span><i class="fas fa-envelope"></i> president.gcf.024@gmail.com</span>
+                <span><i class="fas fa-phone-alt"></i> +91 9612602899</span>
+            </div>
+            <div class="top-bar-socials">
+                <a href="https://www.facebook.com/share/1D7DtNhzAA/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@gcf_global" target="_blank" rel="noopener noreferrer"
+                    aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/globalcompassionfoundation?igsh=dmpzOXl4aHc1aDJr#" target="_blank"
+                    rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/global-compassion-foundation-73364a177/" target="_blank"
+                    rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="site-header" id="main-header">
+        <div class="container">
+            <a href="index.html" class="logo-link" id="logo">
+                <img src="assets/images/hero/logo.png" alt="Global Compassion Foundation Logo">
+                <span class="logo-text">Global Compassion <span>Foundation</span></span>
+            </a>
+
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false"
+                id="menu-toggle">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+
+            <nav class="main-nav" id="navigation-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="volunteer.html" class="nav-link">Volunteer</a></li>
+                    <li><a href="donate.html" class="nav-link">Donate</a></li>
+                    <li><a href="chakma.html" class="nav-link">Chakma</a></li>
+                    <li><a href="education.html" class="nav-link">Education</a></li>
+                    <li><a href="partners.html" class="nav-link active">Partners</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <a href="donate.html" class="btn btn-secondary"
+                    style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.05em; padding: 0.5rem 1.25rem; border-radius: var(--radius-full);">Donate</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Subpage Hero Banner -->
+    <div class="subpage-hero hero-partners">
+        <div class="container">
+            <h1>Our Partners & Affiliations</h1>
+            <p>Collaborating with organizations to empower indigenous tribal children and create high-trust community service environments.</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Section 1: Partnership Philosophy -->
+        <section class="section reveal section-relative">
+            <div class="glow-blob glow-emerald" style="top: 10%; left: -8%;"></div>
+            <div class="container">
+                <div class="split-block" style="align-items: center; gap: var(--space-2xl);">
+                    <div style="position: relative; z-index: 1;">
+                        <span class="badge badge-primary">Collaborative Impact</span>
+                        <h2>Strength Through <span>Partnerships</span></h2>
+                        <p style="margin-bottom: var(--space-md); font-weight: 500; font-size: 1.05rem; line-height: 1.6; color: var(--primary);">
+                            At Global Compassion Foundation, we believe that sustainable development is built on collaboration. Working with strategic partners allows GCF to mobilize skills, optimize workflows, and maintain a standard of service that changes lives.
+                        </p>
+                        <p style="margin-bottom: 0; color: var(--text-muted); font-size: var(--text-sm); line-height: 1.65;">
+                            Our collaborations range from volunteer recruitment channels to structural audits that help us evaluate our workplace culture. By aligning GCF with industry-leading entities, we bring advanced infrastructure, verified management practices, and global volunteer resources to the remote Chakma tribal schools of Tuichawng in Mizoram.
+                        </p>
+                    </div>
+
+                    <div class="split-block-img" style="box-shadow: var(--shadow-lg); border-radius: var(--radius-lg); border: 1px solid var(--border-light); padding: 12px; background: white;">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=600&auto=format&fit=crop"
+                            alt="A diverse group of professional team members stacking their hands together in a sign of unity and partnership"
+                            loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Partner 1 - ConnectFor -->
+        <section class="section reveal section-relative"
+            style="background-color: var(--bg-offset); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+            <div class="glow-blob glow-amber" style="bottom: 10%; right: -8%;"></div>
+            <div class="glow-blob glow-emerald" style="top: 10%; left: -8%;"></div>
+            <div class="container">
+                <!-- Partner Header Block: Logo and Title side-by-side on desktop -->
+                <div class="partner-header-block">
+                    <div class="partner-showcase-card">
+                        <img class="partner-showcase-img" src="assets/images/partners/connectfor.png" alt="ConnectFor logo with turquoise swoosh mark">
+                    </div>
+                    <div style="position: relative; z-index: 1;">
+                        <span class="badge badge-secondary" style="background-color: var(--secondary); color: white;">Volunteering Partner</span>
+                        <h2 style="color: var(--primary); margin-top: 4px;">ConnectFor — Bridging the <span>Volunteering Gap</span></h2>
+                        <p style="margin-bottom: 0; font-weight: 500; font-size: 1.05rem; line-height: 1.6; color: var(--primary);">
+                            ConnectFor acts as GCF's primary pipeline for recruiting skilled professionals and passionate mentors across India.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Body Block: Full container width paragraphs -->
+                <div style="position: relative; z-index: 1; margin-top: var(--space-md);">
+                    <p style="margin-bottom: var(--space-lg); color: var(--text-muted); font-size: var(--text-sm); line-height: 1.65;">
+                        Through ConnectFor's digital matching platform, GCF is able to publish structured volunteering requirements and attract specialized individuals. Whether we need remote curriculum designers, content writers, or on-site teachers to conduct English and science classes in deep forest tribal villages, ConnectFor helps us connect with the right talent to expand our operations.
+                    </p>
+
+                    <!-- Interactive Volunteer Focus Areas Grid - Spans full width -->
+                    <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--primary); margin-bottom: var(--space-sm);">Key Collaboration Impact Areas:</h3>
+                    <div class="feature-grid">
+                        <div class="feature-item-card">
+                            <div class="feature-icon-box">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div>
+                                <h4>Academic Mentors</h4>
+                                <p>Conducting online English and STEM coaching sessions.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item-card">
+                            <div class="feature-icon-box">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div>
+                                <h4>Curriculum Creators</h4>
+                                <p>Designing modern syllabi and interactive textbooks.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item-card">
+                            <div class="feature-icon-box">
+                                <i class="fas fa-globe-americas"></i>
+                            </div>
+                            <div>
+                                <h4>Field Coordinators</h4>
+                                <p>Directly supporting logistics and operations on the ground.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item-card">
+                            <div class="feature-icon-box">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div>
+                                <h4>Digital Literacy Advisors</h4>
+                                <p>Structuring basic computer skills classes for children.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: var(--space-xl);">
+                        <a href="volunteer.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
+                            Apply to Volunteer <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- Section 3: Partner 2 - Great Place to Work -->
+        <section class="section reveal section-relative">
+            <div class="glow-blob glow-emerald" style="bottom: 10%; left: -8%;"></div>
+            <div class="container">
+                <!-- Partner Header Block: Logo on right, Title on left on desktop -->
+                <div class="partner-header-block layout-reverse">
+                    <div class="certificate-badge-card">
+                        <img class="certificate-badge-img" src="assets/images/partners/great_place_to_work.png" alt="Great Place to Work certification banner celebrating India's Best Companies to Work For">
+                    </div>
+                    <div style="position: relative; z-index: 1; flex: 1;">
+                        <span class="badge badge-primary">Workplace Excellence</span>
+                        <h2 style="color: var(--primary); margin-top: 4px;">Certified as a <span>Great Place to Work</span></h2>
+                        <p style="margin-bottom: 0; font-weight: 500; font-size: 1.05rem; line-height: 1.6; color: var(--primary);">
+                            GCF has been officially recognized as a certified Great Place to Work in India from May 2026 to May 2027.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Body Block: Full container width paragraphs -->
+                <div style="position: relative; z-index: 1; margin-top: var(--space-md);">
+                    <p style="margin-bottom: var(--space-lg); color: var(--text-muted); font-size: var(--text-sm); line-height: 1.65;">
+                        This certification represents our commitment to creating an outstanding workplace culture. Working in deep tribal sectors like Tuichawng, Lunglei presents logistical and emotional challenges for our field staff. By offering support, transparent communication, and equal growth opportunities, we ensure that GCF remains a safe, empowering, and motivating environment for every educator, volunteer, and coordinator.
+                    </p>
+
+                    <!-- Trust Index Metric Categories (Interactive) - Spans full width -->
+                    <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--primary); margin-bottom: var(--space-sm);">Our GPTW Certified Cultural Pillars:</h3>
+                    <div class="trust-values-grid">
+                        <div class="trust-value-card">
+                            <div class="trust-value-icon"><i class="fas fa-check-circle"></i></div>
+                            <h4>Credibility</h4>
+                            <p>Open communication & transparency</p>
+                        </div>
+                        <div class="trust-value-card">
+                            <div class="trust-value-icon"><i class="fas fa-heart"></i></div>
+                            <h4>Respect</h4>
+                            <p>Support & professional care</p>
+                        </div>
+                        <div class="trust-value-card">
+                            <div class="trust-value-icon"><i class="fas fa-balance-scale"></i></div>
+                            <h4>Fairness</h4>
+                            <p>Equity, justice & inclusion</p>
+                        </div>
+                        <div class="trust-value-card">
+                            <div class="trust-value-icon"><i class="fas fa-trophy"></i></div>
+                            <h4>Pride</h4>
+                            <p>Impact-driven local ownership</p>
+                        </div>
+                        <div class="trust-value-card">
+                            <div class="trust-value-icon"><i class="fas fa-users"></i></div>
+                            <h4>Camaraderie</h4>
+                            <p>Strong community fellowship</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Interactive Partnership CTA -->
+        <section class="section reveal section-relative" style="background-color: var(--bg-offset); border-top: 1px solid var(--border-light);">
+            <div class="glow-blob glow-amber" style="top: 15%; right: -5%;"></div>
+            <div class="container">
+                <div class="cta-box">
+                    <h3>Empower Tribal Education With Us</h3>
+                    <p>Whether you represent a corporate CSR program, an academic institution, or an NGO network, your alliance can expand our reach in providing clean water, digital literacy, and high-quality education to children in Mizoram.</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn btn-secondary" style="border-radius: var(--radius-full); padding: 0.75rem 2rem;">Contact Our Team</a>
+                        <a href="donate.html" class="btn btn-primary" style="background: linear-gradient(135deg, #d97706, #b45309); box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4); border: none; border-radius: var(--radius-full); padding: 0.75rem 2rem;">Support Our Work</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col" style="flex-grow: 1.5;">
+                    <a href="index.html" class="logo-link">
+                        <img src="assets/images/hero/logo.png" alt="Global Compassion Foundation Logo" loading="lazy">
+                    </a>
+                    <p style="margin-top: var(--space-md); font-size: var(--text-sm); line-height: 1.6; max-width: 320px; color: var(--text-light);">
+                        Empowering remote indigenous communities through sustainable development, education, clean water access, and cultural heritage preservation.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="chakma.html">Chakma</a></li>
+                        <li><a href="education.html">Education</a></li>
+                        <li><a href="partners.html">Partners</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="mizoram.html">About Mizoram</a></li>
+                        <li><a href="story.html">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Get in Touch</h3>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 8px; color: var(--brand-accent);"></i>
+                        Tuichawng, Lunglei District, Mizoram, North-East India</p>
+                    <p><i class="fas fa-envelope" style="margin-right: 8px; color: var(--brand-accent);"></i>
+                        president.gcf.024@gmail.com</p>
+                    <p><i class="fas fa-phone-alt" style="margin-right: 8px; color: var(--brand-accent);"></i> 
+                        +91 9612602899</p>
+                </div>
+            </div> <!-- CLOSE FOOTER-TOP -->
+                
+            <!-- Digital Visitor Counter Dashboard -->
+            <div class="footer-counter-divider"></div>
+            <div class="visitor-counter-wrapper" id="visitor-counter-panel">
+                <div class="counter-container">
+                    <div class="counter-info">
+                        <h4><i class="fas fa-chart-line"></i> Engagement Analytics Hub</h4>
+                        <p>Real-time digital footprint & community reach metrics</p>
+                    </div>
+                    <div class="counter-stats-grid">
+                        <!-- Card 1: Total Hits -->
+                        <div class="counter-card" title="Total accumulated visits from global supporters">
+                            <span class="counter-card-icon"><i class="fas fa-globe-asia"></i></span>
+                            <span class="counter-label">Total GCF Visits</span>
+                            <div class="digital-digits-wrapper" id="total-visits-digits">
+                                <!-- Generated by JavaScript: digit-boxes -->
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Session Views -->
+                        <div class="counter-card" title="Number of pages you've visited during this browsing session">
+                            <span class="counter-card-icon"><i class="fas fa-route"></i></span>
+                            <span class="counter-label">Your GCF Footprint</span>
+                            <div class="digital-digits-wrapper" id="session-views-digits">
+                                <!-- Generated by JavaScript: digit-boxes -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Action button -->
+                    <div class="pulse-button-wrapper">
+                        <button class="btn-pulse" id="btn-support-pulse"
+                            title="Send a heartbeat pulse to GCF servers to show your support!">
+                            <span>Send Support Pulse</span>
+                            <i class="fas fa-heartbeat heartbeat-icon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="copyright-year">2026</span> Global Compassion Foundation. All Rights Reserved. Designed with care.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1D7DtNhzAA/" target="_blank" rel="noopener noreferrer"
+                        class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/@gcf_global" target="_blank" rel="noopener noreferrer"
+                        class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/globalcompassionfoundation?igsh=dmpzOXl4aHc1aDJr#"
+                        target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/global-compassion-foundation-73364a177/" target="_blank"
+                        rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div> <!-- CLOSE CONTAINER -->
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="js/navigation.js?v=4.0"></script>
+    <script src="js/main.js?v=4.0"></script>
+</body>
+
+</html>
