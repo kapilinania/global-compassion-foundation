@@ -24,12 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentPath = window.location.pathname;
 
     navLinks.forEach(link => {
-        link.classList.remove('active');
         const href = link.getAttribute('href');
-
-        if (href) {
-            // Check if href is the current page
-            if (currentPath.endsWith(href) || (href === 'index.html' && (currentPath.endsWith('/') || currentPath === ''))) {
+        if (href && !href.startsWith('#')) {
+            link.classList.remove('active');
+            if ((currentPath.endsWith(href) && href !== 'index.html') || (href === 'index.html' && (currentPath.endsWith('/') || currentPath.endsWith('index.html') || currentPath === ''))) {
                 link.classList.add('active');
             }
         }
@@ -456,4 +454,182 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Run visitor counter initialization
     initVisitorCounter();
+
+    // ==========================================================================
+    // Interactive Field Updates Gallery & Lightbox
+    // ==========================================================================
+    const initUpdatesGallery = () => {
+        const stageWrapper = document.getElementById('update-main-stage');
+        const stageImage = document.getElementById('update-stage-image');
+        const stageCaption = document.getElementById('update-stage-caption-text');
+        const photoNumEl = document.getElementById('current-photo-num');
+        const prevBtn = document.getElementById('update-prev-btn');
+        const nextBtn = document.getElementById('update-next-btn');
+        const thumbBtns = document.querySelectorAll('.update-thumb-btn');
+
+        const lightboxModal = document.getElementById('gcf-lightbox-modal');
+        const modalImg = document.getElementById('modal-img');
+        const modalCaption = document.getElementById('modal-caption');
+        const modalCounter = document.getElementById('modal-counter');
+        const modalCloseBtn = document.getElementById('modal-close-btn');
+        const modalPrevBtn = document.getElementById('modal-prev-btn');
+        const modalNextBtn = document.getElementById('modal-next-btn');
+
+        if (!stageWrapper || !stageImage || thumbBtns.length === 0) return;
+
+        const photos = Array.from(thumbBtns).map(btn => {
+            const img = btn.querySelector('img');
+            return {
+                src: btn.getAttribute('data-src') || (img ? img.src : ''),
+                caption: btn.getAttribute('data-caption') || (img ? img.alt : ''),
+                alt: img ? img.alt : 'Tuichawng Raincoat Distribution'
+            };
+        });
+
+        let currentIndex = 0;
+
+        const updateStage = (index) => {
+            currentIndex = (index + photos.length) % photos.length;
+            const currentPhoto = photos[currentIndex];
+
+            // Animate transition
+            stageImage.style.opacity = '0.3';
+            setTimeout(() => {
+                stageImage.src = currentPhoto.src;
+                stageImage.alt = currentPhoto.alt;
+                stageImage.style.opacity = '1';
+            }, 150);
+
+            if (stageCaption) {
+                stageCaption.textContent = currentPhoto.caption;
+            }
+            if (photoNumEl) {
+                photoNumEl.textContent = currentIndex + 1;
+            }
+
+            thumbBtns.forEach((btn, idx) => {
+                btn.classList.toggle('active', idx === currentIndex);
+            });
+        };
+
+        // Thumbnail Clicks
+        thumbBtns.forEach((btn, idx) => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                updateStage(idx);
+            });
+        });
+
+        // Prev / Next on Stage
+        if (prevBtn) {
+            prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                updateStage(currentIndex - 1);
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                updateStage(currentIndex + 1);
+            });
+        }
+
+        // Lightbox Functions
+        const openLightbox = (index) => {
+            if (!lightboxModal) return;
+            currentIndex = (index + photos.length) % photos.length;
+            const currentPhoto = photos[currentIndex];
+
+            if (modalImg) {
+                modalImg.src = currentPhoto.src;
+                modalImg.alt = currentPhoto.alt;
+            }
+            if (modalCaption) {
+                modalCaption.textContent = currentPhoto.caption;
+            }
+            if (modalCounter) {
+                modalCounter.textContent = `${currentIndex + 1} / ${photos.length}`;
+            }
+
+            lightboxModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeLightbox = () => {
+            if (!lightboxModal) return;
+            lightboxModal.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        const updateLightbox = (index) => {
+            currentIndex = (index + photos.length) % photos.length;
+            const currentPhoto = photos[currentIndex];
+
+            if (modalImg) {
+                modalImg.style.opacity = '0.3';
+                setTimeout(() => {
+                    modalImg.src = currentPhoto.src;
+                    modalImg.alt = currentPhoto.alt;
+                    modalImg.style.opacity = '1';
+                }, 120);
+            }
+            if (modalCaption) {
+                modalCaption.textContent = currentPhoto.caption;
+            }
+            if (modalCounter) {
+                modalCounter.textContent = `${currentIndex + 1} / ${photos.length}`;
+            }
+
+            // Sync with main stage
+            updateStage(currentIndex);
+        };
+
+        // Open lightbox on stage click (unless clicking nav button)
+        stageWrapper.addEventListener('click', (e) => {
+            if (e.target.closest('.update-stage-btn')) return;
+            openLightbox(currentIndex);
+        });
+
+        if (modalCloseBtn) {
+            modalCloseBtn.addEventListener('click', closeLightbox);
+        }
+
+        if (modalPrevBtn) {
+            modalPrevBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                updateLightbox(currentIndex - 1);
+            });
+        }
+
+        if (modalNextBtn) {
+            modalNextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                updateLightbox(currentIndex + 1);
+            });
+        }
+
+        // Close on background backdrop click
+        if (lightboxModal) {
+            lightboxModal.addEventListener('click', (e) => {
+                if (e.target === lightboxModal || e.target.classList.contains('gcf-lightbox-body') || e.target.classList.contains('gcf-lightbox-img-wrapper')) {
+                    closeLightbox();
+                }
+            });
+        }
+
+        // Keyboard controls
+        document.addEventListener('keydown', (e) => {
+            if (!lightboxModal || !lightboxModal.classList.contains('active')) return;
+            if (e.key === 'Escape') {
+                closeLightbox();
+            } else if (e.key === 'ArrowLeft') {
+                updateLightbox(currentIndex - 1);
+            } else if (e.key === 'ArrowRight') {
+                updateLightbox(currentIndex + 1);
+            }
+        });
+    };
+
+    initUpdatesGallery();
 });
