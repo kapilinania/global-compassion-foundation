@@ -32,9 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const payUpiCard = document.getElementById('pay-upi');
     const payOtherCard = document.getElementById('pay-other');
     const payBankCard = document.getElementById('pay-bank');
+    const payPaypalCard = document.getElementById('pay-paypal');
     const upiQrSection = document.getElementById('upi-qr-section');
     const cardFormSection = document.getElementById('card-form-section');
     const bankDetailsSection = document.getElementById('bank-details-section');
+    const paypalSection = document.getElementById('paypal-section');
+    let paypalButtonRendered = false;
     const upiAmountDisplay = document.getElementById('upi-amount-display');
     const qrPlaceholder = document.getElementById('qr-code-placeholder');
 
@@ -152,7 +155,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const cards = [
             { card: payUpiCard, section: upiQrSection, type: 'UPI' },
             { card: payOtherCard, section: cardFormSection, type: 'CARD' },
-            { card: payBankCard, section: bankDetailsSection, type: 'BANK' }
+            { card: payBankCard, section: bankDetailsSection, type: 'BANK' },
+            { card: payPaypalCard, section: paypalSection, type: 'PAYPAL' }
         ];
 
         cards.forEach(item => {
@@ -168,6 +172,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 if (item.section) item.section.style.display = 'block';
                 paymentMethod = method;
+                
+                // If PayPal is selected, render hosted buttons if SDK is available
+                if (method === 'PAYPAL' && !paypalButtonRendered) {
+                    if (window.paypal && typeof paypal.HostedButtons === 'function') {
+                        const container = document.getElementById('paypal-container-W2ST2ZTYUXNJQ');
+                        if (container) {
+                            try {
+                                paypal.HostedButtons({
+                                    hostedButtonId: "W2ST2ZTYUXNJQ",
+                                }).render("#paypal-container-W2ST2ZTYUXNJQ");
+                                paypalButtonRendered = true;
+                            } catch (err) {
+                                console.warn('PayPal hosted button render:', err);
+                            }
+                        }
+                    }
+                }
             } else {
                 item.card.classList.remove('active');
                 item.card.style.border = '1px solid var(--border-light)';
@@ -190,6 +211,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (payBankCard) {
         payBankCard.addEventListener('click', () => selectPaymentMethod('BANK'));
+    }
+    if (payPaypalCard) {
+        payPaypalCard.addEventListener('click', () => selectPaymentMethod('PAYPAL'));
     }
 
     // Step 1 Validation
@@ -385,6 +409,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     alert('Please enter a valid CVV.');
                     return;
                 }
+            }
+
+            if (paymentMethod === 'PAYPAL') {
+                window.open('https://www.paypal.com/ncp/payment/W2ST2ZTYUXNJQ', '_blank');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Redirecting to PayPal...';
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Complete Donation';
+                }, 2000);
+                return;
             }
 
             // Processing state

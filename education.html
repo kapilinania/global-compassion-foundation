@@ -481,6 +481,8 @@
             .polaroid-gallery .polaroid-frame:nth-child(4) { transform: rotate(2deg) translateY(-2px); }
             .polaroid-gallery .polaroid-frame:nth-child(5) { transform: rotate(-2.2deg) translateY(-6px); }
             .polaroid-gallery .polaroid-frame:nth-child(6) { transform: rotate(1.5deg) translateY(5px); }
+            .polaroid-gallery .polaroid-frame:nth-child(7) { transform: rotate(-1.8deg) translateY(-4px); }
+            .polaroid-gallery .polaroid-frame:nth-child(8) { transform: rotate(1.2deg) translateY(6px); }
             .polaroid-gallery .polaroid-frame::before { width: 100px; }
         }
 
@@ -1262,11 +1264,22 @@
             <div class="glow-blob glow-emerald animated" style="top: 10%; left: -8%;"></div>
             <div class="container">
 
-                <!-- Proposed Project Disclaimer -->
-                <div class="disclaimer-strip">
-                    <div class="disclaimer-icon"><i class="fas fa-info-circle"></i></div>
-                    <div class="disclaimer-text">
-                        <p>Important Notice: At present, Global Compassion Academy has not yet been established. It remains a proposed educational project that Global Compassion Foundation hopes to implement in the future with the support of donors, partners, and well-wishers.</p>
+                <!-- Proposed Project Disclaimer & Fundraiser CTA -->
+                <div class="disclaimer-strip" style="display: flex; flex-direction: column; gap: var(--space-md);">
+                    <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+                        <div class="disclaimer-icon"><i class="fas fa-info-circle"></i></div>
+                        <div class="disclaimer-text">
+                            <p><strong>Important Notice:</strong> At present, Global Compassion Academy has not yet been established. It remains a proposed educational project that Global Compassion Foundation is actively fundraising to implement with the support of donors, partners, and well-wishers.</p>
+                        </div>
+                    </div>
+                    <div style="background: rgba(217, 119, 6, 0.08); border: 1px dashed rgba(217, 119, 6, 0.35); border-radius: var(--radius-md); padding: var(--space-md); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-sm);">
+                        <div>
+                            <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; color: #b45309; letter-spacing: 0.05em; display: block; margin-bottom: 2px;"><i class="fas fa-heart" style="color: #ef4444;"></i> Active Crowdfunding Campaign on Milaap</span>
+                            <strong style="color: var(--primary); font-size: var(--text-sm);">Help Build a Value-Based Inclusive School for Underserved Children</strong>
+                        </div>
+                        <a href="http://m-lp.co/economic-16?utm_medium=campaign_page_share&utm_source=copy" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: #d97706; border-color: #d97706; color: white; font-size: var(--text-xs); padding: 8px 18px; border-radius: var(--radius-full); font-weight: 700; display: inline-flex; align-items: center; gap: 8px;">
+                            Donate on Milaap <i class="fas fa-arrow-up-right-from-square"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -1284,8 +1297,8 @@
                     </div>
                     <div>
                         <div class="polaroid-frame">
-                            <img src="assets/images/projects/ehanc3.jpeg" alt="Underserved children learning in rural classroom setup">
-                            <div class="polaroid-caption">Future Classroom Vision</div>
+                            <img src="assets/images/projects/gcf_images.jpeg" alt="Global Compassion Academy official school fundraising appeal poster">
+                            <div class="polaroid-caption">Academy Vision &amp; Appeal</div>
                         </div>
                     </div>
                 </div>
@@ -1660,7 +1673,7 @@
                                         <div class="roadmap-milestones">
                                             <h4>Key Milestones</h4>
                                             <ul>
-                                                <li><i class="fas fa-circle todo"></i> Launch global digital crowdfunding portal</li>
+                                                <li><i class="fas fa-check-circle" style="color: var(--secondary);"></i> <a href="http://m-lp.co/economic-16?utm_medium=campaign_page_share&utm_source=copy" target="_blank" rel="noopener noreferrer" style="color: var(--secondary); font-weight: 600; text-decoration: underline;">Live on Milaap: Crowdfunding Campaign <i class="fas fa-arrow-up-right-from-square" style="font-size: 10px;"></i></a></li>
                                                 <li><i class="fas fa-circle todo"></i> Partner with international philanthropic trusts</li>
                                                 <li><i class="fas fa-circle todo"></i> Present pitch deck to institutional donors</li>
                                             </ul>
@@ -1872,9 +1885,12 @@
                     </div>
                 </div>
 
-                <div style="text-align: center;">
-                    <a href="donate.html" class="btn btn-primary" style="margin-right: var(--space-md); color: white;">Support This Project</a>
-                    <a href="volunteer.html" class="btn btn-secondary">Join Our Network</a>
+                <div style="text-align: center; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-sm);">
+                    <a href="http://m-lp.co/economic-16?utm_medium=campaign_page_share&utm_source=copy" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: #d97706; border-color: #d97706; color: white; display: inline-flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-hand-holding-heart"></i> Donate on Milaap Fundraiser <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <a href="donate.html" class="btn btn-secondary">Bank / UPI Giving</a>
+                    <a href="volunteer.html" class="btn btn-outline">Join Our Network</a>
                 </div>
             </div>
         </section>
@@ -1924,6 +1940,16 @@
                     <div class="polaroid-frame">
                         <img src="assets/images/projects/enhanc2.jpg" alt="Tribal children reading books in Mizoram village" loading="lazy">
                         <div class="polaroid-caption">Fostering Literacy and Hope</div>
+                    </div>
+                    <!-- Photo 7 -->
+                    <div class="polaroid-frame">
+                        <img src="assets/images/projects/enhanc4.jpeg" alt="Underprivileged children attending morning assembly and in wooden classroom" loading="lazy">
+                        <div class="polaroid-caption">Village Assembly &amp; Class</div>
+                    </div>
+                    <!-- Photo 8 -->
+                    <div class="polaroid-frame">
+                        <img src="assets/images/projects/gcf_images.jpeg" alt="Global Compassion Academy official fundraising appeal poster" loading="lazy">
+                        <div class="polaroid-caption">Official School Campaign</div>
                     </div>
                 </div>
 

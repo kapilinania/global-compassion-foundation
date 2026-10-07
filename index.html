@@ -1200,34 +1200,35 @@
 
         .project-progress-meta {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
-            margin-bottom: 6px;
+            margin-top: auto;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border-light);
         }
 
         .project-progress-pct {
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: #047857;
+            display: none !important;
         }
 
         .project-progress-link {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             font-weight: 700;
-            color: var(--text-light);
+            color: #047857;
             text-decoration: none;
-            transition: color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s, transform 0.2s;
         }
 
         .project-progress-link:hover {
-            color: #047857;
+            color: #059669;
+            transform: translateX(3px);
         }
 
         .progress-track {
-            height: 5px;
-            background: var(--border-light);
-            border-radius: 999px;
-            overflow: hidden;
+            display: none !important;
         }
 
         .progress-fill {
@@ -1552,6 +1553,267 @@
         .offset-bg {
             background: var(--bg-offset);
         }
+
+        /* =========================================================
+           FUNDRAISING APPEAL POPUP MODAL (Responsive Mobile/Tablet/Desktop)
+        ========================================================= */
+        .gcf-appeal-modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: rgba(10, 15, 12, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.35s ease, visibility 0.35s ease;
+        }
+
+        .gcf-appeal-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .gcf-appeal-modal-dialog {
+            position: relative;
+            background: #ffffff;
+            width: 100%;
+            max-width: 580px;
+            max-height: 92vh;
+            border-radius: 20px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.15);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform: scale(0.92) translateY(15px);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gcf-appeal-modal-overlay.active .gcf-appeal-modal-dialog {
+            transform: scale(1) translateY(0);
+        }
+
+        /* Close button - prominent, highly visible, easy to touch on all screens */
+        .gcf-appeal-close-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #1c1917;
+            color: #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+            transition: all 0.25s ease;
+            touch-action: manipulation;
+        }
+
+        .gcf-appeal-close-btn:hover {
+            background: #dc2626;
+            color: #ffffff;
+            transform: scale(1.08) rotate(90deg);
+            border-color: #ffffff;
+        }
+
+        .gcf-appeal-close-btn:focus-visible {
+            outline: 3px solid #d97706;
+            outline-offset: 2px;
+        }
+
+        /* Header */
+        .gcf-appeal-modal-header {
+            background: linear-gradient(135deg, #047857 0%, #065f46 100%);
+            color: white;
+            padding: 1.25rem 3.5rem 1rem 1.25rem;
+            flex-shrink: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gcf-appeal-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #a7f3d0;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 3px 10px;
+            border-radius: 999px;
+            margin-bottom: 6px;
+        }
+
+        .gcf-appeal-heading {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            font-weight: 800;
+            line-height: 1.3;
+            margin: 0 0 4px 0;
+            color: #ffffff;
+        }
+
+        .gcf-appeal-sub {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.82);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* Scrollable Body */
+        .gcf-appeal-modal-body {
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            padding: 12px;
+            background: #f8fafc;
+            flex: 1 1 auto;
+            text-align: center;
+        }
+
+        .gcf-appeal-img-link {
+            display: block;
+            cursor: pointer;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .gcf-appeal-img {
+            width: 100%;
+            height: auto;
+            max-height: calc(85vh - 200px);
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+            transition: transform 0.3s ease;
+        }
+
+        /* Footer Action Bar */
+        .gcf-appeal-modal-footer {
+            background: #ffffff;
+            padding: 0.9rem 1.25rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border-top: 1px solid #e2e8f0;
+            flex-shrink: 0;
+        }
+
+        .gcf-appeal-btn-donate {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: #d97706;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 0.85rem;
+            padding: 0.65rem 1.3rem;
+            border-radius: 999px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.35);
+            transition: all 0.25s ease;
+        }
+
+        .gcf-appeal-btn-donate:hover {
+            background: #b45309;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(217, 119, 6, 0.45);
+        }
+
+        .gcf-appeal-btn-alt {
+            display: inline-flex;
+            align-items: center;
+            background: #ecfdf5;
+            color: #047857;
+            font-weight: 700;
+            font-size: 0.82rem;
+            padding: 0.65rem 1.15rem;
+            border-radius: 999px;
+            text-decoration: none;
+            border: 1px solid #a7f3d0;
+            transition: all 0.25s ease;
+        }
+
+        .gcf-appeal-btn-alt:hover {
+            background: #047857;
+            color: #ffffff;
+        }
+
+        .gcf-appeal-btn-later {
+            background: transparent;
+            border: none;
+            color: #64748b;
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 0.4rem 0.8rem;
+            cursor: pointer;
+            text-decoration: underline;
+            transition: color 0.2s ease;
+        }
+
+        .gcf-appeal-btn-later:hover {
+            color: #1e293b;
+        }
+
+        /* Mobile & Tablet Responsiveness */
+        @media (max-width: 640px) {
+            .gcf-appeal-modal-dialog {
+                max-width: 95%;
+                max-height: 94vh;
+                border-radius: 16px;
+            }
+
+            .gcf-appeal-modal-header {
+                padding: 1rem 3.2rem 0.85rem 1rem;
+            }
+
+            .gcf-appeal-heading {
+                font-size: 1rem;
+            }
+
+            .gcf-appeal-close-btn {
+                top: 8px;
+                right: 8px;
+                width: 38px;
+                height: 38px;
+                font-size: 1rem;
+            }
+
+            .gcf-appeal-modal-footer {
+                flex-direction: column;
+                gap: 6px;
+                padding: 0.75rem 1rem;
+            }
+
+            .gcf-appeal-btn-donate,
+            .gcf-appeal-btn-alt {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+                padding: 0.65rem 1rem;
+            }
+        }
+
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .gcf-appeal-modal-dialog {
+                max-width: 540px;
+                max-height: 90vh;
+            }
+        }
     </style>
 
     <!-- JSON-LD Structured Data for Google -->
@@ -1817,14 +2079,26 @@
                                 </div>
                                 <!-- Slide 3 -->
                                 <div class="hero-slide">
-                                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=700&auto=format&fit=crop"
-                                        alt="Agroforestry & planting trees in Mizoram">
+                                    <img src="assets/images/projects/gcf_images.jpeg"
+                                        alt="Global Compassion Academy school fundraising appeal poster">
                                     <div class="hv5-card-strip">
                                         <div>
-                                            <div class="hv5-card-label">Eco-Development</div>
-                                            <div class="hv5-card-value">Acres Reforested</div>
+                                            <div class="hv5-card-label">School Vision</div>
+                                            <div class="hv5-card-value">Compassion Academy</div>
                                         </div>
-                                        <span class="hv5-card-badge">Sustainability</span>
+                                        <span class="hv5-card-badge" style="background:#d97706;">Milaap Campaign</span>
+                                    </div>
+                                </div>
+                                <!-- Slide 4 -->
+                                <div class="hero-slide">
+                                    <img src="assets/images/projects/enhanc4.jpeg"
+                                        alt="Rural tribal children in village school assembly and classroom">
+                                    <div class="hv5-card-strip">
+                                        <div>
+                                            <div class="hv5-card-label">Field Learning</div>
+                                            <div class="hv5-card-value">Tuichawng Classrooms</div>
+                                        </div>
+                                        <span class="hv5-card-badge">Mizoram Field</span>
                                     </div>
                                 </div>
                             </div>
@@ -1840,6 +2114,7 @@
                                 <span class="hero-slider-dot active" data-slide="0"></span>
                                 <span class="hero-slider-dot" data-slide="1"></span>
                                 <span class="hero-slider-dot" data-slide="2"></span>
+                                <span class="hero-slider-dot" data-slide="3"></span>
                             </div>
                         </div>
 
@@ -2099,24 +2374,16 @@
                     <!-- Project 1 -->
                     <div class="project-card-v4">
                         <div class="project-img-v4">
-                            <span class="project-tag">Forestry</span>
-                            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=600&auto=format&fit=crop"
-                                alt="Reforestation site for seedling nursery in Sajek Valley" loading="lazy">
+                            <span class="project-tag" style="background:#d97706; color:white;">Active Appeal</span>
+                            <img src="assets/images/projects/gcf_images.jpeg"
+                                alt="Global Compassion Academy fundraising drive" loading="lazy">
                         </div>
                         <div class="project-body">
-                            <h3 class="project-title-v4">Sajek Valley Nursery</h3>
-                            <p class="project-desc-v4">Community-led seedling nursery to nurture and replant 10,000
-                                native hardwood and fruit trees across denuded mountain slopes.</p>
-                            <div class="project-progress-v4">
-                                <div class="project-progress-meta">
-                                    <span class="project-progress-pct">85% Completed</span>
-                                    <a href="about.html" class="project-progress-link">View Details <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </div>
-                                <div class="progress-track">
-                                    <div class="progress-fill animate-progress" data-progress="85" style="width:0%">
-                                    </div>
-                                </div>
+                            <h3 class="project-title-v4">Global Compassion Academy</h3>
+                            <p class="project-desc-v4">A proposed value-based, inclusive charitable school for underprivileged Chakma tribal children in Tuichawng and 25 remote villages.</p>
+                            <div class="project-progress-meta">
+                                <a href="education.html" class="project-progress-link">View Details <i
+                                        class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -2125,22 +2392,15 @@
                     <div class="project-card-v4">
                         <div class="project-img-v4">
                             <span class="project-tag">Education</span>
-                            <img src="assets/images/projects/classroom1.jpg" alt="Underprivileged students learning native Chakma script in Sajek school class" loading="lazy">
+                            <img src="assets/images/projects/enhanc4.jpeg" alt="Rural children attending village school assembly and learning in rustic wooden classroom in Tuichawng" loading="lazy">
                         </div>
                         <div class="project-body">
                             <h3 class="project-title-v4">Chakma Script Schools</h3>
                             <p class="project-desc-v4">Creating native-language textbooks and providing tutor stipends
                                 for script literacy classes across 12 villages, preserving a dying alphabet.</p>
-                            <div class="project-progress-v4">
-                                <div class="project-progress-meta">
-                                    <span class="project-progress-pct">60% Completed</span>
-                                    <a href="chakma.html" class="project-progress-link">View Details <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </div>
-                                <div class="progress-track">
-                                    <div class="progress-fill animate-progress" data-progress="60" style="width:0%">
-                                    </div>
-                                </div>
+                            <div class="project-progress-meta">
+                                <a href="chakma.html" class="project-progress-link">View Details <i
+                                        class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -2155,16 +2415,9 @@
                             <h3 class="project-title-v4">Ruma Gravity Pipes</h3>
                             <p class="project-desc-v4">4.5km gravity aqueduct pipeline from highland springs delivering
                                 clean, filtered water access directly to 150 local households.</p>
-                            <div class="project-progress-v4">
-                                <div class="project-progress-meta">
-                                    <span class="project-progress-pct">95% Completed</span>
-                                    <a href="chakma.html" class="project-progress-link">View Details <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </div>
-                                <div class="progress-track">
-                                    <div class="progress-fill animate-progress" data-progress="95" style="width:0%">
-                                    </div>
-                                </div>
+                            <div class="project-progress-meta">
+                                <a href="chakma.html" class="project-progress-link">View Details <i
+                                        class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -2325,57 +2578,6 @@
             </div>
         </section>
 
-        <!-- ================================================
-             SECTION 8 — TESTIMONIALS
-        ================================================ -->
-        <section id="testimonials" class="testimonials-section reveal">
-            <div class="container">
-                <div class="sec-header-centered">
-                    <span class="sec-eyebrow">Voices from the Field</span>
-                    <h2 class="sec-title">What People <span>Are Saying</span></h2>
-                    <p class="sec-desc">Feedback from local village heads, dedicated volunteers, and our trusted global
-                        partners.</p>
-                </div>
-
-                <div class="testimonials-grid">
-                    <!-- Testimonial 1 -->
-                    <div class="testimonial-card-v4">
-                        <div class="testimonial-quote-icon">"</div>
-                        <p class="testimonial-text-v4">Before GCF laid down the gravity pipelines, our youth had to
-                            climb down deep ravines daily to carry heavy water containers. Today, clean running water
-                            flows right in our village center.</p>
-                        <div class="testimonial-author-v4">
-                            <span class="testimonial-name-v4">Jyoti Chakma</span>
-                            <span class="testimonial-role-v4">Village Elder, Ruma Sub-district</span>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 2 -->
-                    <div class="testimonial-card-v4">
-                        <div class="testimonial-quote-icon">"</div>
-                        <p class="testimonial-text-v4">Working as a volunteering script teacher with GCF has been an
-                            incredible experience. We are helping children read and write in our ancestral script,
-                            preserving our unique literature for generations.</p>
-                        <div class="testimonial-author-v4">
-                            <span class="testimonial-name-v4">Pranab Chakma</span>
-                            <span class="testimonial-role-v4">GCF Volunteer Script Tutor</span>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 3 -->
-                    <div class="testimonial-card-v4">
-                        <div class="testimonial-quote-icon">"</div>
-                        <p class="testimonial-text-v4">Their direct funding approach is what made me a donor. Seeing
-                            exactly where my contributions are deployed — from PVC pipes to classroom books — gives me
-                            complete confidence in GCF.</p>
-                        <div class="testimonial-author-v4">
-                            <span class="testimonial-name-v4">Sarah Jenkins</span>
-                            <span class="testimonial-role-v4">Monthly GCF Donor, United Kingdom</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- ================================================
              SECTION 9 — CTA
@@ -2405,11 +2607,18 @@
                     <div class="cta-card-v4 amber">
                         <div class="cta-card-icon"><i class="fas fa-heart"></i></div>
                         <h3 class="cta-card-title">Make a Donation</h3>
-                        <p class="cta-card-desc">100% of your contributions go directly to purchase school kits,
-                            learning materials, mentorship tools, and community support resources.</p>
-                        <a href="donate.html" class="cta-btn-amber">
-                            Donate Today <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <p class="cta-card-desc">100% of your contributions directly support school kits and field projects. You can also give via our verified crowdfunding campaign.</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: auto;">
+                            <a href="http://m-lp.co/economic-16?utm_medium=campaign_page_share&utm_source=copy" target="_blank" rel="noopener noreferrer" class="cta-btn-amber" style="background: #b45309;">
+                                <i class="fas fa-hand-holding-heart"></i> Milaap Fundraiser <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+                            </a>
+                            <a href="https://www.paypal.com/ncp/payment/W2ST2ZTYUXNJQ" target="_blank" rel="noopener noreferrer" class="cta-btn-amber" style="background: #0070ba;">
+                                <i class="fab fa-paypal"></i> PayPal (USD) <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+                            </a>
+                            <a href="donate.html" class="cta-btn-amber" style="background: rgba(255, 255, 255, 0.15); border: 1.5px solid rgba(255, 255, 255, 0.35);">
+                                Direct UPI / Bank <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2574,8 +2783,45 @@
             </div>
         </div>
 
-        <div class="gcf-lightbox-footer" id="modal-caption">
-            Distribution of raincoats to underserved tribal children in Tuichawng
+    <!-- ================================================
+         POPUP APPEAL MODAL (Displays on Website Load)
+    ================================================ -->
+    <div class="gcf-appeal-modal-overlay" id="gcf-appeal-modal" role="dialog" aria-modal="true" aria-labelledby="gcf-appeal-title" aria-hidden="true" style="display: none;">
+        <div class="gcf-appeal-modal-dialog">
+            <!-- Close Button (Positioned top-right, highly accessible on mobile/tablet/desktop) -->
+            <button type="button" class="gcf-appeal-close-btn" id="gcf-appeal-close" aria-label="Close fundraising appeal modal">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="gcf-appeal-modal-header">
+                <span class="gcf-appeal-pill"><i class="fas fa-heart"></i> Official Appeal</span>
+                <h3 id="gcf-appeal-title" class="gcf-appeal-heading">Help Bring Education &amp; Hope to Chakma Children</h3>
+                <p class="gcf-appeal-sub">Official Fundraising Appeal &bull; Global Compassion Foundation, Mizoram</p>
+            </div>
+
+            <!-- Scrollable Modal Body -->
+            <div class="gcf-appeal-modal-body">
+                <a href="http://m-lp.co/economic-16?utm_medium=campaign_page_share&utm_source=copy" target="_blank" rel="noopener noreferrer" title="Click to view and donate on Milaap" class="gcf-appeal-img-link">
+                    <img src="assets/images/appeal/appelData.jpeg" alt="Fundraising Appeal - Help Bring Education and Hope to Chakma Children in Remote Villages of Mizoram" class="gcf-appeal-img" loading="eager">
+                </a>
+            </div>
+
+            <!-- Sticky Action Footer -->
+            <div class="gcf-appeal-modal-footer">
+                <a href="http://m-lp.co/economic-16?utm_medium=campaign_page_share&utm_source=copy" target="_blank" rel="noopener noreferrer" class="gcf-appeal-btn-donate">
+                    <i class="fas fa-hand-holding-heart"></i> Donate on Milaap Fundraiser <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="https://www.paypal.com/ncp/payment/W2ST2ZTYUXNJQ" target="_blank" rel="noopener noreferrer" class="gcf-appeal-btn-alt" style="border-color: #0070ba; color: #0070ba; background: #f0f7fc;">
+                    <i class="fab fa-paypal"></i> PayPal (USD) <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+                </a>
+                <a href="donate.html" class="gcf-appeal-btn-alt">
+                    Direct Bank / UPI Giving
+                </a>
+                <button type="button" class="gcf-appeal-btn-later" id="gcf-appeal-dismiss">
+                    Remind Me Later
+                </button>
+            </div>
         </div>
     </div>
 
@@ -2722,6 +2968,62 @@
                     });
                 }
             });
+
+            // ---- Fundraising Appeal Popup Modal on Load ----
+            const appealModal = document.getElementById('gcf-appeal-modal');
+            const appealCloseBtn = document.getElementById('gcf-appeal-close');
+            const appealDismissBtn = document.getElementById('gcf-appeal-dismiss');
+
+            function openAppealModal() {
+                if (!appealModal) return;
+                appealModal.style.display = 'flex';
+                // Trigger smooth CSS animation
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        appealModal.classList.add('active');
+                        appealModal.setAttribute('aria-hidden', 'false');
+                    });
+                });
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeAppealModal() {
+                if (!appealModal) return;
+                appealModal.classList.remove('active');
+                appealModal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+                setTimeout(() => {
+                    appealModal.style.display = 'none';
+                }, 350);
+                // Save session dismissal
+                sessionStorage.setItem('gcf_appeal_modal_closed', 'true');
+            }
+
+            if (appealModal) {
+                // Automatically display modal when website is loaded
+                if (!sessionStorage.getItem('gcf_appeal_modal_closed')) {
+                    setTimeout(openAppealModal, 600);
+                }
+
+                if (appealCloseBtn) {
+                    appealCloseBtn.addEventListener('click', closeAppealModal);
+                }
+                if (appealDismissBtn) {
+                    appealDismissBtn.addEventListener('click', closeAppealModal);
+                }
+                // Close when clicking outside on backdrop
+                appealModal.addEventListener('click', (e) => {
+                    if (e.target === appealModal) {
+                        closeAppealModal();
+                    }
+                });
+                // Close on ESC key press
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && appealModal.classList.contains('active')) {
+                        closeAppealModal();
+                    }
+                });
+            }
 
         });
     </script>
