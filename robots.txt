@@ -5,4 +5,4 @@ Disallow: /js/
 Disallow: /css/
 
 # Link to sitemap
-Sitemap: https://globalcompassionfoundation.org/sitemap.xml
+Sitemap: https://gcf-global.org/sitemap.xml
