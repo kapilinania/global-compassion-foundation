@@ -378,6 +378,9 @@
             transition: transform 0.4s ease;
             width: 100%;
             aspect-ratio: 1648 / 1276;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .cert-card:hover .cert-thumb-frame {
@@ -388,7 +391,8 @@
         .cert-thumb-img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            background-color: #ffffff;
             display: block;
         }
 
@@ -1157,7 +1161,7 @@
                 <div class="gcf-marquee-content">
                     <a href="certificates.html" class="gcf-marquee-item">
                         <span class="item-tag">Governance</span>
-                        <span><strong>Credentials Hub:</strong> Sudip Chakma achieves executive certifications in Strategic Project Management, Leadership &amp; Environmental Ethics.</span>
+                        <span><strong>Credentials Hub:</strong> Sudip Chakma &amp; GCF achieve international credentials from UNDP, Danish MFA &amp; SocioStory in Impact Measurement, CSR &amp; SDGs.</span>
                     </a>
                     <span class="gcf-marquee-sep">•</span>
                     <a href="index.html#latest-updates" class="gcf-marquee-item">
@@ -1178,7 +1182,7 @@
                     <!-- Duplicate for infinite marquee loop -->
                     <a href="certificates.html" class="gcf-marquee-item">
                         <span class="item-tag">Governance</span>
-                        <span><strong>Credentials Hub:</strong> Sudip Chakma achieves executive certifications in Strategic Project Management, Leadership &amp; Environmental Ethics.</span>
+                        <span><strong>Credentials Hub:</strong> Sudip Chakma &amp; GCF achieve international credentials from UNDP, Danish MFA &amp; SocioStory in Impact Measurement, CSR &amp; SDGs.</span>
                     </a>
                     <span class="gcf-marquee-sep">•</span>
                     <a href="index.html#latest-updates" class="gcf-marquee-item">
@@ -1205,11 +1209,11 @@
             <!-- Metrics Highlights Ribbon -->
             <div class="cert-stats-ribbon">
                 <div class="stat-ribbon-item">
-                    <span class="stat-ribbon-number">7+</span>
+                    <span class="stat-ribbon-number">11+</span>
                     <span class="stat-ribbon-label">Executive Certificates</span>
                 </div>
                 <div class="stat-ribbon-item">
-                    <span class="stat-ribbon-number">218+</span>
+                    <span class="stat-ribbon-number">235+</span>
                     <span class="stat-ribbon-label">Specialized Training Hours</span>
                 </div>
                 <div class="stat-ribbon-item">
@@ -1245,16 +1249,19 @@
                     <!-- Category Filter Tabs -->
                     <div class="filter-pills-list" role="tablist" aria-label="Certificate categories">
                         <button class="filter-pill active" data-category="all" role="tab" aria-selected="true">
-                            <i class="fas fa-th-large"></i> All Recognition <span class="filter-pill-count">7</span>
+                            <i class="fas fa-th-large"></i> All Recognition <span class="filter-pill-count">11</span>
+                        </button>
+                        <button class="filter-pill" data-category="csr" role="tab" aria-selected="false">
+                            <i class="fas fa-hand-holding-heart"></i> CSR &amp; SDGs <span class="filter-pill-count">4</span>
+                        </button>
+                        <button class="filter-pill" data-category="leadership" role="tab" aria-selected="false">
+                            <i class="fas fa-users-cog"></i> Leadership &amp; Comms <span class="filter-pill-count">4</span>
+                        </button>
+                        <button class="filter-pill" data-category="ethics" role="tab" aria-selected="false">
+                            <i class="fas fa-globe-americas"></i> Ethics &amp; Sustainability <span class="filter-pill-count">4</span>
                         </button>
                         <button class="filter-pill" data-category="project-management" role="tab" aria-selected="false">
                             <i class="fas fa-tasks"></i> Project Management <span class="filter-pill-count">2</span>
-                        </button>
-                        <button class="filter-pill" data-category="leadership" role="tab" aria-selected="false">
-                            <i class="fas fa-users-cog"></i> Leadership &amp; Comms <span class="filter-pill-count">2</span>
-                        </button>
-                        <button class="filter-pill" data-category="ethics" role="tab" aria-selected="false">
-                            <i class="fas fa-globe-americas"></i> Environmental Ethics <span class="filter-pill-count">1</span>
                         </button>
                         <button class="filter-pill" data-category="finance" role="tab" aria-selected="false">
                             <i class="fas fa-chart-line"></i> Financial Literacy <span class="filter-pill-count">1</span>
@@ -1267,7 +1274,7 @@
 
                 <!-- Live Result Counter and Reset Link -->
                 <div class="filter-meta-bar">
-                    <span id="results-count-text">Showing <strong>7</strong> official certificates</span>
+                    <span id="results-count-text">Showing <strong>11</strong> official certificates</span>
                     <span style="display: inline-flex; align-items: center; gap: 8px;">
                         <i class="fas fa-shield-alt" style="color: var(--secondary);"></i> All certificates issued to GCF Founder &amp; Representative <strong>Sudip Chakma</strong>
                     </span>
@@ -1281,6 +1288,290 @@
 
                 <!-- Certificates Grid -->
                 <div class="certificates-grid" id="certificates-container">
+
+                    <!-- CARD: Impact Measurement and Management for SMEs (UNDP / Danish MFA) -->
+                    <article class="cert-card" data-category="csr ethics leadership"
+                        data-title="Impact Measurement and Management for SMEs"
+                        data-code="UNDP-IMM" data-id="6ae345ad21fe83d8e8f70c5"
+                        data-issuer="UNDP &amp; Ministry of Foreign Affairs of Denmark"
+                        data-recipient="Sudip Chakma"
+                        data-date="October 29, 2026"
+                        data-hours="Specialized Course"
+                        data-score="100%"
+                        data-verify="https://certificates.easygenerator.com/6ae345ad21fe83d8e8f70c5.pdf"
+                        data-pdf="assets/latest Pdf/Impact Measurement and Management for smes.pdf"
+                        data-img="assets/images/certificates/Impact_Measurement_and_Management_for_SMEs.png"
+                        data-description="Advanced credential co-developed by the United Nations Development Programme (UNDP), Ministry of Foreign Affairs of Denmark, and Danish-Arab Partnership Programme focusing on sustainable development impact measurement, theory of change, ESG metrics, and social enterprise accountability.">
+
+                        <div class="cert-thumb-container" onclick="openCertModal(this.closest('.cert-card'))" title="Click to view full preview">
+                            <div class="cert-thumb-frame">
+                                <img src="assets/images/certificates/Impact_Measurement_and_Management_for_SMEs.png"
+                                    alt="Impact Measurement and Management for SMEs Certificate - Sudip Chakma - UNDP"
+                                    class="cert-thumb-img" loading="lazy">
+                            </div>
+                            <div class="cert-overlay-action">
+                                <span class="cert-overlay-btn"><i class="fas fa-expand"></i> Quick Preview</span>
+                            </div>
+                        </div>
+
+                        <div class="cert-card-body">
+                            <div class="cert-card-meta-top">
+                                <span class="cert-domain-badge">Impact &amp; Sustainability (UNDP)</span>
+                                <span class="cert-issuer-badge"><i class="fas fa-check-circle"></i> UNDP &amp; Danish MFA</span>
+                            </div>
+
+                            <h3 class="cert-title">Impact Measurement and Management for SMEs</h3>
+                            <div class="cert-recipient">
+                                <i class="fas fa-user-graduate"></i> Awarded to: Sudip Chakma
+                            </div>
+
+                            <div class="cert-specs-box">
+                                <div class="cert-spec-row">
+                                    <span class="cert-spec-label">Credential ID:</span>
+                                    <span class="cert-spec-value">
+                                        <code>6ae345ad21fe83d8e8f70c5</code>
+                                        <button class="copy-id-btn" onclick="copyCertId('6ae345ad21fe83d8e8f70c5', event)" title="Copy Credential ID">
+                                            <i class="far fa-copy"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="cert-spec-row">
+                                    <span class="cert-spec-label">Date Issued:</span>
+                                    <span class="cert-spec-value">October 29, 2026</span>
+                                </div>
+                                <div class="cert-spec-row">
+                                    <span class="cert-spec-label">Effort / Score:</span>
+                                    <span class="cert-spec-value">Executive &middot; Grade: 100% (Perfect Score)</span>
+                                </div>
+                            </div>
+
+                            <p class="cert-description">
+                                United Nations Development Programme (UNDP) &amp; Danish MFA framework for measuring grassroots social impact, stakeholder outcomes, and SDG alignment.
+                            </p>
+
+                            <div class="cert-card-actions">
+                                <button type="button" class="btn-card-action btn-preview-card" onclick="openCertModal(this.closest('.cert-card'))">
+                                    <i class="fas fa-eye"></i> Preview
+                                </button>
+                                <a href="assets/latest%20Pdf/Impact%20Measurement%20and%20Management%20for%20smes.pdf" download="Impact_Measurement_and_Management_for_SMEs_Sudip_Chakma.pdf" class="btn-card-action btn-download-card">
+                                    <i class="fas fa-download"></i> Download
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CARD: Starting an NGO: From Idea to Registration and CSR-Ready -->
+                    <article class="cert-card" data-category="csr leadership"
+                        data-title="Starting an NGO: From Idea to Registration and CSR-Ready"
+                        data-code="NGO-CSR" data-id="G5YT-30E0-S630-EDNG-YWPW-GQGA-QW"
+                        data-issuer="SocioStory Academy"
+                        data-recipient="Sudip Chakma"
+                        data-date="October 29, 2026"
+                        data-hours="~4 hours"
+                        data-score="100%"
+                        data-verify="https://sociostory.org/verify"
+                        data-pdf="assets/latest Pdf/Certificate_ Sudip Chakma · SocioStory.pdf"
+                        data-img="assets/images/certificates/Starting_An_NGO_From_Idea_To_Registration.png"
+                        data-description="Comprehensive foundation in NGO formation, Indian non-profit legal frameworks, governance architecture, statutory registration, and operational readiness for Corporate Social Responsibility (CSR) partnerships and institutional funding.">
+
+                        <div class="cert-thumb-container" onclick="openCertModal(this.closest('.cert-card'))" title="Click to view full preview">
+                            <div class="cert-thumb-frame">
+                                <img src="assets/images/certificates/Starting_An_NGO_From_Idea_To_Registration.png"
+                                    alt="Starting an NGO Certificate - Sudip Chakma - SocioStory Academy"
+                                    class="cert-thumb-img" loading="lazy">
+                            </div>
+                            <div class="cert-overlay-action">
+                                <span class="cert-overlay-btn"><i class="fas fa-expand"></i> Quick Preview</span>
+                            </div>
+                        </div>
+
+                        <div class="cert-card-body">
+                            <div class="cert-card-meta-top">
+                                <span class="cert-domain-badge">NGO Governance &amp; CSR</span>
+                                <span class="cert-issuer-badge"><i class="fas fa-check-circle"></i> SocioStory Academy</span>
+                            </div>
+
+                            <h3 class="cert-title">Starting an NGO: From Idea to Registration and CSR-Ready</h3>
+                            <div class="cert-recipient">
+                                <i class="fas fa-user-graduate"></i> Awarded to: Sudip Chakma
+                            </div>
+
+                            <div class="cert-specs-box">
+                                <div class="cert-spec-row">
+                                    <span class="cert-spec-label">Credential ID:</span>
+                                    <span class="cert-spec-value">
+                                        <code>G5YT-30E0-S630-EDNG-YWPW-GQGA-QW</code>
+                                        <button class="copy-id-btn" onclick="copyCertId('G5YT-30E0-S630-EDNG-YWPW-GQGA-QW', event)" title="Copy Credential ID">
+                                            <i class="far fa-copy"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="cert-spec-row">
+                                    <span class="cert-spec-label">Date Issued:</span>
+                                    <span class="cert-spec-value">October 29, 2026</span>
+                                </div>
+                                <div class="cert-spec-row">
+                                    <span class="cert-spec-label">Effort / Score:</span>
+                                    <span class="cert-spec-value">~4 hrs &middot; Grade: 100% (Perfect Score)</span>
+                                </div>
+                            </div>
+
+                            <p class="cert-description">
+                                Non-profit governance, legal structuring, compliance frameworks, and institutional CSR readiness tailored for grassroots community leaders.
+                            </p>
+
+                            <div class="cert-card-actions">
+                                <button type="button" class="btn-card-action btn-preview-card" onclick="openCertModal(this.closest('.cert-card'))">
+                                    <i class="fas fa-eye"></i> Preview
+                                </button>
+                                <a href="assets/latest%20Pdf/Certificate_%20Sudip%20Chakma%20%C2%B7%20SocioStory.pdf" download="Starting_an_NGO_Sudip_Chakma_SocioStory.pdf" class="btn-card-action btn-download-card">
+                                    <i class="fas fa-download"></i> Download
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CARD: CSR Essentials: From Law to Impact -->
+                    <article class="cert-card" data-category="csr ethics"
+                        data-title="CSR Essentials: From Law to Impact"
+                        data-code="CSR-LAW" data-id="NDBN-DMAT-15A9-1TP3-JS55-W1HZ-0R"
+                        data-issuer="SocioStory Academy"
+                        data-recipient="Global Compassion Foundation (Compassion in Action)"
+                        data-date="October 29, 2026"
+                        data-hours="~3 hours"
+                        data-score="93%"
+                        data-verify="https://sociostory.org/verify"
+                        data-pdf="assets/latest Pdf/Certificate_ Global Compassion Foundation Compassion in Action · SocioStory.pdf"
+                        data-img="assets/images/certificates/CSR_Essentials_From_Law_To_Impact.png"
+                        data-description="Mastery of Corporate Social Responsibility (CSR) legal architecture under Section 135 of the Companies Act, Schedule VII mandate, corporate partnership structuring, and measurable community impact reporting.">
+
+                        <div class="cert-thumb-container" onclick="openCertModal(this.closest('.cert-card'))" title="Click to view full preview">
+                            <div class="cert-thumb-frame">
+                                <img src="assets/images/certificates/CSR_Essentials_From_Law_To_Impact.png"
+                                    alt="CSR Essentials Certificate - Global Compassion Foundation - SocioStory Academy"
+                                    class="cert-thumb-img" loading="lazy">
+                            </div>
+                            <div class="cert-overlay-action">
+                                <span class="cert-overlay-btn"><i class="fas fa-expand"></i> Quick Preview</span>
+                            </div>
+                        </div>
+
+                        <div class="cert-card-body">
+                            <div class="cert-card-meta-top">
+                                <span class="cert-domain-badge">Corporate Social Responsibility</span>
+                                <span class="cert-issuer-badge"><i class="fas fa-check-circle"></i> SocioStory Academy</span>
+                            </div>
+
+                            <h3 class="cert-title">CSR Essentials: From Law to Impact</h3>
+                            <div class="cert-recipient">
+                                <i class="fas fa-building"></i> Awarded to: Global Compassion Foundation
+                            </div>
+
+                            <div class="cert-specs-box">
+                                <div class="cert-spec-row">
+                                    <span class="cert-spec-label">Credential ID:</span>
+                                    <span class="cert-spec-value">
+                                        <code>NDBN-DMAT-15A9-1TP3-JS55-W1HZ-0R</code>
+                                        <button class="copy-id-btn" onclick="copyCertId('NDBN-DMAT-15A9-1TP3-JS55-W1HZ-0R', event)" title="Copy Credential ID">
+                                            <i class="far fa-copy"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="cert-spec-row">
+                                    <span class="cert-spec-label">Date Issued:</span>
+                                    <span class="cert-spec-value">October 29, 2026</span>
+                                </div>
+                                <div class="cert-spec-row">
+                                    <span class="cert-spec-label">Effort / Score:</span>
+                                    <span class="cert-spec-value">~3 hrs &middot; Grade: 93% (Distinction)</span>
+                                </div>
+                            </div>
+
+                            <p class="cert-description">
+                                Indian CSR compliance, corporate grant alignment, Schedule VII activities, and impact evaluation strengthening GCF's corporate engagement framework.
+                            </p>
+
+                            <div class="cert-card-actions">
+                                <button type="button" class="btn-card-action btn-preview-card" onclick="openCertModal(this.closest('.cert-card'))">
+                                    <i class="fas fa-eye"></i> Preview
+                                </button>
+                                <a href="assets/latest%20Pdf/Certificate_%20Global%20Compassion%20Foundation%20Compassion%20in%20Action%20%C2%B7%20SocioStory.pdf" download="CSR_Essentials_Global_Compassion_Foundation_SocioStory.pdf" class="btn-card-action btn-download-card">
+                                    <i class="fas fa-download"></i> Download
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CARD: The SDGs and India: Goals, Progress and Your Part -->
+                    <article class="cert-card" data-category="csr ethics"
+                        data-title="The SDGs and India: Goals, Progress and Your Part"
+                        data-code="SDG-INDIA" data-id="ZSM9-4KQW-SEMV-TF7R-PA47-P9PM-1C"
+                        data-issuer="SocioStory Academy"
+                        data-recipient="Sudip Chakma, President, Global Compassion Foundation, Tuichawng"
+                        data-date="October 29, 2026"
+                        data-hours="~3 hours"
+                        data-score="100%"
+                        data-verify="https://sociostory.org/verify"
+                        data-pdf="assets/latest Pdf/Certificate_ Sudip Chakma, President, Global Compassion Foundation, Tuichawng · SocioStory.pdf"
+                        data-img="assets/images/certificates/The_SDGs_And_India_Goals_Progress.png"
+                        data-description="Exploration of the United Nations Sustainable Development Goals (SDGs), localized Indian NITI Aayog development indices, tribal development priorities, and community-driven action plans for sustainable rural transformation.">
+
+                        <div class="cert-thumb-container" onclick="openCertModal(this.closest('.cert-card'))" title="Click to view full preview">
+                            <div class="cert-thumb-frame">
+                                <img src="assets/images/certificates/The_SDGs_And_India_Goals_Progress.png"
+                                    alt="The SDGs and India Certificate - Sudip Chakma - SocioStory Academy"
+                                    class="cert-thumb-img" loading="lazy">
+                            </div>
+                            <div class="cert-overlay-action">
+                                <span class="cert-overlay-btn"><i class="fas fa-expand"></i> Quick Preview</span>
+                            </div>
+                        </div>
+
+                        <div class="cert-card-body">
+                            <div class="cert-card-meta-top">
+                                <span class="cert-domain-badge">Sustainable Development (SDGs)</span>
+                                <span class="cert-issuer-badge"><i class="fas fa-check-circle"></i> SocioStory Academy</span>
+                            </div>
+
+                            <h3 class="cert-title">The SDGs and India: Goals, Progress and Your Part</h3>
+                            <div class="cert-recipient">
+                                <i class="fas fa-user-graduate"></i> Awarded to: Sudip Chakma, President, GCF
+                            </div>
+
+                            <div class="cert-specs-box">
+                                <div class="cert-spec-row">
+                                    <span class="cert-spec-label">Credential ID:</span>
+                                    <span class="cert-spec-value">
+                                        <code>ZSM9-4KQW-SEMV-TF7R-PA47-P9PM-1C</code>
+                                        <button class="copy-id-btn" onclick="copyCertId('ZSM9-4KQW-SEMV-TF7R-PA47-P9PM-1C', event)" title="Copy Credential ID">
+                                            <i class="far fa-copy"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="cert-spec-row">
+                                    <span class="cert-spec-label">Date Issued:</span>
+                                    <span class="cert-spec-value">October 29, 2026</span>
+                                </div>
+                                <div class="cert-spec-row">
+                                    <span class="cert-spec-label">Effort / Score:</span>
+                                    <span class="cert-spec-value">~3 hrs &middot; Grade: 100% (Perfect Score)</span>
+                                </div>
+                            </div>
+
+                            <p class="cert-description">
+                                UN SDGs implementation frameworks, localized NITI Aayog tribal indicators, and actionable community strategies driving rural development in Mizoram.
+                            </p>
+
+                            <div class="cert-card-actions">
+                                <button type="button" class="btn-card-action btn-preview-card" onclick="openCertModal(this.closest('.cert-card'))">
+                                    <i class="fas fa-eye"></i> Preview
+                                </button>
+                                <a href="assets/latest%20Pdf/Certificate_%20Sudip%20Chakma,%20President,%20Global%20Compassion%20Foundation,%20Tuichawng%20%C2%B7%20SocioStory.pdf" download="The_SDGs_and_India_Sudip_Chakma_SocioStory.pdf" class="btn-card-action btn-download-card">
+                                    <i class="fas fa-download"></i> Download
+                                </a>
+                            </div>
+                        </div>
+                    </article>
 
                     <!-- CARD 1: Introduction to Project Management -->
                     <article class="cert-card" data-category="project-management"
@@ -1923,6 +2214,14 @@
                             <span class="modal-spec-label">Final Evaluation:</span>
                             <span class="modal-spec-val" id="modal-score">82.22%</span>
                         </li>
+                        <li class="modal-spec-item" id="modal-verify-row" style="display: none;">
+                            <span class="modal-spec-label">Verification:</span>
+                            <span class="modal-spec-val">
+                                <a id="modal-verify-link" href="#" target="_blank" rel="noopener noreferrer" style="color: var(--secondary); font-weight: 600; text-decoration: underline; display: inline-flex; align-items: center; gap: 4px;">
+                                    <i class="fas fa-external-link-alt"></i> Verify Credential
+                                </a>
+                            </span>
+                        </li>
                     </ul>
 
                     <div class="modal-cert-overview">
@@ -2084,7 +2383,7 @@
                     const issuer = (card.getAttribute('data-issuer') || '').toLowerCase();
                     const desc = (card.getAttribute('data-description') || '').toLowerCase();
 
-                    const matchesCategory = (currentCategory === 'all' || category === currentCategory);
+                    const matchesCategory = (currentCategory === 'all' || category === currentCategory || (category && category.split(' ').includes(currentCategory)));
                     const matchesSearch = !query || 
                         title.includes(query) || 
                         code.includes(query) || 
@@ -2213,9 +2512,15 @@
                 activeCardPdfUrl = pdf;
 
                 // Populate details
+                const recipient = card.getAttribute('data-recipient') || 'Sudip Chakma';
+                const verifyUrl = card.getAttribute('data-verify');
+                const verifyRow = document.getElementById('modal-verify-row');
+                const verifyLink = document.getElementById('modal-verify-link');
+
                 modalTitle.textContent = title;
                 modalCourseTitle.textContent = title;
-                modalDomain.textContent = category.replace('-', ' ').toUpperCase();
+                modalDomain.textContent = (category || '').split(' ')[0].replace('-', ' ').toUpperCase();
+                if (modalRecipient) modalRecipient.textContent = recipient;
                 modalIssuer.textContent = issuer;
                 modalId.textContent = id;
                 modalDate.textContent = date;
@@ -2223,7 +2528,17 @@
                 modalScore.textContent = score;
                 modalDescription.textContent = desc;
                 modalImg.src = img;
-                modalImg.alt = title + ' - Sudip Chakma';
+                modalImg.alt = title + ' - ' + recipient;
+
+                if (verifyRow && verifyLink) {
+                    if (verifyUrl) {
+                        verifyRow.style.display = 'flex';
+                        verifyLink.href = verifyUrl;
+                        verifyLink.innerHTML = `<i class="fas fa-external-link-alt"></i> Verify on ${issuer.includes('SocioStory') ? 'SocioStory' : 'Official Portal'}`;
+                    } else {
+                        verifyRow.style.display = 'none';
+                    }
+                }
 
                 modalDownloadBtn.href = pdf;
                 modalDownloadBtn.setAttribute('download', title.replace(/[^a-zA-Z0-9]/g, '_') + '.pdf');
